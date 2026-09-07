@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Daily Papers</title>
+    <link>https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8</link>
+    <description>An automatically generated daily briefing on the newest papers in your field. Each episode summarizes the day's most relevant preprints: what problem they attack, what they actually did, what the numbers say, and what to be skeptical about. Generated for a single listener.
+</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Sep 2026 03:47:55 +0000</lastBuildDate>
+    <itunes:author>yuasabe</itunes:author>
+    <itunes:block>yes</itunes:block>
+    <itunes:category text="Science">
+      <itunes:category text="Natural Sciences"/>
+    </itunes:category>
+    <itunes:image href="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/artwork.jpg"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>yuasabe</itunes:name>
+      <itunes:email>yuasabe@g.ecc.u-tokyo.ac.jp</itunes:email>
+    </itunes:owner>
+    <itunes:subtitle>Your personal research briefing</itunes:subtitle>
+    <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 7 — 5 papers</title>
+      <description>&lt;p&gt;Five papers on squeezing more out of the sensors and models autonomous systems already have: CrossDepth feeds per-pixel ray embeddings to a self-supervised surround-depth network and restricts cross-image attention to regions the rig calibration says are plausible, while LetOccVote trains a Gaussian 3D occupancy model with no 3D labels by keeping only 2D pseudo-labels that several frames viewing the same location agree on. On the decision side, one pretrained diffusion traffic model plays both ego planner and adversary in closed-loop nuPlan — the authors&amp;#x27; higher-scoring planner degrades most under generated cut-ins and hard braking — CoLMIN adds multi-candidate proposals and two reflection stages to LLM vehicle-to-vehicle negotiation in CARLA so cars stop settling on their first agreed plan, and a VLA policy aligns action tokens with text embeddings of phase-specific reasoning during training, then drops the projection head for zero added inference cost.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05397v1"&gt;CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation&lt;/a&gt; &amp;mdash; Samer Abualhanud, Max Mehltretter&lt;br/&gt;They take self-supervised surround-view depth and fix two things that make the six cameras disagree: they feed the network per-pixel ray embeddings so it knows which camera it is looking through, and they let pixels attend across neighboring images but only inside the region the rig calibration says is geometrically plausible.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04921v1"&gt;One Diffusion Model, Two Roles: Guided Trajectory Planning and Safety-Critical Scenario Generation in Closed-Loop Simulation&lt;/a&gt; &amp;mdash; Arka Pal et al.&lt;br/&gt;They take one pretrained diffusion traffic model and use it twice, once as the ego planner and once as the adversary that generates cut-ins and hard braking to break planners in closed-loop nuPlan, and find their own better-scoring planner is the one that degrades most.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04846v1"&gt;LetOccVote: Learning Weakly Supervised 3D Occupancy through Consensus&lt;/a&gt; &amp;mdash; Chi Zhang et al.&lt;br/&gt;They train a Gaussian-based 3D occupancy network with no 3D labels at all, and the trick is to trust a 2D pseudo-label only when several frames looking at the same place agree with each other.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04807v1"&gt;CoLMIN: LLM-based Multi-Decision Path Negotiation for Cooperative Autonomous Driving&lt;/a&gt; &amp;mdash; Zhe Huang et al.&lt;br/&gt;They bolt a multi-candidate proposal loop and two reflection stages onto LLM inter-vehicle negotiation, so connected cars stop locking onto the first mediocre joint plan they agree on in CARLA.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04893v1"&gt;Reasoning Without Inference Cost: Latent Semantic Scaffolding for Robot VLA Policies&lt;/a&gt; &amp;mdash; Andrew Ting Yan Li et al.&lt;br/&gt;They train a VLA with an extra loss that pulls each action token toward a text embedding of the reasoning for that specific manipulation phase, then throw the projection head away, so you get reasoning-flavored representations with literally zero extra inference cost.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-07</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-07.mp3" length="8307782" type="audio/mpeg"/>
+      <pubDate>Mon, 07 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:11:27</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Five papers on squeezing more out of the sensors and models autonomous systems already have: CrossDepth feeds per-pixel ray embeddings to a self-supervised surround-depth network and restricts cross-image attention to regions the rig calibration says are plausible, while LetOccVote trains a Gaussian 3D occupancy model with no 3D labels by keeping only 2D pseudo-labels that several frames viewing the same location agree on. On the decision side, one pretrained diffusion traffic model plays both ego planner and adversary in closed-loop nuPlan — the authors' higher-scoring planner degrades most under generated cut-ins and hard braking — CoLMIN adds multi-candidate proposals and two reflection stages to LLM vehicle-to-vehicle negotiation in CARLA so cars stop settling on their first agreed plan, and a VLA policy aligns action tokens with text embeddings of phase-specific reasoning during training, then drops the projection head for zero added inference cost.</itunes:summary>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+  </channel>
+</rss>
