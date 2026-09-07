@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2026 05:13:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 05:18:59 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -23,18 +23,21 @@
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
     <item>
-      <title>Sep 7 — 2 papers</title>
-      <description>&lt;p&gt;Two papers on making control decisions under explicit uncertainty budgets: the first recasts each rule in a driving rulebook as a risk measure with its own threshold, then solves the resulting lexicographic problem by branch-and-bound to return a policy together with a certified optimality gap. The second trains a JEPA-style world model that jointly predicts a robot&amp;#x27;s future state and the wireless channel&amp;#x27;s future condition from camera frames and radio spectrograms, using those coupled predictions to drop uplink transmissions when the model expects control quality to hold.&lt;/p&gt;
+      <title>Sep 7 — 5 papers</title>
+      <description>&lt;p&gt;Today&amp;#x27;s briefing covers 5 new papers.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05199v1"&gt;Risk-Aware Optimal Control with Rulebooks&lt;/a&gt; &amp;mdash; Tichakorn Wongpiromsarn&lt;br/&gt;It takes rulebooks, the ranked list of driving rules idea, and makes each rule a risk measure with a threshold, then solves the resulting lexicographic problem with a branch-and-bound routine that hands you a policy plus a certified bound on how far from optimal it might be.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04851v1"&gt;Coupled Control and Wireless World Models for Resilient Remote Robotic Control&lt;/a&gt; &amp;mdash; H. P. Madushanka, Sumudu Samarakoon, Mehdi Bennis&lt;br/&gt;They train a JEPA-style world model that predicts both a robot&amp;#x27;s future state and the wireless channel&amp;#x27;s future condition from camera images plus radio spectrograms, and use those joint predictions to decide when the robot can skip an uplink transmission without losing control quality.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05199v1"&gt;Risk-Aware Optimal Control with Rulebooks&lt;/a&gt; &amp;mdash; Tichakorn Wongpiromsarn&lt;br/&gt;It turns a priority-ordered rulebook of driving requirements into a lexicographic optimization over how much each rule&amp;#x27;s risk exceeds its allowed threshold, and solves it with an anytime branch-and-bound that hands you a policy plus a certified bound on how suboptimal it is.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04928v1"&gt;Open-Loop Stackelberg LQ Difference Games with Coupled-Affine Inequality Constraints: An Exact OCP--LCS/LCQP Reformulation&lt;/a&gt; &amp;mdash; Shrestha Ghosh, Puduru Viswanadha Reddy&lt;br/&gt;They show that a leader-follower linear-quadratic game with hard inequality constraints coupling both players can be rewritten exactly as a single optimal control problem with complementarity conditions built in, which finally makes the equilibrium computable.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04851v1"&gt;Coupled Control and Wireless World Models for Resilient Remote Robotic Control&lt;/a&gt; &amp;mdash; H. P. Madushanka, Sumudu Samarakoon, Mehdi Bennis&lt;br/&gt;They train a JEPA-style world model that predicts both a robot&amp;#x27;s future state and the wireless channel&amp;#x27;s future state from camera frames plus radio spectrograms, and use those joint predictions to decide when the robot can skip an uplink transmission.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05300v1"&gt;Human-Human &amp;amp; Human-Robot Interaction Transformer (H2INT) for Robot Navigation in Dense and Uncertain Crowds&lt;/a&gt; &amp;mdash; Ao Shen et al.&lt;br/&gt;They train a robot to push through crowded corridors by keeping the pedestrians reactive during learning, and by letting each pedestrian be more or less willing to yield, which the robot has to figure out on the fly from how people are positioned relative to it.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05133v1"&gt;A Schema Bounded Language Model for Refining Robot Policies Without Destabilizing Local Learning&lt;/a&gt; &amp;mdash; Chongwen Dong et al.&lt;br/&gt;Three simulated robots each run their own language model to write a navigation policy once per round, a bandit to pick how to revise it, and a Double DQN to actually steer, and the full stack reaches the goal in every trial with a median of 42 ticks.&lt;/li&gt;
 &lt;/ol&gt;</description>
       <guid isPermaLink="false">daily-papers-2026-09-07</guid>
-      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-07.mp3" length="5943660" type="audio/mpeg"/>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-07.mp3" length="8188654" type="audio/mpeg"/>
       <pubDate>Mon, 07 Sep 2026 08:00:00 +0000</pubDate>
-      <itunes:duration>00:08:10</itunes:duration>
+      <itunes:duration>00:11:18</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
-      <itunes:summary>Two papers on making control decisions under explicit uncertainty budgets: the first recasts each rule in a driving rulebook as a risk measure with its own threshold, then solves the resulting lexicographic problem by branch-and-bound to return a policy together with a certified optimality gap. The second trains a JEPA-style world model that jointly predicts a robot's future state and the wireless channel's future condition from camera frames and radio spectrograms, using those coupled predictions to drop uplink transmissions when the model expects control quality to hold.</itunes:summary>
+      <itunes:summary>Today's briefing covers 5 new papers.</itunes:summary>
       <itunes:episode>1</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
