@@ -1,17 +1,333 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily Papers</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Daily Papers — Archive</title>
 <style>
-  body { font: 16px/1.6 ui-serif, Georgia, serif; max-width: 34rem;
-         margin: 4rem auto; padding: 0 1.5rem; color: #1a1c20; }
-  code { background: #f3f4f6; padding: .15em .4em; border-radius: 3px;
-         font-size: .9em; word-break: break-all; }
-  .muted { color: #6b7280; font-size: .9em; }
+  /* Deliberately self-contained: no CDN, no webfont. The page has to render
+     from a bare GitHub Pages origin and from a local file:// copy. */
+  :root{
+    --ink:#1c1a17; --ink-2:#5c574c; --ink-3:#8a8271;
+    --paper:#faf8f3; --card:#fffefb; --rule:#e3dcca;
+    --accent:#7a3626; --accent-soft:#f0e4de;
+    --skim-bg:#dcefe0; --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd; --read-fg:#7d5100;
+    --close-bg:#f6cfcf; --close-fg:#9c1f22;
+    --shadow:0 1px 2px rgba(28,26,23,.05), 0 4px 14px rgba(28,26,23,.05);
+    --serif:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#ece7dd; --ink-2:#a9a294; --ink-3:#837b6c;
+      --paper:#16150f; --card:#1e1c16; --rule:#333026;
+      --accent:#e08a6e; --accent-soft:#33241d;
+      --skim-bg:#17351f; --skim-fg:#7fce97;
+      --read-bg:#3a2c0d; --read-fg:#e5bb63;
+      --close-bg:#3d1a1a; --close-fg:#f0908f;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:52rem;margin:0 auto;padding:2rem 1.25rem 5rem;}
+
+  /* ---------- masthead ---------- */
+  header.top{border-bottom:2px solid var(--ink);padding-bottom:.9rem;margin-bottom:1.1rem;}
+  .eyebrow{
+    font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:.3rem;
+  }
+  h1{font-family:var(--serif);font-size:2rem;margin:0 0 .2rem;letter-spacing:-.01em;}
+  .tagline{color:var(--ink-2);font-size:.9rem;margin:0;}
+
+  /* ---------- feed strip ---------- */
+  .feedbar{
+    display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
+    background:var(--accent-soft);border:1px solid var(--rule);
+    border-radius:8px;padding:.6rem .75rem;margin:1rem 0 1.4rem;
+  }
+  .feedbar .label{
+    font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);white-space:nowrap;
+  }
+  .feedbar code{
+    font-family:var(--mono);font-size:.76rem;color:var(--ink);
+    flex:1 1 16rem;min-width:0;overflow-wrap:anywhere;
+  }
+  button.copy{
+    font:inherit;font-size:.76rem;font-weight:600;cursor:pointer;
+    background:var(--card);color:var(--ink);border:1px solid var(--rule);
+    border-radius:6px;padding:.3rem .7rem;white-space:nowrap;
+  }
+  button.copy:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* ---------- controls ---------- */
+  .controls{
+    position:sticky;top:0;z-index:5;background:var(--paper);
+    padding:.7rem 0 .6rem;margin-bottom:.4rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .searchrow{display:flex;gap:.5rem;align-items:center;}
+  #q{
+    flex:1;font:inherit;font-size:.95rem;color:var(--ink);
+    background:var(--card);border:1px solid var(--rule);border-radius:8px;
+    padding:.55rem .8rem;
+  }
+  #q:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent;}
+  #q::placeholder{color:var(--ink-3);}
+  .filters{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem;align-items:center;}
+  .filters .flabel{
+    font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700;margin-right:.15rem;
+  }
+  .pill{
+    font:inherit;font-size:.74rem;font-weight:600;cursor:pointer;
+    border:1px solid var(--rule);background:transparent;color:var(--ink-2);
+    border-radius:999px;padding:.2rem .65rem;
+  }
+  .pill[aria-pressed="true"]{
+    background:var(--ink);color:var(--paper);border-color:var(--ink);
+  }
+  .count{margin-left:auto;font-size:.76rem;color:var(--ink-3);}
+
+  /* ---------- episodes ---------- */
+  .ep{
+    background:var(--card);border:1px solid var(--rule);border-radius:10px;
+    padding:1rem 1.1rem;margin:1rem 0;box-shadow:var(--shadow);
+  }
+  .ep-head{display:flex;gap:.75rem;align-items:baseline;flex-wrap:wrap;}
+  .ep-head h2{
+    font-family:var(--serif);font-size:1.2rem;margin:0;letter-spacing:-.01em;
+  }
+  .ep-meta{font-size:.78rem;color:var(--ink-3);}
+  .ep-summary{font-size:.9rem;color:var(--ink-2);margin:.45rem 0 .7rem;}
+  audio{width:100%;height:34px;margin:.2rem 0 .7rem;}
+  .ep-links{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.5rem;}
+  .btn{
+    font-size:.78rem;font-weight:600;text-decoration:none;
+    border:1px solid var(--rule);border-radius:6px;padding:.28rem .7rem;
+    color:var(--ink);background:transparent;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent);}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .btn.primary:hover{opacity:.9;color:#fff;}
+
+  /* ---------- papers ---------- */
+  ol.papers{list-style:none;margin:.3rem 0 0;padding:0;border-top:1px solid var(--rule);}
+  li.paper{padding:.62rem 0;border-bottom:1px solid var(--rule);}
+  li.paper:last-child{border-bottom:none;padding-bottom:.1rem;}
+  .p-head{display:flex;gap:.6rem;align-items:flex-start;}
+  .p-title{
+    font-family:var(--serif);font-size:.98rem;font-weight:600;
+    margin:0;line-height:1.35;flex:1;
+  }
+  .p-title a{color:var(--ink);text-decoration:none;
+             border-bottom:1px solid var(--rule);}
+  .p-title a:hover{color:var(--accent);border-color:var(--accent);}
+  .badge{
+    font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+    font-weight:700;border-radius:999px;padding:.14rem .5rem;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .badge.skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .badge.read{background:var(--read-bg);color:var(--read-fg);}
+  .badge.readclosely{background:var(--close-bg);color:var(--close-fg);}
+  .p-authors{font-size:.76rem;color:var(--ink-3);margin:.1rem 0 0;}
+  .p-hook{font-size:.86rem;color:var(--ink-2);margin:.22rem 0 0;font-style:italic;}
+  details.more{margin-top:.35rem;}
+  details.more summary{
+    font-size:.74rem;color:var(--ink-3);cursor:pointer;
+    list-style:none;user-select:none;display:inline-block;
+  }
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary::before{content:"▸ ";}
+  details.more[open] summary::before{content:"▾ ";}
+  details.more summary:hover{color:var(--accent);}
+  dl.frags{margin:.4rem 0 0;font-size:.83rem;display:grid;gap:.25rem;}
+  dl.frags dt{
+    font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);
+  }
+  dl.frags dd{margin:0 0 .18rem;color:var(--ink-2);}
+
+  .empty{text-align:center;color:var(--ink-3);padding:3rem 1rem;font-size:.92rem;}
+  footer{
+    margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);
+    font-size:.75rem;color:var(--ink-3);text-align:center;
+  }
+  mark{background:var(--read-bg);color:var(--read-fg);padding:0 .1em;border-radius:2px;}
+
+  @media (max-width:520px){
+    .wrap{padding:1.25rem .85rem 3rem;}
+    h1{font-size:1.6rem;}
+    .count{margin-left:0;width:100%;}
+  }
 </style>
-<h1>Daily Papers</h1>
-<p>A personal, automatically generated research briefing. This page exists so
-   the podcast feed has somewhere to live.</p>
-<p><a href="feed.xml">feed.xml</a></p>
-<p class="muted">Unlisted. Not submitted to any podcast directory.</p>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="eyebrow">Daily Papers</div>
+    <h1>Archive</h1>
+    <p class="tagline">1 episode ·
+       2 papers ·
+       every one-pager and recording, searchable.</p>
+  </header>
+
+  <div class="feedbar">
+    <span class="label">Podcast feed</span>
+    <code id="feedurl">https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/feed.xml</code>
+    <button class="copy" id="copybtn" type="button">Copy</button>
+  </div>
+
+  <div class="controls">
+    <div class="searchrow">
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Search papers — title, author, method, findings…">
+    </div>
+    <div class="filters">
+      <span class="flabel">Priority</span>
+      <button class="pill" data-prio="read-closely" aria-pressed="false" type="button">read closely</button>
+      <button class="pill" data-prio="read"         aria-pressed="false" type="button">read</button>
+      <button class="pill" data-prio="skim"         aria-pressed="false" type="button">skim</button>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <main id="list">
+    <section class="ep" data-ep="2026-09-07">
+      <div class="ep-head">
+        <h2>Monday, September 7, 2026</h2>
+        <span class="ep-meta">Episode 1 · 2 papers · 8 min</span>
+      </div>
+<p class="ep-summary">Two papers on making control decisions under explicit uncertainty budgets: the first recasts each rule in a driving rulebook as a risk measure with its own threshold, then solves the resulting lexicographic problem by branch-and-bound to return a policy together with a certified optimality gap. The second trains a JEPA-style world model that jointly predicts a robot's future state and the wireless channel's future condition from camera frames and radio spectrograms, using those coupled predictions to drop uplink transmissions when the model expects control quality to hold.</p>
+      <audio controls preload="none" src="audio/2026-09-07.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-09-07.html">One-pager</a><a class="btn" href="onepagers/2026-09-07.pdf">PDF</a><a class="btn" href="audio/2026-09-07.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="risk-aware optimal control with rulebooks tichakorn wongpiromsarn it takes rulebooks, the ranked list of driving rules idea, and makes each rule a risk measure with a threshold, then solves the resulting lexicographic problem with a branch-and-bound routine that hands you a policy plus a certified bound on how far from optimal it might be. rulebooks so far assume you can say deterministically whether a rule was violated and by how much, but in real driving every rule evaluation is uncertain, so the priority ordering gets applied to numbers you do not actually know. the open piece is how to do priority-respecting optimization when each rule's satisfaction is a random quantity and when you have only a finite compute budget to search the policy space. each requirement gets a risk measure, an acceptable threshold, and a place in a priority relation, which turns the requirement into a risk-evaluation function from policy to violation risk. control is then a lexicographic optimization over excess risks, meaning risk above threshold, resolved in priority order. the algorithmic core is an anytime filtering and branch-and-bound scheme that shrinks a certified optimality gap at each priority level while also describing the set of policies still surviving at that level, and the paper proves the reported gaps are sound for any finite budget and, under extra assumptions, shrink to zero as the budget grows. the abstract reports no numbers at all. there are two evaluations named, a synthetic benchmark with a known optimum, which is the honest way to check a certified gap, and a highway merging simulation with conditional value at risk rules for collision, rear braking, headway, and comfort. no baseline method is named, so there is nothing quantitative to compare against. the whole construction assumes you already have the risk-evaluation functions, which means you already have a calibrated distribution over how the other cars will behave. that distribution is the hard part of merging, and a wrong tail makes a conditional value at risk certificate confidently wrong while the optimality gap still reads as tight. add to that the unstated additional assumptions behind the convergence claim, and the absence of any reported branch-and-bound runtime or node count, which is exactly what determines whether an anytime method is usable inside a control loop. peripheral to the cooperative parts of your work, but useful at the boundary. the merging case study is single-vehicle decision making under uncertainty about others, with no intent sharing, no maneuver coordination messages, and no trajectory agreement, so it is the non-cooperative alternative to what you build rather than a contribution to it. where it does connect is the framing: if you share intent or fuse remote detections, what you have actually bought is a tighter uncertainty distribution, and this paper gives you a principled way to turn that tighter distribution into a bounded change in achievable risk per rule. that is a cleaner argument for the value of cooperation than most latency and bandwidth plots. 2609.05199v1 notable skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.05199v1">Risk-Aware Optimal Control with Rulebooks</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Tichakorn Wongpiromsarn · arXiv:2609.05199v1</p><p class="p-hook">It takes rulebooks, the ranked list of driving rules idea, and makes each rule a risk measure with a threshold, then solves the resulting lexicographic problem with a branch-and-bound routine that hands you a policy plus a certified bound on how far from optimal it might be.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Rulebooks so far assume you can say deterministically whether a rule was violated and by how much, but in real driving every rule evaluation is uncertain, so the priority ordering gets applied to numbers you do not actually know. The open piece is how to do priority-respecting optimization when each rule's satisfaction is a random quantity and when you have only a finite compute budget to search the policy space.</dd><dt>Method</dt><dd>Each requirement gets a risk measure, an acceptable threshold, and a place in a priority relation, which turns the requirement into a risk-evaluation function from policy to violation risk. Control is then a lexicographic optimization over excess risks, meaning risk above threshold, resolved in priority order. The algorithmic core is an anytime filtering and branch-and-bound scheme that shrinks a certified optimality gap at each priority level while also describing the set of policies still surviving at that level, and the paper proves the reported gaps are sound for any finite budget and, under extra assumptions, shrink to zero as the budget grows.</dd><dt>Results</dt><dd>The abstract reports no numbers at all. There are two evaluations named, a synthetic benchmark with a known optimum, which is the honest way to check a certified gap, and a highway merging simulation with conditional value at risk rules for collision, rear braking, headway, and comfort. No baseline method is named, so there is nothing quantitative to compare against.</dd><dt>Caveat</dt><dd>The whole construction assumes you already have the risk-evaluation functions, which means you already have a calibrated distribution over how the other cars will behave. That distribution is the hard part of merging, and a wrong tail makes a conditional value at risk certificate confidently wrong while the optimality gap still reads as tight. Add to that the unstated additional assumptions behind the convergence claim, and the absence of any reported branch-and-bound runtime or node count, which is exactly what determines whether an anytime method is usable inside a control loop.</dd><dt>Why it matters</dt><dd>Peripheral to the cooperative parts of your work, but useful at the boundary. The merging case study is single-vehicle decision making under uncertainty about others, with no intent sharing, no maneuver coordination messages, and no trajectory agreement, so it is the non-cooperative alternative to what you build rather than a contribution to it. Where it does connect is the framing: if you share intent or fuse remote detections, what you have actually bought is a tighter uncertainty distribution, and this paper gives you a principled way to turn that tighter distribution into a bounded change in achievable risk per rule. That is a cleaner argument for the value of cooperation than most latency and bandwidth plots.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="coupled control and wireless world models for resilient remote robotic control h. p. madushanka, sumudu samarakoon, mehdi bennis they train a jepa-style world model that predicts both a robot's future state and the wireless channel's future condition from camera images plus radio spectrograms, and use those joint predictions to decide when the robot can skip an uplink transmission without losing control quality. a teleoperated or remotely controlled robot that streams camera frames over a wireless link burns bandwidth and energy on every frame and degrades badly when the channel drops. the open piece is deciding what to send and when using a model that understands the channel and the robot dynamics together, rather than treating communication scheduling as a separate layer bolted onto a control loop. they build two coupled joint embedding predictive architecture world models, one over visual observations of robot dynamics and one over the radio environment, and they feed the wireless side both raw spectrograms and a structured topological representation called persistence images. the joint latent forecast of future robot state and future channel condition drives a predictive transmission scheduler that suppresses uplink packets when the prediction is trustworthy. on top of that sits a resilience mechanism that watches for discrepancy between predicted and observed latents and, when it fires, adapts only the perception embeddings instead of retraining the whole control policy. the abstract gives no numbers at all. it claims significant improvements in communication efficiency, robustness and resilience while holding navigation performance, measured against a pid controller, a model-free deep q-network, and a vision transformer predictive baseline, all inside a synchronized gazebo, ros and sionna simulation. thirteen figures suggest the numbers exist in the body, but nothing is committed to up front. everything is simulated, and specifically the wireless side is sionna ray tracing rather than measured channels, so the very thing the world model is supposed to learn, real channel evolution, is generated by a model whose statistics the predictor may simply be memorizing. a sharp reviewer would also press on the persistence images: the paper offers raw spectrograms and topological features together, and without an ablation separating them there is no evidence the persistence homology machinery earns its cost. the baseline set is also soft, since pid and a plain dqn are not serious communication schedulers. this is peripheral to your work. it is single robot and remote control, one agent talking to one controller, so there is no maneuver negotiation, no shared perception between vehicles, no intersection arbitration. the one transferable idea is the predictive transmission scheduler: forecasting channel state jointly with agent state to decide when a message is actually needed maps cleanly onto redundancy mitigation in collective perception, where the same question of which detections are worth the bandwidth is live. if you want that idea, take it from the collective perception literature where it is posed with multiple senders and real congestion, not from here. 2609.04851v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.04851v1">Coupled Control and Wireless World Models for Resilient Remote Robotic Control</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">H. P. Madushanka, Sumudu Samarakoon, Mehdi Bennis · arXiv:2609.04851v1</p><p class="p-hook">They train a JEPA-style world model that predicts both a robot's future state and the wireless channel's future condition from camera images plus radio spectrograms, and use those joint predictions to decide when the robot can skip an uplink transmission without losing control quality.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>A teleoperated or remotely controlled robot that streams camera frames over a wireless link burns bandwidth and energy on every frame and degrades badly when the channel drops. The open piece is deciding what to send and when using a model that understands the channel and the robot dynamics together, rather than treating communication scheduling as a separate layer bolted onto a control loop.</dd><dt>Method</dt><dd>They build two coupled Joint Embedding Predictive Architecture world models, one over visual observations of robot dynamics and one over the radio environment, and they feed the wireless side both raw spectrograms and a structured topological representation called Persistence Images. The joint latent forecast of future robot state and future channel condition drives a predictive transmission scheduler that suppresses uplink packets when the prediction is trustworthy. On top of that sits a resilience mechanism that watches for discrepancy between predicted and observed latents and, when it fires, adapts only the perception embeddings instead of retraining the whole control policy.</dd><dt>Results</dt><dd>The abstract gives no numbers at all. It claims significant improvements in communication efficiency, robustness and resilience while holding navigation performance, measured against a PID controller, a model-free Deep Q-Network, and a Vision Transformer predictive baseline, all inside a synchronized Gazebo, ROS and Sionna simulation. Thirteen figures suggest the numbers exist in the body, but nothing is committed to up front.</dd><dt>Caveat</dt><dd>Everything is simulated, and specifically the wireless side is Sionna ray tracing rather than measured channels, so the very thing the world model is supposed to learn, real channel evolution, is generated by a model whose statistics the predictor may simply be memorizing. A sharp reviewer would also press on the Persistence Images: the paper offers raw spectrograms and topological features together, and without an ablation separating them there is no evidence the persistence homology machinery earns its cost. The baseline set is also soft, since PID and a plain DQN are not serious communication schedulers.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. It is single robot and remote control, one agent talking to one controller, so there is no maneuver negotiation, no shared perception between vehicles, no intersection arbitration. The one transferable idea is the predictive transmission scheduler: forecasting channel state jointly with agent state to decide when a message is actually needed maps cleanly onto redundancy mitigation in collective perception, where the same question of which detections are worth the bandwidth is live. If you want that idea, take it from the collective perception literature where it is posed with multiple senders and real congestion, not from here.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <p class="empty" id="noresults" hidden>No papers match that search.</p>
+
+  <footer>
+    Generated 2026-09-07 14:13 · unlisted, not indexed ·
+    <a href="feed.xml">feed.xml</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var q = document.getElementById('q'),
+      countEl = document.getElementById('count'),
+      noRes = document.getElementById('noresults'),
+      pills = Array.prototype.slice.call(document.querySelectorAll('.pill')),
+      papers = Array.prototype.slice.call(document.querySelectorAll('li.paper')),
+      episodes = Array.prototype.slice.call(document.querySelectorAll('section.ep')),
+      active = new Set();
+
+  function apply(){
+    var term = q.value.trim().toLowerCase(),
+        shown = 0;
+
+    papers.forEach(function(li){
+      var okPrio = active.size === 0 || active.has(li.dataset.prio);
+      var okTerm = !term || li.dataset.text.indexOf(term) !== -1;
+      var vis = okPrio && okTerm;
+      li.hidden = !vis;
+      if (vis) shown++;
+    });
+
+    // An episode with nothing left to show is just noise in the list.
+    episodes.forEach(function(sec){
+      var any = sec.querySelectorAll('li.paper:not([hidden])').length > 0;
+      sec.hidden = !any;
+    });
+
+    noRes.hidden = shown > 0;
+    countEl.textContent = (term || active.size)
+      ? shown + ' of ' + papers.length + ' papers'
+      : papers.length + ' papers';
+  }
+
+  q.addEventListener('input', apply);
+  pills.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.dataset.prio;
+      if (active.has(p)) { active.delete(p); btn.setAttribute('aria-pressed','false'); }
+      else { active.add(p); btn.setAttribute('aria-pressed','true'); }
+      apply();
+    });
+  });
+
+  // "/" focuses search, Escape clears it.
+  document.addEventListener('keydown', function(e){
+    if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
+    if (e.key === 'Escape' && document.activeElement === q) { q.value = ''; apply(); q.blur(); }
+  });
+
+  var copyBtn = document.getElementById('copybtn'),
+      feedUrl = document.getElementById('feedurl');
+  copyBtn.addEventListener('click', function(){
+    var text = feedUrl.textContent.trim();
+    function done(){ copyBtn.textContent = 'Copied'; setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 1400); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var t = document.createElement('textarea');
+      t.value = text; t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch(err){}
+      document.body.removeChild(t);
+    }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
