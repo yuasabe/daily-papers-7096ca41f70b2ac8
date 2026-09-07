@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 1 (2026-09-07)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 7 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 1</strong> · September 7, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.05397v1">CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Samer Abualhanud, Max Mehltretter</p>
+
+<p class="hook">They take self-supervised surround-view depth and fix two things that make the six cameras disagree: they feed the network per-pixel ray embeddings so it knows which camera it is looking through, and they let pixels attend across neighboring images but only inside the region the rig calibration says is geometrically plausible.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In a surround camera rig the adjacent views barely overlap, so almost every pixel gets its depth from monocular appearance cues alone, and those cues are read differently by different cameras because the intrinsics differ and each image sees only its own limited context. The result is depth that is inconsistent across the seam between views, which is exactly where a BEV or occupancy consumer stitches things together.</dd></div><div class="frag"><dt>Method</dt><dd>Two mechanisms bolted onto a self-supervised depth network trained purely on photometric consistency. First, features are conditioned on camera-aware ray embeddings computed per pixel from the intrinsics, so the network can normalize for focal length and principal point instead of memorizing one camera&#39;s statistics. Second, cross-image attention that is masked by geometry: instead of letting a pixel attend to the whole neighboring image, the calibrated extrinsics restrict the attention to the band of pixels that could correspond to it, which cuts the search space and stops the attention from latching onto arbitrary matches.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims improved overall depth accuracy and improved cross-image consistency on DDAD and nuScenes, in-domain and cross-domain, against self-supervised state of the art, but names no baseline, no absolute relative error, no delta. Take the margins as unknown until you open the tables.</dd></div><div class="frag"><dt>Caveat</dt><dd>The core tension is that the paper&#39;s own framing says spatially adjacent images overlap only minimally, and yet the headline mechanism is cross-image attention. If most pixels have no valid correspondence in any other view, the attention can only help a thin seam region, so a reviewer would want the accuracy gain broken out by distance from the image border to see whether the win comes from the attention or almost entirely from the ray embeddings. The second issue is the word generalizable: cross-domain here means DDAD and nuScenes, two urban driving sets with broadly similar six-camera rigs, which is a mild domain shift rather than a real test of transfer to an unseen rig geometry. Third, cross-image consistency is likely a metric the authors define, and a model trained with cross-image attention will improve a cross-image consistency metric almost by construction.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral but not irrelevant to you. If you are building BEV or 3D occupancy pipelines, self-supervised surround depth is a cheap source of geometric supervision or pseudo-labels that does not need lidar, and seam inconsistency between adjacent cameras is a real failure mode that propagates into the BEV feature lift. The camera-aware ray embedding idea is the transferable piece, because it is the same trick that lets a perception model trained on one vehicle platform survive a different sensor rig, which matters directly for sim-to-real and for cross-dataset closed-loop work. Nothing here touches planning, prediction, vision-language-action, or closed-loop evaluation, so it is a perception-side tool, not a paper that changes how you frame your own problem.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.05397v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.05397v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04921v1">One Diffusion Model, Two Roles: Guided Trajectory Planning and Safety-Critical Scenario Generation in Closed-Loop Simulation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Arka Pal et al.</p>
+
+<p class="hook">They take one pretrained diffusion traffic model and use it twice, once as the ego planner and once as the adversary that generates cut-ins and hard braking to break planners in closed-loop nuPlan, and find their own better-scoring planner is the one that degrades most.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Guided diffusion planners and adversarial scenario generators have been built as separate systems, and planner rankings come from nominal nuPlan splits that contain almost no long-tail interaction, so a planner can top the leaderboard without anyone knowing how it behaves under aggressive cut-ins or lead-vehicle braking. Existing training-free guidance for diffusion planners also leans on a first-order approximation of the noisy-sample gradient, which degrades when the energy is sharp, and the alternative is training auxiliary guidance networks.</dd></div><div class="frag"><dt>Method</dt><dd>Two pieces. The decoder, called Single-Stream Dual-Stream, drops late cross-attention and instead lets scene context tokens and trajectory tokens attend jointly inside a diffusion transformer, the same move that joint attention made in image and video diffusion. The guidance scheme, called DAPSE, applies arbitrary energy functions at the clean-sample level rather than to the noisy latent, so it inherits the decoupled annealing posterior sampling idea and skips both the first-order approximation and any learned guidance network. The same frozen model and the same energy hook then steer selected non-ego agents into cut-ins, lead braking, and combined longitudinal and lateral maneuvers, and independent black-box planners are dropped into those scenarios.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers at all, which for a closed-loop nuPlan paper is itself the finding to note. The only quantitative claims are directional: SSDS improves closed-loop nuPlan score over their baseline, the generated scenarios surface failures invisible on standard splits, and the SSDS planner degrades more than weaker planners under those scenarios.</dd></div><div class="frag"><dt>Caveat</dt><dd>Nothing establishes that the generated safety-critical scenarios are survivable. If a guided cut-in is physically unavoidable, then every planner collides and the resulting ranking measures scenario aggressiveness, not planner robustness, and the paper as abstracted offers no feasibility check, no human realism study, and no comparison against established adversarial generators such as the CTG family or STRIVE. The headline inversion also rests on a single-digit number of black-box planners with no seed variance reported, and the guidance claim about avoiding first-order error is asserted rather than isolated by an ablation against ordinary reconstruction guidance.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This lands squarely in your lane and is worth an hour. The dual-use framing, one traffic prior serving as both policy and adversary, is a cheap and immediately reusable pattern for anyone running closed-loop evaluation, and the clean-sample energy trick transfers directly to guiding a diffusion planner with your own cost terms without retraining. Treat the nominal-versus-robustness inversion as a hypothesis to test on your own planners rather than as an established result, because that is exactly the kind of claim that would reshape how you report closed-loop numbers if it holds.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04921v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04921v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04846v1">LetOccVote: Learning Weakly Supervised 3D Occupancy through Consensus</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Chi Zhang et al.</p>
+
+<p class="hook">They train a Gaussian-based 3D occupancy network with no 3D labels at all, and the trick is to trust a 2D pseudo-label only when several frames looking at the same place agree with each other.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Weakly supervised occupancy methods take depth and semantic pseudo-labels from vision foundation models and feed them in as ground truth, so every wrong depth estimate and every mislabeled segment gets baked into the volumetric representation. Nobody had a cheap way to tell a good pseudo-label from a bad one without the 3D annotations the whole approach is trying to avoid.</dd></div><div class="frag"><dt>Method</dt><dd>Two consensus filters sitting in front of the supervision signal. Depth Vote compares depth estimates for the same scene point across neighboring frames, keeps the ones that agree, and throws out contradictory estimates before those depths are used for volumetric lifting and depth loss. Semantic Vote projects pseudo-semantic labels from many frames into one shared 3D space, upweights the voxels where the observations agree, and drops the segments where they conflict. The backbone is a Gaussian occupancy representation, and the whole thing trains on 2D pseudo-labels only.</dd></div><div class="frag"><dt>Results</dt><dd>On Occ3D-nuScenes they report 53.27 IoU for geometry and 20.39 mIoU for semantics, which they call state of the art among methods supervised purely by 2D pseudo-labels. The abstract names no specific baseline and gives no ablation numbers, so we cannot see from it how much of the gain comes from Depth Vote versus Semantic Vote. For scale, fully supervised occupancy networks on this same benchmark sit roughly twice as high on mIoU.</dd></div><div class="frag"><dt>Caveat</dt><dd>Cross-frame consensus quietly assumes the world holds still between observations. That assumption breaks exactly on moving vehicles, pedestrians and cyclists, which are the classes a driving stack actually needs, and the abstract never says how voting behaves on dynamic objects or whether those classes are simply being voted away. The second problem is that agreement is not correctness. If the foundation model makes the same systematic depth or segmentation error from every viewpoint, all the votes line up and the filter passes the error straight through. Evidence is also one dataset only, with no Waymo or SemanticKITTI to show the voting thresholds transfer.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits inside your occupancy and BEV lane, but it is a label-efficiency paper rather than a representation or planning paper, so it is useful to you mainly as a recipe for standing up occupancy on a new domain where you have no 3D annotations. That makes it mildly interesting for sim-to-real and for new sensor rigs. At 20.39 mIoU it is nowhere near good enough to hang an end-to-end planner off, so treat it as a technique to borrow rather than a module to adopt. If you ever need to bootstrap occupancy supervision from raw video, the cross-frame voting idea is the part to steal.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04846v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04846v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04807v1">CoLMIN: LLM-based Multi-Decision Path Negotiation for Cooperative Autonomous Driving</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zhe Huang et al.</p>
+
+<p class="hook">They bolt a multi-candidate proposal loop and two reflection stages onto LLM inter-vehicle negotiation, so connected cars stop locking onto the first mediocre joint plan they agree on in CARLA.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>LLM negotiation between connected vehicles collapses to whatever consensus appears first, and in genuinely multi-solution situations like an unprotected left across an occupied lane, that first agreement is often a bad one. Prior negotiation work treated consensus itself as the objective, so nothing in the loop distinguished agreement from a good agreement.</dd></div><div class="frag"><dt>Method</dt><dd>Three pieces sit around a Negotiator-Evaluator split. The negotiator LLM emits several candidate driving intentions at once rather than one, and an evaluator LLM scores the joint combination, so the search is over sets of intentions instead of a single greedy handshake. A shallow reflection module reads each evaluation and writes feedback into the next negotiation round to speed convergence, while a deep reflection module reads the whole negotiation history and pushes the system off a fixated line of reasoning when rounds keep returning to the same suboptimal plan.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It reports only that CoLMIN significantly outperforms existing methods in challenging interactive driving scenarios in CARLA, and it names neither the baselines, the scenarios, nor a single metric, which is a real signal about how much of the evaluation survived review.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is CARLA, with perfect vehicle-to-vehicle message passing and no communication latency, packet loss, or disagreement between the two vehicles&#39; perception, which is exactly where cooperative driving actually breaks. Worse for this particular design, the three modules are highly entangled and the abstract promises no ablation separating multi-intent generation from shallow reflection from deep reflection, so it is impossible to tell whether the deep reflection module earns its cost or whether simply sampling several candidate intentions accounts for the whole gain. There is also no reported latency budget, and a negotiation loop with three LLM calls per round in a left-turn conflict has to close inside roughly a second to matter.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral to you, with one narrow exception. Your stack is a differentiable perception-to-trajectory pipeline evaluated closed-loop, and this paper operates at a discrete symbolic layer above that, negotiating intentions in text with no trajectory-level or occupancy-level representation anywhere in the loop. The one transferable idea is the deep reflection stage as a cure for mode collapse, which rhymes with the failure mode you already know from multi-modal trajectory prediction, where a planner commits to one hypothesis and the diversity in the prediction head is wasted. Read it as an argument about keeping several joint hypotheses alive rather than as a method you would adopt.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04807v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04807v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04893v1">Reasoning Without Inference Cost: Latent Semantic Scaffolding for Robot VLA Policies</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Andrew Ting Yan Li et al.</p>
+
+<p class="hook">They train a VLA with an extra loss that pulls each action token toward a text embedding of the reasoning for that specific manipulation phase, then throw the projection head away, so you get reasoning-flavored representations with literally zero extra inference cost.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Chain-of-thought and world-model style reasoning does help VLA manipulation policies, but every current method pays for it at run time by generating reasoning tokens or rolling out predicted future states at each control step, which compounds badly over long horizons. Nobody had shown you can bank that benefit purely during pretraining and then discard the machinery before deployment.</dd></div><div class="frag"><dt>Method</dt><dd>During pretraining on human demonstrations they add an auxiliary alignment loss: a small projection head maps the policy&#39;s action-token representations into the text embedding space of physical-reasoning rationales. The key design choice is granularity. Dense LSS aligns each action token to the rationale for the manipulation phase that token belongs to, rather than Pooled LSS which aligns everything to one averaged episode-level embedding. At inference the head is removed and the base policy runs completely unmodified.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all except one relative figure: a representational probe shows Dense LSS produces roughly twice the per-phase separability in the backbone compared to the pooled variant. Success rates, transfer rates, the benchmark, the base VLA and any external baseline are all unnamed, so the only comparison actually stated is Dense versus Pooled, which is their own ablation rather than a competitive baseline.</dd></div><div class="frag"><dt>Caveat</dt><dd>The claimed headline is free reasoning, but the only baseline visible in the abstract is their own pooled variant. There is no stated comparison against an actual inference-time reasoning method such as an embodied chain-of-thought policy or a world-model rollout policy, so we cannot tell whether the free version recovers most of the benefit or a small fraction of it. Phase labels also have to come from somewhere: dense alignment presupposes a per-phase segmentation of every demonstration plus a rationale for each phase, and the abstract never says whether those are human annotations or machine generated, which is exactly the supervision cost that makes the method look cheap. And the separability probe shows the representation changed, not that the change is what causes the transfer gain.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral. This is tabletop manipulation, not driving, and the evaluation is task success rather than closed-loop control under distribution shift. But one idea does port directly: if you want a driving policy to encode why a maneuver is taken without paying for reasoning tokens inside a ten hertz control loop, phase-local auxiliary alignment is the cheap version of that. Substitute driving phases for manipulation phases, so approaching an occluded crosswalk, yielding, or executing a merge, and align trajectory or action tokens to the rationale for that maneuver segment. The transfer result is the interesting part for you, because episode-level pooling over-specializing to the training task is a very plausible failure mode for scenario-level reasoning supervision in driving too.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04893v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04893v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-07 12:42 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
