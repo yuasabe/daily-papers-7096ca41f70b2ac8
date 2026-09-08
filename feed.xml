@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2026 02:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 21:04:40 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,23 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 9 — 3 papers</title>
+      <description>&lt;p&gt;Three papers that buy timeliness by deliberately computing less: an edge node that takes over sensor fusion and path prediction for connected vehicles but caps how many vehicles it fuses per cycle so the answer arrives before it goes stale; Wongpiromsarn&amp;#x27;s risk-aware rulebooks, which attach a risk measure and acceptable threshold to each prioritized traffic rule and solve the lexicographic problem with anytime branch-and-bound, returning a policy plus a certified suboptimality bound; and a JEPA-style world model that jointly predicts a teleoperated robot&amp;#x27;s trajectory and its radio channel, using both to decide when a camera frame can be skipped. Each one names a deadline and then discards information to meet it — unfused vehicles, an early-stopped search, a dropped frame — and none of the three establishes what the discarded information would have been worth.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04364v1"&gt;Scalable Edge-assisted Fusion and Path Prediction for Connected Autonomous Vehicles&lt;/a&gt; &amp;mdash; Tyler Landle et al.&lt;br/&gt;They move the sensor fusion and trajectory prediction off the vehicles and onto a roadside edge node, then throttle how many vehicles get fused each cycle so the answer arrives before it goes stale.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.05199v1"&gt;Risk-Aware Optimal Control with Rulebooks&lt;/a&gt; &amp;mdash; Tichakorn Wongpiromsarn&lt;br/&gt;Wongpiromsarn takes rulebooks, the prioritized traffic-rule hierarchy from the autonomous driving literature, attaches a risk measure and an acceptable threshold to each rule, and solves the resulting lexicographic problem with an anytime branch-and-bound that hands you a policy plus a certified bound on how suboptimal it might be.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.04851v1"&gt;Coupled Control and Wireless World Models for Resilient Remote Robotic Control&lt;/a&gt; &amp;mdash; H. P. Madushanka, Sumudu Samarakoon, Mehdi Bennis&lt;br/&gt;They train a JEPA-style world model that predicts both where a wirelessly teleoperated robot is going and what the radio channel will do next, and use those joint predictions to decide when the robot can skip sending a camera frame.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-09</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-09.mp3" length="7508676" type="audio/mpeg"/>
+      <pubDate>Wed, 09 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:21</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Three papers that buy timeliness by deliberately computing less: an edge node that takes over sensor fusion and path prediction for connected vehicles but caps how many vehicles it fuses per cycle so the answer arrives before it goes stale; Wongpiromsarn's risk-aware rulebooks, which attach a risk measure and acceptable threshold to each prioritized traffic rule and solve the lexicographic problem with anytime branch-and-bound, returning a policy plus a certified suboptimality bound; and a JEPA-style world model that jointly predicts a teleoperated robot's trajectory and its radio channel, using both to decide when a camera frame can be skipped. Each one names a deadline and then discards information to meet it — unfused vehicles, an early-stopped search, a dropped frame — and none of the three establishes what the discarded information would have been worth.</itunes:summary>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 7 — 5 papers</title>
       <description>&lt;p&gt;Today&amp;#x27;s briefing covers 5 new papers.&lt;/p&gt;

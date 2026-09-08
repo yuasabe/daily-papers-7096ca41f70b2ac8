@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 1 (2026-09-09)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 9 — 3 papers</h1>
+    <div class="meta">
+      <strong>Episode 1</strong> · September 9, 2026 · 3 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04364v1">Scalable Edge-assisted Fusion and Path Prediction for Connected Autonomous Vehicles</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Tyler Landle et al.</p>
+
+<p class="hook">They move the sensor fusion and trajectory prediction off the vehicles and onto a roadside edge node, then throttle how many vehicles get fused each cycle so the answer arrives before it goes stale.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Today each connected vehicle fuses everyone else&#39;s detections locally, which means the work is duplicated across the fleet and each vehicle&#39;s view is anchored to itself, so both cost and quality degrade as actor count grows. The open piece is that a shared world model is only useful if it reaches a planner inside a tight Age of Information budget, and fusing more contributors always costs more time.</dd></div><div class="frag"><dt>Method</dt><dd>Conductor builds one world model anchored at a fixed roadside unit rather than at each vehicle, so the fusion is computed once for the locale. Two pieces do the real work: an occlusion-aware selector that ranks vehicles by whether they see objects the roadside units cannot, and a runtime controller that trims both the number of vehicle inputs fused and the number of trajectory predictions run each cycle to hold the Age of Information bound. The selector is the interesting choice, because it makes contribution value about coverage of blind spots rather than proximity or detection count.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract offers one hard number: the joint selector and controller hold the Age of Information safety bound across traffic scenarios with up to thirty-one connected vehicles. Fusion fidelity is described only as close to an Oracle upper bound and much better than a random selector under the same time budget, with no fidelity metric, no latency figures, and no accuracy percentages given.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is in simulation, and the Age of Information claim is the kind of result that depends entirely on how the compute and network models were parameterized, which the abstract does not expose. Thirty-one vehicles is a modest ceiling for a scalability paper, and the comparison set is an Oracle and a random selector, not a real per-vehicle fusion baseline or a simpler heuristic like nearest-N or highest-detection-count, which is exactly the ablation that would show whether occlusion awareness earns its keep. There is also no evidence that the improved world model actually changes downstream planning outcomes, despite better traffic flow and collision prevention being the stated motivation.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits directly in your collective perception lane, and the useful idea to steal is treating contributor selection as an explicit budgeted decision rather than fusing whatever arrives. That reframes the bandwidth and latency trade-off as a scheduling problem with a deadline, which is a cleaner formulation than most feature-level fusion work uses. The infrastructure-anchored world model is also relevant to your intersection coordination interest, since a roadside unit that already holds the fused view is the natural place to run reservation or priority logic. Read it for the selector and controller design, not for the empirical claims, which are thin.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04364v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04364v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.05199v1">Risk-Aware Optimal Control with Rulebooks</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Tichakorn Wongpiromsarn</p>
+
+<p class="hook">Wongpiromsarn takes rulebooks, the prioritized traffic-rule hierarchy from the autonomous driving literature, attaches a risk measure and an acceptable threshold to each rule, and solves the resulting lexicographic problem with an anytime branch-and-bound that hands you a policy plus a certified bound on how suboptimal it might be.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Rulebooks give you a priority order over driving requirements but assume you can evaluate whether a rule is violated, which fails once perception, prediction and other drivers make violation a random event rather than a fact. The open piece was how to do lexicographic optimization when each level is a risk quantity that is expensive to estimate, and how to say anything rigorous about the answer you get when you stop computing early.</dd></div><div class="frag"><dt>Method</dt><dd>Each requirement becomes a risk-evaluation function mapping a policy to the risk of violating that requirement, and the control problem becomes lexicographic minimization of excess risk above each threshold, in priority order. The algorithmic core is filtering plus branch-and-bound run in anytime fashion, so it progressively tightens a certified optimality gap at every priority level while also maintaining the set of policies still admissible at that level, which matters because lexicographic problems need the surviving set, not just one winner, to hand down to the next priority. The theoretical claim is that these gaps are valid for any finite computational budget and, under further assumptions the abstract does not name, shrink to zero as budget grows.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract quotes no numbers at all. It names two evaluations, a synthetic benchmark with a known optimum, which is the honest way to check whether the certified gaps are tight rather than merely valid, and a highway-merging simulation with CVaR-based collision, rear-braking, headway and comfort rules. No baseline method is named, no runtime is given, and no gap magnitude is reported.</dd></div><div class="frag"><dt>Caveat</dt><dd>A sharp reviewer would press on two things. First, an anytime algorithm whose gap is always valid is trivially satisfiable by returning a huge gap, so the whole contribution rests on how fast the gap actually closes on the highway merge, and the abstract declines to say. Second, the merging scenario is single-agent risk-aware control with the surrounding traffic presumably modeled as exogenous uncertainty, so the interaction that makes merging hard, namely the other driver reacting to your decision, is folded into a risk measure rather than modeled, and the CVaR thresholds themselves are hand-chosen with no sensitivity study offered.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral to your work, with one useful borrowing. The negotiation, intent sharing and trajectory agreement that define your problem are absent here, and the highway merge is a single vehicle reasoning under uncertainty rather than two vehicles reaching agreement. What is worth lifting is the formal move itself, because your maneuver coordination and collective perception settings both produce exactly the situation this paper targets, namely a safety decision made against detections and predictions that are probabilistic rather than known. If you ever need to justify accepting a shared detection of uncertain quality when deciding a merge, the excess-risk lexicographic formulation with per-rule thresholds is a cleaner instrument than a hand-tuned cost weighting, and the certified gap gives you something to report. Read the formulation section, skip the branch-and-bound details.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.05199v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.05199v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.04851v1">Coupled Control and Wireless World Models for Resilient Remote Robotic Control</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">H. P. Madushanka, Sumudu Samarakoon, Mehdi Bennis</p>
+
+<p class="hook">They train a JEPA-style world model that predicts both where a wirelessly teleoperated robot is going and what the radio channel will do next, and use those joint predictions to decide when the robot can skip sending a camera frame.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>A remotely controlled robot that streams camera images uplink burns bandwidth and energy, and it degrades badly when the link gets unreliable. The open piece is that communication scheduling and control prediction are normally handled by separate systems, so the scheduler has no idea whether the next dropped frame will actually hurt the control loop.</dd></div><div class="frag"><dt>Method</dt><dd>Two coupled Joint Embedding Predictive Architecture world models learn in a shared latent space, one over visual observations of the robot&#39;s environment and one over radio frequency inputs. The RF side is fed both raw spectrograms and a structured topological representation called persistence images, which is the distinctive choice here. Forecasting future robot state and future channel state together gives a predictive transmission gate, and a resilience mechanism watches for latent prediction discrepancy and adapts only the perception embedding rather than retraining the control policy.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims significant improvements in communication efficiency, robustness and resilience against a PID controller, a model-free Deep Q-Network and a Vision Transformer predictive baseline, all inside a synchronized Gazebo, ROS and Sionna simulation loop, but every quantity is left to the body of the paper. Thirteen figures suggest the evidence is there; the abstract simply refuses to commit to a headline figure.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is simulation, and specifically Sionna ray tracing for the channel, which means the wireless world model is learning the statistics of a simulator rather than of a real radio environment. The baselines are also soft. PID and a plain DQN are not communication-aware, so beating them on communication efficiency is close to guaranteed, and the honest comparison would be against a channel-aware scheduler with an oracle or a standard age-of-information policy. A reviewer would also ask what the persistence images actually buy, since dropping them and keeping only spectrograms is the obvious ablation.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work, and worth knowing about rather than reading. It is single-agent teleoperation, so there is no maneuver negotiation, no shared perception between agents, and no intersection to coordinate. The one idea that does transfer is the framing itself: a learned model that predicts channel evolution and vehicle state in the same latent space, used to decide whether a message is worth sending. That is directly relevant if you ever work on rate adaptation for collective perception messages, where the question of which detections are worth the bandwidth is exactly this problem with more agents. Note it, borrow the framing if you need it, do not spend an afternoon on it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.04851v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.04851v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-09 06:04 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
