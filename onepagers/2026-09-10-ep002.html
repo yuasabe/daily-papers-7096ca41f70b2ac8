@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 2 (2026-09-10)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 10 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 2</strong> · September 10, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.07608v1">Solution for UCF UrbanTwin V2X-Real Track: Sim-to-Real Urban LiDAR 3D Object Detection</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Pu Luo et al.</p>
+
+<p class="hook">A contest report that wins a roadside LiDAR sim-to-real leaderboard by training four differently corrupted synthetic point cloud sets into separate DSVT expert branches, then hand-wiring which branch gets to vote on which object class.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Detectors trained on simulated roadside LiDAR collapse on real scans because several discrepancies stack up at once: scene geometry, point sampling density, return patterns, and the physical scale of pedestrians. Prior sim-to-real work tends to attack one of these, and simply pooling all the synthetic variants into one training set lets the corruptions wash each other out.</dd></div><div class="frag"><dt>Method</dt><dd>They build four training sources with deliberately different roles: raw digital twin scans, diffusion redrawn scans, density stabilized scans, and pedestrian morphology aligned samples. Each source trains its own expert branch inside a shared DSVT detector so the specialization survives, and at inference a fixed, hand-specified routing table decides which branches contribute per class, geometry stable and calibration aware branches for cars, sampling complementary branches for trucks, morphology consistent evidence for pedestrians. A final label free step blends predicted box centers toward the center of the enclosed points to sharpen localization.</dd></div><div class="frag"><dt>Results</dt><dd>On the UrbanTwin V2X-Real hidden test set they report a combined score of 0.7421, made of a 3D mAP at IoU 0.5 of 0.4518 and a realism score of 0.8871. The abstract names no baseline, no ablation, and no competing method, so there is no way to tell how much of that comes from the multi-branch design versus the DSVT backbone.</dd></div><div class="frag"><dt>Caveat</dt><dd>The paper&#39;s own headline claim, that disciplined collaboration among sources beats unconstrained aggregation of outputs, is exactly the claim it gives no evidence for. There is no naive ensemble baseline, no single pooled training run, and no leave-one-source-out ablation. Note also that the combined score of 0.7421 sits far above the detection number of 0.4518 because realism carries roughly two thirds of the weight, so the headline flatters a detector whose actual mAP at half IoU is under 0.46. And the class to branch routing is predefined by hand against one leaderboard, one site, one sensor rig, which is the textbook shape of a solution that does not transfer.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral. Despite V2X in the benchmark name, the collaboration here is between training data sources, not between agents, so there is no message exchange, no fusion of detections across vehicles, no bandwidth or latency question. The one thing worth taking is a caution for your collective perception work: if roadside infrastructure detectors are trained on digital twin data, and this one lands at 0.4518 mAP at IoU 0.5 after four kinds of domain correction, then the shared detections your fusion pipeline consumes may be considerably noisier than upstream papers assume. Worth knowing when you set the error model for infrastructure contributed detections.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.07608v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.07608v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.08218v1">Stabilizing Traffic Flow Via Autonomous Vehicles: A Less Conservative Approach</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">MirSaleh Bahavarnia, Ahmad F. Taha</p>
+
+<p class="hook">They swap out the standard H-infinity string-stability test for a direct no-growing-eigenmodes condition, and show you can stabilize mixed traffic with far fewer autonomous vehicles than the literature claims you need.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>The usual way to certify string stability of a mixed platoon is an H-infinity sufficient condition, and because it is only sufficient it overshoots badly on how many autonomous vehicles you need. Nobody had pinned down how much of the required penetration rate was real physics versus slack in the proof technique.</dd></div><div class="frag"><dt>Method</dt><dd>They linearize the mixed traffic flow with heterogeneous human driver parameters, so different drivers get different car-following gains rather than one averaged model, then impose string stability directly as a constraint that the aggregated dynamics have no eigenmodes with growth. That condition plus control saturation limits goes into a nonlinear optimization that jointly searches for the minimum number of autonomous vehicles and their optimal control gains. They also track the real stability radius as a robustness metric, which lets them price how much margin they are spending to buy the penetration reduction.</dd></div><div class="frag"><dt>Results</dt><dd>Against the homogeneous human driver baseline from the literature, which used the H-infinity sufficient condition, penetration rate drops by 17.14 percent. Pushed further, they report a 61.54 percent penetration reduction bought at 27.66 percent larger position deviation from equilibrium and a 92.47 percent loss in real stability radius, all in numerical simulation only.</dd></div><div class="frag"><dt>Caveat</dt><dd>A 92.47 percent collapse in the real stability radius is not a side note, it is close to the whole story. The configurations that look best on penetration rate are the ones sitting nearest the edge of instability, and the paper offers no closed-loop test against the things that actually perturb real traffic, no communication delay, no packet loss, no sensing noise, no nonlinear driver behavior outside the linearization. Everything is a numerical simulation of a linear model, and the heterogeneous human parameters are drawn by the authors rather than fit to driving data.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to all four of your areas. It is single-lane longitudinal string stability with no message exchange, no negotiation, no shared perception and no intersection. The one transferable idea is the framing itself: certify a cooperative control scheme by a necessary condition rather than a convenient sufficient one, then report how much robustness margin the tighter design consumed. If you ever need to argue how many connected vehicles a coordination scheme requires to work, this is a useful precedent for the claim that published thresholds are inflated by proof conservatism. Skim the introduction and the trade-off table, skip the optimization details.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.08218v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.08218v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.07689v1">Emergent Charging Coordination in Electric Delivery Fleets</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Javier Vales-Alonso, Juan J. Alcaraz</p>
+
+<p class="hook">Twenty cities of simulated delivery vans each run the same selfish charging policy, learned by neuroevolution or PPO, and just by reading broadcast station occupancy they stop piling onto the same charger, cutting queue waits from about forty-five minutes to under two.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Mid-shift charging for delivery fleets is a coupled decision problem: when every van independently picks the nearest station on low battery, queues form and shifts run late. The usual fix is central dispatch, precomputed schedules or station reservations, and real charging infrastructure mostly does not offer any of that.</dd></div><div class="frag"><dt>Method</dt><dd>Every vehicle runs an identical policy that sees only its own time and energy budgets plus broadcast station occupancy, then decides when, where and how much to charge. No messaging between vehicles, no central allocator, so the coordination is entirely emergent from a shared observation channel. They train that policy two ways, NEAT neuroevolution and PPO, on four cities built from real OpenStreetMap networks, then deploy it zero-shot on all twenty, and calibrate each frozen scenario against an omniscient Oracle upper bound.</dd></div><div class="frag"><dt>Results</dt><dd>Oracle completes 99.5 percent of shifts on time, naive nearest-station greedy 73 percent, tuned urgency-only thresholds around 80 percent in contended cities. NEAT reaches 96.8 percent and PPO 98.6 percent across all twenty cities, sixteen of them never seen in training, with per-session queue waits falling from about forty-five minutes to under two.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole coordination story rests on broadcast station occupancy being accurate and current, and the abstract never says what happens when that signal is stale, noisy or partially missing, which is exactly the failure mode that separates a real deployment from a simulator. There is also no ablation isolating how much of the gain comes from the occupancy channel versus the learned partial-charging behaviour, and calling the result emergent coordination without messaging is a little generous when a shared public signal is doing the work a coordination protocol would otherwise do.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral to your work, but not useless. The mechanism is the same shape as the problem you care about: homogeneous agents with identical policies achieving conflict-free resource allocation from a broadcast state signal rather than from pairwise negotiation, which is the decentralized limit of intersection slot reservation and merge right-of-way. If you ever want to argue that maneuver coordination messages earn their bandwidth, this is a clean example of what you can get without them, and the honest reading is that a shared occupancy broadcast is itself a coordination message wearing a different hat. The charging-specific machinery, battery floors, shift deadlines, OSM routing, will not transfer.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.07689v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.07689v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.07590v1">Solution for UCF UrbanTwin LUMPI Track: Sim-to-Real Urban LiDAR 3D Object Detection</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Pu Luo et al.</p>
+
+<p class="hook">A five-page ECCV challenge report on winning a synthetic-only LiDAR detection track, where the honest headline is that the fake point clouds looked great and the detector barely worked.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>The LUMPI track forces you to train a 3D detector purely on synthetic LiDAR and then test it on fifty held-out real frames from roadside sensors, so the whole difficulty is the sim-to-real domain gap in point density and sensor statistics. It was open in the sense that any leaderboard is open: nobody had tuned a pipeline for this particular density mismatch and this particular fifty-frame evaluation.</dd></div><div class="frag"><dt>Method</dt><dd>Three stages, all engineering rather than new theory. They rebuild the training distribution first, downsampling synthetic scans to match the fifty thousand point test density and assembling a thirty thousand record pool with RangeLDM-based sampling diversification, copy-paste for rare classes, and pedestrian-oriented augmentation. Then they train an ensemble of DSVT transformer detectors plus dedicated PointPillars specialists for cars and buses, and fuse the outputs with class-aware routing, asymmetric agreement fusion, and selective box-size calibration. The realism submission is a completely separate track handled by radial-density matching and weak affine calibration.</dd></div><div class="frag"><dt>Results</dt><dd>Combined Score of 0.4692, which splits into a Realism Score of 0.9035 and a Detection Score of 0.1797, with 3D mAP at IoU 0.5 of just 0.1258. There are no baselines and no ablations in the abstract, so you cannot tell which of the roughly ten listed components actually bought anything.</dd></div><div class="frag"><dt>Caveat</dt><dd>The combined score is carried almost entirely by the realism branch at 0.9035 while actual detection sits at twelve percent mAP, so a strong number on the leaderboard hides a detector that misses roughly nine out of ten objects. Add that the detection evaluation is fifty frames, which is far too small to separate a real improvement from variance, and that the paper stacks maybe ten fusion and augmentation tricks with no ablation to attribute credit to any of them.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral, with one narrow exception. Nothing here touches maneuver coordination, intersection management, or message design, and there is no multi-agent element at all. But LUMPI is roadside infrastructure LiDAR, which is exactly the sensor that feeds infrastructure-side collective perception, so the useful takeaway for you is a calibration point: a detector trained only on synthetic infrastructure LiDAR reaches about twelve percent mAP on real frames. If you were planning to bootstrap a collective perception study on simulated roadside sensors and assume the detections transfer, that number is the warning label. The density-matching step is also a reminder that synthetic-to-real point cloud transfer breaks on sensor statistics before it breaks on semantics.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.07590v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.07590v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.08796v1">Hi-FLoop: Hierarchical State-Feedback Loops for Multi-Timescale World Modeling</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Rx Fan, Zhan H</p>
+
+<p class="hook">It generates eight-second multi-agent traffic futures by splitting the rollout into nested time scales, an eight-second goal, a two-second preview, and a one-second control step, and it only lets the half-second slice that actually executed become memory for the next step.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Closed-loop traffic simulators tend to unroll a whole long future from the initial scene and resolve intent, interaction, and physical motion in one monolithic pass, so the context they condition on goes stale as their own generated states drift, and decisions at different time scales stop agreeing with each other. Nobody had a clean way to feed generated state back in without also feeding back the hypotheses that were never executed.</dd></div><div class="frag"><dt>Method</dt><dd>The scene is branched into eight joint hypotheses they call Worlds, and every agent is locked to the same World identity for the whole eight-second rollout, which is what buys joint consistency rather than per-agent independence. Inside a branch, intent, interaction, and motion are handled at three separate horizons, and every half second only the executed prefix is committed as fact while unexecuted branches are discarded. Two extra pieces: Joint Preview Interaction builds a sparse directed graph over predicted futures and gates interaction refinement using conflict probability and signed arrival-time difference, and a prefix-frozen cascade hands typed physical state and the branch index, deliberately not latent state, from a frozen first model to a second independent model, to test whether the system can recover when it must re-encode its own generated output.</dd></div><div class="frag"><dt>Results</dt><dd>On a nine hundred fifty five scenario public validation split they report an overall score of zero point six nine from the official evaluator, plus oracle minimum average displacement error of one point two meters at eight seconds and zero point five three meters at six seconds. The abstract names no baseline and no competing method, so there is no way to tell from it whether zero point six nine is strong, average, or weak.</dd></div><div class="frag"><dt>Caveat</dt><dd>No baselines, no ablations, and a single run. The abstract says one complete run, which means the eight-World branching, the three-tier hierarchy, and the conflict gating are all reported as a bundle with nothing isolating what any of them contributes, and the displacement numbers are oracle numbers, meaning they take the best of the eight hypotheses after the fact, which flatters any method that simply generates more diverse branches. Quoting six decimal places on a single-seed score is a tell that variance was never measured.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral. This is a centralized generative simulator with full scene observability and no communication layer at all, so it says nothing about message loss, bandwidth, latency, occlusion, or trust, which is where cooperative driving actually breaks. Two things are still worth taking: the conflict probability plus signed arrival-time difference gate is essentially a lightweight conflict detector for merges and unsignalized crossings and transfers directly to intent-sharing work, and the shared World identity across all agents is a clean formalization of what a maneuver agreement is, namely every vehicle committing to the same joint hypothesis rather than each predicting the others separately. If you need realistic non-cooperative background traffic for evaluating a coordination scheme, this is a candidate simulator rather than a contribution to coordination itself.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.08796v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.08796v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-10 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2026 21:04:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 21:03:52 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 10 — 5 papers</title>
+      <description>&lt;p&gt;Two UCF UrbanTwin sim-to-real LiDAR reports push the same synthetic-only setup in opposite directions: one takes the V2X-Real roadside track by training four differently corrupted point cloud sets into separate DSVT expert branches and hand-wiring which branch votes on which class, while the LUMPI track winner concedes that the synthetic clouds looked convincing and the detector still barely worked. The rest is control and coordination — a string-stability result that drops the H-infinity test for a direct no-growing-eigenmodes condition and stabilizes mixed traffic with far fewer AVs than prior bounds demand, twenty cities of simulated delivery vans whose shared selfish charging policy reads broadcast station occupancy and cuts queue waits from roughly forty-five minutes to under two, and Hi-FLoop&amp;#x27;s nested eight-second/two-second/one-second traffic rollout that commits only the half-second slice actually executed to memory.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.07608v1"&gt;Solution for UCF UrbanTwin V2X-Real Track: Sim-to-Real Urban LiDAR 3D Object Detection&lt;/a&gt; &amp;mdash; Pu Luo et al.&lt;br/&gt;A contest report that wins a roadside LiDAR sim-to-real leaderboard by training four differently corrupted synthetic point cloud sets into separate DSVT expert branches, then hand-wiring which branch gets to vote on which object class.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.08218v1"&gt;Stabilizing Traffic Flow Via Autonomous Vehicles: A Less Conservative Approach&lt;/a&gt; &amp;mdash; MirSaleh Bahavarnia, Ahmad F. Taha&lt;br/&gt;They swap out the standard H-infinity string-stability test for a direct no-growing-eigenmodes condition, and show you can stabilize mixed traffic with far fewer autonomous vehicles than the literature claims you need.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.07689v1"&gt;Emergent Charging Coordination in Electric Delivery Fleets&lt;/a&gt; &amp;mdash; Javier Vales-Alonso, Juan J. Alcaraz&lt;br/&gt;Twenty cities of simulated delivery vans each run the same selfish charging policy, learned by neuroevolution or PPO, and just by reading broadcast station occupancy they stop piling onto the same charger, cutting queue waits from about forty-five minutes to under two.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.07590v1"&gt;Solution for UCF UrbanTwin LUMPI Track: Sim-to-Real Urban LiDAR 3D Object Detection&lt;/a&gt; &amp;mdash; Pu Luo et al.&lt;br/&gt;A five-page ECCV challenge report on winning a synthetic-only LiDAR detection track, where the honest headline is that the fake point clouds looked great and the detector barely worked.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.08796v1"&gt;Hi-FLoop: Hierarchical State-Feedback Loops for Multi-Timescale World Modeling&lt;/a&gt; &amp;mdash; Rx Fan, Zhan H&lt;br/&gt;It generates eight-second multi-agent traffic futures by splitting the rollout into nested time scales, an eight-second goal, a two-second preview, and a one-second control step, and it only lets the half-second slice that actually executed become memory for the next step.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-10</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-10.mp3" length="6971404" type="audio/mpeg"/>
+      <pubDate>Thu, 10 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:36</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Two UCF UrbanTwin sim-to-real LiDAR reports push the same synthetic-only setup in opposite directions: one takes the V2X-Real roadside track by training four differently corrupted point cloud sets into separate DSVT expert branches and hand-wiring which branch votes on which class, while the LUMPI track winner concedes that the synthetic clouds looked convincing and the detector still barely worked. The rest is control and coordination — a string-stability result that drops the H-infinity test for a direct no-growing-eigenmodes condition and stabilizes mixed traffic with far fewer AVs than prior bounds demand, twenty cities of simulated delivery vans whose shared selfish charging policy reads broadcast station occupancy and cuts queue waits from roughly forty-five minutes to under two, and Hi-FLoop's nested eight-second/two-second/one-second traffic rollout that commits only the half-second slice actually executed to memory.</itunes:summary>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 9 — 3 papers</title>
       <description>&lt;p&gt;Three papers that buy timeliness by deliberately computing less: an edge node that takes over sensor fusion and path prediction for connected vehicles but caps how many vehicles it fuses per cycle so the answer arrives before it goes stale; Wongpiromsarn&amp;#x27;s risk-aware rulebooks, which attach a risk measure and acceptable threshold to each prioritized traffic rule and solve the lexicographic problem with anytime branch-and-bound, returning a policy plus a certified suboptimality bound; and a JEPA-style world model that jointly predicts a teleoperated robot&amp;#x27;s trajectory and its radio channel, using both to decide when a camera frame can be skipped. Each one names a deadline and then discards information to meet it — unfused vehicles, an early-stopped search, a dropped frame — and none of the three establishes what the discarded information would have been worth.&lt;/p&gt;
