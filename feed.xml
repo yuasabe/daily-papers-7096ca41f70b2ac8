@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2026 21:03:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 21:03:33 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 11 — 5 papers</title>
+      <description>&lt;p&gt;A vehicle-in-the-loop study shows that sharing planned intent rather than current status keeps a follower from crashing when its V2X link is hit with up to two seconds of denial-of-service delay, and a rolling-horizon, bounded-horizon Conflict Based Search over spline roadmaps routes differently-sized warehouse AGVs through narrow two-way corridors for up to eleven percent more throughput than the rule-based scheme a real factory would run. Three more papers round it out: a proof that single-state agents communicating over a directed network can hold a common moving safety corridor and reach consensus despite different asymmetric actuator saturation limits, an uncertainty-aware control barrier function layered on distributional reinforcement learning so the safety filter tightens only where the policy is unsure at unsignalized intersections, and a drift correction that snaps short odometry segments onto OpenStreetMap lane centerlines whether the odometry came from LiDAR or a camera.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.10232v1"&gt;Mitigating Degradation Attacks in Cooperative Autonomous Driving via Intention Sharing: A Vehicle-in-the-Loop Study&lt;/a&gt; &amp;mdash; Prakhar Gupta et al.&lt;br/&gt;They put a real drive-by-wire car in the loop, jammed its V2X link with up to two seconds of denial-of-service delay, and showed that sharing planned intent instead of current status stops the follower from crashing.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.10400v1"&gt;A traffic management system for large and heterogeneous vehicles in narrow industrial environments&lt;/a&gt; &amp;mdash; Alessandro Bonetti et al.&lt;br/&gt;They coordinate warehouse AGVs of different sizes through narrow two-way corridors using a rolling-horizon, bounded-horizon Conflict Based Search over spline roadmaps, and get up to eleven percent more throughput than the rule-based system a real factory would use today.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.09384v1"&gt;Networked Admissibility-Preserving Control for Directed Safe Coordination&lt;/a&gt; &amp;mdash; Abhinav Sinha, Lohitvel Gopikannan, Shashi Ranjan Kumar&lt;br/&gt;A control-theory paper proving that a group of single-state agents talking over a directed network can hold a common moving safety corridor and hit consensus even when each actuator has different asymmetric saturation limits.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.09650v1"&gt;A Risk-Sensitive and Uncertainty-Aware Decision-Making and Control Framework for Safe and Robust Autonomous Driving&lt;/a&gt; &amp;mdash; Zhuoren Li et al.&lt;br/&gt;They bolt an uncertainty-aware control barrier function onto distributional reinforcement learning so the safety filter tightens only when the policy itself is unsure, tested on unsignalized intersection crossings in simulation.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.10336v1"&gt;Odometer-Agnostic Drift Correction Using OpenStreetMap Lane Geometry&lt;/a&gt; &amp;mdash; Joaquin Caballero et al.&lt;br/&gt;They snap short chunks of odometry onto OpenStreetMap lane centerlines to kill long-term drift, and it works regardless of whether the odometry came from LiDAR or a camera.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-11</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-11.mp3" length="7261968" type="audio/mpeg"/>
+      <pubDate>Fri, 11 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A vehicle-in-the-loop study shows that sharing planned intent rather than current status keeps a follower from crashing when its V2X link is hit with up to two seconds of denial-of-service delay, and a rolling-horizon, bounded-horizon Conflict Based Search over spline roadmaps routes differently-sized warehouse AGVs through narrow two-way corridors for up to eleven percent more throughput than the rule-based scheme a real factory would run. Three more papers round it out: a proof that single-state agents communicating over a directed network can hold a common moving safety corridor and reach consensus despite different asymmetric actuator saturation limits, an uncertainty-aware control barrier function layered on distributional reinforcement learning so the safety filter tightens only where the policy is unsure at unsignalized intersections, and a drift correction that snaps short odometry segments onto OpenStreetMap lane centerlines whether the odometry came from LiDAR or a camera.</itunes:summary>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 10 — 5 papers</title>
       <description>&lt;p&gt;Two UCF UrbanTwin sim-to-real LiDAR reports push the same synthetic-only setup in opposite directions: one takes the V2X-Real roadside track by training four differently corrupted point cloud sets into separate DSVT expert branches and hand-wiring which branch votes on which class, while the LUMPI track winner concedes that the synthetic clouds looked convincing and the detector still barely worked. The rest is control and coordination — a string-stability result that drops the H-infinity test for a direct no-growing-eigenmodes condition and stabilizes mixed traffic with far fewer AVs than prior bounds demand, twenty cities of simulated delivery vans whose shared selfish charging policy reads broadcast station occupancy and cuts queue waits from roughly forty-five minutes to under two, and Hi-FLoop&amp;#x27;s nested eight-second/two-second/one-second traffic rollout that commits only the half-second slice actually executed to memory.&lt;/p&gt;

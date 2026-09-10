@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 3 (2026-09-11)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 11 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 3</strong> · September 11, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.10232v1">Mitigating Degradation Attacks in Cooperative Autonomous Driving via Intention Sharing: A Vehicle-in-the-Loop Study</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Prakhar Gupta et al.</p>
+
+<p class="hook">They put a real drive-by-wire car in the loop, jammed its V2X link with up to two seconds of denial-of-service delay, and showed that sharing planned intent instead of current status stops the follower from crashing.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Cooperative controllers that exchange only current status, meaning position and speed right now, have nothing to fall back on when a denial-of-service attack stalls the link, so the follower extrapolates stale data and closes the gap until it hits something. Whether intention sharing actually fixes this on real hardware rather than in a pure simulation was untested.</dd></div><div class="frag"><dt>Method</dt><dd>A vehicle-in-the-loop testbed wires a real drive-by-wire vehicle to a microscopic traffic simulator through actual vehicle-to-X communication hardware, and the attack is emulated as injected communication delay reaching two seconds. Three model predictive controllers are compared: a baseline that consumes status messages, one that consumes shared intention meaning the leader&#39;s planned future trajectory, and a delay-aware variant that additionally accounts for the measured latency inside the prediction horizon. The key point is that shared intent gives the model predictive controller a valid future reference to keep optimizing over while packets are missing, so the horizon does not collapse to extrapolation.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract is almost entirely qualitative. The only hard number is the attack magnitude, delays of up to two seconds; the outcome is stated as baseline control suffering significant degradation and frequent collisions while intention sharing eliminates collisions and stays near nominal behavior. No collision counts, no gap or jerk statistics, no separation between the plain intention-sharing controller and the delay-aware one.</dd></div><div class="frag"><dt>Caveat</dt><dd>The comparison is close to rigged. A status-sharing controller with no fallback logic is the weakest possible baseline, and any competent implementation would freeze the target, open the gap, or degrade to sensor-only adaptive cruise control on packet timeout, which would also prevent collisions without any intent sharing at all. The abstract also never distinguishes intention sharing from delay-aware intention sharing, so the marginal value of the delay compensation, arguably the more interesting contribution, is invisible. And this is a Correspondence, a short format, on what the authors themselves hedge as the tested scenarios, so it is likely one car-following or platooning scenario rather than a scenario sweep.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits at the intersection of your maneuver coordination and your communication reliability interests, and it is the rare case where intent sharing is evaluated against an adversary rather than against benign packet loss. The useful takeaway for you is the framing: a maneuver coordination message is not only a coordination primitive, it is also a resilience buffer, because a received plan stays valid for its own horizon even when the link dies. The testbed description is worth reading if you are building your own vehicle-in-the-loop setup. Do not expect a defense you can cite as sufficient against denial of service, and do not expect it to touch collective perception or intersection management.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.10232v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.10232v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.10400v1">A traffic management system for large and heterogeneous vehicles in narrow industrial environments</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Alessandro Bonetti et al.</p>
+
+<p class="hook">They coordinate warehouse AGVs of different sizes through narrow two-way corridors using a rolling-horizon, bounded-horizon Conflict Based Search over spline roadmaps, and get up to eleven percent more throughput than the rule-based system a real factory would use today.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In dense industrial settings, AGV traffic is usually managed by local negotiation rules that assign priority on the fly, which stalls fleets in narrow bidirectional corridors and deadlocks when vehicles of different footprints meet. Existing multi-agent path finding work mostly assumes grid-like maps and uniform robots, so it does not transfer to non-standardized factory floors where a long tug and a small tow tractor share the same aisle.</dd></div><div class="frag"><dt>Method</dt><dd>The roadmap is built from Non-Uniform Rational B-Spline curves rather than a grid, so paths respect real vehicle geometry and kinematics. On top of that they run Lifelong Multi-Agent Path Finding with a modified Bounded Horizon Conflict Based Search inside a Rolling Horizon Conflict Resolution loop, where the planning horizon per agent is stretched adaptively to cover whole corridors identified from a topological map. Two engineering pieces carry a lot of the weight: an anytime solver so a usable plan always exists at the control deadline, and a separate execution layer plus explicit deadlock detection and recovery for the real fleet.</dd></div><div class="frag"><dt>Results</dt><dd>The only number in the abstract is throughput improvement of up to eleven percent against three baselines: a conventional rule-based traffic manager, a state-of-the-art industrial method, and a priority-based Lifelong MAPF variant. There are no reported figures for deadlock frequency, planning time, corridor occupancy, fleet size, or how often the anytime solver returned a suboptimal plan, and the environments are described only as realistic industrial without naming a public benchmark.</dd></div><div class="frag"><dt>Caveat</dt><dd>Up to eleven percent is a best-case figure with no distribution behind it, and the abstract never says how many AGVs, how many runs, or how the industrial baseline was tuned, so the comparison is unfalsifiable as written. The claim of locally optimal coordination is doing quiet work: bounded horizon CBS is optimal only within the horizon, and the adaptive horizon regulation that decides how far to look is exactly the component most in need of an ablation, which the abstract does not promise. There is also no evidence about communication loss or localization error, which is what actually breaks centralized fleet coordination on a real floor.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is adjacent rather than central. The relevant transfer is the corridor abstraction: they detect corridors from a topological map and extend the planning horizon to span the whole conflict region, which is a clean answer to the question of how far ahead maneuver coordination has to commit, and that maps directly onto merge and lane change negotiation where a fixed horizon is either too short to resolve the conflict or too long to be reliable. The rest does not transfer well. This is a centralized fleet manager with cooperative agents on a private site, so there is no intent sharing between independent vehicles, no perception fusion, and no treatment of packet loss, trust, or heterogeneous stacks. If you are working on maneuver coordination message design, read the horizon regulation and deadlock resolution sections and skip the rest.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.10400v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.10400v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.09384v1">Networked Admissibility-Preserving Control for Directed Safe Coordination</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Abhinav Sinha, Lohitvel Gopikannan, Shashi Ranjan Kumar</p>
+
+<p class="hook">A control-theory paper proving that a group of single-state agents talking over a directed network can hold a common moving safety corridor and hit consensus even when each actuator has different asymmetric saturation limits.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Distributed consensus laws usually assume the commanded input is the input that actually gets applied, and they usually assume the communication graph is weight balanced or undirected. When actuators saturate asymmetrically, positive and negative demands clip differently, and the standard barrier-based safety argument no longer certifies that outputs stay inside the corridor.</dd></div><div class="frag"><dt>Method</dt><dd>They split the problem into two blocks. An Admissibility-Preserving Input Realization sits between the distributed command and the physical actuator so that the realized input always lands inside its own asymmetric bound, and a logarithmic barrier coordinate re-parameterizes the moving safety corridor so that staying inside it becomes an unconstrained consensus problem. The key structural claim is that these two blocks form an exact cascade: the realization error decays exponentially and feeds a nonsymmetric consensus system, which lets them prove existence and uniqueness of a complete solution, forward invariance of both the corridor and the actuator intervals with uniform margins, and exponential consensus. They also give direction-specific sufficient conditions separating when positive demands versus negative demands stay admissible, and a closed-form limit for the barrier coordinate set by the left Perron vector and the initial realization mismatch.</dd></div><div class="frag"><dt>Results</dt><dd>There are no numbers in the abstract at all. The only evidence offered is a single non-weight-balanced example used to illustrate the directional certificate and the predicted collective motion, which means this is a theorem paper with a demonstration, not an evaluation.</dd></div><div class="frag"><dt>Caveat</dt><dd>The agents are scalar, meaning one state each, and the safety constraint is a shared corridor rather than pairwise separation between agents. That is a long way from vehicles with position and velocity and heading needing to avoid each other. The corridor is also treated as exogenously moving or, under pinning, propagated from an informed subset, so nobody has to negotiate what the corridor should be. And the communication graph is fixed with a directed spanning tree, so packet loss, delay and topology churn, the things that actually break cooperative control in V2X, are outside the model. A sharp reviewer would also press on whether the single illustrative example is doing any real validation work.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral. The one genuinely transferable idea is the input realization block: the notion that you should certify safety against the input the actuator can actually deliver, with asymmetric bounds because braking and accelerating are not mirror images, is directly relevant to cooperative trajectory planning and platoon formation, where comfort and traction limits are asymmetric and often quietly ignored. The directed-graph result is also mildly interesting because V2X information flow in a platoon really is directed and not weight balanced. But the scalar-agent model, the fixed graph, and the absence of any inter-agent collision constraint mean you cannot lift the certificate into a maneuver coordination setting without redoing most of the analysis. Read it for the input realization idea, not for the coordination result.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.09384v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.09384v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.09650v1">A Risk-Sensitive and Uncertainty-Aware Decision-Making and Control Framework for Safe and Robust Autonomous Driving</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zhuoren Li et al.</p>
+
+<p class="hook">They bolt an uncertainty-aware control barrier function onto distributional reinforcement learning so the safety filter tightens only when the policy itself is unsure, tested on unsignalized intersection crossings in simulation.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Safety filters on learned driving policies usually apply one fixed conservative margin, so they either brake constantly and wreck throughput or fail to catch the rare tail case. The open question is how to make the strictness of the filter respond to how much the policy should be trusted at that moment.</dd></div><div class="frag"><dt>Method</dt><dd>Three pieces stacked together. Risk-sensitive distributional reinforcement learning gives them the tail of the return distribution rather than just the mean, and an ensemble of policies gives them a spread that stands in for epistemic uncertainty. That uncertainty signal then drives the class-K parameters of a high-order control barrier function, so the barrier gets aggressive when the ensemble disagrees, and a learned residual term patches the gap between the nominal vehicle model and the discretized reality.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims a favorable balance among safety, efficiency and robustness, claims wins over unnamed representative safe reinforcement learning baselines under nominal, out-of-distribution and long-tail conditions, and claims real-time feasibility, but every one of those is a bare assertion here. Five tables and eight figures exist in the paper; none of that reaches the abstract.</dd></div><div class="frag"><dt>Caveat</dt><dd>This is single-agent ego-vehicle control that treats the other cars as environment, not as parties to a negotiation. There is no communication, no shared intent, no coordination. The uncertainty signal is ensemble disagreement, which is a well-known and rather weak proxy for epistemic uncertainty and tends to collapse when ensemble members share initialization or training data, and nothing in the abstract says how the ensemble was diversified. Evaluation is simulation only, and the out-of-distribution and long-tail scenarios are self-constructed, which means the authors chose the very distribution shift they claim robustness to.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral, with one usable part. Your intersection work is about coordination between vehicles, and this paper deliberately does not coordinate: the ego car reasons alone and the surrounding traffic is unmodeled interaction. The transferable idea is the uncertainty-gated barrier. If you build a cooperative crossing scheme where trust in a received message or a shared trajectory varies, the same trick of scaling constraint strictness by a confidence signal maps directly onto your misbehaviour detection and trust concerns. Worth lifting that mechanism; not worth reading as an intersection coordination paper.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.09650v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.09650v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.10336v1">Odometer-Agnostic Drift Correction Using OpenStreetMap Lane Geometry</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Joaquin Caballero et al.</p>
+
+<p class="hook">They snap short chunks of odometry onto OpenStreetMap lane centerlines to kill long-term drift, and it works regardless of whether the odometry came from LiDAR or a camera.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Incremental pose integration drifts without bound when there are no loop closures, which is the normal case for a vehicle driving a long route that never revisits anywhere. Existing map-based fixes demand dense prior maps, sensor-specific front ends, or heavy matching pipelines, so they are expensive to build and do not transfer across odometry backends.</dd></div><div class="frag"><dt>Method</dt><dd>The correction is posed as a direct geometric alignment between a recent window of odometry poses and the sparse polyline lane centerlines pulled from OpenStreetMap. Because the alignment consumes only the pose trajectory and not raw sensor data, the module bolts onto any odometry source untouched. The key design bet is that free, sparse, topological road geometry carries enough constraint to bound drift, so no dense point cloud prior and no offline preprocessing are needed, and it runs online.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims consistent improvement with both LiDAR and visual odometry backends and says gains are largest under severe drift, but names no dataset, no baseline method, and no error metric. Accepted at RA-L for 2026, so the numbers exist in the paper, but the abstract will not let you triage on evidence.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole approach inherits OpenStreetMap&#39;s errors. Lane centerlines there are volunteer-drawn, frequently a single way for a multi-lane road, and geometrically off by meters in places, so the method&#39;s accuracy floor is set by map quality that the abstract never characterises. A sharp reviewer would also press on where alignment fails outright: large open intersections, parking areas, highway interchanges, service roads and any place the map has no lane geometry. And the honest failure mode is confident wrong snapping, where the trajectory locks onto the wrong parallel lane or the wrong carriageway and the correction actively hurts.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your maneuver coordination and collective perception work, but it touches your supporting-work interest in localization between agents. Cooperative perception and trajectory agreement both assume the vehicles share a consistent frame, and drift is exactly what breaks that assumption when a vehicle has been driving for a long time without loop closure. What this paper offers is a cheap common reference, because OpenStreetMap lane geometry is a globally available shared prior that every participant can align to independently. That is a plausible route to inter-agent frame consistency without any extra communication. The paper itself does no cooperative evaluation and does not measure relative error between two vehicles, which is the number you would actually need, so treat it as a component you might borrow rather than a result about cooperation.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.10336v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.10336v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-11 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
