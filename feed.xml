@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2026 21:03:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 21:02:35 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 13 — 1 papers</title>
+      <description>&lt;p&gt;A Northeastern group argues that Open RAN&amp;#x27;s split of softwarized radios, an external controller, and pluggable apps generalizes beyond cellular, letting radar, GPS, and cellular tenants share antennas and compute rather than only dividing up frequency. Ray-traced simulation gives up to 12 dB of median SINR gain from that pooled infrastructure, though the case rests on simulation rather than a deployed multi-tenant testbed, and the paper leaves the cross-operator trust and scheduling latency questions to future work.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.11843v1"&gt;From Open RAN to Open Spectrum: A Programmable, Intelligent Architecture for Multi-Service Spectrum Coexistence&lt;/a&gt; &amp;mdash; Michele Polese et al.&lt;br/&gt;A team from Northeastern proposes extending Open RAN&amp;#x27;s softwarized, controller-plus-app model from cellular networks to spectrum sharing generally, so that radar, GPS, and cellular tenants pool not just frequencies but also antennas and compute, and they show in ray-traced simulation that sharing infrastructure buys up to twelve decibels of median SINR.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-13</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-13.mp3" length="3523828" type="audio/mpeg"/>
+      <pubDate>Sun, 13 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:04:49</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A Northeastern group argues that Open RAN's split of softwarized radios, an external controller, and pluggable apps generalizes beyond cellular, letting radar, GPS, and cellular tenants share antennas and compute rather than only dividing up frequency. Ray-traced simulation gives up to 12 dB of median SINR gain from that pooled infrastructure, though the case rests on simulation rather than a deployed multi-tenant testbed, and the paper leaves the cross-operator trust and scheduling latency questions to future work.</itunes:summary>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 12 — 3 papers</title>
       <description>&lt;p&gt;Two papers on estimation and control under a broken channel, one on shared-world simulation: a multi-sensor fusion estimator that still recovers state when data packets arrive with scrambled sender identities, modeling the mix-up as an unknown permutation to either average over or pick the most likely; and a predefined-time sliding-mode consensus protocol for second-order agents that freezes its internal convergence clock during each denial-of-service blackout and restarts it when links return, so the deadline guarantee survives jamming. CARLAverse puts a driving simulator, a bike simulator, and a pedestrian walking rig into one CARLA world simultaneously, with each participant&amp;#x27;s vehicle physics and force feedback computed on local hardware instead of across the network.&lt;/p&gt;

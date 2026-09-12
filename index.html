@@ -180,8 +180,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">5 episodes ·
-       21 papers ·
+    <p class="tagline">6 episodes ·
+       22 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -206,6 +206,34 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-09-13">
+      <div class="ep-head">
+        <h2>Sunday, September 13, 2026</h2>
+        <span class="ep-meta">Episode 5 · 1 papers · 5 min</span>
+      </div>
+<p class="ep-summary">A Northeastern group argues that Open RAN&#39;s split of softwarized radios, an external controller, and pluggable apps generalizes beyond cellular, letting radar, GPS, and cellular tenants share antennas and compute rather than only dividing up frequency. Ray-traced simulation gives up to 12 dB of median SINR gain from that pooled infrastructure, though the case rests on simulation rather than a deployed multi-tenant testbed, and the paper leaves the cross-operator trust and scheduling latency questions to future work.</p>
+      <audio controls preload="none" src="audio/2026-09-13.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-09-13.html">One-pager</a><a class="btn" href="onepagers/2026-09-13.pdf">PDF</a><a class="btn" href="audio/2026-09-13.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="from open ran to open spectrum: a programmable, intelligent architecture for multi-service spectrum coexistence michele polese et al. a team from northeastern proposes extending open ran&#39;s softwarized, controller-plus-app model from cellular networks to spectrum sharing generally, so that radar, gps, and cellular tenants pool not just frequencies but also antennas and compute, and they show in ray-traced simulation that sharing infrastructure buys up to twelve decibels of median sinr. spectrum coexistence frameworks like cbrs only arbitrate one dimension, which frequency block goes to whom, while the physical radios, the processing hardware, and the protocol stacks stay siloed per service. that leaves the obvious efficiency on the table, and nobody has a clean architecture for arbitrating across sensing, navigation, positioning, and communications at once, because those services have wildly different requirements and operating modes. they define an architecture where spectrum, services, and infrastructure go into one shared pool managed by a spectrum intelligent controller, which is the direct analogue of the ran intelligent controller in open ran. on top of it sit plug-and-play modules they call spectrum applications, and interference is modelled with data-driven digital twins rather than static exclusion zones. they also spell out the operational workflows that make this a governance proposal as much as a technical one: how a tenant onboards, what the incentives are, how conflicts get resolved, and how services share. the only quantitative claim is from system-level simulation using the bostontwin urban digital twin with sionna ray tracing, and it is a median sinr improvement of up to twelve decibels plus increased spectrum access when infrastructure is shared. no hardware results, no testbed measurements, no comparison against a cbrs baseline with numbers attached. everything rests on one simulated city with a ray tracer, and twelve decibels is reported as an upper bound on a median, which tells you nothing about the tail where a radar or a navigation receiver actually fails. the architecture is described rather than implemented, so the hard parts stay untested: there is no evidence the spectrum intelligent controller can resolve conflicts fast enough for real-time incumbents, no latency budget, and no adversarial analysis of what a tenant gains by misreporting its needs inside the incentive scheme. this is peripheral to all four of your areas. it sits a full layer below maneuver coordination and collective perception, and it never touches vehicular traffic, latency bounds for control loops, or message sets. the one thread worth holding onto is the framing: if spectrum for c-v2x ever gets negotiated in a shared pool rather than dedicated in the five point nine gigahertz band, then the reliability assumptions underneath your cooperative control work become a function of somebody else&#39;s tenant arbitration policy. that is a real question for your supporting-work area, but this paper does not answer it, and you would learn more from work on c-v2x coexistence with wi-fi in that band. 2609.11843v1 notable skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.11843v1">From Open RAN to Open Spectrum: A Programmable, Intelligent Architecture for Multi-Service Spectrum Coexistence</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Michele Polese et al. · arXiv:2609.11843v1</p><p class="p-hook">A team from Northeastern proposes extending Open RAN&#39;s softwarized, controller-plus-app model from cellular networks to spectrum sharing generally, so that radar, GPS, and cellular tenants pool not just frequencies but also antennas and compute, and they show in ray-traced simulation that sharing infrastructure buys up to twelve decibels of median SINR.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Spectrum coexistence frameworks like CBRS only arbitrate one dimension, which frequency block goes to whom, while the physical radios, the processing hardware, and the protocol stacks stay siloed per service. That leaves the obvious efficiency on the table, and nobody has a clean architecture for arbitrating across sensing, navigation, positioning, and communications at once, because those services have wildly different requirements and operating modes.</dd><dt>Method</dt><dd>They define an architecture where spectrum, services, and infrastructure go into one shared pool managed by a Spectrum Intelligent Controller, which is the direct analogue of the RAN Intelligent Controller in Open RAN. On top of it sit plug-and-play modules they call spectrum applications, and interference is modelled with data-driven digital twins rather than static exclusion zones. They also spell out the operational workflows that make this a governance proposal as much as a technical one: how a tenant onboards, what the incentives are, how conflicts get resolved, and how services share.</dd><dt>Results</dt><dd>The only quantitative claim is from system-level simulation using the BostonTwin urban digital twin with Sionna ray tracing, and it is a median SINR improvement of up to twelve decibels plus increased spectrum access when infrastructure is shared. No hardware results, no testbed measurements, no comparison against a CBRS baseline with numbers attached.</dd><dt>Caveat</dt><dd>Everything rests on one simulated city with a ray tracer, and twelve decibels is reported as an upper bound on a median, which tells you nothing about the tail where a radar or a navigation receiver actually fails. The architecture is described rather than implemented, so the hard parts stay untested: there is no evidence the Spectrum Intelligent Controller can resolve conflicts fast enough for real-time incumbents, no latency budget, and no adversarial analysis of what a tenant gains by misreporting its needs inside the incentive scheme.</dd><dt>Why it matters</dt><dd>This is peripheral to all four of your areas. It sits a full layer below maneuver coordination and collective perception, and it never touches vehicular traffic, latency bounds for control loops, or message sets. The one thread worth holding onto is the framing: if spectrum for C-V2X ever gets negotiated in a shared pool rather than dedicated in the five point nine gigahertz band, then the reliability assumptions underneath your cooperative control work become a function of somebody else&#39;s tenant arbitration policy. That is a real question for your supporting-work area, but this paper does not answer it, and you would learn more from work on C-V2X coexistence with Wi-Fi in that band.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-09-12">
       <div class="ep-head">
         <h2>Saturday, September 12, 2026</h2>
@@ -575,7 +603,7 @@
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-09-12 06:03 · unlisted, not indexed ·
+    Generated 2026-09-13 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
