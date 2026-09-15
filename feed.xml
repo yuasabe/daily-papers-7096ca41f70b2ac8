@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Sep 2026 21:02:35 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 21:04:25 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,36 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 16 — 4 papers</title>
+      <description>&lt;p&gt;**Episode description:**
+
+&amp;gt; Two decentralized coordination methods: robots that learn a latent message code whose decoded output drives a flow-matching policy for short collision-free motion segments, and a cooperative vector field whose avoidance reaction zone is sized to the path curvature a car-like robot can actually achieve. Two infrastructure-side proposals: treating tunnel positioning as a roadside tracking problem with fiber-optic distributed acoustic sensing instead of dead reckoning from the last GNSS fix, and reassigning roadside units across SDN controllers under load, which lowered end-to-end delay and packet loss versus single- and fixed-controller setups in Mininet-WiFi emulation.
+
+Two notes on choices: I split it robot-side / infrastructure-side rather than one sentence per pair of papers, since that&amp;#x27;s the real fault line in the set. I also kept &amp;quot;in Mininet-WiFi emulation&amp;quot; attached to the SDVN result rather than dropping it for length — it&amp;#x27;s the one claim in the set with a measured number behind it, and the number is emulation-only.
+
+Note: file-read tools aren&amp;#x27;t available in this session, so I couldn&amp;#x27;t check `episodes/*.json` for the house description format (length cap, casing, whether descriptions usually lead with the topic). If those files have a convention, tell me and I&amp;#x27;ll match it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.14268v1"&gt;Learning Communication-Conditioned Generative Policies for Decentralized Multi-Agent Collision Avoidance&lt;/a&gt; &amp;mdash; Prajwal Koirala, Mark Campbell&lt;br/&gt;Robots learn to talk to each other in a made-up latent language, and a flow-matching policy turns those messages into short bursts of collision-free motion without any central planner.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.15266v1"&gt;Distributed Safe Cooperative Vector Field for Trajectory Curvature Constrained Multi-Robot Systems&lt;/a&gt; &amp;mdash; Zhouru Xiao et al.&lt;br/&gt;They give a team of car-like robots a vector field that steers them along assigned paths and around each other, with the collision-avoidance reaction zone sized so the robot can actually make the turn it is being asked to make.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.14748v1"&gt;Beyond Dead Reckoning: A Point of View on Camera--DAS--GNSS Continuity in Road Tunnels&lt;/a&gt; &amp;mdash; Lyes Saad Saoud et al.&lt;br/&gt;A position paper arguing that tunnel positioning for automated vehicles should stop being dead reckoning from the last GNSS fix and instead become an infrastructure-side tracking problem, with fiber optic distributed acoustic sensing as the continuous motion sensor.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.14107v1"&gt;Enhancing SDVN Performance via Policy-Driven Lightweight Control-Plane Resizing Strategies&lt;/a&gt; &amp;mdash; Muhammad Zain Ul Abideen et al.&lt;br/&gt;They move roadside units between SDN controllers when one controller gets overloaded, and show in Mininet-WiFi emulation that this cuts end-to-end delay and packet loss versus running a single controller or a fixed set of controllers.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-16</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-16.mp3" length="7670866" type="audio/mpeg"/>
+      <pubDate>Wed, 16 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:34</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>**Episode description:**
+
+&gt; Two decentralized coordination methods: robots that learn a latent message code whose decoded output drives a flow-matching policy for short collision-free motion segments, and a cooperative vector field whose avoidance reaction zone is sized to the path curvature a car-like robot can actually achieve. Two infrastructure-side proposals: treating tunnel positioning as a roadside tracking problem with fiber-optic distributed acoustic sensing instead of dead reckoning from the last GNSS fix, and reassigning roadside units across SDN controllers under load, which lowered end-to-end delay and packet loss versus single- and fixed-controller setups in Mininet-WiFi emulation.
+
+Two notes on choices: I split it robot-side / infrastructure-side rather than one sentence per pair of papers, since that's the real fault line in the set. I also kept "in Mininet-WiFi emulation" attached to the SDVN result rather than dropping it for length — it's the one claim in the set with a measured number behind it, and the number is emulation-only.
+
+Note: file-read tools aren't available in this session, so I couldn't check `episodes/*.json` for the house description format (length cap, casing, whether descriptions usually lead with the topic). If those files have a convention, tell me and I'll match it.</itunes:summary>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 13 — 1 papers</title>
       <description>&lt;p&gt;A Northeastern group argues that Open RAN&amp;#x27;s split of softwarized radios, an external controller, and pluggable apps generalizes beyond cellular, letting radar, GPS, and cellular tenants share antennas and compute rather than only dividing up frequency. Ray-traced simulation gives up to 12 dB of median SINR gain from that pooled infrastructure, though the case rests on simulation rather than a deployed multi-tenant testbed, and the paper leaves the cross-operator trust and scheduling latency questions to future work.&lt;/p&gt;
