@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2026 21:04:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 21:03:38 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 17 — 2 papers</title>
+      <description>&lt;p&gt;CoAdapt puts an LLM in the runtime loop as a dispatcher that reads a text description of the scene and decides which robots contribute to LiDAR fusion and which fusion algorithm runs, cutting communication cost 38% on OPV2V. The second paper shows that optimizing a status-update link for freshness alone leaves bursty gaps between consecutive updates, and its controller over finite-state Markov channels accepts 8.3% worse average age in exchange for 37.3% fewer joint threshold violations.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.16852v1"&gt;CoAdapt: An LLM-based Framework for Adaptive Collaborative Perception in IIoT Robotic Swarms&lt;/a&gt; &amp;mdash; Houssam Hajj Hassan et al.&lt;br/&gt;They put an LLM in the loop as a runtime dispatcher that reads a text description of the scene and decides which robots get to contribute to the LiDAR fusion and which fusion algorithm runs, saving 38 percent of communication cost on OPV2V.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.16569v1"&gt;Joint Freshness and Age-Dispersion Control over Finite-State Markov Wireless Channels&lt;/a&gt; &amp;mdash; Aresh Dadlani et al.&lt;br/&gt;They show that if you only chase freshness on a status update link, you get bursty gaps between consecutive updates, and their controller trades 8.3 percent worse average age for 37.3 percent fewer joint threshold violations.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-17</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-17.mp3" length="5687831" type="audio/mpeg"/>
+      <pubDate>Thu, 17 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:49</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>CoAdapt puts an LLM in the runtime loop as a dispatcher that reads a text description of the scene and decides which robots contribute to LiDAR fusion and which fusion algorithm runs, cutting communication cost 38% on OPV2V. The second paper shows that optimizing a status-update link for freshness alone leaves bursty gaps between consecutive updates, and its controller over finite-state Markov channels accepts 8.3% worse average age in exchange for 37.3% fewer joint threshold violations.</itunes:summary>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 16 — 4 papers</title>
       <description>&lt;p&gt;**Episode description:**
