@@ -249,6 +249,12 @@
 
   /* ---------- print: one tight page ---------- */
 
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
   /* ---------- density ----------
      The promise is ONE page. Five papers do not fit at the comfortable
      spacing three papers get, so the sheet tightens as the day gets busier
@@ -298,7 +304,7 @@
   }
 </style>
 </head>
-<body class="">
+<body class="density-tight">
 <div class="page">
 
   <header class="masthead">
@@ -306,9 +312,9 @@
       <span class="brand">Daily Papers · Your personal research briefing</span>
       <span>One-page briefing</span>
     </div>
-    <h1 class="doc-title serif">Sep 18 — 2 papers</h1>
+    <h1 class="doc-title serif">Sep 18 — 5 papers</h1>
     <div class="meta">
-      <strong>Episode 8</strong> · September 18, 2026 · 2 papers
+      <strong>Episode 8</strong> · September 18, 2026 · 5 papers
     </div>
   </header>
 
@@ -316,51 +322,117 @@
     <article class="paper">
       <div class="paper-head">
         <h2 class="title serif">
-<a href="http://arxiv.org/abs/2609.19106v1">Leader-Follower Formation Control with Prescribed Convergence Rates under Bearing Persistence of Excitation</a>        </h2>
+<a href="http://arxiv.org/abs/2609.15361v1">Robust and Efficient Communication for Multi-Agent Learning</a>        </h2>
         <div class="badges">
           <span class="pill pill-skim">skim</span>
         </div>
       </div>
 
-      <p class="byline">Tarek Bouazza et al.</p>
+      <p class="byline">Rafael Pina, Varuna De Silva, Corentin Artaud</p>
 
-<p class="hook">They replace the fixed gain in bearing-only leader-follower formation control with a time-varying matrix gain built from each follower&#39;s own bearing measurements, so you can dial in the exponential convergence rate instead of inheriting whatever rate the formation&#39;s excitation level happens to give you.</p>
+<p class="hook">A MARL communication method that regularizes learned messages to reduce uncertainty about future states, and then stress-tests those messages under bandwidth limits and packet loss instead of assuming a perfect channel.</p>
       <dl class="facts">
-<div class="frag"><dt>Problem</dt><dd>In bearing-only formation control, a follower can only recover the missing range information if the bearing directions vary enough over time, the persistence of excitation condition. With a fixed gain, the guaranteed convergence rate is tied to the PE bound, so a formation with weak excitation converges slowly and you cannot fix it by tuning. The gap was decoupling rate from excitation quality.</dd></div><div class="frag"><dt>Method</dt><dd>Each follower runs a matrix gain that is itself a dynamical system driven by the bearing vectors it measures, roughly an adaptive gain that accumulates the directions seen so far and inverts that accumulation, in the spirit of least-squares or Riccati-style adaptive observers. The authors prove the gain stays well posed and uniformly bounded whenever the formation is bearing-persistently exciting, and then show exponential convergence at a rate set by a single tunable design parameter rather than by the PE constant. The design is then carried over from single-integrator to double-integrator follower dynamics.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers at all. There is no convergence rate figure, no formation size, no noise level, no quantitative baseline gap. The only stated evidence is simulations comparing convergence properties against fixed-gain designs, in an eight-page conference paper with three figures.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole guarantee rests on bearing-persistent excitation, and the paper as described never says what happens when that condition is marginal, intermittent, or violated, which is exactly the regime where a rate-decoupling claim would earn its keep. Inverting an accumulated bearing matrix is numerically delicate near the excitation boundary, and uniform boundedness of the gain is a much weaker promise than good conditioning. Add that measurements are assumed noise-free bearings and velocities, evaluation is simulation only with three figures, and there is no comparison against adaptive or range-estimating alternatives, only against fixed-gain controllers the method is designed to beat.</dd></div>      </dl>
+<div class="frag"><dt>Problem</dt><dd>Learned inter-agent communication in multi-agent reinforcement learning usually assumes a clean, unlimited channel, so the messages agents invent are not required to be compact or robust. The open question is whether a learned protocol can stay useful when the channel compresses it or drops it.</dd></div><div class="frag"><dt>Method</dt><dd>They build an attention-based communication architecture and add a regularization term on the messages derived from conditional mutual information, pushing each message to reduce uncertainty about future system states rather than carrying arbitrary latent content. The key move is that the training objective itself shapes message content, and evaluation is then run through imposed bottlenecks and lossy channels rather than an idealized link. They also analyze what the learned messages actually encode under compression.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims MARC significantly outperforms state-of-the-art methods in complex cooperative domains and holds performance under significant data compression, but it names no benchmark, no baseline method and no percentage, so the strength of the evidence cannot be judged from the abstract alone.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on the loss model. A sharp reviewer would ask what the lossy channel actually is, because independent random message dropout is a far kinder failure mode than the correlated, burst-like losses real radio channels produce, and a protocol that survives the former can collapse under the latter. The second question is what the cooperative domains are. If these are grid worlds or particle environments, the claim of real-world constraints for autonomous robotic networks is unearned, and there is no indication in the abstract of any vehicular or physical-layer evaluation.</dd></div>      </dl>
 
-      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work, and the distance is worth naming precisely. Bearing-only formation control assumes vehicles sense each other and communicate almost nothing, which is the opposite of the premise you are building on, namely that vehicles exchange intentions and proposed trajectories and negotiate. There is no maneuver protocol here, no proposal or acceptance, no conflict resolution, no packet loss model. The one transferable idea is the structure of the argument, that convergence speed can be decoupled from how informative the incoming signal is, which has a loose analogy to platoon string stability degrading with communication quality. That analogy is suggestive, not a result you can cite.</p>
+      <p class="why"><span class="lbl">Why it matters</span>Mostly peripheral, with one useful angle. This is emergent communication, where agents learn their own message content, which is the opposite of your world of standardized maneuver coordination messages with fixed semantics that a human can audit and a standards body can ratify. You cannot ship a learned latent vector as a maneuver proposal. What does transfer is the framing of message content as a compression problem with an explicit degradation curve, which is exactly the experiment your field underdoes. Most maneuver coordination work evaluates at full participation and full delivery, then reports a single degraded case. The idea of regularizing toward reducing uncertainty about future states is also a clean formal statement of what an intent message is supposed to do, and it could sharpen how you argue for trajectory sharing over intent sharing. Read it for the evaluation protocol, not the method.</p>
 
       <div class="card-foot">
-        <span class="arxiv-id">arXiv:2609.19106v1</span>
-<a class="pdf-link" href="https://arxiv.org/pdf/2609.19106v1">PDF</a>        <span class="chip">incremental</span>
+        <span class="arxiv-id">arXiv:2609.15361v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.15361v1">PDF</a>        <span class="chip">incremental</span>
       </div>
     </article>
     <article class="paper">
       <div class="paper-head">
         <h2 class="title serif">
-<a href="http://arxiv.org/abs/2609.18929v1">Social Laws for Multi-agent Coordination in Stochastic Environments</a>        </h2>
+<a href="http://arxiv.org/abs/2609.13711v1">Decentralized Multi-Robot Task Allocation Under Degraded Communication: A Benchmark of Performance, Reliability, and Computation</a>        </h2>
         <div class="badges">
           <span class="pill pill-skim">skim</span>
         </div>
       </div>
 
-      <p class="byline">Rolando Fernandez et al.</p>
+      <p class="byline">James Lott, Vahraz Honary</p>
 
-<p class="hook">They take social laws, the old idea that you constrain what agents are allowed to do so they stop getting in each other&#39;s way, and extend it from deterministic goal-reaching to stochastic reward settings, with a way to check how much utility a law guarantees you.</p>
+<p class="hook">They ran six decentralized task-allocation algorithms head to head over five hundred paired instances with lossy radios, and found no single winner — different allocators own different corners of the tradeoff space between route quality, message volume, and compute time.</p>
       <dl class="facts">
-<div class="frag"><dt>Problem</dt><dd>Social law theory was built for deterministic, goal-based worlds where the question is whether an agent can still reach its goal under the restriction. That leaves open the case where outcomes are probabilistic and agents care about accumulated reward, not a binary goal, so there was no way to say what a law actually costs you.</dd></div><div class="frag"><dt>Method</dt><dd>They define alpha-robustness: the guaranteed utility an agent keeps when it runs its own single-agent optimal policy under the assumption that everyone else obeys the law. Verification is done by reducing the question to solving a series of Markov decision processes, so checking a law becomes a planning problem rather than a bespoke proof. The key move is that each agent plans as if alone, and the law, not inference about others, is what carries the coordination.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It says only that empirical evaluation is on toy environments and that the results illustrate the potential of the framework. There are no baselines, no task names, no utility figures.</dd></div><div class="frag"><dt>Caveat</dt><dd>The evaluation is toy environments with no reported quantities, which is thin even for a workshop paper, but the sharper issue is the assumption baked into alpha-robustness itself: it assumes all other agents obey the law. That is exactly the case that does not need much verification. There is no treatment of what happens when a fraction of agents defect or simply cannot comply, and the MDP reduction is likely to scale badly as the number of agents and the joint state space grow.</dd></div>      </dl>
+<div class="frag"><dt>Problem</dt><dd>Papers proposing decentralized multi-robot task allocation methods each report route quality on their own setup, so an engineer choosing one for an embedded platform has no common ground to compare communication robustness, allocation reliability, and computational cost. That comparison was open because nobody had run these allocators against each other under matched, deliberately degraded link conditions.</dd></div><div class="frag"><dt>Method</dt><dd>They fix one scenario, Collaborative Visit, and one instance set, then run CBAA, ACBBA, PI, HIPC, DMCHBA and DGA across twenty-five communication conditions built from three loss models: Bernoulli independent loss, Gilbert-Elliott bursty loss, and Rayleigh fading. Each allocator is scored on five separate axes rather than one — MinMax travel, MinSum travel, publication intensity meaning messages sent per team step, allocation reliability, and wall-clock computation. Extra campaigns vary grid size, robot density, and target load, and separate static pre-allocation computation from computation folded into execution.</dd></div><div class="frag"><dt>Results</dt><dd>Over the twenty-four impaired conditions, DGA and DMCHBA had the lowest mean MinMax travel at 24.49 and 24.78 steps; HIPC narrowly led MinSum at 66.95 steps against DGA at 67.22. The sharpest number is computation: under ideal delivery, median full-protocol time ranged from 4.88 milliseconds for DMCHBA to 1.346 seconds for DGA, a spread of roughly two hundred and seventy times, and DMCHBA also sent the fewest messages at 2.08 publications per team step, while ACBBA, PI and DGA lost stability or viability as links degraded.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on a single synthetic scenario on a grid, Collaborative Visit, with ten targets in the core study and robots that visit points. There is no vehicle dynamics, no continuous space, no deadline or physical conflict between agents, and the communication models are abstract packet-loss processes rather than a simulated radio stack with contention and queuing. A reviewer would also press on the compute numbers: 1.346 seconds for DGA depends entirely on implementation quality and language, and the paper is comparing six codebases that may not be equally optimized, which makes the two-hundred-fold spread partly an artifact of engineering effort rather than algorithmic complexity.</dd></div>      </dl>
 
-      <p class="why"><span class="lbl">Why it matters</span>This is adjacent rather than central. The conceptual link is real: a social law is the limit case of your field, coordination by prior convention instead of by message exchange, and alpha-robustness is a clean way to ask what utility a vehicle sacrifices by following a rule like always yield to the vehicle on the right. But it does not model communication, so it says nothing about message loss, delay, or partial penetration, and those are the failure modes you care about. The honest read is that it offers one vocabulary item, a quantified price of obedience, not a method you would adopt.</p>
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral, but worth twenty minutes for one reason. Your problem is not task allocation — nobody is assigning lane changes to vehicles from a central pool of tasks — and the Collaborative Visit scenario has none of the kinematic coupling or safety deadlines that make maneuver negotiation hard. What does transfer is the evaluation design. This paper does what the maneuver coordination literature mostly does not: it sweeps three distinct loss models including bursty Gilbert-Elliott, reports messages per step as a first-class metric alongside solution quality, and separates the condition where an allocator degrades gracefully from the condition where it stops converging at all. If you are writing an evaluation section on how your negotiation protocol behaves when messages drop, steal this structure. Also note that the consensus-based allocators here, CBAA and ACBBA, are ancestors of the auction and consensus machinery in cooperative right-of-way negotiation, so the failure patterns they show under loss are suggestive of what your protocol will hit.</p>
 
       <div class="card-foot">
-        <span class="arxiv-id">arXiv:2609.18929v1</span>
-<a class="pdf-link" href="https://arxiv.org/pdf/2609.18929v1">PDF</a>        <span class="chip">incremental</span>
+        <span class="arxiv-id">arXiv:2609.13711v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.13711v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.12679v1">Personalized and Trust-Aware Health Recommendation Policies for a Construction Workplace</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Atefeh Mollabagher et al.</p>
+
+<p class="hook">They build a control model of construction workers who lose trust in a health app that nags them, and then tune how often the app should fire an alert per worker using both a short-horizon controller and reinforcement learning.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Workplace health monitoring systems detect fatigue and heat stress but the intervention side is treated as free: push a recommendation and assume it is followed. The open piece is that compliance is itself a state variable, since repeated or badly timed recommendations erode a worker&#39;s trust and the next alert gets ignored, so triggering thresholds and alert frequency have to be chosen against that feedback loop.</dd></div><div class="frag"><dt>Method</dt><dd>They write a dynamic model with three coupled states: worker health evolving over time, worker trust driven by both health outcomes and by the recommendation stream itself, and compliance as a function of trust. On top of that they characterize the policy in two pieces, a health-based threshold that decides when to trigger a recommendation and a recommendation frequency, and they solve for it twice, once with model-based short-horizon control and once with model-free reinforcement learning, then compare how the frequency shifts across workers who differ in health sensitivity and trust sensitivity.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. No dataset, no worker cohort, no baseline recommender, no reported health or compliance improvement. The stated output is qualitative: how recommendation frequency gets adjusted for different worker types to balance health, productivity and trust.</dd></div><div class="frag"><dt>Caveat</dt><dd>The trust dynamics are assumed, not measured. Everything the paper concludes about how often to nag a worker is a property of the trust update law they wrote down, and there is no indication in the abstract of calibration against real construction workers or any behavioral dataset. A sharp reviewer would also ask what the model-free reinforcement learning result adds if the model-based short-horizon controller already recovers the threshold structure, since agreement between the two only validates the solver, not the model.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. There is no vehicle, no communication channel, no multi-agent negotiation: the interaction is one recommender and one worker, and the coupling is psychological rather than physical. The one transferable idea is modeling compliance as a decaying state rather than an assumption, which has a loose analogue in maneuver coordination when a vehicle repeatedly rejects proposals and you want a peer&#39;s acceptance probability to be a state you track rather than a constant. That analogy is thin, and you would get more from the cooperative game theory literature directly. Skip unless you are specifically hunting for ways to model a partner that stops cooperating.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.12679v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.12679v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.12505v1">LettuceVisSim: A Simulator That Generates Lettuce Image Time-series for Vision-Based Reinforcement Learning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Ziye Zhu et al.</p>
+
+<p class="hook">A lettuce growth simulator that renders synthetic time-series crop images in Unity so you can train vision-based reinforcement learning controllers for greenhouses without collecting labelled plant photos.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Vision-based reinforcement learning for controlled environment agriculture needs enormous quantities of labelled crop imagery across many growth trajectories, and that data simply does not exist because every labelled image costs a real growing cycle. Without a source of synthetic labelled images, you cannot run the millions of environment steps reinforcement learning demands.</dd></div><div class="frag"><dt>Method</dt><dd>They chain three components. A process-based model predicts shoot dry weight over time under changing light, temperature and plant spacing. A piecewise cubic regression maps that dry weight to a potential projected leaf area, a canopy layout algorithm turns the area into a geometric arrangement of plants, and a Unity rendering engine converts that layout into RGB images plus matching segmentation masks. The key design choice is going through a physiological state variable, dry weight, rather than learning images directly, which is what gives them free ground-truth labels.</dd></div><div class="frag"><dt>Results</dt><dd>The dry weight model hit R squared of 0.84 under dynamic plant-density management, the dry weight to projected area regression hit 0.94, and the canopy layout reproduced measured ground coverage ratio at R squared 0.84 when fed measured dry weight. Rendering runs under 10 milliseconds per frame, and a lighting control policy was learned from generated images alone as a proof of concept.</dd></div><div class="frag"><dt>Caveat</dt><dd>The number that matters most is the weakest one. When the pipeline runs end to end on its own simulated dry weight rather than measured dry weight, ground coverage agreement collapses from 0.84 to 0.40, and the authors recover 0.76 only by dropping one of twelve datasets. That is the closed-loop error you actually inherit when training a policy, and one excluded outlier out of twelve is a thin basis for calling it an outlier. There is also no evidence that the learned lighting policy transfers to real greenhouse images, which is the whole point of building the simulator.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is not your field and you should not read it for content. The only transferable thing here is the validation discipline, namely reporting the honest end-to-end number alongside the flattering component-wise ones, which is exactly the distinction that gets blurred in cooperative driving simulators when per-module accuracy is reported instead of closed-loop coordination outcomes under real message loss. Note it and move on.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.12505v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.12505v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.12502v1">Communication-Constrained Multi-Robot Exploration With Adaptive Communication Windows</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Ben Rossano, Jaein Lim, Jonathan P. How</p>
+
+<p class="hook">Robots exploring an unknown map decide, at scheduled check-in times, whether it is actually worth driving back to a spot where they can radio each other, by solving a small orienteering problem that credits the exploration they can do along the way.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In intermittent-communication multi-robot exploration you either meet at fixed rendezvous points, which wastes travel, or you communicate only opportunistically, which shares information too rarely. Nobody had made the meet-or-keep-exploring choice an explicit cost-benefit computation at runtime.</dd></div><div class="frag"><dt>Method</dt><dd>MACE is decentralized. Each robot keeps a set of previously identified locations where communication is known to be possible. At a scheduled communication window it estimates the travel cost of reaching each one and casts the choice as a variant of the Vehicle Orienteering Problem, so a candidate route is scored both by the travel it demands and by the frontier exploration it picks up on the way. The route that wins is the one where connecting is cheap because it barely detours from useful exploration.</dd></div><div class="frag"><dt>Results</dt><dd>Simulation only, across environments varying in size and geometry. The single number the abstract offers is up to 23 percent reduction in total exploration time against existing communication-constrained exploration strategies. Those baselines are not named in the abstract, and up to 23 percent is a best case, not a mean.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole method rests on a map of where communication previously worked, which assumes radio connectivity is stable and roughly repeatable at those locations. Real multipath and blockage make that assumption fragile, and the abstract offers no hardware trial and no ablation isolating how much of the 23 percent comes from the orienteering formulation versus simply having scheduled windows at all. A single headline number with no variance and no named baselines is thin evidence for eight pages.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. The shared instinct is real, namely treating communication as a resource you spend deliberately rather than assume, and the orienteering formulation is a clean way to price a detour against its information payoff. But exploration robots choose when to meet, whereas your vehicles cannot detour to improve connectivity; they are locked to a road network and to a negotiation deadline measured in hundreds of milliseconds. There is no maneuver negotiation here, no proposal and acceptance, no deadlock. Worth one look for the framing of communication cost, not for anything transferable to maneuver coordination messages.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.12502v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.12502v1">PDF</a>        <span class="chip">incremental</span>
       </div>
     </article>
   </main>
 
   <footer class="colophon">
-    Generated automatically · 2026-09-18 02:12 · verify against the source before citing
+    Generated automatically · 2026-09-18 06:04 · verify against the source before citing
   </footer>
 
 </div>
