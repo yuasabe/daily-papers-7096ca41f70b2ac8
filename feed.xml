@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2026 21:04:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 21:04:17 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 19 — 5 papers</title>
+      <description>&lt;p&gt;Five papers on keeping multi-agent systems coordinated when the assumptions underneath them shift: per-robot position boxes that turn &amp;quot;the communication graph stays connected&amp;quot; into a local constraint each robot can satisfy alone, crowd navigation that carries a belief about each individual pedestrian&amp;#x27;s responsiveness forward between replans, and a learned similarity metric over opponent driving styles that separates an aggressive blocker from a passive line-holder within a few laps and feeds its predicted uncertainty into overtake decisions on a 1/10-scale racecar. Two networking papers work the other direction, from simulator fidelity to attack surface — one fits a closed-form packet-loss formula to 10.5M labeled ns-3 5G-LENA sidelink receptions so Veins/SUMO users get realistic Mode-2 delivery rates without implementing Mode-2, the other shows that spoofing a rain sensor cuts a platoon&amp;#x27;s usable mmWave link range in half without ever touching the radio channel.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.19912v1"&gt;Distributed Model Predictive Control with Connectivity-based Contracts&lt;/a&gt; &amp;mdash; Jorit Geurts et al.&lt;br/&gt;Every robot in the team gets handed a box it must keep its predicted positions inside, and the boxes are constructed so that if everyone respects their own box, the communication graph cannot break.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.18776v1"&gt;TRACER: Adaptive Multi-Robot Social Navigation via Joint Human-Response Prediction and Interaction-Aware Replanning&lt;/a&gt; &amp;mdash; Lan Hu et al.&lt;br/&gt;Robots moving through crowds pick team trajectories by predicting how each nearby human will react, then remember what that specific human actually did and carry that belief forward into the next replan.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.20578v1"&gt;NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment&lt;/a&gt; &amp;mdash; Rasheed Bello et al.&lt;br/&gt;They ran full ns-3 5G-LENA sidelink simulations, labeled ten and a half million reception outcomes, and fit a closed-form packet-loss formula that lets a Veins and SUMO user get realistic Mode-2 delivery rates without ever implementing the Mode-2 protocol.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.17147v1"&gt;Kernel-Based Metrics Learning for Uncertain Opponent Vehicle Trajectory Prediction in Autonomous Racing&lt;/a&gt; &amp;mdash; Hojin Lee et al.&lt;br/&gt;They learn a similarity metric over opponent driving styles so a Gaussian-process-style predictor can tell an aggressive blocker from a passive line-holder after a few laps of watching, and then use the predicted uncertainty to pick safe overtakes on a one-tenth scale racecar.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.20601v1"&gt;Weather Data Spoofing Attacks on Rain-Adaptive Millimeter-Wave Frequency Selection in V2X Communication Networks&lt;/a&gt; &amp;mdash; Rasheed Bello et al.&lt;br/&gt;If you let a car pick its mmWave band from the rain it thinks is falling, you can spoof the rain sensor and quietly cut a platoon&amp;#x27;s usable link range in half without ever touching the radio channel.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-19</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-19.mp3" length="7404920" type="audio/mpeg"/>
+      <pubDate>Sat, 19 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:12</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Five papers on keeping multi-agent systems coordinated when the assumptions underneath them shift: per-robot position boxes that turn "the communication graph stays connected" into a local constraint each robot can satisfy alone, crowd navigation that carries a belief about each individual pedestrian's responsiveness forward between replans, and a learned similarity metric over opponent driving styles that separates an aggressive blocker from a passive line-holder within a few laps and feeds its predicted uncertainty into overtake decisions on a 1/10-scale racecar. Two networking papers work the other direction, from simulator fidelity to attack surface — one fits a closed-form packet-loss formula to 10.5M labeled ns-3 5G-LENA sidelink receptions so Veins/SUMO users get realistic Mode-2 delivery rates without implementing Mode-2, the other shows that spoofing a rain sensor cuts a platoon's usable mmWave link range in half without ever touching the radio channel.</itunes:summary>
+      <itunes:episode>9</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 18 — 5 papers</title>
       <description>&lt;p&gt;Three papers on coordination when the radio link is unreliable: a MARL method that regularizes learned messages to reduce uncertainty about future states and then stress-tests them under bandwidth caps and packet loss, a 500-instance head-to-head of six decentralized task allocators that finds no single winner across route quality, message volume, and compute time, and an exploration planner that solves a small orienteering problem at scheduled check-ins to decide whether driving back into radio range is worth the detour. Two applied control papers round it out: per-worker tuning of health-alert frequency for construction workers modelled as losing trust in an app that nags them, compared between a short-horizon controller and reinforcement learning, and a Unity lettuce-growth simulator that renders synthetic crop image time-series so vision-based greenhouse controllers can be trained without labelled plant photos.&lt;/p&gt;

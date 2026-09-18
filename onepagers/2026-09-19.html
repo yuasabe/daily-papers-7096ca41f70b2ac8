@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 9 (2026-09-19)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 19 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 9</strong> · September 19, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.19912v1">Distributed Model Predictive Control with Connectivity-based Contracts</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Jorit Geurts et al.</p>
+
+<p class="hook">Every robot in the team gets handed a box it must keep its predicted positions inside, and the boxes are constructed so that if everyone respects their own box, the communication graph cannot break.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Distributed model predictive control for robot teams assumes the communication network stays connected but almost never enforces it, and the standard way to enforce it, keeping the second smallest eigenvalue of the Laplacian positive, is nonconvex and couples every agent to every other agent, so it cannot be solved locally in real time.</dd></div><div class="frag"><dt>Method</dt><dd>Each agent is assigned a connectivity contract, a local spatial region that its predicted positions over the horizon must stay inside. The contracts are built jointly from the currently maintained contract graph so that mutual containment implies the links survive, which converts a global nonconvex graph condition into a per-agent convex constraint. An agent constructs its contract from a single round of exchange with its immediate neighbors and then solves its own optimization completely independently, so there is no iterative consensus loop in the control cycle.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims proofs of closed-loop connectivity maintenance, collision avoidance and satisfaction of local state and input constraints, and reports simulations plus hardware runs on miniature car-like robots, but no success rates, no horizon lengths, no team sizes, no comparison against any baseline controller.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole guarantee rests on the contract graph being maintained, which means the scheme preserves connectivity it already has rather than recovering it, and the abstract says nothing about what happens when a message in that single neighbor exchange is lost or delayed. A one-shot exchange followed by independent optimization is exactly the regime where a dropped packet leaves neighbors with inconsistent contracts, and there is no stated robustness analysis or packet-loss experiment. Confining predicted positions to a prescribed region is also inherently conservative, and with no baseline the cost of that conservatism in travel time or path quality is unmeasured.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is adjacent to your work rather than inside it. The vehicles here are not negotiating who yields or who merges first; they are keeping radio links alive, and the coordination object is a spatial containment region rather than an intention or a proposed trajectory. What is worth borrowing is the structural trick: replacing a global coupled condition with per-agent contracts that are sound by construction, so one exchange replaces an iterative negotiation. If you are building a maneuver agreement scheme that must terminate within a fixed cycle, that single-round design pattern transfers even though the constraint being enforced does not. The connectivity guarantee itself may also matter to you as a precondition, since maneuver coordination messages are worthless if the link drops mid negotiation.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.19912v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.19912v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.18776v1">TRACER: Adaptive Multi-Robot Social Navigation via Joint Human-Response Prediction and Interaction-Aware Replanning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Lan Hu et al.</p>
+
+<p class="hook">Robots moving through crowds pick team trajectories by predicting how each nearby human will react, then remember what that specific human actually did and carry that belief forward into the next replan.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Work on action-conditioned human prediction, multi-robot planning, and online adaptation has mostly lived in separate boxes, so nothing feeds the outcome of an executed maneuver back into the model of how a particular person responds. The gap is a loop: predict, act, observe the actual response, update the belief about that identity, predict again.</dd></div><div class="frag"><dt>Method</dt><dd>TRACER is a receding-horizon planner that scores candidate trajectories for the whole robot team using a per-entity probabilistic response model. The key modeling choice is that the response model is explicitly non-additive: it separates the effect of each individual robot on a person from the pairwise interaction effect of two robots acting together, rather than summing single-robot influences. After executing a trajectory prefix, it updates identity-bound beliefs over latent response modes from the synchronized observed responses, and those beliefs feed the next round of candidate scoring under probabilistic safety and response-aware cost terms.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It reports three qualitative claims: better capture of non-additive interaction effects than a capacity-matched additive predictor, improved response prediction and replanning from persistent identity-consistent evidence, and improved collision-free completion over an independent-robot baseline on the SocialGym2 benchmark. No collision rates, no success percentages, no timing.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on SocialGym2, a simulator where the simulated humans are themselves driven by a policy, so the non-additive interaction effects the model learns to capture may be artifacts of the simulator&#39;s pedestrian model rather than properties of real people. The comparison baselines are also weak: a capacity-matched additive predictor and an independent-robot baseline are the obvious strawmen, not a strong joint planner. And identity-bound belief tracking assumes reliable re-identification across time, which the abstract never addresses.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work, and the reason is structural. TRACER is built for the case where the other agents cannot talk to you, so all coordination knowledge has to be inferred from observed responses. Your problem is the opposite one: vehicles that explicitly exchange intentions and proposed trajectories precisely so they do not have to infer. The one transferable idea is the non-additive response model. If you ever study partial-penetration scenarios where some vehicles broadcast maneuver coordination messages and others stay silent, the silent ones need exactly this kind of identity-persistent, interaction-aware response model, and the insight that two coordinating vehicles jointly produce a reaction you cannot get by adding their individual effects is worth carrying over. Otherwise skim the response model section and move on.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.18776v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.18776v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.20578v1">NS3Learn: Transferring 5G NR Mode-2 Reception Realism from ns-3 to the Veins/SUMO Stack for Connected-Vehicle Safety Assessment</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Rasheed Bello et al.</p>
+
+<p class="hook">They ran full ns-3 5G-LENA sidelink simulations, labeled ten and a half million reception outcomes, and fit a closed-form packet-loss formula that lets a Veins and SUMO user get realistic Mode-2 delivery rates without ever implementing the Mode-2 protocol.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Coupled traffic and network simulations used for connected-vehicle safety studies typically use channel models that ignore resource competition in 5G NR sidelink Mode-2, so they report delivery rates that are far too optimistic exactly in the dense traffic where safety questions matter. Fixing that properly means reimplementing the Mode-2 scheduler inside Veins, which almost nobody does.</dd></div><div class="frag"><dt>Method</dt><dd>They generated ground truth by driving ns-3 5G-LENA with SUMO trajectories on calibrated 3GPP scenarios, then labeled every reception outcome by which physical mechanism decided it: half-duplex blocking, scheduling collision, receiver capture, or decoding failure. They fit a closed-form model, NS3Learn, with one term per mechanism, so each fitted parameter maps to a named physical cause rather than being an opaque regression weight. The result is model distillation between simulators: refitting for a new radio configuration is an offline exercise, not a code change.</dd></div><div class="frag"><dt>Results</dt><dd>Mean absolute deviation in per-instant delivery against ns-3 5G-LENA was 0.06, versus 0.44 and 0.55 for the two alternative models, across two signalized urban networks, six penetration levels from one to one hundred percent, and five seeds per condition. Transferring the fitted parameters to a different intersection cost only twenty percent additional error, and the downstream effect was large: switching to the realistic communication model reversed the direction of simulated traffic speed trends and more than doubled predicted hard-braking events.</dd></div><div class="frag"><dt>Caveat</dt><dd>The ground truth is another simulator, not measurements, so a 0.06 deviation from ns-3 5G-LENA only certifies fidelity to 5G-LENA&#39;s own assumptions about the Mode-2 scheduler and channel. Everything is two signalized urban intersections with a single transfer test, which is thin evidence for a model whose entire selling point is transferability, and the headline claim that hard-braking events more than double is a statement about how sensitive their particular car-following and safety application is, not a validated prediction about real vehicles.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is infrastructure, not coordination research, but it is infrastructure that bites your evaluation methodology directly. If you evaluate a maneuver coordination protocol in Veins and SUMO with a standard channel model, you are almost certainly overstating how often proposals and acceptances arrive, which is precisely the failure mode your degradation analysis is supposed to expose. The penetration sweep from one to one hundred percent is the part closest to your interests, since partial participation is exactly where negotiation protocols fall apart. Worth knowing it exists and worth borrowing if you build a loss model into your own simulations; it will not change how you design a protocol.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.20578v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.20578v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.17147v1">Kernel-Based Metrics Learning for Uncertain Opponent Vehicle Trajectory Prediction in Autonomous Racing</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hojin Lee et al.</p>
+
+<p class="hook">They learn a similarity metric over opponent driving styles so a Gaussian-process-style predictor can tell an aggressive blocker from a passive line-holder after a few laps of watching, and then use the predicted uncertainty to pick safe overtakes on a one-tenth scale racecar.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In racing you cannot ask the opponent what it intends and you do not know its policy, so a single prediction model averaged over all opponents produces confidently wrong trajectories exactly when overtaking margins are thinnest. What was open is getting a useful uncertainty estimate cheaply enough to run onboard at racing speeds.</dd></div><div class="frag"><dt>Method</dt><dd>They build heterogeneous kernel metrics for deep kernel learning, meaning a neural feature encoder feeding a Gaussian process kernel, where the kernel is shaped so that observed ego-opponent interaction histories from similar driving policies land close together and dissimilar ones are pushed apart. The clustering is unsupervised, so no policy labels are required, only logged interactions. The predicted mean and the predicted variance both feed the overtaking decision.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It claims improved prediction accuracy, safe overtakes, and computational efficiency on a one-tenth scale racecar platform, but names no baseline, no error metric, no runtime figure, and no opponent count.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on scale hardware with opponents the authors themselves scripted, so the diversity of driving policies the kernel learns to separate is diversity the authors chose to inject. A reviewer would ask what happens when the opponent policy is outside the training distribution entirely, and would want the ablation that separates the contribution of the learned kernel metric from the plain deep kernel learning baseline. Absent numbers in the abstract, the accuracy claim is unverifiable from the paper&#39;s own front matter.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is the opposite of your problem. The entire premise is that the other vehicle will not talk to you and must be inferred from behaviour, whereas your work assumes an explicit exchange of intentions or trajectories. The one transferable piece is the uncertainty representation: if you model partial participation, where some vehicles broadcast maneuver coordination messages and others stay silent, you need a principled predictor for the silent ones, and a calibrated variance per opponent is more useful to a negotiation protocol than a point prediction. Read it as a component for your degraded-communication case, not as related work.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.17147v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.17147v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.20601v1">Weather Data Spoofing Attacks on Rain-Adaptive Millimeter-Wave Frequency Selection in V2X Communication Networks</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Rasheed Bello et al.</p>
+
+<p class="hook">If you let a car pick its mmWave band from the rain it thinks is falling, you can spoof the rain sensor and quietly cut a platoon&#39;s usable link range in half without ever touching the radio channel.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Rain-adaptive band selection for mmWave V2X sidelinks treats the meteorological input as trusted, so nobody had asked what happens when that input is a lie. The attack needs no transmitter and leaves no channel footprint, which puts it outside everything jamming and message-authentication defenses are built to catch.</dd></div><div class="frag"><dt>Method</dt><dd>They spoof the rainfall reading two ways and let the victim&#39;s own selection logic do the damage: force-up pushes the carrier to 73 GHz, force-down pins it at 5 GHz. Evaluation runs in MilliCar, an ns-3 module where the chosen band becomes the actual 3GPP NR V2X carrier with per-band propagation, beamforming and blockage, so the range loss comes out of the physics rather than an assumed model. They then build the detector the attack implies: rain attenuation grows linearly with distance while path loss grows logarithmically, so a receiver compares measured SINR against what the claimed rain rate predicts and flags the mismatch.</dd></div><div class="frag"><dt>Results</dt><dd>Force-up holds an eight-vehicle platoon&#39;s reliable range at 38 meters against an honest baseline of 82 meters. Force-down keeps 97 percent long-range reception but cuts the transport block to a third and pushes long-range latency to 12.5 milliseconds, four times baseline. The detector catches force-up with 98 percent probability inside 1.5 seconds at a 1 percent false-alarm rate, and re-selection lifts long-range reception from 60 to 75 percent.</dd></div><div class="frag"><dt>Caveat</dt><dd>The authors say it themselves, which is honest, but it is still the headline weakness: the defense is structurally blind to force-down, because a 5 GHz fallback is nearly rain-immune and therefore produces no SINR anomaly to test against. So half the threat model is unmitigated, and force-down is arguably the more insidious half since the link stays up and only capacity and latency degrade. Everything is ns-3 simulation with no hardware or field rain measurement, the platoon is a single eight-vehicle configuration, and the recommended fix, an authenticated meteorological input, is asserted rather than designed or evaluated.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to maneuver negotiation itself, but it hands you a concrete and unusually well-quantified degradation model for the layer your protocols sit on. If you study how coordination falls apart when messages are lost or delayed, note that this is an adversary who chooses your range and latency rather than randomly degrading them, and 38 meters of reliable range is below the interaction distance most lane-change and gap-creation negotiations assume. The force-down case is the one to sit with, because it looks like a healthy link with 97 percent reception while quietly quadrupling latency, which is exactly the failure that breaks proposal and acceptance timing and string stability without tripping any liveness check your protocol has.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.20601v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.20601v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-19 06:04 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
