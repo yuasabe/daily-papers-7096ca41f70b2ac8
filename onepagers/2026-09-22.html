@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 10 (2026-09-22)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 22 — 2 papers</h1>
+    <div class="meta">
+      <strong>Episode 10</strong> · September 22, 2026 · 2 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.19106v1">Leader-Follower Formation Control with Prescribed Convergence Rates under Bearing Persistence of Excitation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Tarek Bouazza et al.</p>
+
+<p class="hook">They replace the fixed gain in bearing-only leader-follower formation control with a gain matrix that adapts to the bearings each follower actually sees, so you can dial in the exponential convergence rate instead of inheriting whatever rate the formation&#39;s excitation happens to give you.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In bearing-based formation control with fixed gains, the guaranteed convergence rate is hostage to the persistence of excitation bound of the desired formation, so a formation geometry that is only weakly exciting converges slowly and you cannot fix it by tuning. The gap was that nobody had decoupled the achievable rate from that excitation bound while keeping the gain well posed and bounded.</dd></div><div class="frag"><dt>Method</dt><dd>Each follower runs a time-varying matrix gain driven by its own accumulated relative bearing measurements, in the spirit of the excitation-normalizing gains used in adaptive estimation. They prove the gain is well posed and uniformly bounded whenever the formation is bearing persistently exciting, and show the closed loop converges exponentially at a rate set by one tunable design parameter rather than by the excitation bound. The design is then carried over from single-integrator to double-integrator follower dynamics.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers at all. There is no convergence rate figure, no noise level, no formation size, and no benchmark beyond a qualitative simulation comparison against fixed-gain designs, across three figures in eight pages.</dd></div><div class="frag"><dt>Caveat</dt><dd>The whole evidence base is simulation against the authors&#39; own fixed-gain baseline, with no measurement noise model stated and no hardware. The sharper concern is conditioning: a gain built by accumulating bearing information must be inverted or normalized somewhere, and uniform boundedness under ideal bearing persistence of excitation says nothing about what happens when excitation is marginal, when bearings are noisy, or when a follower briefly loses sight of its leader. No ablation on how the tunable rate parameter trades against control effort or actuator saturation, which is exactly where a prescribed-rate claim usually breaks.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work and you should treat it as such. It is sensor-only formation keeping with no communication in the loop at all: no intent exchange, no proposals or acceptances, no negotiation, and a fixed leader-follower hierarchy that assumes away the question of who yields. The one thread worth noting is that it lives on the opposite side of your central dichotomy, since it shows how far you can get on relative measurements alone, which makes it a useful reference point when you argue why explicit maneuver coordination messages buy something that bearing feedback cannot. If you want the platooning connection, the double-integrator extension is the closest thing here to a string of vehicles, but the paper says nothing about string stability, communication loss, or partial participation.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.19106v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.19106v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.21974v1">Multi-Agent Event-Triggered LQG Control under Shared Communication Constraints</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zahra Hashemi, Dipankar Maity</p>
+
+<p class="hook">When a group of independent LQG plants share one channel with a hard cap on how many can transmit per step, the controllers still decouple agent by agent, and the only hard part left is deciding who gets to speak, which they solve with a mixed integer program and then approximate with a cheap auction.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Event-triggered control is usually derived for a single plant, where the trigger only trades that plant&#39;s estimation error against its own communication cost. Once several plants share a network with a per-step capacity limit, the triggering decisions become globally coupled even though the dynamics are not, and the standard separation results do not obviously survive that coupling.</dd></div><div class="frag"><dt>Method</dt><dd>They prove the optimal control law stays certainty-equivalent and splits into one independent finite-horizon Riccati recursion per agent, so the coupling lives entirely in the schedule. The schedule is then handled by a centralized receding-horizon scheduler, written as a mixed-integer linear program using a closed-form expression for the estimation-error covariance under a given transmission pattern. Two scalability devices sit on top: a window-based skip-pruning test that safely fixes runs of consecutive transmissions to zero before the solver runs, and an auction-inspired scheduler that ranks agents by a one-step transmission-benefit score.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It only asserts, qualitatively, that the model predictive scheduler gets the best trade-off between control cost and communication cost, and that the auction scheduler lands close to it at substantially lower computational cost, with no agent counts, horizon lengths, solve times or percentage gaps stated.</dd></div><div class="frag"><dt>Caveat</dt><dd>Two things a reviewer would press on. First, everything rests on decoupled agent dynamics, so the shared network is the only thing tying the agents together; this is a bandwidth allocation result dressed as multi-agent control, and nothing here indicates what happens when the plants actually interact. Second, the scheduler is centralized and needs every agent&#39;s estimation-error covariance in one place at every step, which quietly assumes a perfect side channel for exactly the information the paper says is scarce. Add that the auction score is one step greedy with no stated optimality gap, and the claim that it comes close to the mixed-integer solution rests on unreported simulation numbers.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>Peripheral. It shares your vocabulary, auctions and communication limits and degraded coordination, but not your problem: there is no negotiation here, no proposal and acceptance, no conflict to resolve, because the agents have nothing to agree about. The one transferable idea is the transmission-benefit score, which is a principled answer to the question of which vehicle should get the channel when maneuver coordination messages are congested, and that is worth borrowing as a congestion-control heuristic. But if you are looking for results on how coordination degrades under loss or partial participation, this paper assumes the capacity limit away into a scheduler rather than studying what breaks.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.21974v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.21974v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-22 06:04 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 21:04:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 21:04:14 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 22 — 2 papers</title>
+      <description>&lt;p&gt;Bearing-only leader-follower formation control normally inherits whatever exponential convergence rate the formation&amp;#x27;s excitation happens to supply; the first paper replaces the fixed gain with a gain matrix adapted to the bearings each follower actually measures, making the rate something you prescribe rather than observe. The second takes independent LQG plants sharing a single channel with a hard per-step cap on transmitters and shows the controllers still separate agent by agent, leaving scheduling as the only coupled piece — posed as a mixed integer program and then approximated by a cheap auction.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.19106v1"&gt;Leader-Follower Formation Control with Prescribed Convergence Rates under Bearing Persistence of Excitation&lt;/a&gt; &amp;mdash; Tarek Bouazza et al.&lt;br/&gt;They replace the fixed gain in bearing-only leader-follower formation control with a gain matrix that adapts to the bearings each follower actually sees, so you can dial in the exponential convergence rate instead of inheriting whatever rate the formation&amp;#x27;s excitation happens to give you.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.21974v1"&gt;Multi-Agent Event-Triggered LQG Control under Shared Communication Constraints&lt;/a&gt; &amp;mdash; Zahra Hashemi, Dipankar Maity&lt;br/&gt;When a group of independent LQG plants share one channel with a hard cap on how many can transmit per step, the controllers still decouple agent by agent, and the only hard part left is deciding who gets to speak, which they solve with a mixed integer program and then approximate with a cheap auction.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-22</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-22.mp3" length="5635005" type="audio/mpeg"/>
+      <pubDate>Tue, 22 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:45</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Bearing-only leader-follower formation control normally inherits whatever exponential convergence rate the formation's excitation happens to supply; the first paper replaces the fixed gain with a gain matrix adapted to the bearings each follower actually measures, making the rate something you prescribe rather than observe. The second takes independent LQG plants sharing a single channel with a hard per-step cap on transmitters and shows the controllers still separate agent by agent, leaving scheduling as the only coupled piece — posed as a mixed integer program and then approximated by a cheap auction.</itunes:summary>
+      <itunes:episode>10</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 19 — 5 papers</title>
       <description>&lt;p&gt;Five papers on keeping multi-agent systems coordinated when the assumptions underneath them shift: per-robot position boxes that turn &amp;quot;the communication graph stays connected&amp;quot; into a local constraint each robot can satisfy alone, crowd navigation that carries a belief about each individual pedestrian&amp;#x27;s responsiveness forward between replans, and a learned similarity metric over opponent driving styles that separates an aggressive blocker from a passive line-holder within a few laps and feeds its predicted uncertainty into overtake decisions on a 1/10-scale racecar. Two networking papers work the other direction, from simulator fidelity to attack surface — one fits a closed-form packet-loss formula to 10.5M labeled ns-3 5G-LENA sidelink receptions so Veins/SUMO users get realistic Mode-2 delivery rates without implementing Mode-2, the other shows that spoofing a rain sensor cuts a platoon&amp;#x27;s usable mmWave link range in half without ever touching the radio channel.&lt;/p&gt;
