@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 21:04:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 21:03:43 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 23 — 5 papers</title>
+      <description>&lt;p&gt;Network-flow constraints that keep a multi-vehicle MILP planner&amp;#x27;s communication graph connected scale better for plain connectivity but give no average speedup for k-hop connectivity. Nash and Stackelberg intersection controllers, moved from MATLAB onto Quanser QCar 2 scale cars, start to suffer from sensing and state-estimation noise, and robots that share frozen perception embeddings instead of positions learn from reward alone to detect an occluded hazard in 99.7% of episodes. Also covered: a VCG-style auction where drone operators bid for slots in a shared safe corridor and gain nothing by misreporting their costs, and a scenario-based MPC that writes driving rules in signal temporal logic and, when the rules can&amp;#x27;t all be met, relaxes them with a Pareto tradeoff across several agents rather than protecting only the ego vehicle.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.24474v1"&gt;Mixed-integer flow formulations for motion planning and decision-making of networked multi-agent systems&lt;/a&gt; &amp;mdash; Angelo Caregnato-Neto et al.&lt;br/&gt;The authors replace subtour-elimination constraints with network-flow constraints to keep a multi-vehicle MILP planner&amp;#x27;s communication graph connected, and find this scales better for plain connectivity but gives no average speedup for k-hop connectivity.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23904v1"&gt;Hardware-in-the-Loop Evaluation of Game-Theoretic Autonomous Driving&lt;/a&gt; &amp;mdash; Aakanksha Kataria, Huiwen Yan, Mushuang Liu&lt;br/&gt;The authors take existing Nash and Stackelberg intersection-crossing controllers, run them on Quanser QCar 2 scale cars through a staged pipeline from MATLAB to a simulator to physical hardware, and find that sensing and state-estimation noise matter once the controllers leave simulation.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23269v1"&gt;Latent Telepathy: Multi-Robot Communication with Self-Supervised Perceptual Latents&lt;/a&gt; &amp;mdash; Howard Wang, Han Zheng, Cathy Wu&lt;br/&gt;Instead of sending each other positions or planned trajectories, robots broadcast the frozen perception embedding they already compute. A teammate learns from reward alone to read an occluded hazard out of it, and it does so in 99.7 percent of episodes.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23256v1"&gt;Paying for Space: Incentive-Aware Motion Planning for Multi-Agent Collision Avoidance&lt;/a&gt; &amp;mdash; Debajyoti Chakrabarti, Anushri Dixit&lt;br/&gt;They let drone operators bid for slots in a shared safe corridor, and use a VCG-style payment so that lying about your own costs never gets you a better trajectory.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23263v1"&gt;Scenario MPC with STL Specifications and Pareto-Based Feasibility Repair&lt;/a&gt; &amp;mdash; Tianhao Wu, Yiwei Lyu&lt;br/&gt;An MPC controller that encodes driving rules in signal temporal logic, handles uncertain surrounding vehicles by sampling scenarios, and when the rules become impossible to satisfy, relaxes them by picking a Pareto tradeoff across several agents&amp;#x27; objectives instead of only protecting the ego vehicle.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-23</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-23.mp3" length="6587031" type="audio/mpeg"/>
+      <pubDate>Wed, 23 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:04</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Network-flow constraints that keep a multi-vehicle MILP planner's communication graph connected scale better for plain connectivity but give no average speedup for k-hop connectivity. Nash and Stackelberg intersection controllers, moved from MATLAB onto Quanser QCar 2 scale cars, start to suffer from sensing and state-estimation noise, and robots that share frozen perception embeddings instead of positions learn from reward alone to detect an occluded hazard in 99.7% of episodes. Also covered: a VCG-style auction where drone operators bid for slots in a shared safe corridor and gain nothing by misreporting their costs, and a scenario-based MPC that writes driving rules in signal temporal logic and, when the rules can't all be met, relaxes them with a Pareto tradeoff across several agents rather than protecting only the ego vehicle.</itunes:summary>
+      <itunes:episode>10</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 22 — 2 papers</title>
       <description>&lt;p&gt;Bearing-only leader-follower formation control normally inherits whatever exponential convergence rate the formation&amp;#x27;s excitation happens to supply; the first paper replaces the fixed gain with a gain matrix adapted to the bearings each follower actually measures, making the rate something you prescribe rather than observe. The second takes independent LQG plants sharing a single channel with a hard per-step cap on transmitters and shows the controllers still separate agent by agent, leaving scheduling as the only coupled piece — posed as a mixed integer program and then approximated by a cheap auction.&lt;/p&gt;
