@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2026 21:03:43 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 21:03:05 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 24 — 5 papers</title>
+      <description>&lt;p&gt;A relevance filter for collective perception messages has each vehicle send only the detected objects that matter for safety, and send them less often when nothing critical is happening; the authors report roughly the safety of 10 Hz full broadcasting at about a fifteenth of the bandwidth. The rest of the papers: an exact convergence test for distributed observers over switching networks when the system matrix commutes with the coupling matrices, which also covers unstable plants like vehicle platoons; a finite-sample bound for decentralized team learning with only private observations and delayed shared information; multi-robot exploration with probabilistic peer intent and multi-hop plan relay, where neither addition wins everywhere; and a result showing that networks with identical spectra can get opposite results from communicating.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.26470v1"&gt;Frugal Collective Perception: Context-Aware Adaptive Reporting for Safety-Critical C-ITS&lt;/a&gt; &amp;mdash; Romain Tessier et al.&lt;br/&gt;This is a relevance filter for collective perception messages. Each vehicle sends only the detected objects that matter for safety, and sends them less often when nothing critical is happening. The authors report roughly the safety of 10 hertz full broadcasting for about a fifteenth of the bandwidth.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.26065v1"&gt;On stability of a distributed observer over switching networks: The case of commutative coupling&lt;/a&gt; &amp;mdash; Sunghyun Koo, Jin Gyu Lee, Hyungbo Shim&lt;br/&gt;Koo, Lee and Shim show that if the system matrix commutes with the observer&amp;#x27;s coupling matrices, you get an exact necessary and sufficient test for when a distributed observer converges over a switching network, and that test also covers unstable plants such as a vehicle platoon.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.26783v1"&gt;A Decentralized Partially Observable Team Decision Methodology with Delayed Information Sharing&lt;/a&gt; &amp;mdash; Xiaoxing Ren, Thomas Parisini, Andreas A. Malikopoulos&lt;br/&gt;A theory paper showing that each member of a cooperative team can learn its own piece of a near-optimal team policy using only its private observations and team information that arrives with a delay, with no central coordinator and no known model, and with a finite-sample bound on how much data this takes.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.22726v1"&gt;Decentralized Multi-Robot Exploration with Probabilistic Peer Intent and Multi-hop Plan Propagation&lt;/a&gt; &amp;mdash; Saurbh Singh Jamwal, Nived Chebrolu, Shivaram Kalyanakrishnan&lt;br/&gt;The authors take an existing decentralized tree-search planner for multi-robot exploration and add two things. Shared peer waypoints get smeared into a probability map of where teammates will go, and plans get relayed over multiple hops. Neither addition wins everywhere.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23310v1"&gt;When Does Communication Help? Beyond Spectral Descriptions of Collective Intelligence&lt;/a&gt; &amp;mdash; Xuening Wu&lt;br/&gt;Two networks of agents can share identical eigenvalue and singular-value spectra and still get opposite results from communicating, so predicting whether talking helps means using a task-aware local-response model, not a spectral summary.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-24</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-24.mp3" length="6027740" type="audio/mpeg"/>
+      <pubDate>Thu, 24 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:17</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A relevance filter for collective perception messages has each vehicle send only the detected objects that matter for safety, and send them less often when nothing critical is happening; the authors report roughly the safety of 10 Hz full broadcasting at about a fifteenth of the bandwidth. The rest of the papers: an exact convergence test for distributed observers over switching networks when the system matrix commutes with the coupling matrices, which also covers unstable plants like vehicle platoons; a finite-sample bound for decentralized team learning with only private observations and delayed shared information; multi-robot exploration with probabilistic peer intent and multi-hop plan relay, where neither addition wins everywhere; and a result showing that networks with identical spectra can get opposite results from communicating.</itunes:summary>
+      <itunes:episode>11</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 23 — 5 papers</title>
       <description>&lt;p&gt;Network-flow constraints that keep a multi-vehicle MILP planner&amp;#x27;s communication graph connected scale better for plain connectivity but give no average speedup for k-hop connectivity. Nash and Stackelberg intersection controllers, moved from MATLAB onto Quanser QCar 2 scale cars, start to suffer from sensing and state-estimation noise, and robots that share frozen perception embeddings instead of positions learn from reward alone to detect an occluded hazard in 99.7% of episodes. Also covered: a VCG-style auction where drone operators bid for slots in a shared safe corridor and gain nothing by misreporting their costs, and a scenario-based MPC that writes driving rules in signal temporal logic and, when the rules can&amp;#x27;t all be met, relaxes them with a Pareto tradeoff across several agents rather than protecting only the ego vehicle.&lt;/p&gt;

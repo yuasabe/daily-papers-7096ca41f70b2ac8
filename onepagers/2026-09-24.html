@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 11 (2026-09-24)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 24 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 11</strong> · September 24, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.26470v1">Frugal Collective Perception: Context-Aware Adaptive Reporting for Safety-Critical C-ITS</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Romain Tessier et al.</p>
+
+<p class="hook">This is a relevance filter for collective perception messages. Each vehicle sends only the detected objects that matter for safety, and sends them less often when nothing critical is happening. The authors report roughly the safety of 10 hertz full broadcasting for about a fifteenth of the bandwidth.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Standard collective perception rules send every detected object at high rates, whether or not any receiver needs it. That congests the channel, fills processing queues, and does not scale in dense traffic. Existing generation rules decide what to send from object dynamics, not from whether the object matters to anyone.</dd></div><div class="frag"><dt>Method</dt><dd>The authors add a filter at the sender. It scores each perceived object by how relevant and how critical it is in the current situation, then uses that score to decide both which objects go into the message and how often the message is sent. They test it in a combined SUMO and Artery simulation, varying how much computing power the vehicles have and the base transmission rate.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports safety comparable to conventional messages sent at the 10 hertz maximum, over 93 percent less communication volume, and no queue saturation. It gives no number for the safety metric itself, and it names no baseline apart from conventional collective perception at fixed rates.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is in simulation, and the safety claim is only called comparable, with no stated metric or margin. A 93 percent cut measured against a 10 hertz send-everything baseline is a weak comparison, because the standard&#39;s own dynamics-based rules and earlier redundancy-mitigation schemes already cut a lot of traffic. The key question is how criticality is judged at the sender. If the sender decides what matters to the receivers, an object it misjudges as irrelevant is simply never sent, and the abstract does not say how often that happens or how bad the result is.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is about sharing perception, not coordinating maneuvers, so it is mostly outside your work. Nothing here involves negotiation, intent sharing, proposals and acceptances, platooning, or joint planning. The one useful idea is making message content and rate depend on context and criticality, which could carry over to designing maneuver coordination messages under congestion. Its analysis of queues and computing tiers might also help you model delayed coordination messages.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.26470v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.26470v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.26065v1">On stability of a distributed observer over switching networks: The case of commutative coupling</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Sunghyun Koo, Jin Gyu Lee, Hyungbo Shim</p>
+
+<p class="hook">Koo, Lee and Shim show that if the system matrix commutes with the observer&#39;s coupling matrices, you get an exact necessary and sufficient test for when a distributed observer converges over a switching network, and that test also covers unstable plants such as a vehicle platoon.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Stability results for distributed observers over switching, unreliable networks have mostly required the plant to be neutrally stable. That leaves out unstable dynamics, and a platoon&#39;s relative positions are one example of such dynamics.</dd></div><div class="frag"><dt>Method</dt><dd>They assume the system matrix commutes with every coupling matrix the network can switch between. That lets the error dynamics be split so the plant&#39;s own growth and the network coupling can be studied separately. From this split they derive a condition that is both necessary and sufficient for stability under switching topologies.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, no simulation details and no baselines. The contribution is a stability condition, and the platoon appears only as an example of a system the result covers.</dd></div><div class="frag"><dt>Caveat</dt><dd>Commutativity is a strong structural assumption. It holds for symmetric setups with identical agents, but it is unclear whether a realistic platoon with different vehicles, lags or controller gains satisfies it. The abstract also does not say whether the switching condition can be checked for real packet loss, or whether it holds only for arbitrary or dwell-time switching.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is about estimation, not negotiation, and it has no message design, proposals or acceptance. The one link is platooning under unreliable communication: if you need a clean argument that a shared platoon state estimate stays consistent while links drop, the commutativity trick might be worth borrowing.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.26065v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.26065v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.26783v1">A Decentralized Partially Observable Team Decision Methodology with Delayed Information Sharing</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Xiaoxing Ren, Thomas Parisini, Andreas A. Malikopoulos</p>
+
+<p class="hook">A theory paper showing that each member of a cooperative team can learn its own piece of a near-optimal team policy using only its private observations and team information that arrives with a delay, with no central coordinator and no known model, and with a finite-sample bound on how much data this takes.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Decentralized partially observable team problems are usually solved either with a known model or with centralized training. Neither works when agents share information with a lag and nobody knows the dynamics, so it was an open question whether fully decentralized learning could still get close to the team optimum.</dd></div><div class="frag"><dt>Method</dt><dd>They use the common-information approach from team theory. Because common information is shared with a delay, the team problem can be recast as an equivalent problem where each member plans over that common information together with its own private information. Each member then assumes the latent dynamics are low-rank, learns an approximate low-rank Markov decision process from its own data, and runs least-squares value iteration to get its policy. They then prove that these separately computed policies match the corresponding components of an approximate team-optimal policy.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, no benchmarks and no baselines. The claimed evidence is theoretical: an approximation result tying each member&#39;s solution to the centralized team solution, plus a finite-sample performance guarantee and a sample-complexity bound. At fifteen pages with two figures, any experiments are likely small illustrations.</dd></div><div class="frag"><dt>Caveat</dt><dd>The guarantees depend on two strong structural assumptions: the latent dynamics must be exactly or nearly low-rank, and the delay in common information must have a fixed, known pattern. Neither says anything about random packet loss, variable latency, or team members who do not take part. The sample-complexity bound probably grows with the size of the common-information history, and the abstract does not say how tight it is or show that it holds on any real control problem.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to maneuver negotiation. It does not deal with lane changes, message formats, proposal and acceptance schemes, or right of way. The one useful link is conceptual. If you want a formal argument that vehicles sharing intentions over a delayed channel can still reach team-optimal behaviour without a central coordinator, the delayed common-information framing is the right reference. Malikopoulos&#39;s group also applies this line of work to connected vehicles, so it&#39;s worth knowing as theoretical background.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.26783v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.26783v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.22726v1">Decentralized Multi-Robot Exploration with Probabilistic Peer Intent and Multi-hop Plan Propagation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Saurbh Singh Jamwal, Nived Chebrolu, Shivaram Kalyanakrishnan</p>
+
+<p class="hook">The authors take an existing decentralized tree-search planner for multi-robot exploration and add two things. Shared peer waypoints get smeared into a probability map of where teammates will go, and plans get relayed over multiple hops. Neither addition wins everywhere.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In decentralized exploration, robots only know the plans of peers within direct radio range, so they duplicate coverage. The earlier DMCE method also treated those peer plans as exact waypoint sequences, with no sense of how uncertain they are.</dd></div><div class="frag"><dt>Method</dt><dd>Each robot turns the waypoint sequences it receives from peers into a continuous spatial field of predicted intent. That field is used to discount rewards when the robot&#39;s local Monte Carlo Tree Search evaluates candidate actions. Separately, robots forward the plans they receive, so intent spreads over several hops beyond direct range.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It only says that each addition can improve exploration across several simulated environments and team sizes, that the gains depend on map structure and team size, and that the method was deployed on three real robots. The only named baseline is DMCE.</dd></div><div class="frag"><dt>Caveat</dt><dd>The claim is conditional. Each component helps in some settings, but the abstract never says whether combining them helps or when one hurts. There is also no reported cost of multi-hop relaying in bandwidth or staleness, even though that is the whole trade-off under limited communication. The real-robot part is a three-robot demonstration, not a controlled comparison.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. The robots never negotiate: intent is broadcast and softly avoided, with no proposal, acceptance or yielding step, and no safety-critical conflicts to resolve. The one idea you could reuse is turning a shared trajectory into a probabilistic occupancy field, and the question of how stale relayed plans affect coordination. Both relate to intent-sharing message design and to settings where only some vehicles are in range.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.22726v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.22726v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.23310v1">When Does Communication Help? Beyond Spectral Descriptions of Collective Intelligence</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Xuening Wu</p>
+
+<p class="hook">Two networks of agents can share identical eigenvalue and singular-value spectra and still get opposite results from communicating, so predicting whether talking helps means using a task-aware local-response model, not a spectral summary.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>People often judge communication in distributed inference by aggregate spectral quantities of the interaction matrix. That shortcut assumes the spectrum tells you whether consensus improves decisions, and nobody had tested whether it actually does. The paper also asks who gets the benefit when bias is shared within communities, which an average accuracy gain hides.</dd></div><div class="frag"><dt>Method</dt><dd>First, it builds stable linear systems where the evidence, network and readout stay fixed and only the direction of messages changes. The interaction and state operators keep the same spectra, yet the gain from communicating flips sign. Second, it fits a standard task-projected local-response approximation on labeled calibration data held out from the test set, and uses it to predict multi-round gains in small trained nonlinear agents. Third, it adds calibration constraints to limit harm to communities under community-shared bias.</dd></div><div class="frag"><dt>Results</dt><dd>Changing only message orientation moves accuracy from 72.6 percent up to 91.2 percent, or down to 65.9 percent. The local-response predictor hits a root mean square error of 0.45 percentage points on two synthetic tasks, with further tests on natural edge changes and handwritten digits. The calibration constraints reduce observed community harm while keeping much of the mean benefit, but they guarantee nothing, and full direct calibration does about as well.</dd></div><div class="frag"><dt>Caveat</dt><dd>The flagship result is a hand-built counterexample. Showing that spectra can fail is not the same as showing they usually fail in real networks. The predictor is tested on small agents, two synthetic tasks and handwritten digits, and it needs labeled calibration data, which a deployed system would not have. The author openly says broad transfer and practical superiority remain unproven, and the calibration method does no better than the simpler direct baseline.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is about agents voting on an inference problem, not about vehicles negotiating maneuvers, and it has nothing on message loss, delay, partial participation or string stability. The one idea worth borrowing is that consensus can reach agreement while making decisions worse, and that message direction matters more than aggregate network properties. That could shape how you frame the case against pure consensus-based trajectory agreement, or how you check whether shared intentions actually help each vehicle.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.23310v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.23310v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-24 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
