@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 21:03:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 21:02:46 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 25 — 2 papers</title>
+      <description>&lt;p&gt;Two papers on what to do when many agents share a network too limited to carry everything they want to send. One keeps each agent&amp;#x27;s LQG controller separate and treats deciding who transmits as a coupled scheduling problem, solved by a MILP receding-horizon scheduler and a cheaper auction heuristic; the other has pairs of robots decide whom to gossip with, when, and which part of the shared state to send, which keeps 80 ergodic-search robots in consensus while sending about as much data as a central server would.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.21974v1"&gt;Multi-Agent Event-Triggered LQG Control under Shared Communication Constraints&lt;/a&gt; &amp;mdash; Zahra Hashemi, Dipankar Maity&lt;br/&gt;When many decoupled agents share a network that can only carry a few messages per step, the control law stays per-agent LQG but deciding who gets to transmit becomes a coupled scheduling problem, which they solve with a MILP-based receding-horizon scheduler and a cheaper auction heuristic.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.24702v1"&gt;AC-DC: Adaptive Communication for Scalable Dynamic Average Consensus in Multi-Robot Ergodic Search&lt;/a&gt; &amp;mdash; Robin Inho Kee, Begum Cannataro, Vasileios Tzoumas&lt;br/&gt;A gossip-style consensus scheme where robot pairs pick who to talk to, when, and which slice of the shared state to send, so eighty search robots stay coordinated while sending about as much data as a central server would.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-25</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-25.mp3" length="4535281" type="audio/mpeg"/>
+      <pubDate>Fri, 25 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:13</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Two papers on what to do when many agents share a network too limited to carry everything they want to send. One keeps each agent's LQG controller separate and treats deciding who transmits as a coupled scheduling problem, solved by a MILP receding-horizon scheduler and a cheaper auction heuristic; the other has pairs of robots decide whom to gossip with, when, and which part of the shared state to send, which keeps 80 ergodic-search robots in consensus while sending about as much data as a central server would.</itunes:summary>
+      <itunes:episode>12</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 24 — 5 papers</title>
       <description>&lt;p&gt;A relevance filter for collective perception messages has each vehicle send only the detected objects that matter for safety, and send them less often when nothing critical is happening; the authors report roughly the safety of 10 Hz full broadcasting at about a fifteenth of the bandwidth. The rest of the papers: an exact convergence test for distributed observers over switching networks when the system matrix commutes with the coupling matrices, which also covers unstable plants like vehicle platoons; a finite-sample bound for decentralized team learning with only private observations and delayed shared information; multi-robot exploration with probabilistic peer intent and multi-hop plan relay, where neither addition wins everywhere; and a result showing that networks with identical spectra can get opposite results from communicating.&lt;/p&gt;

@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">13 episodes ·
-       50 papers ·
+    <p class="tagline">14 episodes ·
+       52 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,48 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-09-25">
+      <div class="ep-head">
+        <h2>Friday, September 25, 2026</h2>
+        <span class="ep-meta">Episode 12 · 2 papers · 6 min</span>
+      </div>
+<p class="ep-summary">Two papers on what to do when many agents share a network too limited to carry everything they want to send. One keeps each agent&#39;s LQG controller separate and treats deciding who transmits as a coupled scheduling problem, solved by a MILP receding-horizon scheduler and a cheaper auction heuristic; the other has pairs of robots decide whom to gossip with, when, and which part of the shared state to send, which keeps 80 ergodic-search robots in consensus while sending about as much data as a central server would.</p>
+      <audio controls preload="none" src="audio/2026-09-25.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-09-25.html">One-pager</a><a class="btn" href="onepagers/2026-09-25.pdf">PDF</a><a class="btn" href="audio/2026-09-25.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="multi-agent event-triggered lqg control under shared communication constraints zahra hashemi, dipankar maity when many decoupled agents share a network that can only carry a few messages per step, the control law stays per-agent lqg but deciding who gets to transmit becomes a coupled scheduling problem, which they solve with a milp-based receding-horizon scheduler and a cheaper auction heuristic. event-triggered lqg results mostly treat one agent at a time or give each agent its own channel. when agents compete for limited shared bandwidth, their transmission decisions become coupled, and there has been no clean way to schedule them optimally. they show certainty equivalence still holds, so each agent runs its own finite-horizon riccati controller and only the transmission schedule is global. they use a closed-form expression for the estimation-error covariance to cast receding-horizon scheduling as a mixed-integer linear program. to make it scale, they add a window-based pruning rule that fixes provably useless transmissions to zero before solving, and an auction-style scheduler that gives each slot to the agents with the highest one-step transmission-benefit scores. the abstract gives no numbers. it says only that the mpc scheduler gives the best trade-off between control cost and communication cost, and that the auction scheduler comes close to it at much lower computational cost. the baselines, number of agents and capacity settings are not stated. the agents are linear, dynamically decoupled and have no safety constraints, and the scheduler is centralized with full knowledge of every agent&#39;s covariance. that is far from vehicles whose plans conflict. the auction is a greedy one-step heuristic with no stated optimality gap, and the evaluation looks like a small numerical example rather than a realistic network model with packet loss or delay. this is peripheral to maneuver negotiation. nothing is negotiated between vehicles, and the auction allocates bandwidth rather than right of way. it is only worth a skim if you need a principled way to prioritize which vehicles send updates over a congested v2x channel, for example value-of-information scheduling for platoon or cacc messages. 2609.21974v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.21974v1">Multi-Agent Event-Triggered LQG Control under Shared Communication Constraints</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Zahra Hashemi, Dipankar Maity · arXiv:2609.21974v1</p><p class="p-hook">When many decoupled agents share a network that can only carry a few messages per step, the control law stays per-agent LQG but deciding who gets to transmit becomes a coupled scheduling problem, which they solve with a MILP-based receding-horizon scheduler and a cheaper auction heuristic.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Event-triggered LQG results mostly treat one agent at a time or give each agent its own channel. When agents compete for limited shared bandwidth, their transmission decisions become coupled, and there has been no clean way to schedule them optimally.</dd><dt>Method</dt><dd>They show certainty equivalence still holds, so each agent runs its own finite-horizon Riccati controller and only the transmission schedule is global. They use a closed-form expression for the estimation-error covariance to cast receding-horizon scheduling as a mixed-integer linear program. To make it scale, they add a window-based pruning rule that fixes provably useless transmissions to zero before solving, and an auction-style scheduler that gives each slot to the agents with the highest one-step transmission-benefit scores.</dd><dt>Results</dt><dd>The abstract gives no numbers. It says only that the MPC scheduler gives the best trade-off between control cost and communication cost, and that the auction scheduler comes close to it at much lower computational cost. The baselines, number of agents and capacity settings are not stated.</dd><dt>Caveat</dt><dd>The agents are linear, dynamically decoupled and have no safety constraints, and the scheduler is centralized with full knowledge of every agent&#39;s covariance. That is far from vehicles whose plans conflict. The auction is a greedy one-step heuristic with no stated optimality gap, and the evaluation looks like a small numerical example rather than a realistic network model with packet loss or delay.</dd><dt>Why it matters</dt><dd>This is peripheral to maneuver negotiation. Nothing is negotiated between vehicles, and the auction allocates bandwidth rather than right of way. It is only worth a skim if you need a principled way to prioritize which vehicles send updates over a congested V2X channel, for example value-of-information scheduling for platoon or CACC messages.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="ac-dc: adaptive communication for scalable dynamic average consensus in multi-robot ergodic search robin inho kee, begum cannataro, vasileios tzoumas a gossip-style consensus scheme where robot pairs pick who to talk to, when, and which slice of the shared state to send, so eighty search robots stay coordinated while sending about as much data as a central server would. dynamic average consensus usually assumes synchronized rounds and messages that grow with team size, and both break down when radios have limited range, limited rate and interference. the open question was how to keep a running team-wide average accurate at scale without flooding the channel. robot pairs exchange and average only selected coordinates of their consensus state. they do this asynchronously, without waiting for a global round to finish, and they correct for their own changing local inputs as they go. each message has a fixed size set by the state representation rather than by the number of robots. two consensus streams run at once in an ergodic search task. one tracks team visitation to coordinate motion, and the other fuses regional measurements to update uncertainty maps and search targets. across twelve settings with up to 80 robots and 20 paired trials each, ac-dc has the lowest mean covariance-trace auc and the lowest modeled payload of the decentralized methods. on average it cuts auc by 27.5 percent against state-of-the-art baselines and uses 8.7 times less traffic. in a 120-robot scaling test over a 600 by 600 meter area, it sends 19.3 megabytes against 19.2 for an idealized centralized station. everything runs in simulation with a modeled payload, and the reported figure is attempted payload, not delivered throughput. so the interference and packet-loss claims depend on the authors&#39; own channel model rather than real radios. the abstract also does not say whether the gain comes from choosing whom to talk to, when to talk, or what to send, and a reviewer would ask for an ablation that separates the three. finally, ergodic search tolerates stale or approximate averages, so nothing here shows the scheme works where consensus errors are safety-critical. this is peripheral to your work. there is no negotiation, no proposal and acceptance, no right-of-way, and no vehicle dynamics. the one transferable idea is bandwidth-aware partial-state exchange with pairwise asynchronous updates. that could matter if you build distributed consensus-based trajectory planning or platoon state estimation on congested v2x channels, and in that case the message-sizing argument is worth a look. 2609.24702v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.24702v1">AC-DC: Adaptive Communication for Scalable Dynamic Average Consensus in Multi-Robot Ergodic Search</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Robin Inho Kee, Begum Cannataro, Vasileios Tzoumas · arXiv:2609.24702v1</p><p class="p-hook">A gossip-style consensus scheme where robot pairs pick who to talk to, when, and which slice of the shared state to send, so eighty search robots stay coordinated while sending about as much data as a central server would.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Dynamic average consensus usually assumes synchronized rounds and messages that grow with team size, and both break down when radios have limited range, limited rate and interference. The open question was how to keep a running team-wide average accurate at scale without flooding the channel.</dd><dt>Method</dt><dd>Robot pairs exchange and average only selected coordinates of their consensus state. They do this asynchronously, without waiting for a global round to finish, and they correct for their own changing local inputs as they go. Each message has a fixed size set by the state representation rather than by the number of robots. Two consensus streams run at once in an ergodic search task. One tracks team visitation to coordinate motion, and the other fuses regional measurements to update uncertainty maps and search targets.</dd><dt>Results</dt><dd>Across twelve settings with up to 80 robots and 20 paired trials each, AC-DC has the lowest mean covariance-trace AUC and the lowest modeled payload of the decentralized methods. On average it cuts AUC by 27.5 percent against state-of-the-art baselines and uses 8.7 times less traffic. In a 120-robot scaling test over a 600 by 600 meter area, it sends 19.3 megabytes against 19.2 for an idealized centralized station.</dd><dt>Caveat</dt><dd>Everything runs in simulation with a modeled payload, and the reported figure is attempted payload, not delivered throughput. So the interference and packet-loss claims depend on the authors&#39; own channel model rather than real radios. The abstract also does not say whether the gain comes from choosing whom to talk to, when to talk, or what to send, and a reviewer would ask for an ablation that separates the three. Finally, ergodic search tolerates stale or approximate averages, so nothing here shows the scheme works where consensus errors are safety-critical.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. There is no negotiation, no proposal and acceptance, no right-of-way, and no vehicle dynamics. The one transferable idea is bandwidth-aware partial-state exchange with pairwise asynchronous updates. That could matter if you build distributed consensus-based trajectory planning or platoon state estimation on congested V2X channels, and in that case the message-sizing argument is worth a look.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-09-24">
       <div class="ep-head">
         <h2>Thursday, September 24, 2026</h2>
@@ -1100,7 +1142,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-09-24 06:03 · unlisted, not indexed ·
+    Generated 2026-09-25 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
