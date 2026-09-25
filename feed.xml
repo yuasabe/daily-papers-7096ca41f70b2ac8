@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 21:02:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 21:02:46 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,23 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 26 — 3 papers</title>
+      <description>&lt;p&gt;Three papers on keeping multi-agent teams coordinated: a barrier-Lyapunov formation controller with a central manager that adds temporary relaxed links so robots can join or leave without breaking connectivity or colliding (simulated quadrotors only), and a graph transformer that gives each robot in an LLM-driven drone swarm a small learned feedback token so flocks of up to 1024 hold formation under natural-language commands. The third moves to the network layer: a Lyapunov scheduler for private 5G-TSN factory cells adds a head-of-line delay term so safety-critical AGV control traffic survives overload, at the cost of throughput for lower-priority traffic classes.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.29939v1"&gt;Safe Formation Control of Open Multi-Robot Systems with Connectivity-Preserving Reconfiguration&lt;/a&gt; &amp;mdash; Pelin Sekercioglu, Nicola De Carli, Dimos V. Dimarogonas&lt;br/&gt;A barrier-Lyapunov formation controller for double-integrator robots, plus a central formation manager that adds temporary relaxed links so robots can join or leave the team without breaking connectivity or colliding, shown on simulated quadrotors.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.28247v1"&gt;Controlling Collectives of AI Agents in Reasoning Space with Spatial Transformers&lt;/a&gt; &amp;mdash; Frederic Vatnsdal et al.&lt;br/&gt;Each robot in a big LLM-driven drone swarm gets a small learned feedback token from a graph transformer that pools multi-hop messages from its neighbours, and with it, flocks of up to 1024 robots hold formation under natural language commands.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.26011v1"&gt;Overload-Robust Latency in 5G-TSN: A HoL-Enhanced Hybrid Lyapunov Approach for 3GPP Indoor Factory Environments&lt;/a&gt; &amp;mdash; Kouros Zanbouri et al.&lt;br/&gt;A Lyapunov radio scheduler for private 5G factory networks, with an added head-of-line delay term, keeps safety-critical AGV control traffic alive when the cell is overloaded by giving up throughput on the less important traffic classes.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-26</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-26.mp3" length="5577708" type="audio/mpeg"/>
+      <pubDate>Sat, 26 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:40</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Three papers on keeping multi-agent teams coordinated: a barrier-Lyapunov formation controller with a central manager that adds temporary relaxed links so robots can join or leave without breaking connectivity or colliding (simulated quadrotors only), and a graph transformer that gives each robot in an LLM-driven drone swarm a small learned feedback token so flocks of up to 1024 hold formation under natural-language commands. The third moves to the network layer: a Lyapunov scheduler for private 5G-TSN factory cells adds a head-of-line delay term so safety-critical AGV control traffic survives overload, at the cost of throughput for lower-priority traffic classes.</itunes:summary>
+      <itunes:episode>13</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 25 — 2 papers</title>
       <description>&lt;p&gt;Two papers on what to do when many agents share a network too limited to carry everything they want to send. One keeps each agent&amp;#x27;s LQG controller separate and treats deciding who transmits as a coupled scheduling problem, solved by a MILP receding-horizon scheduler and a cheaper auction heuristic; the other has pairs of robots decide whom to gossip with, when, and which part of the shared state to send, which keeps 80 ergodic-search robots in consensus while sending about as much data as a central server would.&lt;/p&gt;

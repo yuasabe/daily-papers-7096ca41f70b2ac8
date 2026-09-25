@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 13 (2026-09-26)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 26 — 3 papers</h1>
+    <div class="meta">
+      <strong>Episode 13</strong> · September 26, 2026 · 3 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.29939v1">Safe Formation Control of Open Multi-Robot Systems with Connectivity-Preserving Reconfiguration</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Pelin Sekercioglu, Nicola De Carli, Dimos V. Dimarogonas</p>
+
+<p class="hook">A barrier-Lyapunov formation controller for double-integrator robots, plus a central formation manager that adds temporary relaxed links so robots can join or leave the team without breaking connectivity or colliding, shown on simulated quadrotors.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Most formation controllers with collision-avoidance and connectivity guarantees assume a fixed team, so they say nothing about safety when a robot joins or departs. A new robot usually starts outside the nominal sensing range, and removing a robot can cut the graph apart, so the usual barrier functions become infeasible at the moment of switching.</dd></div><div class="frag"><dt>Method</dt><dd>Each robot runs a distributed gradient controller on a barrier-Lyapunov function that encodes minimum-distance and maximum-distance limits on each edge. A formation manager decides when robots enter or leave, and adds prospective edges to bring a newcomer in or to keep the graph connected before a departure. On those edges the maximum-distance limit starts relaxed and is tightened back to nominal by auxiliary dynamics. The whole open team is treated as a switched system, and they prove uniform practical stability for almost all initial conditions, provided switches respect a transition-dependent average dwell time.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. The only evidence is Gazebo simulations of dynamically simulated quadrotors doing repeated joins and departures, with no stated team size, baseline, or metric.</dd></div><div class="frag"><dt>Caveat</dt><dd>The formation manager is a centralized coordinator that assumes reliable knowledge of who is joining and leaving, so the distributed claim only covers the low-level controller. The dwell-time condition means robots cannot join or leave in quick bursts, and the paper models no communication delay or packet loss. Validation is simulation only, with no comparison against other open-system or reconfiguration methods.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. At a high level, a robot joining or leaving a connected formation looks like a platoon join or split, and the relax-then-tighten link constraint is a neat pattern for safe gap closing. But there are no road or lane constraints and no negotiation or proposal and acceptance protocol, and message loss is ignored, so it does not touch maneuver coordination messages or right-of-way resolution. Take the dwell-time result as a reference if you ever need a stability argument for repeated platoon reconfiguration.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.29939v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.29939v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.28247v1">Controlling Collectives of AI Agents in Reasoning Space with Spatial Transformers</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Frederic Vatnsdal et al.</p>
+
+<p class="hook">Each robot in a big LLM-driven drone swarm gets a small learned feedback token from a graph transformer that pools multi-hop messages from its neighbours, and with it, flocks of up to 1024 robots hold formation under natural language commands.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>LLM planners break down on multi-robot tasks as the team grows, and a single centralized LLM cannot track the state of hundreds of agents. Existing fixes either pass raw state through the language channel or depend on a central planner, and neither scales.</dd></div><div class="frag"><dt>Method</dt><dd>Each robot runs its own language model policy. A spatial transformer on each robot pools multi-hop messages from across the fleet into one compact learned feedback token, which is fed back into that robot&#39;s reasoning, so control is closed-loop in reasoning space. They also vary the wording of the command across robots on purpose, and claim this structured diversity cancels out the biases of individual models.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It reports only qualitative wins: better cohesion and intent tracking than a centralized frontier LLM and a language-only communication ablation, and zero-shot generalization to ambiguous unseen instructions at up to 16 times the training scale, which means up to 1024 robots. It also says hand-engineered feedback that puts raw state into the language channel destroys cohesion.</dd></div><div class="frag"><dt>Caveat</dt><dd>The task is flocking, where agents only need to stay together and follow a shared heading. That tells us nothing about resolving conflicting individual goals or yielding, and &#39;decisively&#39; and &#39;obliterates&#39; stand in for metrics that the abstract never reports. It is almost certainly simulation only, the communication appears to be ideal with no loss or delay, and the centralized LLM baseline is a straw man at a thousand agents.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. Flocking is emergent cohesion, not negotiation, and there are no proposals, acceptances, right-of-way decisions or incompatible plans to settle. The one idea worth borrowing is the result that a compact learned token beats raw state written into language, which is relevant if you are thinking about what an LLM-based vehicle agent should receive in place of verbose maneuver messages.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.28247v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.28247v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.26011v1">Overload-Robust Latency in 5G-TSN: A HoL-Enhanced Hybrid Lyapunov Approach for 3GPP Indoor Factory Environments</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Kouros Zanbouri et al.</p>
+
+<p class="hook">A Lyapunov radio scheduler for private 5G factory networks, with an added head-of-line delay term, keeps safety-critical AGV control traffic alive when the cell is overloaded by giving up throughput on the less important traffic classes.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>When a fixed 20 megahertz private 5G cell is oversubscribed, standard schedulers like proportional-fair spread the shortfall across all traffic, so critical control packets miss their deadlines along with everything else. Plain Lyapunov drift-plus-penalty keeps queues stable, but it does not target per-packet deadlines.</dd></div><div class="frag"><dt>Method</dt><dd>The scheduler keeps a drift-plus-penalty queue-stability core and adds an explicit head-of-line delay term to the per-resource-block weight. It also adds a class-isolation mechanism so that low-latency control, broadband sensing, and massive machine-type flows on separate QoS bearers cannot starve one another. It is evaluated in simulation in the 3GPP Indoor Factory channel model, with standard fading, spatial consistency and clutter blockage, and with 5 to 30 AGVs each generating all three traffic classes.</dd></div><div class="frag"><dt>Results</dt><dd>All schedulers hit a capacity limit at about 12 AGVs, confirmed by resource-block saturation. Below that limit, the head-of-line term halves the control-traffic deadline-miss ratio compared with plain Lyapunov. At two and a half times overload, the scheduler delivers 1.8 times more control traffic than the proportional-fair and delay-budget-aware baselines, with a 99th-percentile latency roughly four to seven times shorter, at the cost of lower total cell throughput.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline overload gain mostly shows that the scheduler prioritizes one class strictly, which any strict-priority or weighted scheme would also do. The abstract names no strict-priority baseline, and says below the limit the scheduler is only competitive with the strongest delay-aware baselines. Everything is single-cell simulation, and there is no cooperative-vehicle traffic. The AGVs are just traffic sources, not agents negotiating anything.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. The vehicles here only generate traffic, with no maneuver negotiation, platooning or trajectory sharing. The one useful link is conceptual: it quantifies how control-message latency falls apart under radio overload, which could inform assumptions about delayed or lost coordination messages. Cellular V2X sidelink behaves differently from an indoor factory uplink, though, so the numbers will not transfer directly.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.26011v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.26011v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-26 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
