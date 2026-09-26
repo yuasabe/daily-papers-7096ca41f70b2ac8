@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 21:02:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 21:03:13 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 27 — 5 papers</title>
+      <description>&lt;p&gt;Five papers on how robots coordinate, with and without talking to each other: fine-tuning small vision-language models on about 8,000 synthetic kitchen demonstrations, in which a leader robot instructs a follower in natural language, raises success on unseen tasks from 2% to 77%, and a bearing-only formation controller for Euler-Lagrange agents drops the radio link entirely while still tracking leaders whose speed changes. Also covered: a decaying pull toward each agent&amp;#x27;s starting value that provably recovers the exact average when consensus messages carry persistent noise, a single-author simulated four-legged walker study finding that whether reading a peer limb&amp;#x27;s force sensors helps depends on where the information is measured, and a centralized mixed-integer allocator that has free-flying space robots push a floating object around one circular obstacle under human steering, tested only in Gazebo.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.23997v1"&gt;RoboTalk: Learning Multi-Robot Communication and Coordination from Multimodal Demonstrations&lt;/a&gt; &amp;mdash; Dorian Benhamou Goldfajn et al.&lt;br/&gt;They generated about eight thousand synthetic kitchen-robot demonstrations in which a leader robot plans and talks to a follower in natural language, and showed that fine-tuning small vision-language models on that data raises success on unseen tasks from about two percent to seventy-seven percent.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.29049v1"&gt;Bearing-Only Formation Tracking Control for Euler-Lagrange Multi-Agent Systems Without Inter-Agent Communication&lt;/a&gt; &amp;mdash; Zilong Song, Lu Liu, Gang Feng&lt;br/&gt;A controller that keeps robots in a formation using only bearing measurements to their neighbours, with no radio link at all, while the leaders move at changing speeds.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.28082v1"&gt;Exact Average Consensus under Noisy Communication Links: A Decentralized Gradient Perspective&lt;/a&gt; &amp;mdash; Yuhang Deng, Zheng Chen, Erik G. Larsson&lt;br/&gt;When consensus messages carry persistent additive noise, the authors add a decaying pull back toward each agent&amp;#x27;s own starting value, and they prove this recovers the exact average almost surely instead of a random value near it.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.27580v1"&gt;Action-Directed Information for Distributed Control and Agentic Interaction&lt;/a&gt; &amp;mdash; Shlomo Dubnov&lt;br/&gt;A single-author study that uses a simulated four-legged walker to ask whether one limb reading its peers&amp;#x27; force sensors helps control, and finds that the answer depends on where you measure the information.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.24376v1"&gt;Multi-Agent Transportation of Free-Flyers in Microgravity Via Pushing Interaction Under Human-in-the-Loop Control&lt;/a&gt; &amp;mdash; Gregorio Marchesini et al.&lt;br/&gt;Several space robots push a passive floating object around a single circular obstacle while a human steers it, using a centralized mixed-integer allocator with Lyapunov and barrier constraints that decides which robot pushes where, and it is tested only in Gazebo.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-27</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-27.mp3" length="6432445" type="audio/mpeg"/>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:51</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Five papers on how robots coordinate, with and without talking to each other: fine-tuning small vision-language models on about 8,000 synthetic kitchen demonstrations, in which a leader robot instructs a follower in natural language, raises success on unseen tasks from 2% to 77%, and a bearing-only formation controller for Euler-Lagrange agents drops the radio link entirely while still tracking leaders whose speed changes. Also covered: a decaying pull toward each agent's starting value that provably recovers the exact average when consensus messages carry persistent noise, a single-author simulated four-legged walker study finding that whether reading a peer limb's force sensors helps depends on where the information is measured, and a centralized mixed-integer allocator that has free-flying space robots push a floating object around one circular obstacle under human steering, tested only in Gazebo.</itunes:summary>
+      <itunes:episode>14</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 26 — 3 papers</title>
       <description>&lt;p&gt;Three papers on keeping multi-agent teams coordinated: a barrier-Lyapunov formation controller with a central manager that adds temporary relaxed links so robots can join or leave without breaking connectivity or colliding (simulated quadrotors only), and a graph transformer that gives each robot in an LLM-driven drone swarm a small learned feedback token so flocks of up to 1024 hold formation under natural-language commands. The third moves to the network layer: a Lyapunov scheduler for private 5G-TSN factory cells adds a head-of-line delay term so safety-critical AGV control traffic survives overload, at the cost of throughput for lower-priority traffic classes.&lt;/p&gt;
