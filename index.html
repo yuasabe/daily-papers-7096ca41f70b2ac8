@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">16 episodes ·
-       60 papers ·
+    <p class="tagline">17 episodes ·
+       61 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,34 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-09-28">
+      <div class="ep-head">
+        <h2>Monday, September 28, 2026</h2>
+        <span class="ep-meta">Episode 15 · 1 papers · 3 min</span>
+      </div>
+<p class="ep-summary">In multi-agent actor-critic reinforcement learning, a compromised communication link can feed false values to agents and push their learned parameters off course. This briefing covers a method in which each agent checks every incoming message against copies of it relayed by neighbors (two hops away), so that under attack the agents still learn the same parameters they would have learned without one.</p>
+      <audio controls preload="none" src="audio/2026-09-28.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-09-28.html">One-pager</a><a class="btn" href="onepagers/2026-09-28.pdf">PDF</a><a class="btn" href="audio/2026-09-28.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="fully byzantine-resilient multi-agent reinforcement learning haejoon lee, dimitra panagou agents learning together by actor-critic reinforcement learning can cross-check each message against two-hop copies, so that compromised communication links no longer pull the learned parameters away from what they would have been without an attack. earlier byzantine-resilient actor-critic methods only guarantee that parameters end up near the attack-free solution, so an adversary on the network permanently costs some performance. nobody had shown convergence to exactly the attack-free limit points in a fully decentralized setting. each agent receives the same neighbor information over several two-hop paths and uses that redundancy to spot and throw out tampered messages, then runs ordinary consensus-based actor-critic updates on what is left. the proof assumes linear function approximation for both the value function and the team reward, and it assumes the attacks are edge attacks, meaning the agents themselves are honest and only the messages are corrupted. they define a new graph redundancy condition, give a way to build networks that meet it, and show the condition can be checked in polynomial time. the main result is a proof that parameters converge almost surely to the attack-free limit points over time-varying graphs. the only experiments are cooperative multi-robot formation control tasks, and the abstract gives no numbers, no baselines and no team sizes. the exact-recovery guarantee depends on two strong restrictions. adversaries may only corrupt links, not act as malicious agents, and value and reward functions must be linear. on top of that, the redundancy condition probably needs dense networks with many two-hop paths, which a sparse and fast-changing set of vehicles talking over wireless links is unlikely to provide. the formation control demo gives no evidence of how the method handles packet loss, delay, or agents that do not take part. this is peripheral to your work. it concerns learning shared parameters under adversarial messages, not negotiating maneuvers or exchanging trajectories. the one idea you could borrow is checking a message against redundant two-hop relays, which could apply to verifying relayed intentions in a maneuver coordination protocol. but their threat model is tampering, not the loss and delay you study. 2609.25701v1 notable skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.25701v1">Fully Byzantine-Resilient Multi-Agent Reinforcement Learning</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Haejoon Lee, Dimitra Panagou · arXiv:2609.25701v1</p><p class="p-hook">Agents learning together by actor-critic reinforcement learning can cross-check each message against two-hop copies, so that compromised communication links no longer pull the learned parameters away from what they would have been without an attack.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Earlier Byzantine-resilient actor-critic methods only guarantee that parameters end up near the attack-free solution, so an adversary on the network permanently costs some performance. Nobody had shown convergence to exactly the attack-free limit points in a fully decentralized setting.</dd><dt>Method</dt><dd>Each agent receives the same neighbor information over several two-hop paths and uses that redundancy to spot and throw out tampered messages, then runs ordinary consensus-based actor-critic updates on what is left. The proof assumes linear function approximation for both the value function and the team reward, and it assumes the attacks are edge attacks, meaning the agents themselves are honest and only the messages are corrupted. They define a new graph redundancy condition, give a way to build networks that meet it, and show the condition can be checked in polynomial time.</dd><dt>Results</dt><dd>The main result is a proof that parameters converge almost surely to the attack-free limit points over time-varying graphs. The only experiments are cooperative multi-robot formation control tasks, and the abstract gives no numbers, no baselines and no team sizes.</dd><dt>Caveat</dt><dd>The exact-recovery guarantee depends on two strong restrictions. Adversaries may only corrupt links, not act as malicious agents, and value and reward functions must be linear. On top of that, the redundancy condition probably needs dense networks with many two-hop paths, which a sparse and fast-changing set of vehicles talking over wireless links is unlikely to provide. The formation control demo gives no evidence of how the method handles packet loss, delay, or agents that do not take part.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. It concerns learning shared parameters under adversarial messages, not negotiating maneuvers or exchanging trajectories. The one idea you could borrow is checking a message against redundant two-hop relays, which could apply to verifying relayed intentions in a maneuver coordination protocol. But their threat model is tampering, not the loss and delay you study.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-09-27">
       <div class="ep-head">
         <h2>Sunday, September 27, 2026</h2>
@@ -1282,7 +1310,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-09-27 06:03 · unlisted, not indexed ·
+    Generated 2026-09-28 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>

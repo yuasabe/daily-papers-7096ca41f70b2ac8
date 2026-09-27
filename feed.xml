@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2026 21:03:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 21:02:39 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 28 — 1 papers</title>
+      <description>&lt;p&gt;In multi-agent actor-critic reinforcement learning, a compromised communication link can feed false values to agents and push their learned parameters off course. This briefing covers a method in which each agent checks every incoming message against copies of it relayed by neighbors (two hops away), so that under attack the agents still learn the same parameters they would have learned without one.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.25701v1"&gt;Fully Byzantine-Resilient Multi-Agent Reinforcement Learning&lt;/a&gt; &amp;mdash; Haejoon Lee, Dimitra Panagou&lt;br/&gt;Agents learning together by actor-critic reinforcement learning can cross-check each message against two-hop copies, so that compromised communication links no longer pull the learned parameters away from what they would have been without an attack.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-28</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-28.mp3" length="2517438" type="audio/mpeg"/>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:03:25</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In multi-agent actor-critic reinforcement learning, a compromised communication link can feed false values to agents and push their learned parameters off course. This briefing covers a method in which each agent checks every incoming message against copies of it relayed by neighbors (two hops away), so that under attack the agents still learn the same parameters they would have learned without one.</itunes:summary>
+      <itunes:episode>15</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 27 — 5 papers</title>
       <description>&lt;p&gt;Five papers on how robots coordinate, with and without talking to each other: fine-tuning small vision-language models on about 8,000 synthetic kitchen demonstrations, in which a leader robot instructs a follower in natural language, raises success on unseen tasks from 2% to 77%, and a bearing-only formation controller for Euler-Lagrange agents drops the radio link entirely while still tracking leaders whose speed changes. Also covered: a decaying pull toward each agent&amp;#x27;s starting value that provably recovers the exact average when consensus messages carry persistent noise, a single-author simulated four-legged walker study finding that whether reading a peer limb&amp;#x27;s force sensors helps depends on where the information is measured, and a centralized mixed-integer allocator that has free-flying space robots push a floating object around one circular obstacle under human steering, tested only in Gazebo.&lt;/p&gt;
