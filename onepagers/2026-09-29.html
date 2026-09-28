@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 16 (2026-09-29)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Sep 29 — 3 papers</h1>
+    <div class="meta">
+      <strong>Episode 16</strong> · September 29, 2026 · 3 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.31217v1">Deep Reinforcement Learning for Misbehavior Detection Under Partially Observable V2X Data</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Roshan Sedar, Charalampos Kalalas</p>
+
+<p class="hook">They train a reinforcement learning agent to flag falsified V2X messages when parts of the data stream are missing, and show it beats XGBoost on VeReMi but can be easily fooled by attackers who hide behind natural occlusions.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Data-centric misbehavior detectors for V2X usually assume every message and feature arrives intact, but real streams have gaps from hardware faults, dropped links and occlusion. Nobody had seriously studied how detectors behave under that missingness, or how an attacker could exploit or create it on purpose.</dd></div><div class="frag"><dt>Method</dt><dd>They treat detection as a sequential decision problem and train a deep reinforcement learning policy that sees incomplete feature vectors and learns when to flag a sender. They also define a threat model with two evasion strategies: timing misbehavior to coincide with natural occlusion gaps, and deliberately suppressing message features. Both are compared against an XGBoost classifier trained on the same data.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It says only that on the VeReMi dataset, under several missingness patterns, the DRL detector significantly outperforms XGBoost, is highly vulnerable to evasion that exploits natural missingness, and degrades more gradually than XGBoost when features are suppressed.</dd></div><div class="frag"><dt>Caveat</dt><dd>VeReMi is an old simulated dataset of position-falsification attacks built on basic safety beacons, so the missingness patterns are injected artificially rather than measured on real links. The headline finding also partly undercuts itself, because the DRL policy&#39;s main advantage vanishes against the adversary the paper itself proposes. A reviewer would also ask why a sequential RL formulation beats a sequence-aware supervised model, since XGBoost on static features is a weak stand-in for that comparison.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It concerns the trustworthiness of periodic awareness beacons, not negotiation, maneuver coordination messages or joint planning. The one useful idea for you is its threat model: a vehicle that strategically drops or withholds fields to escape scrutiny is exactly the partial-participation and message-loss failure mode your protocols need to tolerate, and it suggests that silence in a negotiation can be adversarial rather than accidental.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.31217v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.31217v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.30655v1">Certificate-Carrying Distributed Model Predictive Control on Product Manifolds with $\mathrm{SO}(3)$</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Shengjun Zhang et al.</p>
+
+<p class="hook">A distributed MPC scheme for spacecraft formations where each agent announces its shifted plan and a bounded update budget before solving, so neighbours can tighten collision and attitude constraints just enough to keep them hard-satisfied even though everyone re-plans at the same time.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In synchronous distributed MPC, every agent solves at once against neighbour predictions that are about to change, so pairwise constraints are either violated or enforced with large fixed margins. Earlier fixes rely on sequential solves, fixed conservative margins, or margins that depend on the current optimizer output, and they rarely handle rotational constraints on the rotation group.</dd></div><div class="frag"><dt>Method</dt><dd>Before the parallel solve, each agent broadcasts its shifted prediction and an announced update budget. A hard trust region on its own trajectory makes that budget binding. Distance and relative-attitude constraints are then tightened using explicit Lipschitz constants and two budget layers: one covers the simultaneous neighbour update, and one keeps a reserve so the shifted fallback stays feasible. An edge-wise feasibility cap, computed only from the shifted packets, sizes the budget. They prove hard pairwise constraint satisfaction and recursive feasibility under nominal execution and terminal-set assumptions, bound the extra residual caused by execution error, and give a local practical value-decrease result rather than full asymptotic stability.</dd></div><div class="frag"><dt>Results</dt><dd>The only evidence is a simulated spacecraft formation with hard terminal and pairwise constraints and a geodesic relative-attitude constraint. It is compared against fixed margins, trajectory-only margins and windowed online margins. The abstract reports no numbers, only that the proposed budget is less conservative while keeping a positive shifted-feasibility margin.</dd></div><div class="frag"><dt>Caveat</dt><dd>The hard guarantees assume nominal execution and a synchronous, lossless exchange of packets every step. There is no treatment of dropped or delayed messages or of agents that do not participate, and the execution-error case gets only a residual bound, not a guarantee. The single spacecraft example says little about scalability or about dense, fast-changing interaction graphs, and the conservatism gain is claimed without a quantified figure in the abstract.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. The part that transfers is the protocol idea: announce the shifted trajectory plus an enforceable bound on how far you will deviate, so neighbours can plan safely in parallel. That maps onto trajectory-sharing message design in cooperative driving, where a declared deviation bound is a useful field for maneuver coordination messages. But there is no negotiation, no yielding or right-of-way logic, no degradation analysis under message loss, and the attitude-on-rotation-group machinery is irrelevant for road vehicles.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.30655v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.30655v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.31137v1">INTERACT: Interactive Planning for Autonomous Driving via Anchor-Conditioned Prediction and Trust-Region Refinement</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Aron Distelzweig et al.</p>
+
+<p class="hook">A single-ego planner generates a few map-based intents, asks a separate prediction model once per intent how other cars would react, and then refines each intent with the Cross-Entropy Method while keeping the plan close enough that the predicted reaction still holds.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Predict-then-plan pipelines ignore that other agents react to the ego plan. Joint training causes task interference, and conditioning a predictor on a fixed proposal set limits the planner to those proposals or means one predictor query per candidate.</dd></div><div class="frag"><dt>Method</dt><dd>Coarse intent anchors are taken from lane geometry. An ego-conditioned prediction model is queried once per anchor, and the anchors run in parallel. Each anchor is then refined with the Cross-Entropy Method under a trust-region penalty on distance from the anchor. The core assumption is that other agents respond to the intent a plan expresses, not to its exact path, so one conditioned prediction covers a whole neighbourhood of plans.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract claims state of the art in closed loop on nuPlan and interPlan, with the largest gains in interactive scenarios. It gives no scores, no margins and no baseline names, so the size of the gain cannot be judged from the abstract.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on the claim that reactions depend on intent and not on the exact path. The abstract shows no test of this, such as how prediction error grows as the refined plan moves away from its anchor, or an ablation on the trust-region radius. There is also a deeper problem. The other agents in nuPlan and interPlan are rule-based models like the Intelligent Driver Model, or they replay logged data. A predictor conditioned on the ego plan may be learning those simulator rules rather than how real drivers respond. The code is not yet released.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. There is no communication, no message exchange and no negotiation. The ego infers how others will react, which is the approach your research positions itself against. The one useful idea is the trust-region framing. A shared intent stays valid for a family of trajectories, and that could justify sending coarse intent messages instead of full trajectories, and re-negotiating only when a vehicle drifts outside its declared region. It could also serve as a strong inference-only baseline for you to compare against.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.31137v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.31137v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-09-29 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

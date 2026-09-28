@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2026 21:02:39 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 21:02:52 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,23 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 29 — 3 papers</title>
+      <description>&lt;p&gt;A reinforcement-learning misbehavior detector beats XGBoost on VeReMi even when parts of the V2X stream are missing, but attackers can fool it easily by hiding falsified messages behind natural occlusions. We also cover a distributed MPC scheme for spacecraft formations where each agent announces its shifted plan and an update budget before solving, which keeps collision and attitude constraints hard-satisfied while everyone re-plans at once, and INTERACT, a planner that asks a prediction model how other cars would react to each map-based intent, then refines each plan with the Cross-Entropy Method while keeping it close enough that the predicted reaction still holds.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.31217v1"&gt;Deep Reinforcement Learning for Misbehavior Detection Under Partially Observable V2X Data&lt;/a&gt; &amp;mdash; Roshan Sedar, Charalampos Kalalas&lt;br/&gt;They train a reinforcement learning agent to flag falsified V2X messages when parts of the data stream are missing, and show it beats XGBoost on VeReMi but can be easily fooled by attackers who hide behind natural occlusions.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.30655v1"&gt;Certificate-Carrying Distributed Model Predictive Control on Product Manifolds with $\mathrm{SO}(3)$&lt;/a&gt; &amp;mdash; Shengjun Zhang et al.&lt;br/&gt;A distributed MPC scheme for spacecraft formations where each agent announces its shifted plan and a bounded update budget before solving, so neighbours can tighten collision and attitude constraints just enough to keep them hard-satisfied even though everyone re-plans at the same time.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.31137v1"&gt;INTERACT: Interactive Planning for Autonomous Driving via Anchor-Conditioned Prediction and Trust-Region Refinement&lt;/a&gt; &amp;mdash; Aron Distelzweig et al.&lt;br/&gt;A single-ego planner generates a few map-based intents, asks a separate prediction model once per intent how other cars would react, and then refines each intent with the Cross-Entropy Method while keeping the plan close enough that the predicted reaction still holds.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-29</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-29.mp3" length="5563888" type="audio/mpeg"/>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:39</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A reinforcement-learning misbehavior detector beats XGBoost on VeReMi even when parts of the V2X stream are missing, but attackers can fool it easily by hiding falsified messages behind natural occlusions. We also cover a distributed MPC scheme for spacecraft formations where each agent announces its shifted plan and an update budget before solving, which keeps collision and attitude constraints hard-satisfied while everyone re-plans at once, and INTERACT, a planner that asks a prediction model how other cars would react to each map-based intent, then refines each plan with the Cross-Entropy Method while keeping it close enough that the predicted reaction still holds.</itunes:summary>
+      <itunes:episode>16</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 28 — 1 papers</title>
       <description>&lt;p&gt;In multi-agent actor-critic reinforcement learning, a compromised communication link can feed false values to agents and push their learned parameters off course. This briefing covers a method in which each agent checks every incoming message against copies of it relayed by neighbors (two hops away), so that under attack the agents still learn the same parameters they would have learned without one.&lt;/p&gt;
