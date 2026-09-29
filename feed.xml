@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2026 21:02:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 21:02:09 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Sep 30 — 2 papers</title>
+      <description>&lt;p&gt;Air-taxi trajectory planning as a potential game is made robust by having each agent plan against a bounded adversary that perturbs the other agents&amp;#x27; controls at every timestep, and the authors show the robust version is still a potential game, so it stays cheap to solve. A second paper adds a learned residual, built from a recurrent equilibrium network, on top of a standard robust platoon controller and caps its gain so the existing ℓ2 string-stability proofs still hold.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.35142v1"&gt;Strategically Robust Game-Theoretic Multi-Agent Trajectory Optimization&lt;/a&gt; &amp;mdash; Victor L. Qin et al.&lt;br/&gt;They make potential-game trajectory planning for air taxis robust by having each agent guard against a bounded adversary that nudges the other agents&amp;#x27; controls at every timestep, and they show the game stays a potential game so it is still cheap to solve.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.33892v1"&gt;Residual Learning-Based Control of Vehicle Platoons with $\ell_2$ Stability Guarantees via Recurrent Equilibrium Networks&lt;/a&gt; &amp;mdash; Brian Delgado, Anh-Tu Nguyen, Hamid Taghavifar&lt;br/&gt;They add a learned correction term on top of a standard robust platoon controller, and they cap the size of that correction so the usual stability proofs still hold.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-09-30</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-09-30.mp3" length="4661585" type="audio/mpeg"/>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:24</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Air-taxi trajectory planning as a potential game is made robust by having each agent plan against a bounded adversary that perturbs the other agents' controls at every timestep, and the authors show the robust version is still a potential game, so it stays cheap to solve. A second paper adds a learned residual, built from a recurrent equilibrium network, on top of a standard robust platoon controller and caps its gain so the existing ℓ2 string-stability proofs still hold.</itunes:summary>
+      <itunes:episode>17</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 29 — 3 papers</title>
       <description>&lt;p&gt;A reinforcement-learning misbehavior detector beats XGBoost on VeReMi even when parts of the V2X stream are missing, but attackers can fool it easily by hiding falsified messages behind natural occlusions. We also cover a distributed MPC scheme for spacecraft formations where each agent announces its shifted plan and an update budget before solving, which keeps collision and attitude constraints hard-satisfied while everyone re-plans at once, and INTERACT, a planner that asks a prediction model how other cars would react to each map-based intent, then refines each plan with the Cross-Entropy Method while keeping it close enough that the predicted reaction still holds.&lt;/p&gt;

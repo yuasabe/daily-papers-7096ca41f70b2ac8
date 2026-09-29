@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">18 episodes ·
-       64 papers ·
+    <p class="tagline">19 episodes ·
+       66 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,48 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-09-30">
+      <div class="ep-head">
+        <h2>Wednesday, September 30, 2026</h2>
+        <span class="ep-meta">Episode 17 · 2 papers · 6 min</span>
+      </div>
+<p class="ep-summary">Air-taxi trajectory planning as a potential game is made robust by having each agent plan against a bounded adversary that perturbs the other agents&#39; controls at every timestep, and the authors show the robust version is still a potential game, so it stays cheap to solve. A second paper adds a learned residual, built from a recurrent equilibrium network, on top of a standard robust platoon controller and caps its gain so the existing ℓ2 string-stability proofs still hold.</p>
+      <audio controls preload="none" src="audio/2026-09-30.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-09-30.html">One-pager</a><a class="btn" href="onepagers/2026-09-30.pdf">PDF</a><a class="btn" href="audio/2026-09-30.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="strategically robust game-theoretic multi-agent trajectory optimization victor l. qin et al. they make potential-game trajectory planning for air taxis robust by having each agent guard against a bounded adversary that nudges the other agents&#39; controls at every timestep, and they show the game stays a potential game so it is still cheap to solve. game-theoretic collision avoidance posed as an exact dynamic potential game finds open-loop equilibria efficiently, but it assumes every agent follows its equilibrium trajectory exactly. that assumption breaks under actuation, perception and computation errors, and naive robustification would usually destroy the potential structure that makes the problem tractable. each agent&#39;s cost includes a fictitious adversary that, separately at each timestep, perturbs the other agents&#39; control inputs within a bounded budget to minimize the pairwise distance at that step. they prove that under certain conditions on the distance cost and on the agents&#39; robustness levels, the robust game is still an exact dynamic potential game. for linear dynamics, the inner worst-case problem has a quasi-closed-form solution, so the minimax does not need a nested optimizer. the abstract gives no quantitative numbers. it reports only qualitative findings from experiments with up to eight agents using logarithmic distance costs: trajectories shift toward safer options in high-collision-risk configurations, low-risk trajectories barely change, and runtime rises modestly. no baseline, success rate, or minimum-separation figure is quoted. the adversary is per-timestep and open-loop, so it does not model perturbations that compound over time or agents that re-plan in response. the tractability result depends on linear dynamics and on the conditions on robustness levels, which the abstract does not spell out. also, eight agents in simulation with no stated comparison to chance-constrained or tube-based robust planners is a thin test of the claim that robustness is worth its cost. this is inference-based decentralized planning. agents predict each other&#39;s controls and exchange no intentions, proposals or acceptances, so it is the opposite of your explicit-negotiation setting, and the domain is air mobility, not road vehicles. it is still useful as a baseline and as a framing device: it shows what robustness to other agents deviating costs when there is no communication. the trick of keeping the potential-game structure under robustification could carry over to your cooperative trajectory optimization if you model message loss or partial compliance as bounded deviation. 2609.35142v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.35142v1">Strategically Robust Game-Theoretic Multi-Agent Trajectory Optimization</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Victor L. Qin et al. · arXiv:2609.35142v1</p><p class="p-hook">They make potential-game trajectory planning for air taxis robust by having each agent guard against a bounded adversary that nudges the other agents&#39; controls at every timestep, and they show the game stays a potential game so it is still cheap to solve.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Game-theoretic collision avoidance posed as an exact dynamic potential game finds open-loop equilibria efficiently, but it assumes every agent follows its equilibrium trajectory exactly. That assumption breaks under actuation, perception and computation errors, and naive robustification would usually destroy the potential structure that makes the problem tractable.</dd><dt>Method</dt><dd>Each agent&#39;s cost includes a fictitious adversary that, separately at each timestep, perturbs the other agents&#39; control inputs within a bounded budget to minimize the pairwise distance at that step. They prove that under certain conditions on the distance cost and on the agents&#39; robustness levels, the robust game is still an exact dynamic potential game. For linear dynamics, the inner worst-case problem has a quasi-closed-form solution, so the minimax does not need a nested optimizer.</dd><dt>Results</dt><dd>The abstract gives no quantitative numbers. It reports only qualitative findings from experiments with up to eight agents using logarithmic distance costs: trajectories shift toward safer options in high-collision-risk configurations, low-risk trajectories barely change, and runtime rises modestly. No baseline, success rate, or minimum-separation figure is quoted.</dd><dt>Caveat</dt><dd>The adversary is per-timestep and open-loop, so it does not model perturbations that compound over time or agents that re-plan in response. The tractability result depends on linear dynamics and on the conditions on robustness levels, which the abstract does not spell out. Also, eight agents in simulation with no stated comparison to chance-constrained or tube-based robust planners is a thin test of the claim that robustness is worth its cost.</dd><dt>Why it matters</dt><dd>This is inference-based decentralized planning. Agents predict each other&#39;s controls and exchange no intentions, proposals or acceptances, so it is the opposite of your explicit-negotiation setting, and the domain is air mobility, not road vehicles. It is still useful as a baseline and as a framing device: it shows what robustness to other agents deviating costs when there is no communication. The trick of keeping the potential-game structure under robustification could carry over to your cooperative trajectory optimization if you model message loss or partial compliance as bounded deviation.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="residual learning-based control of vehicle platoons with $\ell_2$ stability guarantees via recurrent equilibrium networks brian delgado, anh-tu nguyen, hamid taghavifar they add a learned correction term on top of a standard robust platoon controller, and they cap the size of that correction so the usual stability proofs still hold. nominal platoon controllers designed from linear matrix inequalities lose tracking accuracy when vehicle parameters are uncertain and when the platoon mixes different vehicles. learned corrections could close that gap, but they usually give up any guarantee of closed-loop or string stability. the base layer is a linear matrix inequality state-feedback controller with a disturbance observer. on top of it, a recurrent equilibrium network is trained offline on stored trajectories to predict the errors of the nominal model. the network is built so that its l2 gain stays below a prescribed bound, and a small-gain argument then gives sufficient conditions for local closed-loop stability and disturbance string stability. the abstract reports lower spacing and velocity errors than the nominal controller, but it gives no numbers, no platoon size, no disturbance profile and no comparison against other learning-based or robust controllers. it does not say whether the experiments are simulation or hardware. the only baseline is the authors&#39; own nominal controller, so we cannot tell how much of the gain beats a well-tuned robust controller or a learned residual without the gain bound. the stability result is local and only sufficient, and a small-gain bound may be conservative enough to limit the residual to small corrections. the abstract also never says how communication delay or packet loss enters the analysis, and for string stability under real vehicle-to-vehicle links that is the question that matters. this is peripheral to your work. it touches your platooning and string stability thread, but only at the level of the longitudinal control loop. it does not cover forming, joining or splitting a platoon, it does not cover message design, and it does not cover negotiating between vehicles. the one idea you might borrow is using a gain-bounded recurrent network as a learned module that keeps a string stability certificate. 2609.33892v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2609.33892v1">Residual Learning-Based Control of Vehicle Platoons with $\ell_2$ Stability Guarantees via Recurrent Equilibrium Networks</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Brian Delgado, Anh-Tu Nguyen, Hamid Taghavifar · arXiv:2609.33892v1</p><p class="p-hook">They add a learned correction term on top of a standard robust platoon controller, and they cap the size of that correction so the usual stability proofs still hold.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Nominal platoon controllers designed from linear matrix inequalities lose tracking accuracy when vehicle parameters are uncertain and when the platoon mixes different vehicles. Learned corrections could close that gap, but they usually give up any guarantee of closed-loop or string stability.</dd><dt>Method</dt><dd>The base layer is a linear matrix inequality state-feedback controller with a disturbance observer. On top of it, a Recurrent Equilibrium Network is trained offline on stored trajectories to predict the errors of the nominal model. The network is built so that its l2 gain stays below a prescribed bound, and a small-gain argument then gives sufficient conditions for local closed-loop stability and disturbance string stability.</dd><dt>Results</dt><dd>The abstract reports lower spacing and velocity errors than the nominal controller, but it gives no numbers, no platoon size, no disturbance profile and no comparison against other learning-based or robust controllers. It does not say whether the experiments are simulation or hardware.</dd><dt>Caveat</dt><dd>The only baseline is the authors&#39; own nominal controller, so we cannot tell how much of the gain beats a well-tuned robust controller or a learned residual without the gain bound. The stability result is local and only sufficient, and a small-gain bound may be conservative enough to limit the residual to small corrections. The abstract also never says how communication delay or packet loss enters the analysis, and for string stability under real vehicle-to-vehicle links that is the question that matters.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. It touches your platooning and string stability thread, but only at the level of the longitudinal control loop. It does not cover forming, joining or splitting a platoon, it does not cover message design, and it does not cover negotiating between vehicles. The one idea you might borrow is using a gain-bounded recurrent network as a learned module that keeps a string stability certificate.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-09-29">
       <div class="ep-head">
         <h2>Tuesday, September 29, 2026</h2>
@@ -1366,7 +1408,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-09-29 06:02 · unlisted, not indexed ·
+    Generated 2026-09-30 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
