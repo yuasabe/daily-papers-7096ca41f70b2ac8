@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2026 21:02:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 21:03:20 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 1 — 5 papers</title>
+      <description>&lt;p&gt;Three papers on game-theoretic planning for interacting agents: contingency games where each agent&amp;#x27;s intent is revealed at its own branching time, with the game split by scenario using ADMM so the branches solve in parallel; an agent-based rebuild of a Wardrop model of mixed-autonomy weaving ramps, where agents with altruistic automated vehicles choose lanes by an evolutionary game rule and settle at the equilibrium the macroscopic model predicts; and a faster interior point solver for constrained dynamic games, with a cheap second-order fix that makes it less likely to stop at saddle points that are not Nash equilibria, tested on scaled race cars. Also covered: a battery-pack controller that ranks cells at every step so its on-off switching decision grows linearly with pack size, and GlowTact, a fingertip tactile sensor whose nitrile membrane glows brighter where pressure is higher, so the camera image is the pressure map.
+
+Two of these papers are off-topic for the podcast. GlowTact&amp;#x27;s own summary says it has nothing to do with connected vehicles, and the battery-pack paper isn&amp;#x27;t about maneuver coordination either. That suggests the relevance filter let them through. If you drop them, the description can be just the first sentence. I can also look at why the filter passed them.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.37612v1"&gt;Cascaded consensus splitting for multi-branch contingency games&lt;/a&gt; &amp;mdash; Bastien Lechardoy et al.&lt;br/&gt;They extend contingency games so each agent&amp;#x27;s intent can be revealed at its own branching time, not all at once, and split the resulting game by scenario with ADMM so the branches solve in parallel.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.36424v1"&gt;Agent-Based Evolutionary Dynamics for Mixed Autonomy Weaving Ramps&lt;/a&gt; &amp;mdash; Sheryl Paul et al.&lt;br/&gt;They take an existing Wardrop-style model of weaving ramps with altruistic automated vehicles and rebuild it as a population of agents that each adjust their lane choice with an evolutionary game rule, then show the agents settle at the same equilibrium the macroscopic model predicts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.31901v1"&gt;Game-Theoretic Control with Constrained Potential Surgery&lt;/a&gt; &amp;mdash; Zhiyuan Zhang, Panagiotis Tsiotras&lt;br/&gt;A faster interior point solver for constrained dynamic games, plus a cheap second-order fix that makes it less likely to land on saddle points that are not Nash equilibria, tested on scaled race cars.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.32471v1"&gt;GlowTact: Simple and Compact Vision-Based Tactile Sensing with High Sensitivity and Spatial Resolution&lt;/a&gt; &amp;mdash; Yuxiang Ma et al.&lt;br/&gt;GlowTact is a fingertip tactile sensor where a pressed nitrile membrane glows brighter where the pressure is higher, so the camera image is the pressure map with no geometry reconstruction step, and it has nothing to do with connected vehicles.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.32032v1"&gt;RFSR-MI-MPC: Ranking-Based Feasible-Set Restriction for Real-Time Control of Reconfigurable Battery Packs&lt;/a&gt; &amp;mdash; Albert Škegro et al.&lt;br/&gt;A battery-pack controller that ranks the cells at every step and only lets the solver switch on the top few, so the on-off decision grows linearly with pack size instead of exploding combinatorially.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-01</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-01.mp3" length="6799740" type="audio/mpeg"/>
+      <pubDate>Thu, 01 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:22</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Three papers on game-theoretic planning for interacting agents: contingency games where each agent's intent is revealed at its own branching time, with the game split by scenario using ADMM so the branches solve in parallel; an agent-based rebuild of a Wardrop model of mixed-autonomy weaving ramps, where agents with altruistic automated vehicles choose lanes by an evolutionary game rule and settle at the equilibrium the macroscopic model predicts; and a faster interior point solver for constrained dynamic games, with a cheap second-order fix that makes it less likely to stop at saddle points that are not Nash equilibria, tested on scaled race cars. Also covered: a battery-pack controller that ranks cells at every step so its on-off switching decision grows linearly with pack size, and GlowTact, a fingertip tactile sensor whose nitrile membrane glows brighter where pressure is higher, so the camera image is the pressure map.
+
+Two of these papers are off-topic for the podcast. GlowTact's own summary says it has nothing to do with connected vehicles, and the battery-pack paper isn't about maneuver coordination either. That suggests the relevance filter let them through. If you drop them, the description can be just the first sentence. I can also look at why the filter passed them.</itunes:summary>
+      <itunes:episode>18</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Sep 30 — 2 papers</title>
       <description>&lt;p&gt;Air-taxi trajectory planning as a potential game is made robust by having each agent plan against a bounded adversary that perturbs the other agents&amp;#x27; controls at every timestep, and the authors show the robust version is still a potential game, so it stays cheap to solve. A second paper adds a learned residual, built from a recurrent equilibrium network, on top of a standard robust platoon controller and caps its gain so the existing ℓ2 string-stability proofs still hold.&lt;/p&gt;
