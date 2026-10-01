@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 19 (2026-10-02)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 2 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 19</strong> · October 2, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.38731v1">Decentralized Decision-Making among Heterogeneous Autonomous Vehicles: An $α$-Potential Game Framework</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Anran Hu et al.</p>
+
+<p class="hook">When vehicles care about each other unequally, the authors show you can still get an approximate Nash equilibrium by minimizing one shared potential function, and they bound how far off it is by how asymmetric those weights are.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Multi-vehicle games where interaction weights are asymmetric, for example one vehicle yielding more than another, are not exact potential games, so computing a Nash equilibrium means solving coupled best responses that are expensive and may not converge. Earlier potential-game approaches to driving assumed symmetric interaction costs, which rules out priority, heterogeneous aggressiveness and right-of-way asymmetry.</dd></div><div class="frag"><dt>Method</dt><dd>They build on the alpha-potential game idea. They write down a single auxiliary function for a dynamic game in which each vehicle uses a closed-loop policy based only on its own state. Its minimizer is an approximate Nash equilibrium, and the error alpha is bounded by how asymmetric the pairwise interaction weights are. A per-vehicle rescaling of the cost functions then reduces the effective asymmetry, and in some special cases it removes the error and gives an exact equilibrium. They also derive price-of-anarchy-style efficiency bounds for the policy the potential selects.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers. It describes simulations of collision and obstacle avoidance, lane changes, overtaking and priority-based intersection crossing. It gives no baselines, no runtime figures and no measured equilibrium gap against the theoretical alpha bound.</dd></div><div class="frag"><dt>Caveat</dt><dd>Calling this decentralized is misleading for practice. Minimizing the shared potential needs one solver that knows every vehicle&#39;s cost function and interaction weights, which is the hard part of coordination, and the paper has no communication model, no message loss and no handling of vehicles that do not participate. Results are simulation only. It is also unclear whether the alpha bound is tight enough to matter in dense traffic, or how the potential approach compares on solve time and solution quality with iterative best response or iterative LQ game solvers.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to work on explicit negotiation and message design, because it assumes the full game is known rather than agreeing on it through exchanged intentions. The useful idea for your conflict-resolution thread is that asymmetric interaction weights act as a tunable right-of-way priority with a provable equilibrium error. That could serve as the solver behind a protocol where vehicles exchange their weights or priorities, but the paper does not build that protocol.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.38731v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.38731v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.37098v2">V2X-WAM: A Cooperative World Action Model for End-to-End Autonomous Driving</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Junwei You et al.</p>
+
+<p class="hook">An end-to-end driving model for a single car that takes compressed roadside sensor features, plans candidate trajectories, predicts how the scene&#39;s occupancy and motion would unfold under each one, and uses that prediction to refine the plan.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Vehicle-infrastructure cooperative driving methods use roadside data to improve the ego vehicle&#39;s picture of the current scene, but they do not model how the planner&#39;s own actions would change the future scene. That leaves the planner blind to how its decisions interact with the traffic around it.</dd></div><div class="frag"><dt>Method</dt><dd>Vehicle and roadside observations are fused into a spatiotemporal representation weighted by reliability, and the roadside side is compressed into a quantized message to save bandwidth. A multimodal planner proposes trajectories. Each proposal conditions a prediction of future occupancy and dynamic flow, and that prediction is fed back to refine the chosen trajectory. This action-conditioned loop is the world action model idea.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It claims consistent gains in planning accuracy and safety over representative end-to-end cooperative baselines, better future-world prediction, and much lower communication overhead, all on one large-scale real-world cooperative driving dataset that it does not name. It also mentions supporting ablations.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is evaluated open-loop on a single logged dataset, so the refined trajectory never affects the other agents. That undercuts the central claim of modeling action consequences, because the future world is learned from logs in which nobody reacted to this planner. The bandwidth saving is measured against feature-sharing baselines, not against sending compact object lists or intents. The abstract also does not say how the model behaves when the roadside message is lost or delayed.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. Only one party plans, the roadside unit only senses, and the shared message carries compressed perception, not intentions, proposals or acceptances. There is no negotiation, no yielding decision, and no multi-vehicle agreement. At most it is a reference for how the end-to-end community frames action-conditioned prediction, and a contrast case showing what inference-heavy cooperation looks like next to explicit maneuver coordination.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.37098v2</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.37098v2">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.35651v1">Denoising Multi-Robot Trajectories</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yuhao Zhang et al.</p>
+
+<p class="hook">This is the journal extension of D4orm, which plans collision-free trajectories for many robots at once by iteratively denoising random perturbations of their control sequences on a GPU, and it now adds decoupled, receding-horizon and distributed versions.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Joint trajectory planning for many robots is nonconvex, multimodal and high-dimensional, so gradient-based solvers get stuck or slow down as the team grows. Existing sampling methods like MPPI also struggle to reliably find conflict-free solutions at scale.</dd></div><div class="frag"><dt>Method</dt><dd>D4orm treats planning as sampling-based optimization. In each step it samples many deformations of the current control trajectories in parallel, scores the rolled-out trajectories against a cost that includes collisions and goals, and uses a diffusion-style denoising schedule to shrink the noise toward a good solution. Running the controls through the robot dynamics keeps the result kinodynamically feasible without any training. On top of this core, they add a decoupled planner that splits the team for scalability, a receding-horizon planner with feedback control for online use, and a distributed planner in which each robot runs its own instance onboard.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers on success rate, cost or runtime. It only says D4orm variants beat MPPI and a learned diffusion-model planner on speed and reliability. The scale evidence is ten real quadrotors flying among obstacles zero-shot, one hundred robots deconflicted in simulation, and six ground robots running the distributed planner fully onboard in continuous lifelong operation.</dd></div><div class="frag"><dt>Caveat</dt><dd>The baselines are only other sampling or learned methods. Nothing in the abstract compares against optimization-based multi-robot planners such as sequential convex programming, or against search-based methods, even though the paper sets itself against conventional optimization. The distributed planner is the part that matters most for vehicle coordination, but the abstract never says what robots exchange, how often, or how performance changes when messages are dropped, delayed or a robot stops participating. The robots are differential-drive or holonomic platforms in open space, with no lanes, no car-like kinematics at road speeds, and no notion of priority or right of way.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work but touches your cooperative trajectory planning thread. It is a solver for joint conflict-free trajectories, not a negotiation protocol. Who yields comes out of a shared cost function rather than an explicit proposal and acceptance exchange, and the abstract says nothing about message design or degradation under bad communication. The distributed onboard variant is worth a look if you need a GPU-friendly backend that can generate candidate joint trajectories for vehicles to then agree on. Check what state it shares between agents before deciding it is relevant.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.35651v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.35651v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.40098v1">Pricing Time, Not Just Tokens: Latency-Aware Mechanism Design for LLM Inference</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Ian McDougall, Karthikeyan Sankaralingam</p>
+
+<p class="hook">A mechanism design paper showing that LLM providers who sell fast and slow hardware tiers can let customers sort themselves by urgency, which justifies flat per-token pricing and earns 26 to 66 percent more profit than a single tier.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Existing economic models of LLM pricing treat tokens as interchangeable and ignore that buyers also care about latency. That leaves a three-dimensional screening problem over willingness to pay, task volume and time preference, and such problems are usually intractable.</dd></div><div class="frag"><dt>Method</dt><dd>The authors build a cost model from GPU inference physics, with prefill limited by compute and decode limited by memory bandwidth. They then prove a separation theorem: with discrete hardware tiers, buyers sort into tiers by their time preference, so within each tier only standard one-dimensional screening remains, which they solve with virtual-value techniques. A side result is that optimal per-task prices do not depend on volume.</dd></div><div class="frag"><dt>Results</dt><dd>Calibrated to 8-GPU H100 and B200 clusters, the separation theorem holds in 83 percent of 105 tested configurations, rising to 96 percent at economically relevant willingness-to-pay scales. Two-tier pricing beats the best single tier by 26 to 66 percent in profit, mainly where hardware cost is a large share of the value of each request.</dd></div><div class="frag"><dt>Caveat</dt><dd>The empirical check is a calibrated numerical simulation, not data from a real market or real buyers, so it only shows the theorem&#39;s conditions hold for the authors&#39; chosen parameters. It fails in 17 percent of configurations, and the abstract does not say which regimes those are. The 96 percent figure depends on an economically relevant range of willingness to pay that the authors define themselves.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is about pricing cloud LLM inference, not vehicles, communication or coordination. The only loose link is that latency-tiered screening and self-selection are mechanism design ideas, and auction-based right-of-way work uses the same toolkit. But nothing here carries over to negotiation between vehicles, message design or platooning. You can safely ignore it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.40098v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.40098v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2609.39849v1">Flatness-based Neural Network Control of DC-DC Converters</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Kamakshi Tatkare, Ufuk Topcu, Brian Johnson</p>
+
+<p class="hook">They use differential flatness to generate feasible duty-cycle trajectories for buck, boost and buck-boost converters, then train a small neural network to imitate those trajectories as a static state-to-duty control law.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Learned controllers for power converters usually ignore the known structure of converter dynamics and search over needlessly large policy classes, which makes them data-hungry and hard to trust across wide operating ranges.</dd></div><div class="frag"><dt>Method</dt><dd>For each topology they pick a flat output of the averaged converter model, so that states and the duty cycle can be written algebraically in terms of that output and its derivatives. They use this to generate feasible trajectories with the duty cycle kept within its bounds, label the states with the matching duty values, and fit a multilayer perceptron by supervised regression. The same pipeline covers all three converter types. Only the choice of flat output changes from one topology to the next.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, baselines or error metrics. It only says the learned duty trajectories closely match the model-generated ones in simulation, and that regulation stays stable under large simultaneous input and load disturbances.</dd></div><div class="frag"><dt>Caveat</dt><dd>This is behaviour cloning of a model-based feedforward law, tested only in simulation on the same averaged model used to make the training data, so it shows no robustness to model mismatch, switching ripple or parameter drift. It also gives no stability guarantee for the learned static map and no comparison against a classical flatness-based or PI controller.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area: it is single-plant power electronics with no vehicles, no communication and no negotiation. The only idea you could carry over is using flatness to generate feasible trajectories for imitation learning, and that idea is already well known in vehicle trajectory planning.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2609.39849v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2609.39849v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-02 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

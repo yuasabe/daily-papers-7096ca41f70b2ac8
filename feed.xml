@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 21:03:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 21:03:14 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 2 — 5 papers</title>
+      <description>&lt;p&gt;Vehicles that weigh each other&amp;#x27;s interests unequally can still reach an approximate Nash equilibrium by minimizing one shared α-potential function, with the error bounded by how asymmetric the weights are; V2X-WAM refines a single car&amp;#x27;s end-to-end plan by predicting occupancy and motion under each candidate trajectory using compressed roadside features; and the journal version of D4orm adds decoupled, receding-horizon and distributed variants to GPU-based denoising of multi-robot control sequences. Further from driving, a mechanism-design paper shows that fast and slow LLM inference tiers let customers sort themselves by urgency, which supports flat per-token pricing and earns 26–66% more profit than a single tier, and a power-electronics paper trains a small neural network to copy flatness-based duty-cycle trajectories for buck, boost and buck-boost converters.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.38731v1"&gt;Decentralized Decision-Making among Heterogeneous Autonomous Vehicles: An $α$-Potential Game Framework&lt;/a&gt; &amp;mdash; Anran Hu et al.&lt;br/&gt;When vehicles care about each other unequally, the authors show you can still get an approximate Nash equilibrium by minimizing one shared potential function, and they bound how far off it is by how asymmetric those weights are.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.37098v2"&gt;V2X-WAM: A Cooperative World Action Model for End-to-End Autonomous Driving&lt;/a&gt; &amp;mdash; Junwei You et al.&lt;br/&gt;An end-to-end driving model for a single car that takes compressed roadside sensor features, plans candidate trajectories, predicts how the scene&amp;#x27;s occupancy and motion would unfold under each one, and uses that prediction to refine the plan.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.35651v1"&gt;Denoising Multi-Robot Trajectories&lt;/a&gt; &amp;mdash; Yuhao Zhang et al.&lt;br/&gt;This is the journal extension of D4orm, which plans collision-free trajectories for many robots at once by iteratively denoising random perturbations of their control sequences on a GPU, and it now adds decoupled, receding-horizon and distributed versions.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.40098v1"&gt;Pricing Time, Not Just Tokens: Latency-Aware Mechanism Design for LLM Inference&lt;/a&gt; &amp;mdash; Ian McDougall, Karthikeyan Sankaralingam&lt;br/&gt;A mechanism design paper showing that LLM providers who sell fast and slow hardware tiers can let customers sort themselves by urgency, which justifies flat per-token pricing and earns 26 to 66 percent more profit than a single tier.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2609.39849v1"&gt;Flatness-based Neural Network Control of DC-DC Converters&lt;/a&gt; &amp;mdash; Kamakshi Tatkare, Ufuk Topcu, Brian Johnson&lt;br/&gt;They use differential flatness to generate feasible duty-cycle trajectories for buck, boost and buck-boost converters, then train a small neural network to imitate those trajectories as a static state-to-duty control law.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-02</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-02.mp3" length="7323787" type="audio/mpeg"/>
+      <pubDate>Fri, 02 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:05</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Vehicles that weigh each other's interests unequally can still reach an approximate Nash equilibrium by minimizing one shared α-potential function, with the error bounded by how asymmetric the weights are; V2X-WAM refines a single car's end-to-end plan by predicting occupancy and motion under each candidate trajectory using compressed roadside features; and the journal version of D4orm adds decoupled, receding-horizon and distributed variants to GPU-based denoising of multi-robot control sequences. Further from driving, a mechanism-design paper shows that fast and slow LLM inference tiers let customers sort themselves by urgency, which supports flat per-token pricing and earns 26–66% more profit than a single tier, and a power-electronics paper trains a small neural network to copy flatness-based duty-cycle trajectories for buck, boost and buck-boost converters.</itunes:summary>
+      <itunes:episode>19</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 1 — 5 papers</title>
       <description>&lt;p&gt;Three papers on game-theoretic planning for interacting agents: contingency games where each agent&amp;#x27;s intent is revealed at its own branching time, with the game split by scenario using ADMM so the branches solve in parallel; an agent-based rebuild of a Wardrop model of mixed-autonomy weaving ramps, where agents with altruistic automated vehicles choose lanes by an evolutionary game rule and settle at the equilibrium the macroscopic model predicts; and a faster interior point solver for constrained dynamic games, with a cheap second-order fix that makes it less likely to stop at saddle points that are not Nash equilibria, tested on scaled race cars. Also covered: a battery-pack controller that ranks cells at every step so its on-off switching decision grows linearly with pack size, and GlowTact, a fingertip tactile sensor whose nitrile membrane glows brighter where pressure is higher, so the camera image is the pressure map.
