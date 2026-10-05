@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 20 (2026-10-06)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 6 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 20</strong> · October 6, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.03059v1">An Analytical Review of Model Order Reduction Methodologies of Converter-Dominated Power Systems for Stability Studies</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Goran Grdenić, Marco Fraccaro, Josipa-Pina Milišić</p>
+
+<p class="hook">It&#39;s a 53-page survey of ways to shrink big power-grid models full of inverters so stability studies run faster, and it has nothing to do with vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Grids with many renewables are now dominated by power-electronic converters. Their dynamics span many timescales, so high-fidelity models become huge differential-algebraic systems that are too expensive to simulate, and no review has organized the reduction methods around the equations they actually use.</dd></div><div class="frag"><dt>Method</dt><dd>It&#39;s a literature review, not new work. It groups model order reduction methods into five families: singular perturbation based on timescale separation, projection-based methods, operator-based methods, data-driven methods, and machine-learning methods. For each family it lays out the key reduction equations and discusses strengths and weaknesses.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, benchmarks or comparisons on test systems. Its stated output is a qualitative synthesis that points to harmonic interactions and multi-frequency dynamics as the open challenges.</dd></div><div class="frag"><dt>Caveat</dt><dd>Judging from the abstract, the review sorts methods by family but never compares them on a shared benchmark grid. So a reader can&#39;t tell which method keeps accuracy at which frequency range for what computational cost. That weakens the practical guidance it promises.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It covers power-system stability, not vehicle coordination, messages or negotiation. The only faint link is to platoon string stability, where reduced-order models of interconnected dynamics come up. Even there, the methods target electrical networks and would not change how you approach platooning.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.03059v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.03059v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.03013v1">RYOPO: Bringing End-to-End Category-Level Object Pose Estimation into Real Time</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hakjin Lee, Junghoon Seo, Jaehoon Sim</p>
+
+<p class="hook">RYOPO is a single-pass RGB-D network that detects, segments and estimates the full nine-degree-of-freedom pose of household objects at about 32 frames per second, matching slower two-stage pipelines without needing a separate segmenter.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>The most accurate category-level pose methods on RGB-D first run a separate instance segmenter and then process a crop for each object, so runtime grows with the number of objects and real-time use is hard. Earlier end-to-end detectors avoided that cost but gave up a lot of accuracy, so the field had no fast method that was also accurate.</dd></div><div class="frag"><dt>Method</dt><dd>It is a DETR-style query-based set predictor in which a shared image and scene encoder runs once per frame, and each object query pulls in its own 3D points and RGB features through a query-conditioned geometry pathway, with no CAD shape priors. Each query keeps an explicit pose state, which is refined over several rounds by cross-attention conditioned on the current pose plus recurrent residual updates.</dd></div><div class="frag"><dt>Results</dt><dd>On NOCS it substantially beats published RGB-D joint detection and pose methods. On REAL275 and HouseCat6D it is competitive with two-stage methods under all-object evaluation, and it runs on full frames at 31.8 frames per second on an RTX A6000. The abstract gives no accuracy numbers for any of these comparisons.</dd></div><div class="frag"><dt>Caveat</dt><dd>The abstract says competitive, not better, against two-stage methods, so the gain is mostly speed. The 31.8 frames per second figure is on a workstation GPU, and the abstract does not say whether it holds as scenes get more crowded, which is the scaling claim the paper rests on. The benchmarks are indoor tabletop categories like mugs and cameras, far from outdoor or vehicle-scale scenes.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is indoor object pose perception for robot manipulation, with no vehicles, no communication and no coordination between agents. At most, the per-object query design that refines an explicit state is a loose architectural parallel for perception, and it says nothing about negotiating maneuvers.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.03013v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.03013v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.02969v1">Profile-Aware Trustworthy Recipe Generation with Planner-Critic Agentic Remediation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Shanhong Liu, Pai Chet Ng, Konstantinos N. Plataniotis</p>
+
+<p class="hook">An LLM pipeline for turning food photos into recipes, where one agent drafts a recipe from the user&#39;s allergy and diet profile and a second agent checks it for violations and sends it back for fixes; it has nothing to do with vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Generating a recipe from a food image in a single pass can ignore user-specific constraints like allergies, dietary restrictions and preparation limits. The usual fallback is to discard unsafe outputs, so a plain generator can return something unsafe or nothing usable.</dd></div><div class="frag"><dt>Method</dt><dd>A Planner agent pulls ingredients from the image and writes a recipe draft conditioned on a user profile. A separate Safety Critic agent audits the draft against that profile and returns structured feedback, so the Planner revises the draft in a loop. Unsafe drafts get repaired instead of being returned or thrown away.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers. It says the system was tested on real food images with 100 benchmark user profiles across four backbone models, some proprietary and some open-source served locally, and that it does well on safety and generation with capable backbones.</dd></div><div class="frag"><dt>Caveat</dt><dd>The safety checker is itself a language model, so if the critic and the planner share blind spots, safety is graded by the same kind of system that produced the violations. The phrase about capable backbone models suggests the gains shrink or disappear on the weaker open models. The abstract also names no baseline, such as a single pass with the constraints written into the prompt.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This one is off-topic for you. It is a food and recipe paper that was filed under systems and control, so it slipped through the category filter. The only loose link is the propose, critique and revise loop, which looks a bit like a proposal and acceptance scheme. But it involves no communication, no multiple vehicles and no real negotiation, so you can drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.02969v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.02969v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.02898v1">MixVLA: Adaptive Mixing of Non-Invariant Information for Generalizable Vision-Language-Action Models</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Pingrui Zhang et al.</p>
+
+<p class="hook">MixVLA makes robot manipulation policies less fooled by background and lighting changes by randomly mixing the scene-specific part of the learned features during training, and it claims better zero-shot robustness on LIBERO-Plus and RoboTwin without extra data.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Vision-language-action policies for manipulation break under out-of-distribution visual conditions because they latch onto spurious appearance cues tied to the training environment. The task-relevant structure and the environment-specific factors stay entangled in one representation, and existing fixes usually need extra out-of-distribution data or architecture changes.</dd></div><div class="frag"><dt>Method</dt><dd>The model&#39;s representation is split into an invariant part and a non-invariant part. A module called Adaptive Mixing of Non-Invariant Information stochastically mixes the non-invariant features across samples, in the spirit of feature-level mixup or style mixing. The mixed non-invariant features are then fused back with the invariant ones for action prediction, so environment cues are regularized rather than thrown away, and the whole scheme is pitched as model-agnostic training with no architectural change.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It claims improved zero-shot robustness on LIBERO, LIBERO-Plus, the RoboTwin perturbation suite and some real-world tasks, while keeping in-domain performance, but names no baselines and no margins.</dd></div><div class="frag"><dt>Caveat</dt><dd>The abstract does not say how the invariant and non-invariant parts are actually separated. If the split is just a learned projection with no supervision, then calling it invariance is a label rather than a guarantee, and a reviewer will want ablations against plain feature mixup and standard augmentation. The perturbation suites mostly test visual shifts like lighting, texture and camera, so robustness to new dynamics or new tasks is not shown.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is about single-robot manipulation and visual distribution shift, with nothing on communication, negotiation, intent sharing or multi-agent coordination. The only loose link is that perception-driven driving policies face the same problem of spurious appearance cues, and that does not touch maneuver protocols or cooperative planning.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.02898v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.02898v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.02863v1">Multi-Agent AI as a Nested Principal-Agent Problem in Private Wealth Management: Mandate Representation and Evidence Control in Switzerland, Germany and Austria</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Walter Kurz et al.</p>
+
+<p class="hook">A wealth-management paper that models a client delegating to a manager, who in turn delegates to an AI. The AI is told to maximise a weighted mix of client and manager payoffs subject to legal and mandate constraints, and the paper tests this on a handful of made-up mandates.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>When a manager hands decisions to an AI system, the client&#39;s interests can quietly lose out to the manager&#39;s, and there is no explicit way to see that trade-off or check it against Swiss, German and Austrian legal duties. Prior principal-agent work treats a single delegation step and does not separate client and manager outcomes inside the AI&#39;s objective.</dd></div><div class="frag"><dt>Method</dt><dd>They formalise a two-level principal-agent chain, then give the AI a constrained joint maximisation over pairs of a portfolio and a service workflow. Legal duties, mandate terms and evidence sufficiency define which options are admissible. Explicit weights and a reference-service floor set the client-manager trade-off, and a concession accounting step reports how much the client gives up relative to their best admissible option.</dd></div><div class="frag"><dt>Results</dt><dd>Across eight decision states from four constructed mandates, leaving out client liabilities caused two liquidity violations, leaving out manager terms caused two capacity violations, and mistranslated weights changed four choices. At the declared weights, six states picked a higher service tier, costing clients 1,178 to 2,264 euros while manager gains ran from 3,062 to 10,381 euros. Three instruction styles all hit 32 of 32 specified decisions, and a 2022 backtest left clients worse off than the reference service.</dd></div><div class="frag"><dt>Caveat</dt><dd>Almost every headline result is true by construction. If you drop a constraint from a faithful optimiser, it will violate that constraint, and if you change the weights, the choice changes. The evidence is eight hand-built decision states with simulated approval, so the 32 out of 32 accuracy says nothing about real advisors or messy mandates. The venue is also an unfamiliar institute journal, so treat its peer review as unverified.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It has no vehicles, no message exchange, no packet loss and no multi-agent negotiation protocol. The only transferable idea is concession accounting. That means reporting how much each party gives up compared with its own best admissible option under an explicit weighted objective with floors. You could use that framing to report fairness in cooperative lane-change or gap-creation agreements, but you would get it faster from the bargaining literature.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.02863v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.02863v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-06 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

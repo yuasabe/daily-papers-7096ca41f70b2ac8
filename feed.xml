@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 21:03:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 21:02:38 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 6 — 5 papers</title>
+      <description>&lt;p&gt;RYOPO estimates the full nine-degree-of-freedom pose of household objects from RGB-D input in a single pass at about 32 fps, matching slower two-stage pipelines without a separate segmenter. MixVLA randomly mixes scene-specific features during training to make robot manipulation policies less sensitive to background and lighting, and claims better zero-shot robustness on LIBERO-Plus and RoboTwin; the other three papers are a 53-page survey of shrinking inverter-heavy power-grid models for stability studies, a two-agent LLM pipeline that checks recipes generated from food photos against a user&amp;#x27;s allergy and diet profile, and a principal-agent model of AI delegation in Swiss, German and Austrian wealth management tested on a few made-up mandates.
+
+None of these five papers are about cooperative driving or V2X, and two of your own notes say &amp;quot;nothing to do with vehicles.&amp;quot; The topic filter probably let them through by mistake, so you may want to skip this episode rather than publish it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.03059v1"&gt;An Analytical Review of Model Order Reduction Methodologies of Converter-Dominated Power Systems for Stability Studies&lt;/a&gt; &amp;mdash; Goran Grdenić, Marco Fraccaro, Josipa-Pina Milišić&lt;br/&gt;It&amp;#x27;s a 53-page survey of ways to shrink big power-grid models full of inverters so stability studies run faster, and it has nothing to do with vehicles.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.03013v1"&gt;RYOPO: Bringing End-to-End Category-Level Object Pose Estimation into Real Time&lt;/a&gt; &amp;mdash; Hakjin Lee, Junghoon Seo, Jaehoon Sim&lt;br/&gt;RYOPO is a single-pass RGB-D network that detects, segments and estimates the full nine-degree-of-freedom pose of household objects at about 32 frames per second, matching slower two-stage pipelines without needing a separate segmenter.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.02969v1"&gt;Profile-Aware Trustworthy Recipe Generation with Planner-Critic Agentic Remediation&lt;/a&gt; &amp;mdash; Shanhong Liu, Pai Chet Ng, Konstantinos N. Plataniotis&lt;br/&gt;An LLM pipeline for turning food photos into recipes, where one agent drafts a recipe from the user&amp;#x27;s allergy and diet profile and a second agent checks it for violations and sends it back for fixes; it has nothing to do with vehicles.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.02898v1"&gt;MixVLA: Adaptive Mixing of Non-Invariant Information for Generalizable Vision-Language-Action Models&lt;/a&gt; &amp;mdash; Pingrui Zhang et al.&lt;br/&gt;MixVLA makes robot manipulation policies less fooled by background and lighting changes by randomly mixing the scene-specific part of the learned features during training, and it claims better zero-shot robustness on LIBERO-Plus and RoboTwin without extra data.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.02863v1"&gt;Multi-Agent AI as a Nested Principal-Agent Problem in Private Wealth Management: Mandate Representation and Evidence Control in Switzerland, Germany and Austria&lt;/a&gt; &amp;mdash; Walter Kurz et al.&lt;br/&gt;A wealth-management paper that models a client delegating to a manager, who in turn delegates to an AI. The AI is told to maximise a weighted mix of client and manager payoffs subject to legal and mandate constraints, and the paper tests this on a handful of made-up mandates.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-06</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-06.mp3" length="5906350" type="audio/mpeg"/>
+      <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:07</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>RYOPO estimates the full nine-degree-of-freedom pose of household objects from RGB-D input in a single pass at about 32 fps, matching slower two-stage pipelines without a separate segmenter. MixVLA randomly mixes scene-specific features during training to make robot manipulation policies less sensitive to background and lighting, and claims better zero-shot robustness on LIBERO-Plus and RoboTwin; the other three papers are a 53-page survey of shrinking inverter-heavy power-grid models for stability studies, a two-agent LLM pipeline that checks recipes generated from food photos against a user's allergy and diet profile, and a principal-agent model of AI delegation in Swiss, German and Austrian wealth management tested on a few made-up mandates.
+
+None of these five papers are about cooperative driving or V2X, and two of your own notes say "nothing to do with vehicles." The topic filter probably let them through by mistake, so you may want to skip this episode rather than publish it.</itunes:summary>
+      <itunes:episode>20</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 2 — 5 papers</title>
       <description>&lt;p&gt;Vehicles that weigh each other&amp;#x27;s interests unequally can still reach an approximate Nash equilibrium by minimizing one shared α-potential function, with the error bounded by how asymmetric the weights are; V2X-WAM refines a single car&amp;#x27;s end-to-end plan by predicting occupancy and motion under each candidate trajectory using compressed roadside features; and the journal version of D4orm adds decoupled, receding-horizon and distributed variants to GPU-based denoising of multi-robot control sequences. Further from driving, a mechanism-design paper shows that fast and slow LLM inference tiers let customers sort themselves by urgency, which supports flat per-token pricing and earns 26–66% more profit than a single tier, and a power-electronics paper trains a small neural network to copy flatness-based duty-cycle trajectories for buck, boost and buck-boost converters.&lt;/p&gt;
