@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 21:02:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 21:02:50 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 7 — 2 papers</title>
+      <description>&lt;p&gt;Treating announced right-of-way priorities at an unsignalised intersection as a potential game always discards a fixed share of the incentive structure, one fifth at an eight-vehicle intersection, and a Hodge decomposition shows that no rank-based payoff redesign can recover it. A second team retrofitted ordinary production cars with MPC-based cooperative adaptive cruise control and drove them away from a traffic light at gaps under three meters, with each car using information only from the car directly ahead.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.05832v1"&gt;Priority Coordination Games: Hodge Decomposition and a Sharp Design Limit&lt;/a&gt; &amp;mdash; Zhihao Lin et al.&lt;br/&gt;If you model announced right-of-way priorities at an unsignalised intersection as a potential game, you are guaranteed to throw away a fixed share of the incentive structure, for example one fifth at an eight-vehicle intersection, and no rank-based payoff redesign can recover it.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.05429v1"&gt;Cooperative Adaptive Cruise Control with Constant Distance Gaps for Retrofitted Legacy Vehicles&lt;/a&gt; &amp;mdash; Kay Massow et al.&lt;br/&gt;A team retrofitted ordinary production cars with MPC-based cooperative adaptive cruise control and drove them off from a traffic light with gaps under three meters, with each car listening only to the car directly ahead.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-07</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-07.mp3" length="5486254" type="audio/mpeg"/>
+      <pubDate>Wed, 07 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:32</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Treating announced right-of-way priorities at an unsignalised intersection as a potential game always discards a fixed share of the incentive structure, one fifth at an eight-vehicle intersection, and a Hodge decomposition shows that no rank-based payoff redesign can recover it. A second team retrofitted ordinary production cars with MPC-based cooperative adaptive cruise control and drove them away from a traffic light at gaps under three meters, with each car using information only from the car directly ahead.</itunes:summary>
+      <itunes:episode>21</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 6 — 5 papers</title>
       <description>&lt;p&gt;RYOPO estimates the full nine-degree-of-freedom pose of household objects from RGB-D input in a single pass at about 32 fps, matching slower two-stage pipelines without a separate segmenter. MixVLA randomly mixes scene-specific features during training to make robot manipulation policies less sensitive to background and lighting, and claims better zero-shot robustness on LIBERO-Plus and RoboTwin; the other three papers are a 53-page survey of shrinking inverter-heavy power-grid models for stability studies, a two-agent LLM pipeline that checks recipes generated from food photos against a user&amp;#x27;s allergy and diet profile, and a principal-agent model of AI delegation in Swiss, German and Austrian wealth management tested on a few made-up mandates.
