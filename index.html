@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">23 episodes ·
-       83 papers ·
+    <p class="tagline">24 episodes ·
+       84 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,34 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-08">
+      <div class="ep-head">
+        <h2>Thursday, October 8, 2026</h2>
+        <span class="ep-meta">Episode 22 · 1 papers · 4 min</span>
+      </div>
+<p class="ep-summary">A receding-horizon scheme approximates the feedback Nash equilibrium of a differential game by repeatedly solving open-loop games, with the horizon length and terminal cost tuned so the closed-loop trajectories track the true feedback solution. The paper proves an upper bound on how far the two sets of trajectories drift apart, but that bound only holds when there are no constraints, so the guarantee doesn&#39;t cover the constrained games named in the title.</p>
+      <audio controls preload="none" src="audio/2026-10-08.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-08.html">One-pager</a><a class="btn" href="onepagers/2026-10-08.pdf">PDF</a><a class="btn" href="audio/2026-10-08.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="approximate feedback nash equilibria in constrained differential games via model predictive control with upper bound guarantees balint varga et al. they approximate the feedback nash equilibrium of a differential game by running receding-horizon open-loop games, tune the horizon and terminal cost so the result tracks the feedback solution, and prove a bound on how far the trajectories drift apart, but only when there are no constraints. feedback nash equilibria give time-consistent strategies for interacting agents, but they are hard to compute and become intractable once state and input constraints are added. open-loop games are tractable, but they are not time-consistent, and nobody had quantified how far a receding-horizon open-loop scheme strays from the true feedback equilibrium. at each step they solve a finite-horizon open-loop game and apply its first input, in the usual mpc way. the key device is an auxiliary game whose prediction horizon and terminal costs are chosen so that its optimality conditions mimic those of the infinite-horizon feedback game. they then add hard constraints by swapping in a constrained open-loop game, and for the unconstrained case they derive an analytic upper bound on the gap between the mpc state trajectory and the feedback equilibrium trajectory. the abstract gives no numbers. it says only that numerical examples beat unnamed baselines from the literature, and it names no benchmark, system dimension or count of agents. the guarantee does not cover the setting the paper uses to motivate itself: the bound holds only without constraints, so the constrained extension is a heuristic with no certificate. the bound is very likely tied to linear-quadratic structure, the motivation is two-agent human-machine interaction, and the evidence is numerical examples only. every agent is also assumed to know every other agent&#39;s cost exactly, which no real negotiation scenario provides. this is peripheral to your work. it is a solver-level result for game-theoretic interaction, so it matters only if you use nash-equilibrium mpc to settle right of way in merges or lane changes. even then, it models no communication, intent exchange, message loss or proposal and acceptance. its open-loop versus feedback bound might be worth citing if you justify receding-horizon game planners, but it says nothing about protocol design. 2610.04614v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.04614v1">Approximate Feedback Nash Equilibria in Constrained Differential Games via Model Predictive Control with Upper Bound Guarantees</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Balint Varga et al. · arXiv:2610.04614v1</p><p class="p-hook">They approximate the feedback Nash equilibrium of a differential game by running receding-horizon open-loop games, tune the horizon and terminal cost so the result tracks the feedback solution, and prove a bound on how far the trajectories drift apart, but only when there are no constraints.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Feedback Nash equilibria give time-consistent strategies for interacting agents, but they are hard to compute and become intractable once state and input constraints are added. Open-loop games are tractable, but they are not time-consistent, and nobody had quantified how far a receding-horizon open-loop scheme strays from the true feedback equilibrium.</dd><dt>Method</dt><dd>At each step they solve a finite-horizon open-loop game and apply its first input, in the usual MPC way. The key device is an auxiliary game whose prediction horizon and terminal costs are chosen so that its optimality conditions mimic those of the infinite-horizon feedback game. They then add hard constraints by swapping in a constrained open-loop game, and for the unconstrained case they derive an analytic upper bound on the gap between the MPC state trajectory and the feedback equilibrium trajectory.</dd><dt>Results</dt><dd>The abstract gives no numbers. It says only that numerical examples beat unnamed baselines from the literature, and it names no benchmark, system dimension or count of agents.</dd><dt>Caveat</dt><dd>The guarantee does not cover the setting the paper uses to motivate itself: the bound holds only without constraints, so the constrained extension is a heuristic with no certificate. The bound is very likely tied to linear-quadratic structure, the motivation is two-agent human-machine interaction, and the evidence is numerical examples only. Every agent is also assumed to know every other agent&#39;s cost exactly, which no real negotiation scenario provides.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. It is a solver-level result for game-theoretic interaction, so it matters only if you use Nash-equilibrium MPC to settle right of way in merges or lane changes. Even then, it models no communication, intent exchange, message loss or proposal and acceptance. Its open-loop versus feedback bound might be worth citing if you justify receding-horizon game planners, but it says nothing about protocol design.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-07">
       <div class="ep-head">
         <h2>Wednesday, October 7, 2026</h2>
@@ -1706,7 +1734,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-07 06:02 · unlisted, not indexed ·
+    Generated 2026-10-08 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
