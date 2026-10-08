@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">24 episodes ·
-       84 papers ·
+    <p class="tagline">25 episodes ·
+       86 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,50 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-09">
+      <div class="ep-head">
+        <h2>Friday, October 9, 2026</h2>
+        <span class="ep-meta">Episode 23 · 2 papers · 4 min</span>
+      </div>
+<p class="ep-summary">MagLearn 2 uses an LSTM to predict how a magnetic core&#39;s B-H response changes over time under PWM switching waveforms, with a separate model for the saturated region, and it tops the MagNet Challenge Two leaderboard at 2.2 percent RMSE on the challenge&#39;s own data. A grid-expansion planning model treats pairs of batteries at the two ends of a congested line as a virtual transmission line, but it is tested on only one standard 24-bus test grid.
+
+Neither paper is about cooperative driving or V2X, so they look out of scope for this podcast. If these came from the saved-papers source (`2778c3d`/`11d41fd`), the maneuver-coordination scope filter might not be running on that path.</p>
+      <audio controls preload="none" src="audio/2026-10-09.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-09.html">One-pager</a><a class="btn" href="onepagers/2026-10-09.pdf">PDF</a><a class="btn" href="audio/2026-10-09.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="maglearn 2: high-fidelity, saturation-aware, and history-efficient sequence-to-sequence modeling of transient b-h behaviour under pwm excitation jingrong yang et al. an lstm predicts how a magnetic core&#39;s field responds under switching-converter waveforms, plus a separate model for the saturated region, and it tops the magnet challenge two leaderboard at 2.2 percent rmse. data-driven core-loss models struggle to predict the transient field waveform under pwm excitation, because the response depends on past magnetisation. prior sequence models never settled how much history to feed in, how to handle saturation, or how to adapt to new materials. a short-window lstm sequence-to-sequence model takes recent flux density and field history, plus the operating conditions, and forecasts the future field waveform. when a waveform is dominated by saturation, a separate auxiliary module replaces the main model&#39;s output in those segments. the authors then mask parts of the input history to measure how much each part of the history contributes to the prediction. on one saturated 3c90 ferrite case, the auxiliary module cuts sequence-level relative rmse from 67.84 percent to 9.19 percent. the best model scored 2.2 percent average rmse in the independent magnet challenge two evaluation, the lowest reported so far on that task. the saturation gain comes from one hand-picked case, not a distribution over the test set, so we can&#39;t tell how often the replacement logic fires or whether it adds discontinuities where it switches in. the abstract names adaptation to unseen materials as a goal but reports no transfer numbers. the finding that recent history matters most is partly circular, because the masking test runs on a model trained only on a short history window. this is power-electronics magnetics modeling and has nothing to do with vehicle coordination, negotiation protocols, platooning, or trajectory planning. there is no transferable idea here that you wouldn&#39;t find in the standard sequence-modeling literature. it most likely reached your feed through its systems-and-control category label. 2610.03504v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.03504v1">MagLearn 2: High-Fidelity, Saturation-Aware, and History-Efficient Sequence-to-sequence Modeling of Transient B-H Behaviour Under PWM Excitation</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Jingrong Yang et al. · arXiv:2610.03504v1</p><p class="p-hook">An LSTM predicts how a magnetic core&#39;s field responds under switching-converter waveforms, plus a separate model for the saturated region, and it tops the MagNet Challenge Two leaderboard at 2.2 percent RMSE.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Data-driven core-loss models struggle to predict the transient field waveform under PWM excitation, because the response depends on past magnetisation. Prior sequence models never settled how much history to feed in, how to handle saturation, or how to adapt to new materials.</dd><dt>Method</dt><dd>A short-window LSTM sequence-to-sequence model takes recent flux density and field history, plus the operating conditions, and forecasts the future field waveform. When a waveform is dominated by saturation, a separate auxiliary module replaces the main model&#39;s output in those segments. The authors then mask parts of the input history to measure how much each part of the history contributes to the prediction.</dd><dt>Results</dt><dd>On one saturated 3C90 ferrite case, the auxiliary module cuts sequence-level relative RMSE from 67.84 percent to 9.19 percent. The best model scored 2.2 percent average RMSE in the independent MagNet Challenge Two evaluation, the lowest reported so far on that task.</dd><dt>Caveat</dt><dd>The saturation gain comes from one hand-picked case, not a distribution over the test set, so we can&#39;t tell how often the replacement logic fires or whether it adds discontinuities where it switches in. The abstract names adaptation to unseen materials as a goal but reports no transfer numbers. The finding that recent history matters most is partly circular, because the masking test runs on a model trained only on a short history window.</dd><dt>Why it matters</dt><dd>This is power-electronics magnetics modeling and has nothing to do with vehicle coordination, negotiation protocols, platooning, or trajectory planning. There is no transferable idea here that you wouldn&#39;t find in the standard sequence-modeling literature. It most likely reached your feed through its systems-and-control category label.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="generation and transmission expansion planning with bess-based virtual transmission lines qiushi wang, xingpeng li a power grid planning model that treats pairs of grid batteries at two ends of a congested line as a virtual transmission line, tested on one standard 24-bus test grid. renewables and data centers are being added faster than transmission lines can be built, which leaves lines congested. existing expansion planning models treat batteries as standalone devices and do not coordinate them as a substitute for new transmission. they add a virtual transmission line formulation to a long-term generation and transmission expansion planning model. it links two battery systems at different buses so that both are never charging or discharging at the same time, which makes the pair behave like a line that shifts energy between locations. the coupling constraint is relaxed, and they do not add an explicit congestion cost to the objective, so any congestion relief comes from the coupling alone. on a revised ieee 24-bus system, compared with standalone batteries, the virtual line cuts weighted total congestion by 12.3 percent and cuts congestion on individual branches by up to about 67 percent, while total planning cost rises by only 0.3 percent. congestion rent and n-1 violations also fall, but only in the base case. all evidence comes from one small, modified test grid, so we cannot tell whether the gains hold on realistic networks or under different renewable and load scenarios. the coupling is one extra no-simultaneous-operation constraint on top of the standalone battery model. a reviewer would ask how tight the relaxation is, and whether the congestion gains are a real coordination effect or just a different optimum chosen by the solver at almost the same cost. this is outside your area. it is power system expansion planning, with no vehicles, no communication, and no negotiation between agents. the only loose link is the idea of pairing two assets under a coupling constraint, and that adds nothing to maneuver coordination or platooning work. 2610.02674v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.02674v1">Generation and Transmission Expansion Planning with BESS-Based Virtual Transmission Lines</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Qiushi Wang, Xingpeng Li · arXiv:2610.02674v1</p><p class="p-hook">A power grid planning model that treats pairs of grid batteries at two ends of a congested line as a virtual transmission line, tested on one standard 24-bus test grid.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Renewables and data centers are being added faster than transmission lines can be built, which leaves lines congested. Existing expansion planning models treat batteries as standalone devices and do not coordinate them as a substitute for new transmission.</dd><dt>Method</dt><dd>They add a virtual transmission line formulation to a long-term generation and transmission expansion planning model. It links two battery systems at different buses so that both are never charging or discharging at the same time, which makes the pair behave like a line that shifts energy between locations. The coupling constraint is relaxed, and they do not add an explicit congestion cost to the objective, so any congestion relief comes from the coupling alone.</dd><dt>Results</dt><dd>On a revised IEEE 24-bus system, compared with standalone batteries, the virtual line cuts weighted total congestion by 12.3 percent and cuts congestion on individual branches by up to about 67 percent, while total planning cost rises by only 0.3 percent. Congestion rent and N-1 violations also fall, but only in the base case.</dd><dt>Caveat</dt><dd>All evidence comes from one small, modified test grid, so we cannot tell whether the gains hold on realistic networks or under different renewable and load scenarios. The coupling is one extra no-simultaneous-operation constraint on top of the standalone battery model. A reviewer would ask how tight the relaxation is, and whether the congestion gains are a real coordination effect or just a different optimum chosen by the solver at almost the same cost.</dd><dt>Why it matters</dt><dd>This is outside your area. It is power system expansion planning, with no vehicles, no communication, and no negotiation between agents. The only loose link is the idea of pairing two assets under a coupling constraint, and that adds nothing to maneuver coordination or platooning work.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-08">
       <div class="ep-head">
         <h2>Thursday, October 8, 2026</h2>
@@ -1734,7 +1778,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-08 06:02 · unlisted, not indexed ·
+    Generated 2026-10-09 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
