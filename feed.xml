@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Oct 2026 21:02:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 21:02:20 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,27 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 10 — 3 papers</title>
+      <description>&lt;p&gt;RFChipAgent uses a chain of LLM agents to pick a topology, build the schematic and testbench, and size the circuit with Bayesian and evolutionary optimizers run against a simulator, but it&amp;#x27;s only shown on one family of 60 GHz low-noise amplifiers. YUBI-STAG automatically re-captions two-handed robot demonstrations to say which hand grabs what, and a VLA fine-tuned on those captions follows more specific instructions; a third paper linearizes a DC microgrid model of an AI data center around each fault trajectory to predict how the response changes when parameters shift by up to 15 percent, without rerunning the full simulation.
+
+None of these three papers is about cooperative driving or V2X. If they came through the saved-papers source rather than the arXiv filter, the scope filter may not be running on that path.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.10858v1"&gt;RFChipAgent: Multi-Agentic AI Flow for Analog/RF Chip Design&lt;/a&gt; &amp;mdash; Awani Khodkumbhe et al.&lt;br/&gt;It&amp;#x27;s an LLM agent pipeline for analog RF chip design that picks a topology, builds the schematic and testbench, and then sizes the circuit with Bayesian and evolutionary optimizers running against a simulator, shown on one family of 60 gigahertz low noise amplifiers.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.09718v1"&gt;YUBI-STAG: Contact and Semantic-Rich Alignment for VLAs via Automated Video-Language Grounding&lt;/a&gt; &amp;mdash; Masatoshi Tateno et al.&lt;br/&gt;They automatically re-caption bimanual robot demonstrations with who-grabs-what detail, distill that annotator into a single video model, and show that fine-tuning a VLA on the richer captions makes it follow more specific instructions.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.09393v1"&gt;Trajectory Sensitivity-Based Dynamic Assessment of an AI Data Center Under Contingencies&lt;/a&gt; &amp;mdash; Arnav Bagga et al.&lt;br/&gt;They linearize a DC microgrid model of an AI data center around each fault trajectory, then use those sensitivities to predict how the response shifts when parameters move by up to fifteen percent, instead of rerunning the full simulation.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-10</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-10.mp3" length="4535012" type="audio/mpeg"/>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:13</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>RFChipAgent uses a chain of LLM agents to pick a topology, build the schematic and testbench, and size the circuit with Bayesian and evolutionary optimizers run against a simulator, but it's only shown on one family of 60 GHz low-noise amplifiers. YUBI-STAG automatically re-captions two-handed robot demonstrations to say which hand grabs what, and a VLA fine-tuned on those captions follows more specific instructions; a third paper linearizes a DC microgrid model of an AI data center around each fault trajectory to predict how the response changes when parameters shift by up to 15 percent, without rerunning the full simulation.
+
+None of these three papers is about cooperative driving or V2X. If they came through the saved-papers source rather than the arXiv filter, the scope filter may not be running on that path.</itunes:summary>
+      <itunes:episode>24</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 9 — 2 papers</title>
       <description>&lt;p&gt;MagLearn 2 uses an LSTM to predict how a magnetic core&amp;#x27;s B-H response changes over time under PWM switching waveforms, with a separate model for the saturated region, and it tops the MagNet Challenge Two leaderboard at 2.2 percent RMSE on the challenge&amp;#x27;s own data. A grid-expansion planning model treats pairs of batteries at the two ends of a congested line as a virtual transmission line, but it is tested on only one standard 24-bus test grid.

@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 24 (2026-10-10)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 10 — 3 papers</h1>
+    <div class="meta">
+      <strong>Episode 24</strong> · October 10, 2026 · 3 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10858v1">RFChipAgent: Multi-Agentic AI Flow for Analog/RF Chip Design</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Awani Khodkumbhe et al.</p>
+
+<p class="hook">It&#39;s an LLM agent pipeline for analog RF chip design that picks a topology, builds the schematic and testbench, and then sizes the circuit with Bayesian and evolutionary optimizers running against a simulator, shown on one family of 60 gigahertz low noise amplifiers.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Analog and RF circuit design is still mostly manual. Existing automation handles either topology choice or device sizing in isolation, and doesn&#39;t reuse the design knowledge buried in a team&#39;s internal documentation.</dd></div><div class="frag"><dt>Method</dt><dd>A retrieval layer indexes each engineering document separately and feeds design knowledge to a topology agent and to a schematic and testbench agent. Device sizing uses a hybrid of a Tree-structured Parzen Estimator and CMA-ES, with a circuit simulator scoring every candidate. A database of simulation results, weighted by how much each result is trusted, carries what earlier runs learned into later optimization trials.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It claims substantial reductions in design effort and signoff-quality verification on 60 gigahertz wideband low noise amplifiers in the GlobalFoundries 22 nanometer FD-SOI process, but it names no baseline, no reported gain or noise figure, and no measure of designer hours.</dd></div><div class="frag"><dt>Caveat</dt><dd>The evaluation covers a single circuit class in a single process node, and the abstract reports no comparison against a human designer or against plain optimizer-based sizing without the agents. So it is unclear how much the LLM layer adds beyond running the TPE and CMA-ES optimizers, which are standard tools.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. The multi-agent part means LLM tool orchestration inside a chip design flow, not autonomous agents negotiating with each other, so it has nothing on vehicle coordination, message design or conflict resolution. You can safely drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10858v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10858v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.09718v1">YUBI-STAG: Contact and Semantic-Rich Alignment for VLAs via Automated Video-Language Grounding</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Masatoshi Tateno et al.</p>
+
+<p class="hook">They automatically re-caption bimanual robot demonstrations with who-grabs-what detail, distill that annotator into a single video model, and show that fine-tuning a VLA on the richer captions makes it follow more specific instructions.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Robot demonstration datasets usually carry only a coarse task label, so a pretrained VLA never learns to tie words like which gripper, which object, or which target location to the physical contact that actually happens. Writing those fine-grained labels by hand is too expensive to do at scale.</dd></div><div class="frag"><dt>Method</dt><dd>YUBI-STAG uses contact-object segmentation to find what each gripper is touching. It then calls vision-language models in several stages to label object identity, attributes and state, the action of each gripper, bimanual coordination, and spatial relations. Because that pipeline needs pre-segmented clips and many VLM calls, they distill it into YUBI-VLM, a single model that recovers action segments and annotations from raw, unsegmented video. It needs only a few calls and can work from wrist cameras alone.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It only says that YUBI-VLM keeps much of the annotator&#39;s accuracy on their own YUBI-STAG-Bench with fewer calls and less runtime, and that bimanual VLAs post-trained on the new labels follow instructions better, including control over object identity, which gripper acts, target location and spatial relations.</dd></div><div class="frag"><dt>Caveat</dt><dd>The benchmark is built by the same team that built the annotator, and the student model is scored against the teacher&#39;s labels. So keeping much of the accuracy measures how well it agrees with YUBI-STAG, not how well it agrees with the truth. The policy gains also need a baseline that fine-tunes on the same data with coarse labels, or else the improvement may come from extra training rather than from richer language.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off-topic for you. It deals with manipulation data and language grounding for single-robot VLAs, and has nothing on vehicles, inter-agent messages, negotiation or platooning. The only loose connection is the bimanual idea of saying which agent acts on what. That is coordination inside one robot, though, not a communication protocol between independent agents.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.09718v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.09718v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.09393v1">Trajectory Sensitivity-Based Dynamic Assessment of an AI Data Center Under Contingencies</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Arnav Bagga et al.</p>
+
+<p class="hook">They linearize a DC microgrid model of an AI data center around each fault trajectory, then use those sensitivities to predict how the response shifts when parameters move by up to fifteen percent, instead of rerunning the full simulation.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Screening an AI data center&#39;s power system against every outage, load profile and parameter change means rerunning a stiff nonlinear time-domain model many times. That is slow, and it says little about which parameters the response actually depends on. Applying trajectory sensitivity to a converter-dominated data center with workload-driven load swings had not been done before.</dd></div><div class="frag"><dt>Method</dt><dd>They build an ODE model of a 2 kilovolt DC microgrid with a grid-tied voltage source converter, battery storage, supercapacitors, synchronous generation and time-varying data-hall loads. For each disturbance they integrate the sensitivity equations along the nonlinear trajectory. They then predict perturbed trajectories with a first-order Taylor expansion from those sensitivities. This is classic trajectory sensitivity analysis from power systems, applied to a new kind of plant.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports close agreement with full nonlinear ODE runs under simultaneous perturbations of plus or minus fifteen percent, and a speedup from seconds to milliseconds per evaluation. It gives no error metric, no count of scenarios, and no comparison with other surrogate or reduced-order methods.</dd></div><div class="frag"><dt>Caveat</dt><dd>A first-order expansion holds only near the nominal trajectory. Fifteen percent may be the edge of where it works, and the hard cases, such as converter current limits, protection trips or mode switches that change the trajectory&#39;s structure, are exactly where it should fail. The speedup also leaves out the up-front cost of computing the sensitivities, and everything is validated on a single simulated system that the authors built themselves.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off topic for you. It is about power electronics in data centers, with no vehicles, no communication and no negotiation. The only transferable idea is using trajectory sensitivities as a cheap surrogate to see how a planned trajectory shifts under parameter perturbations, and the vehicle-planning literature already covers that better.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.09393v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.09393v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-10 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
