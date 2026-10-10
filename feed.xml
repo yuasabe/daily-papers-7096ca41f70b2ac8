@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 21:02:20 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 21:03:01 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 11 — 5 papers</title>
+      <description>&lt;p&gt;A learned policy picks motion primitives for teams of double-integrator robots, first imitating a planner and then refined with reinforcement learning, while a backup-trajectory shield rules out collisions; a legged robot runs a bank of GPU simulators with different physics, picks the one that best predicted its recent motion, and plans its next whole-body move through it; and a fabric air bladder with stiff patches buttoned on in different patterns can expand, contract, bend or twist without being rebuilt. Also covered: a reinforcement-learning coordinator that can&amp;#x27;t see inside each optical network domain picks which end-to-end paths to probe, first spreading the probes out and then concentrating them around a suspected failed link, and a study showing LLM agents triaging security alerts too often dismiss real attacks, which a propose–challenge–judge loop with a stricter bar for dismissal mostly fixes.
+
+None of these five papers is about cooperative driving or V2X, so the topic filter may have let them through by mistake.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.06290v1"&gt;GAMBIT: Learning to Plan Continuous Multi-Robot Trajectories&lt;/a&gt; &amp;mdash; Rishabh Jain et al.&lt;br/&gt;They train a single policy that picks motion primitives for many double-integrator robots, first by imitating a planner and then by refining it with reinforcement learning, and they wrap it in a backup-trajectory shield so that nothing ever collides.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.11054v1"&gt;A Reconfigurable Fabric Based Pneumatic Actuator with Button Fastened Constraint Modules for Multi Mode Actuation&lt;/a&gt; &amp;mdash; Kentaro Kimura et al.&lt;br/&gt;This is a fabric air bladder in a buttoned sleeve. You button stiff fabric patches onto the sleeve in different patterns, and the same actuator expands, contracts, bends or twists, with no new fabrication.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.10753v1"&gt;Adaptive E2E Monitoring Path Selection with Deep Reinforcement Learning in Multi-domain Optical Networks&lt;/a&gt; &amp;mdash; Soham Choudhury et al.&lt;br/&gt;A slice coordinator that cannot see inside each optical domain uses reinforcement learning to pick which end-to-end probe paths to monitor, first spreading them widely, then concentrating them around a suspected failed link.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.10465v1"&gt;LLA-MPPI: Rapidly Adaptive Whole-body Control of Legged Robots with GPU-Accelerated Parallel Simulations&lt;/a&gt; &amp;mdash; Sebin Jung et al.&lt;br/&gt;A legged robot runs a bank of GPU simulators, each with different physics, picks whichever one best predicted its last few moments of motion, and plans its next whole-body move through that simulator.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.10608v1"&gt;From Investigation Failures to Reliable SOC Agents: Understanding and Improving LLM-Based Alert Triage&lt;/a&gt; &amp;mdash; Saimon Amanuel Tsegai et al.&lt;br/&gt;A security paper showing that LLM agents triaging security alerts dismiss real attacks far too often, and that a propose, challenge and judge loop with a stricter bar for dismissal mostly fixes it.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-11</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-11.mp3" length="7068661" type="audio/mpeg"/>
+      <pubDate>Sun, 11 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:44</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A learned policy picks motion primitives for teams of double-integrator robots, first imitating a planner and then refined with reinforcement learning, while a backup-trajectory shield rules out collisions; a legged robot runs a bank of GPU simulators with different physics, picks the one that best predicted its recent motion, and plans its next whole-body move through it; and a fabric air bladder with stiff patches buttoned on in different patterns can expand, contract, bend or twist without being rebuilt. Also covered: a reinforcement-learning coordinator that can't see inside each optical network domain picks which end-to-end paths to probe, first spreading the probes out and then concentrating them around a suspected failed link, and a study showing LLM agents triaging security alerts too often dismiss real attacks, which a propose–challenge–judge loop with a stricter bar for dismissal mostly fixes.
+
+None of these five papers is about cooperative driving or V2X, so the topic filter may have let them through by mistake.</itunes:summary>
+      <itunes:episode>25</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 10 — 3 papers</title>
       <description>&lt;p&gt;RFChipAgent uses a chain of LLM agents to pick a topology, build the schematic and testbench, and size the circuit with Bayesian and evolutionary optimizers run against a simulator, but it&amp;#x27;s only shown on one family of 60 GHz low-noise amplifiers. YUBI-STAG automatically re-captions two-handed robot demonstrations to say which hand grabs what, and a VLA fine-tuned on those captions follows more specific instructions; a third paper linearizes a DC microgrid model of an AI data center around each fault trajectory to predict how the response changes when parameters shift by up to 15 percent, without rerunning the full simulation.

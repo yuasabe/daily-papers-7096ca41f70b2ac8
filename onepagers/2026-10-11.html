@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 25 (2026-10-11)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 11 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 25</strong> · October 11, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.06290v1">GAMBIT: Learning to Plan Continuous Multi-Robot Trajectories</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Rishabh Jain et al.</p>
+
+<p class="hook">They train a single policy that picks motion primitives for many double-integrator robots, first by imitating a planner and then by refining it with reinforcement learning, and they wrap it in a backup-trajectory shield so that nothing ever collides.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In dense multi-robot settings, good team behaviour often requires individual robots to yield or take a worse local move, and hand-written heuristics rarely capture this. Centralised continuous-space planners that do capture it do not scale to large teams.</dd></div><div class="frag"><dt>Method</dt><dd>The policy chooses among a discrete library of motion primitives for robots with double-integrator dynamics. It is warm-started by imitation learning from expert plans and then fine-tuned with reinforcement learning on a team-level objective, so that sacrificial yielding can emerge. At execution time, a safeguarded rollout keeps a backup trajectory for each robot and falls back to it whenever a proposed primitive cannot be certified collision-free, which is where the guarantee of always being collision-free comes from.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract says GAMBIT substantially outperforms both centralised motion planners and decentralised reactive planners, but it gives no success rates, makespans or margins. The only concrete figures are about scale: over a thousand robots, with planning latency below a few hundred milliseconds.</dd></div><div class="frag"><dt>Caveat</dt><dd>The collision-free guarantee depends on every robot knowing every other robot&#39;s committed and backup trajectories, so it is really a centralised or perfect-information guarantee, and the abstract says nothing about what happens under message loss, delay or partial participation. On top of that, double-integrator point robots in open space have no lanes, no road geometry, no nonholonomic constraints and no human drivers. The abstract also does not say how much of the gain comes from reinforcement-learning fine-tuning versus imitation alone, or how the sub-second latency is split between policy inference and the safety check.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is multi-robot motion planning, not vehicle negotiation, and it assumes the shared-trajectory channel that your research treats as the hard part. Two ideas are worth a quick look. One is the backup-trajectory shield, which is close to the contingency or fallback maneuvers used in cooperative lane-change protocols. The other is learning who should yield from a team-level reward, as an alternative to game-theoretic or auction-based right-of-way schemes. Skim the safety mechanism and the communication assumptions, then move on.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.06290v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.06290v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.11054v1">A Reconfigurable Fabric Based Pneumatic Actuator with Button Fastened Constraint Modules for Multi Mode Actuation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Kentaro Kimura et al.</p>
+
+<p class="hook">This is a fabric air bladder in a buttoned sleeve. You button stiff fabric patches onto the sleeve in different patterns, and the same actuator expands, contracts, bends or twists, with no new fabrication.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Soft pneumatic actuators usually have their motion fixed at fabrication by internal chambers or reinforcements, so changing the motion means building a new actuator. The paper targets tool-free reconfiguration of one actuator body after it is built.</dd></div><div class="frag"><dt>Method</dt><dd>Low-stretch fabric constraint modules button onto a textile sleeve around a pneumatic bladder, and where they sit decides whether the actuator expands, contracts, bends or twists. A capacitive fabric touch sensor attaches the same way, anywhere on the surface. Several actuators are chained into a soft arm, and the arm&#39;s grasping motion is changed by rearranging the constraint patches in place.</dd></div><div class="frag"><dt>Results</dt><dd>At 24 kilopascals the actuator reaches an elongation ratio of 1.2, about 60 degrees of bending and about 90 degrees of twisting, with blocking force above 10 newtons in every mode. The sensor&#39;s capacitance rises steadily with force, with roughly 12 percent hysteresis. The abstract reports no comparison against a fixed-design actuator and gives no cycle counts for how well the buttons hold up over repeated reconfiguration.</dd></div><div class="frag"><dt>Caveat</dt><dd>Reconfiguration is done by hand, so calling it in situ means a person rebuttons the patches, not that the robot switches modes on its own. Without a baseline against an equivalent monolithic actuator, we don&#39;t know how much force or range the buttoned constraints cost.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This has nothing to do with your work. It is a soft robotics hardware paper with no vehicles, no communication, no negotiation and no multi-agent coordination. The only loose link is that the word modular shows up in both places. It most likely reached your feed because it is filed under the cs.RO robotics category, so you can drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.11054v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.11054v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10753v1">Adaptive E2E Monitoring Path Selection with Deep Reinforcement Learning in Multi-domain Optical Networks</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Soham Choudhury et al.</p>
+
+<p class="hook">A slice coordinator that cannot see inside each optical domain uses reinforcement learning to pick which end-to-end probe paths to monitor, first spreading them widely, then concentrating them around a suspected failed link.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In multi-domain optical networks, each operator hides its internal topology and performance data, so a cross-domain controller has to find and localize link failures using only end-to-end path measurements. Choosing which paths to probe under that partial view is a combinatorial problem that has no adaptive closed-loop solution.</dd></div><div class="frag"><dt>Method</dt><dd>They split monitoring into two optimization problems. The initial problem picks paths that maximize failure coverage with no prior knowledge. The progressive problem adds paths clustered around locations flagged by earlier probes. A deep reinforcement learning agent picks the path set for each phase, and the two phases together form a closed monitoring loop at the coordinator.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It says only that the method beats unnamed baseline algorithms on both problems and gets near-optimal localization in the initial phase, measured in the GNPy optical network simulator.</dd></div><div class="frag"><dt>Caveat</dt><dd>All evaluation runs in the GNPy simulator, apparently on a small number of topologies, and the abstract quantifies neither the optimality gap nor the baselines. That leaves open whether the learned policy generalizes to unseen topologies or to multiple simultaneous failures, and whether it actually beats a well-tuned greedy or integer programming solver at realistic scale.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off-topic for you. It is about probing optical transport networks, and it involves no vehicles, no maneuver negotiation and no inter-agent agreement. The only loose parallel is a coordinator acting with limited visibility into independent domains, and that does not carry over to your work on V2X coordination.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10753v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10753v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10465v1">LLA-MPPI: Rapidly Adaptive Whole-body Control of Legged Robots with GPU-Accelerated Parallel Simulations</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Sebin Jung et al.</p>
+
+<p class="hook">A legged robot runs a bank of GPU simulators, each with different physics, picks whichever one best predicted its last few moments of motion, and plans its next whole-body move through that simulator.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Whole-body controllers for legged robots plan with one fixed model and get worse when the real dynamics change, for example when a payload is added or a leg fails. Classical adaptive control needs a parametric model structure that contact-rich dynamics do not have, and learning-based adaptation needs offline training for every condition you expect.</dd></div><div class="frag"><dt>Method</dt><dd>They turn adaptation into a selection problem. A set of contact simulators, each with different mass, friction or limb parameters, runs in a batch on the GPU. A sliding-window prediction error looks back over recent motion and picks the simulator that explains it best. A sampling-based MPPI planner then looks ahead and optimizes whole-body controls through that chosen simulator. There is no training stage, and the chosen hypothesis can be read directly as a physical parameter.</dd></div><div class="frag"><dt>Results</dt><dd>Across four simulated tasks the method succeeds 97.5 percent of the time. The strongest baseline reaches 74 percent and an oracle given the true model reaches 98.5 percent. On a Unitree Go2 they show three qualitative demos: walking after a payload is added mid-run, walking with one leg disabled, and pushing a box whose mass grows during the task.</dd></div><div class="frag"><dt>Caveat</dt><dd>Near-oracle performance is almost guaranteed if the true condition is already in the hypothesis bank, so the real question is what happens when it is not. The abstract does not say how the method behaves when the true dynamics fall between or outside the bank entries. The bank grows combinatorially with the number of uncertain parameters, which limits how far this scales. Four tasks is a small benchmark, the hardware results appear to be demonstrations rather than measured trials, and the abstract does not name the baselines, so the gap from 74 percent is hard to interpret.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is largely irrelevant to your work. It is single-agent control of one robot, with no communication, no negotiation and no multi-vehicle interaction. The one transferable idea is the scoring of a discrete bank of models against a window of recent observations. That resembles picking which intent hypothesis best explains a non-communicating vehicle in mixed traffic. Your focus is explicit message exchange rather than inference, though, so it is not worth your time.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10465v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10465v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10608v1">From Investigation Failures to Reliable SOC Agents: Understanding and Improving LLM-Based Alert Triage</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Saimon Amanuel Tsegai et al.</p>
+
+<p class="hook">A security paper showing that LLM agents triaging security alerts dismiss real attacks far too often, and that a propose, challenge and judge loop with a stricter bar for dismissal mostly fixes it.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Tool-using LLM agents are being pushed into security operations center triage, but nobody had measured how their reasoning strategy decides what evidence to gather and when to close an alert. The risk is that real attacks get quietly dismissed.</dd></div><div class="frag"><dt>Method</dt><dd>The authors build ALERT-BENCH, which replays enterprise telemetry through a live security event platform, so each agent has to query for its own evidence. They compare five reasoning styles, analyse the traces, and then design AIDA. In AIDA, one agent commits to a proposed decision, a second agent challenges it in a separate context, and a judge rules or asks for another round, with every step logged to an append-only ledger. Dismissing an alert needs more evidence than escalating it.</dd></div><div class="frag"><dt>Results</dt><dd>On 1,247 alerts, every baseline missed at least 40.4 percent of attack alerts, and baseline F1 ranged from 0.371 to 0.744. AIDA reaches an F1 of 0.958 and cuts the false negative rate to 3.1 percent, but sends 18.4 percent of alerts to human analysts.</dd></div><div class="frag"><dt>Caveat</dt><dd>All 1,247 alerts come from one multi-stage attack scenario on a benchmark the authors built themselves, so AIDA may be tuned to this one attack. The comparison likely gives AIDA much more compute and more rounds than the baselines, and the abstract shows no ablation separating the dismissal asymmetry from the separate challenger context. The 18.4 percent escalation rate also moves part of the workload back to humans, and that cost is not set against the F1 gain.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It involves no vehicles, no communication channel, no message loss and no multi-party negotiation over shared resources. The only transferable idea is structural: a proposal must be stated explicitly before it is challenged, and a costly decision, like dismissing an alert or accepting a merge, needs stronger evidence than the safe default. That echoes proposal and acceptance schemes in maneuver coordination, but the paper offers nothing you could cite as evidence for that design.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10608v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10608v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-11 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
