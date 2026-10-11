@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">27 episodes ·
-       94 papers ·
+    <p class="tagline">28 episodes ·
+       96 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,50 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-12">
+      <div class="ep-head">
+        <h2>Monday, October 12, 2026</h2>
+        <span class="ep-meta">Episode 26 · 2 papers · 6 min</span>
+      </div>
+<p class="ep-summary">A distributed planner turns a braid-based multi-robot coordination plan into pairwise winding-number targets, which each robot tracks with its own local MPC while consensus on a shared progress variable keeps the group in step. A single-author study of LLM tool-using agents finds that a supervisor that keeps intervening can cause the tool failures it is reacting to, and that backing off based on a running average of those self-caused failures brings task completion back.
+
+The second paper is about LLM tool agents, not vehicle or robot coordination, so it looks outside the maneuver-coordination scope you set for these episodes. It may have come in through the saved-papers source.</p>
+      <audio controls preload="none" src="audio/2026-10-12.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-12.html">One-pager</a><a class="btn" href="onepagers/2026-10-12.pdf">PDF</a><a class="btn" href="audio/2026-10-12.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="distributed motion planning for multi-robot systems under topological constraints gianpietro battocletti et al. they turn a braid-based multi-robot coordination plan into pairwise winding-number targets that each robot tracks with its own local mpc, and use consensus on a shared progress variable to keep the robots in step. braids are a compact way to state who passes whom, and in which order, in a multi-robot plan. existing controllers execute them one braid generator at a time, which serializes the motion and produces slow, wasteful trajectories, and no clean distributed way to execute the whole braid at once existed. each pairwise crossing in the braid is replaced by a target winding number, a continuous topological invariant, and a cost term in each robot&#39;s mpc tracks it, so the global specification breaks into local pairwise objectives. robots solve only local mpc problems and run a consensus scheme on an estimate of overall progress, so that pairs complete their crossings in sync instead of sequentially. they report simulations and real-robot experiments showing faster execution and lower control effort than generator-by-generator braid execution. the abstract gives no numbers, no robot counts and no named baselines beyond those sequential approaches. the braid is taken as a given input, so the hard question for vehicles, which is how the agents agree on who yields, is assumed away. a reviewer would also want to know how consensus-based progress estimation behaves under packet loss, delay or a non-participating agent. they would also ask whether the guarantees survive dynamics like vehicles in lanes rather than mobile robots in an open plane, since the abstract mentions neither. this sits next to your work rather than inside it. the idea that a topological ordering of who passes whom can be split into pairwise targets and tracked by distributed mpc is a useful lens for encoding an agreed merge or overtake order. but the paper executes a fixed plan instead of negotiating one, and says nothing about message design or communication failures. skim it for the winding-number cost term and the progress-consensus trick, which you might reuse as the execution layer under a negotiation protocol. 2610.10065v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.10065v1">Distributed Motion Planning for Multi-Robot Systems under Topological Constraints</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Gianpietro Battocletti et al. · arXiv:2610.10065v1</p><p class="p-hook">They turn a braid-based multi-robot coordination plan into pairwise winding-number targets that each robot tracks with its own local MPC, and use consensus on a shared progress variable to keep the robots in step.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Braids are a compact way to state who passes whom, and in which order, in a multi-robot plan. Existing controllers execute them one braid generator at a time, which serializes the motion and produces slow, wasteful trajectories, and no clean distributed way to execute the whole braid at once existed.</dd><dt>Method</dt><dd>Each pairwise crossing in the braid is replaced by a target winding number, a continuous topological invariant, and a cost term in each robot&#39;s MPC tracks it, so the global specification breaks into local pairwise objectives. Robots solve only local MPC problems and run a consensus scheme on an estimate of overall progress, so that pairs complete their crossings in sync instead of sequentially.</dd><dt>Results</dt><dd>They report simulations and real-robot experiments showing faster execution and lower control effort than generator-by-generator braid execution. The abstract gives no numbers, no robot counts and no named baselines beyond those sequential approaches.</dd><dt>Caveat</dt><dd>The braid is taken as a given input, so the hard question for vehicles, which is how the agents agree on who yields, is assumed away. A reviewer would also want to know how consensus-based progress estimation behaves under packet loss, delay or a non-participating agent. They would also ask whether the guarantees survive dynamics like vehicles in lanes rather than mobile robots in an open plane, since the abstract mentions neither.</dd><dt>Why it matters</dt><dd>This sits next to your work rather than inside it. The idea that a topological ordering of who passes whom can be split into pairwise targets and tracked by distributed MPC is a useful lens for encoding an agreed merge or overtake order. But the paper executes a fixed plan instead of negotiating one, and says nothing about message design or communication failures. Skim it for the winding-number cost term and the progress-consensus trick, which you might reuse as the execution layer under a negotiation protocol.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="when the governor becomes the disturbance: control-generated disturbance and cost-aware backoff in governed tool-using agents veronique ziegler a single-author study of llm tool agents shows that a supervisor which keeps intervening can cause the very tool failures it reacts to, and that backing off based on a running average of those self-caused failures restores task completion. supervisory governors for tool-using agents are usually treated as purely protective, and nobody had isolated the case where intervention itself creates failures that loop into persistent blocking. the paper builds a setting where that feedback loop exists by construction so it can be studied directly. the testbed is a file-recovery task where raising the governor&#39;s intervention intensity deliberately injects tool failures, either by replacing tool results or by executing corrupted tool arguments. a cost-blind governor is compared with a backoff rule that lowers its intervention probability using a moving average of the induced events, which the rule can observe directly. agents are a hand-coded stochastic policy and gemini 2.5 flash. the abstract reports no success rates or effect sizes, only directions. with the scripted agent, adaptive backoff beats a fixed weak governor at roughly matched intervention frequency. a gemini 2.5 flash run of 576 episodes across 6 tasks shows less blocking and better completion under backoff, with intermediate backoff strength giving the best aggregate success. the core result is close to circular: the cost is injected by the experimenter, and the backoff rule is told exactly which events it caused, so it is unsurprising that backing off helps. in real deployments, governor-induced failures would have to be inferred from noisy outcomes. six tasks on one llm, with no reported confidence intervals in the abstract, is a thin basis for the claim that intermediate strength is best. this is peripheral to your work. it concerns llm tool agents and a supervisor, not vehicles negotiating maneuvers, and there is no communication protocol, trajectory exchange, or multi-agent right-of-way problem in it. the one transferable idea is that a coordination layer can become a source of disturbance and should be cost-aware. that idea already exists in your field as message-rate adaptation and congestion control for intent sharing, so you would learn nothing new here. 2610.09037v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.09037v1">When the Governor Becomes the Disturbance: Control-Generated Disturbance and Cost-Aware Backoff in Governed Tool-Using Agents</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Veronique Ziegler · arXiv:2610.09037v1</p><p class="p-hook">A single-author study of LLM tool agents shows that a supervisor which keeps intervening can cause the very tool failures it reacts to, and that backing off based on a running average of those self-caused failures restores task completion.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Supervisory governors for tool-using agents are usually treated as purely protective, and nobody had isolated the case where intervention itself creates failures that loop into persistent blocking. The paper builds a setting where that feedback loop exists by construction so it can be studied directly.</dd><dt>Method</dt><dd>The testbed is a file-recovery task where raising the governor&#39;s intervention intensity deliberately injects tool failures, either by replacing tool results or by executing corrupted tool arguments. A cost-blind governor is compared with a backoff rule that lowers its intervention probability using a moving average of the induced events, which the rule can observe directly. Agents are a hand-coded stochastic policy and Gemini 2.5 Flash.</dd><dt>Results</dt><dd>The abstract reports no success rates or effect sizes, only directions. With the scripted agent, adaptive backoff beats a fixed weak governor at roughly matched intervention frequency. A Gemini 2.5 Flash run of 576 episodes across 6 tasks shows less blocking and better completion under backoff, with intermediate backoff strength giving the best aggregate success.</dd><dt>Caveat</dt><dd>The core result is close to circular: the cost is injected by the experimenter, and the backoff rule is told exactly which events it caused, so it is unsurprising that backing off helps. In real deployments, governor-induced failures would have to be inferred from noisy outcomes. Six tasks on one LLM, with no reported confidence intervals in the abstract, is a thin basis for the claim that intermediate strength is best.</dd><dt>Why it matters</dt><dd>This is peripheral to your work. It concerns LLM tool agents and a supervisor, not vehicles negotiating maneuvers, and there is no communication protocol, trajectory exchange, or multi-agent right-of-way problem in it. The one transferable idea is that a coordination layer can become a source of disturbance and should be cost-aware. That idea already exists in your field as message-rate adaptation and congestion control for intent sharing, so you would learn nothing new here.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-11">
       <div class="ep-head">
         <h2>Sunday, October 11, 2026</h2>
@@ -1922,7 +1966,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-11 06:03 · unlisted, not indexed ·
+    Generated 2026-10-12 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
