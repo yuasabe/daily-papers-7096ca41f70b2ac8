@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2026 21:02:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 21:01:54 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 13 — 1 papers</title>
+      <description>&lt;p&gt;An edge server at a signal-free intersection uses vehicle-to-infrastructure (V2I) links to schedule connected automated vehicles first come, first served, and assigns each one a time to cross. Because each vehicle knows its slot in advance, it can adjust its speed on approach, and most vehicles get through without stopping.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.13394v1"&gt;Maneuver Coordination Using V2I to Improve Traffic Efficiency at Intersections&lt;/a&gt; &amp;mdash; Lorenzo Farina et al.&lt;br/&gt;An edge server at a signal-free intersection schedules connected automated vehicles first come, first served, and tells each one when to cross, so most never have to stop.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-13</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-13.mp3" length="2418001" type="audio/mpeg"/>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:03:17</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>An edge server at a signal-free intersection uses vehicle-to-infrastructure (V2I) links to schedule connected automated vehicles first come, first served, and assigns each one a time to cross. Because each vehicle knows its slot in advance, it can adjust its speed on approach, and most vehicles get through without stopping.</itunes:summary>
+      <itunes:episode>27</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 12 — 2 papers</title>
       <description>&lt;p&gt;A distributed planner turns a braid-based multi-robot coordination plan into pairwise winding-number targets, which each robot tracks with its own local MPC while consensus on a shared progress variable keeps the group in step. A single-author study of LLM tool-using agents finds that a supervisor that keeps intervening can cause the tool failures it is reacting to, and that backing off based on a running average of those self-caused failures brings task completion back.
