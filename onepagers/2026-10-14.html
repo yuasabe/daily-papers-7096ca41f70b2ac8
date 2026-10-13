@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 28 (2026-10-14)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 14 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 28</strong> · October 14, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.11559v1">SWE-Journey: Towards More Realistic Evaluation of Coding Assistants through Long-Horizon, Multi-Turn Interaction</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hexuan Deng et al.</p>
+
+<p class="hook">A coding-assistant benchmark with long, evolving repository tasks and simulated users. Agents do well when the simulated user is a software architect and badly when the simulated user is a non-coder.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Existing coding benchmarks use short, single-shot tasks. Real assistant use involves long chains of work in a changing repository and repeated back-and-forth to clarify what the user wants. Neither the long task horizon nor the multi-turn dialogue had been captured in a controlled benchmark.</dd></div><div class="frag"><dt>Method</dt><dd>They build long-horizon tasks automatically with what they call a weak-to-strong synthesis pipeline, which chains development steps over a repository that keeps evolving. For the interaction side, they mine four user personas from real interaction logs, ranging from software architect to non-coder. An LLM user-simulation agent then plays each persona while the coding assistant works.</dd></div><div class="frag"><dt>Results</dt><dd>Averaged across models, assistants pass over 75 percent of tests for the requested functionality with the architect persona, but under 25 percent with the non-coder persona. The abstract names no specific models, task counts or baselines, and it does not quantify how realistic the simulator is. The authors attribute the gap to three skills, which they call asking right, finding right and fixing right.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline gap depends on an LLM pretending to be a non-coder. Nothing in the abstract shows the simulated personas behave like real non-coders, so the 75 versus 25 split could partly reflect how the simulator was prompted. The tests and the requirements also come from the same synthesis pipeline. A vague simulated user may simply never state what the tests check, which would blur assistant failure together with an underspecified target.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It covers software engineering agents and has nothing on vehicles, maneuver messages or right of way. The one loose transfer is methodological. It evaluates an agent against simulated counterparts with different personas, and that resembles testing a negotiation protocol against vehicles that cooperate in different ways or only partly participate. You would get that idea faster from the abstract than from the paper.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.11559v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.11559v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10720v1">Safe Learning of Adaptive Control Policies for Remote Patient Monitoring</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Ramanan Tamizholi et al.</p>
+
+<p class="hook">A safe model-based reinforcement learning scheme that learns how often to check on a remote patient, converging to a threshold policy while avoiding pushing patients into critical states during exploration; it is a health paper with nothing to do with vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Choosing monitoring intensity for remote patients is a cost versus safety tradeoff modelled as a Markov decision process. The transition probabilities and costs are unknown in advance, and naive exploration could let a patient&#39;s health deteriorate while the policy is still learning.</dd></div><div class="frag"><dt>Method</dt><dd>The method is an online model-based reinforcement learning algorithm. It estimates transition probabilities and costs from observed patient state changes and re-solves for the monitoring policy as the estimates improve. Exploration is constrained so that safety comes first, presumably by restricting low-intensity monitoring actions in states near critical health. They claim proofs of safety during learning and of convergence to the optimal policy, which is threshold-based in structure.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers, no baselines and no patient dataset. It only says that simulations show convergence to the optimal threshold policy, low treatment cost and reduced risk of reaching critical states.</dd></div><div class="frag"><dt>Caveat</dt><dd>The evaluation is purely simulated on what is likely a small, discrete, synthetic Markov chain. A reviewer would ask how the safety guarantee depends on prior knowledge of which states are safe. They would also ask whether the convergence result holds beyond the threshold-structured special case, and how the method compares against standard safe exploration baselines.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It involves a single decision maker with no multi-agent interaction, no communication, no negotiation and no vehicles. The only loose link is safe exploration in model-based reinforcement learning, and the vehicle and robotics safe reinforcement learning literature covers that better for your purposes.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10720v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10720v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10472v1">Robotic Boomerang Throwing via Model-Based Release Design</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yang Liu, Colin Jones, Aude Billard</p>
+
+<p class="hook">A six-axis industrial arm with limited joint speed throws a boomerang that comes back, landing about thirty centimetres from the robot base, and the motion that works looks nothing like a human throw.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Robot throwing research has mostly dealt with ballistic objects. A returning boomerang depends heavily on release spin, attitude and velocity, and a manipulator cannot reproduce the fast wrist snap humans use, so nobody had a robot arm produce a returning flight.</dd></div><div class="frag"><dt>Method</dt><dd>They identify the boomerang&#39;s flight dynamics in stages, so they can predict how the flight changes when the boomerang design changes. They then screen throwing-motion parameters by how strongly and how reliably each one controls release spin when contact conditions are uncertain. They use these models together to co-design the throwing trajectory and the boomerang itself for a speed-limited six-axis arm.</dd></div><div class="frag"><dt>Results</dt><dd>In the returning trial they report, the boomerang leaves the gripper spinning at 51 radians per second, about 8 revolutions per second. It travels 2.03 metres from the base and touches down 0.31 metres from it. The abstract reports no success rate across repeated trials and no baseline beyond a qualitative comparison with recorded human throws.</dd></div><div class="frag"><dt>Caveat</dt><dd>The abstract describes one demonstrated returning trial, which reads like an existence proof rather than a repeatable capability. Without a success rate over many throws, there is no way to tell how robust the release-spin screening really is to the contact uncertainty it was designed to handle. A two-metre flight is also a very short and forgiving envelope compared with real boomerang throws.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This has nothing to do with your work. It involves no connected vehicles, no communication and no multi-agent negotiation. The only transferable idea, a weak one, is screening control parameters by how consistently they affect an outcome under uncertainty, and you would not need this paper to get there.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10472v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10472v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10283v1">Temporal Visuo-Tactile Learning for Dexterous Grasp Stability</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Ken Nakahara et al.</p>
+
+<p class="hook">The authors put four high-resolution tactile sensors on a multi-fingered robot hand, recorded ten thousand grasps, and showed that a temporal model using touch predicts whether a grasp will survive the lift better than vision alone.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Most robotic grasping work picks grasps from vision with parallel grippers, so it is unclear how much rich, time-varying fingertip touch adds to stability prediction on dexterous hands. Large real-world datasets of dexterous hands with high-resolution tactile sensors have been scarce, which kept this question open.</dd></div><div class="frag"><dt>Method</dt><dd>They collected 10,000 real grasp trials over 200 objects with a multi-fingered hand carrying four Digit 360 sensors, logging external vision, proprioception and tactile streams. They trained end-to-end temporal multimodal models that look only at the pre-lift observations and predict post-lift stability, comparing sensing modalities and encoder backbones. The trained predictor then acts as an online gate that either approves a lift or triggers a regrasp.</dd></div><div class="frag"><dt>Results</dt><dd>Ablations show that adding touch improves stability prediction, and that high-resolution, dynamic touch helps most. On the real robot, gating with the visuo-tactile model raised the success rate among executed lifts by 10.5 percentage points over a gate without touch. The abstract reports no absolute accuracy figures.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline gain is measured only over lifts the gate chose to execute, so a stricter gate can raise this number simply by rejecting more grasps. Without the rejection rate, the number of regrasps and the time per successful lift, the 10.5 point figure overstates the real benefit. The results also rest on one hand and one proprietary sensor, and the abstract does not say whether test objects were held out from the 200 training objects.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It involves no vehicles, no communication and no negotiation between agents. The only loose link is the idea of a learned gate that predicts whether an action will succeed before committing to it, which resembles accepting or rejecting a maneuver proposal, but nothing here transfers directly to your protocol or planning work.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10283v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10283v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.10020v1">Tactile Reconstruction of Contact Task Frames and Forces for Hybrid Force/Motion Control</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Antonio Rapuano et al.</p>
+
+<p class="hook">They train a network to read a single DigiTac tactile image and output indentation depth, two tilt angles and a 3D contact force with uncertainty, then fuse that with UR10 joint data in an extended Kalman filter, so a robot can do hybrid force and motion control against a surface with no force-torque sensor in the loop.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Hybrid force and motion control needs both the contact force and a task frame that separates force-controlled from motion-controlled directions, and these usually come from a wrist force-torque sensor or model-based residuals plus a known environment model. Soft optical tactile sensors are cheap and local, but they had not been used as the only exteroceptive source for estimating a time-varying task frame online.</dd></div><div class="frag"><dt>Method</dt><dd>A manipulator presses the sensor into a surface in controlled ways while an auxiliary force-torque sensor records ground-truth labels offline. This self-labeling data trains an image-to-contact-state regressor that outputs depth, two surface-to-sensor tilt angles and a 3D force, each with a per-sample uncertainty. Those uncertainties set the measurement noise in an extended Kalman filter that combines the tactile estimate with robot proprioception to track the contact frame and force continuously. The method assumes locally planar contact with a negligible contact moment.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers. The only evidence it describes is closed-loop force regulation on a UR10 with a DigiTac sensor, pressing against a flat rigid board while a human operator drives linear and angular motion. There is no stated force error, no frame-angle error, and no comparison against a force-torque baseline.</dd></div><div class="frag"><dt>Caveat</dt><dd>The test uses one flat rigid board, which is the easiest case for the planar, zero-moment assumption, so curved, compliant or textured surfaces remain untested. Gel wear and drift could also break a learned mapping calibrated on a single sensor. A reviewer would want quantified tracking error against the force-torque ground truth, and an ablation showing whether the filter&#39;s use of per-sample uncertainty actually beats a fixed noise model.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is single-robot contact manipulation, with no vehicles, communication, negotiation or multi-agent coordination. The only loose overlap is the idea of feeding learned per-sample uncertainty into an extended Kalman filter as measurement noise, which you can get from many papers closer to your work, such as ones on fusing V2X intent messages with onboard perception.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.10020v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.10020v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-14 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
