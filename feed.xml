@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 21:02:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 21:02:12 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 15 — 2 papers</title>
+      <description>&lt;p&gt;SIGN-MAPPO trains a shared graph-attention policy with multi-agent PPO so connected automated vehicles at an unsignalized mixed-traffic intersection each choose stop or go, broadcast that intention over V2V, and fall back on a local rule layer when peers&amp;#x27; information conflicts under imperfect communication. Akule speeds up diffusion-based multi-robot path planning by keeping a single-robot diffusion model frozen, adding learned pairwise corrections only for the robot pairs a learned selector flags, and handing any remaining conflicts to a search-based planner.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.15577v1"&gt;SIGN-MAPPO: State-Intent-Aware Graph Multi-Agent Reinforcement Learning for Cooperative Driving under Imperfect V2X&lt;/a&gt; &amp;mdash; Zide Fan et al.&lt;br/&gt;Connected automated vehicles at an unsignalized mixed-traffic intersection each pick stop or go with a shared graph-attention policy trained by multi-agent PPO, then broadcast that intention over V2V, and a local rule layer resolves conflicts when peers hold inconsistent information.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.14248v1"&gt;Akule: Fast and Scalable Multi-Robot Motion Planning via Sparse Interaction Diffusion&lt;/a&gt; &amp;mdash; Manav Vora et al.&lt;br/&gt;Akule speeds up diffusion-based multi-robot path planning by keeping a single-robot diffusion model frozen and adding learned pairwise corrections, but only for the robot pairs a learned selector thinks matter. A search-based planner then repairs whatever conflicts are left.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-15</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-15.mp3" length="4612514" type="audio/mpeg"/>
+      <pubDate>Thu, 15 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:20</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>SIGN-MAPPO trains a shared graph-attention policy with multi-agent PPO so connected automated vehicles at an unsignalized mixed-traffic intersection each choose stop or go, broadcast that intention over V2V, and fall back on a local rule layer when peers' information conflicts under imperfect communication. Akule speeds up diffusion-based multi-robot path planning by keeping a single-robot diffusion model frozen, adding learned pairwise corrections only for the robot pairs a learned selector flags, and handing any remaining conflicts to a search-based planner.</itunes:summary>
+      <itunes:episode>29</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 14 — 5 papers</title>
       <description>&lt;p&gt;Tactile sensing gives robots information that other sensors miss: on a four-sensor multi-fingered hand, a temporal visuo-tactile model trained on ten thousand grasps predicts whether a grasp survives the lift better than vision alone, and a network that reads single DigiTac images lets a UR10 run hybrid force/motion control with no force-torque sensor in the loop, while a separate study gets a speed-limited six-axis arm to throw a boomerang that lands about 30 cm from its base, using a motion unlike a human throw. Also covered: SWE-Journey, a long-horizon coding benchmark where agents do well with a simulated software-architect user but poorly with a non-coder, and a safe model-based reinforcement learning (RL) method that learns how often to check on remote patients without pushing them into critical states while it explores.

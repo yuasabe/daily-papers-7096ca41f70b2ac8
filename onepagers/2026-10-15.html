@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 29 (2026-10-15)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 15 — 2 papers</h1>
+    <div class="meta">
+      <strong>Episode 29</strong> · October 15, 2026 · 2 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.15577v1">SIGN-MAPPO: State-Intent-Aware Graph Multi-Agent Reinforcement Learning for Cooperative Driving under Imperfect V2X</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zide Fan et al.</p>
+
+<p class="hook">Connected automated vehicles at an unsignalized mixed-traffic intersection each pick stop or go with a shared graph-attention policy trained by multi-agent PPO, then broadcast that intention over V2V, and a local rule layer resolves conflicts when peers hold inconsistent information.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Learned crossing policies at unsignalized intersections usually assume perfect communication and assume all vehicles are connected. When packets drop or arrive late, and when human drivers cannot announce their intent, independently chosen decisions can conflict, and existing multi-agent RL work rarely says how to reconcile them.</dd></div><div class="frag"><dt>Method</dt><dd>Each eligible connected vehicle builds its own traffic graph from whatever timestamped peer states it has received. A graph-attention actor trained with MAPPO outputs a raw stop-or-go intention, and predicted human-driver intent features are added as extra input. The intentions are then exchanged over V2V, and a hand-designed conflict-aware arbitration layer on each vehicle turns its raw intention into a safe executable action, even when vehicles disagree about the shared state.</dd></div><div class="frag"><dt>Results</dt><dd>In the main SUMO scenario they report a 97.53 percent completion rate, a 0.10 percent collision rate and a mean traversal time of 35.28 seconds. Ablations show that both human-intent prediction and intent exchange help. The abstract names no baseline methods, and it gives no numbers for the delay and packet-loss ranges, saying only that performance stays robust within the tested ranges.</dd></div><div class="frag"><dt>Caveat</dt><dd>The abstract never separates how much safety comes from the learned policy and how much comes from the rule-based arbitration layer, so we cannot tell whether the RL is doing the coordination or the arbitration is. Even with that layer, collisions are not zero, and about 2.5 percent of runs fail to complete, with no sign of whether those are deadlocks. The action space is a binary stop or go at one intersection type, in SUMO only. The communication stress test covers only unspecified delay and loss ranges, and the authors admit safety margins shrink when human drivers behave unpredictably in combination.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits close to your interest in how coordination degrades under message loss and partial participation, because the arbitration step reconciles timestamped intent messages from peers with inconsistent views. It is not true negotiation, though. There is no proposal and acceptance exchange, no trajectory sharing, and no lane change, merge or platooning content. Read the arbitration design and the delay and loss experiments, and treat the learning part as standard MAPPO with graph attention.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.15577v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.15577v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.14248v1">Akule: Fast and Scalable Multi-Robot Motion Planning via Sparse Interaction Diffusion</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Manav Vora et al.</p>
+
+<p class="hook">Akule speeds up diffusion-based multi-robot path planning by keeping a single-robot diffusion model frozen and adding learned pairwise corrections, but only for the robot pairs a learned selector thinks matter. A search-based planner then repairs whatever conflicts are left.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Diffusion models give good trajectory priors for one robot, but coordinating many robots usually means denoising the joint trajectory of every robot at once, and that cost blows up with team size. Cheaper approaches either evaluate every pairwise interaction or simply add pairwise effects together, so they either waste compute or produce proposals with many conflicts.</dd></div><div class="frag"><dt>Method</dt><dd>During denoising, a frozen single-robot prior is adjusted by three learned modules. The first is a reusable pairwise correction model trained on matched two-robot trajectory optimizations. The second is a selector that decides which robot pairs are worth computing a correction for. The third is a composer that combines the selected corrections with signed weights that depend on context, instead of summing them equally. The composer and selector are trained on physically optimized joint trajectories with no ground-truth interaction graph, and the final joint proposal goes to a downstream search-based planner for validation and repair.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports planning success that is only competitive with baselines, speedups of up to 25 times over complete planners, zero-shot transfer to team sizes not seen in training, and successful runs with up to 256 robots. Ablations show that learned selection and composition reduce conflicts before repair, and reduce repair effort, compared with heuristic selection and uniform summation. The abstract does not name the benchmarks or the baseline planners, and gives no success rate at 256 robots.</dd></div><div class="frag"><dt>Caveat</dt><dd>Correctness and completeness come from the downstream search planner, not from the diffusion model. So the real contribution is a better warm start, and the 25 times figure is a best case against complete planners, not against other learned or prioritized methods. The setting is fully centralized with perfect shared state, and there is no modeling of communication, partial participation, or agents with their own objectives. Success is only described as competitive, which suggests the speedup may come with lower success on harder instances.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is mostly peripheral to your work. Akule is a centralized planner for cooperative robots with full information, not a negotiation protocol between vehicles that each make their own decisions and exchange intentions over an unreliable link. The one transferable idea is the learned sparse selector, which picks the agent pairs whose interaction needs explicit coordination. That could help you decide which neighbors a connected vehicle should negotiate with or send trajectory proposals to under a bandwidth budget. Read it if you need a learned way to prune who coordinates with whom. Otherwise skip it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.14248v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.14248v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-15 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
