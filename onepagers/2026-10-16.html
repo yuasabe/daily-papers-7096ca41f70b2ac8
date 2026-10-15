@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 30 (2026-10-16)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 16 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 30</strong> · October 16, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.20280v1">Learning-Based Adaptive MPC for Magnetorquer-Only Satellite Attitude Control</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Patrick Schwartz, Abhishek Cauligi</p>
+
+<p class="hook">A CubeSat attitude controller that uses only magnetorquers, where an MPC plans with a neural magnetic field model and refits only the last layer from onboard measurements, tested in simulation around Earth and Uranus.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Magnetorquers can only produce torque perpendicular to the local magnetic field, so control authority drops when the field points the wrong way, and the controller needs an accurate field model. For poorly mapped planets like Uranus, that model is not available in advance.</dd></div><div class="frag"><dt>Method</dt><dd>They train a neural network field model offline on low-fidelity magnetic field data. Online, they keep the network fixed except for its final layer, which they refit from field measurements taken in orbit. The MPC then plans rotation trajectories using the adapted model, so it can predict when control authority will be weak.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports that controller success improves by 5 percent in the Earth-orbit case and 61 percent in the Uranus-orbit case. It does not say what success means, what the baseline is, or how many trials were run.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is in simulation, and the true Uranus field is itself a synthetic model, so the 61 percent gain mostly shows how far apart the training model and the test model were set. The abstract does not say whether the baseline was a non-adaptive MPC with the same network or a classical detumbling controller, and it shows no comparison with other adaptation methods such as online least-squares fits of spherical harmonic coefficients.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is a single spacecraft with no other agents, no communication and no negotiation. The only loose link is the general pattern of an MPC whose learned model gets a last-layer update online, which you could get from any adaptive MPC paper closer to your field.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.20280v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.20280v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19413v1">A VR Training System for Robot-Assisted Vascular Intervention with Dual-Mode Control and Model-Based Interaction Response</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yining Shang et al.</p>
+
+<p class="hook">A VR simulator for training people to steer a guidewire through blood vessels with a catheter robot, which estimates contact force from a physics model instead of a sensor, plus a small 15-novice study that shows better phantom performance after training.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Trainees on robot-assisted vascular intervention get little feedback on how hard the guidewire is pressing on the vessel wall, and the robot needs to support both fast navigation and fine positioning. Force sensors at the tip are hard to fit, so feedback has to be estimated another way.</dd></div><div class="frag"><dt>Method</dt><dd>The system maps operator commands to the robot in two modes. One is velocity control with three speed gears for navigation, and the other is incremental position control for fine manipulation. It estimates contact intensity without a sensor by combining modelled guidewire bending with a Hunt-Crossley contact model and smoothing the result over time. Logged trajectories are then scored with a cumulative trauma work metric for review after the procedure.</dd></div><div class="frag"><dt>Results</dt><dd>Phantom task success rose from 53.3 percent to 93.3 percent after VR training, and mean completion time fell from 132.4 to 96.7 seconds, in 15 novices. The remaining checks are qualitative: different command patterns for each gear, an estimated response that rises when the guidewire bends, and a single trauma work value of 15.166 in normalized units.</dd></div><div class="frag"><dt>Caveat</dt><dd>The training study is a pre-post design with no control group, so the gains could just be practice on the same phantom task. The sensorless force estimate is never compared against measured forces, so the trauma metric is internally consistent but not validated.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is unrelated to your work. It is about a single-operator surgical robot and medical simulation, with no vehicles, no communication between agents, no negotiation, and no multi-agent planning. It probably slipped through a keyword filter on control modes or robotics, and you can drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19413v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19413v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19345v1">When Is Smaller Greener? Right-Sizing Language Models for Agentic AI</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Sajid Siraj, Maria Barbati</p>
+
+<p class="hook">If an agent has to get every step right, a slightly less reliable small model loses more and more as tasks get longer, so the authors work out the task length at which a bigger model becomes cheaper, greener and faster per finished task, and check it on fifteen open models.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Language models are usually compared on energy, cost and latency per call. That hides the fact that in multi-step agent work, task success compounds across steps, and failed attempts still burn resources. Nobody had formalised which model is actually cheapest per completed task, or when that answer flips.</dd></div><div class="frag"><dt>Method</dt><dd>They take the successfully completed task as the unit of measurement. They model task success as compounding per-step reliability, with variants for graded outcomes and for retries. From this they derive a crossover task length for each resource, beyond which the larger, more reliable model wins. A two-stage decision procedure follows: first drop models that are Pareto-dominated, then apply weighted preferences only when a real trade-off remains.</dd></div><div class="frag"><dt>Results</dt><dd>The pilot covers fifteen open-weight models from five developers, from 0.6 billion to 27 billion parameters, on just two multi-step agent tasks, with GPU energy measured directly. The model with the lowest energy per completed task changes with task length and task type. The abstract says observed crossovers generally match those predicted from per-step measurements, but it gives no error figures, success rates or energy values.</dd></div><div class="frag"><dt>Caveat</dt><dd>The core result assumes that steps succeed independently, so success decays geometrically with task length. Real agents have correlated failures, can recover from errors, and depend on context, and any of these could move or erase the crossover. The evidence comes from two tasks and models of 27 billion parameters or fewer. Generally matching is a soft claim, and the abstract does not say how close the predicted and observed crossovers actually were.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is essentially outside your area. It is about choosing language models for software agents, not about vehicles negotiating maneuvers, protocols, platoons or joint trajectories. The only transferable idea is a familiar one. When a coordinated maneuver needs every message exchange or step to succeed, small per-step reliability gaps compound with sequence length. You already reason about this when you study message loss in multi-step negotiation, and the paper adds nothing specific to that setting.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19345v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19345v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19122v1">Learning in Orbit: Onboard Training and Closed-Loop Attitude Control with a Thermal Segmentation Model on a Spacecraft</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Elena Sorina Lupu et al.</p>
+
+<p class="hook">A team flew a 6U CubeSat that trained a small thermal segmentation network on its own Jetson GPU in low Earth orbit, then used that network&#39;s output to steer the spacecraft so it kept the Moon in view.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Spacecraft going into deep space can&#39;t count on a fast link to the ground, so they need to run and adapt learned models onboard. Until now, onboard training and learned perception inside a closed control loop had seen almost no real flight testing on commercial off-the-shelf GPUs.</dd></div><div class="frag"><dt>Method</dt><dd>They put an NVIDIA Jetson TX2 NX on a 6U CubeSat, trained and ran a thermal image segmentation model onboard, and fed its real-time output into the attitude controller to track the Moon. The software stack uses ROS 2 Foxy to move data and an open-source self-healing file system to protect data integrity against radiation and power faults.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports 12 experiments over about one year in low Earth orbit. It gives no numbers for segmentation accuracy, tracking error, training time, power draw or fault rates, and it names no baseline.</dd></div><div class="frag"><dt>Caveat</dt><dd>This is a systems demonstration with a sample of twelve runs and no reported quantitative performance in the abstract. The segmentation task, finding a hot Moon disk against cold space, is easy, so it says little about whether onboard learning works on hard perception problems. A reviewer would also ask whether onboard training actually beat a model trained on the ground and uploaded, and how often the GPU or file system had faults.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This has nothing to do with your work. It involves a single spacecraft, with no vehicle-to-vehicle communication, no negotiation, no platooning and no joint trajectory planning. The only loose link is its use of ROS 2 as middleware on constrained hardware, which you won&#39;t learn much from. Skip it unless you&#39;re curious about space robotics.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19122v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19122v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.18385v1">Impact of Data Center Load on Co-Optimized Generation and Transmission Expansion Planning with Embedded Unit Commitment</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Haoxiang Wan, Xingpeng Li, Jonghwan Kwon</p>
+
+<p class="hook">On a 24-bus test grid, adding a 500 megawatt data center pushes a joint generation and transmission plan away from a 230 kilovolt line upgrade and toward a new gas plant, and raises 15-year system cost by about 62 percent.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Most data center grid studies look at short-term operating flexibility rather than long-term investment decisions. The authors ask how a large new load placed at several buses changes a combined generation and transmission expansion plan that also models unit commitment.</dd></div><div class="frag"><dt>Method</dt><dd>They solve a multi-year mixed-integer linear program that chooses new generation and new transmission together, with unit commitment built into the operating model. It runs on a modified IEEE 24-bus Reliability Test System using wind and solar profiles calibrated to ERCOT, the Texas grid operator. A 500 megawatt load, about 17.5 percent of base-year peak, is split across four buses using hand-picked siting rules based on voltage level, generation headroom, nearby renewables and network connectivity.</dd></div><div class="frag"><dt>Results</dt><dd>The added load raises 15-year net present system cost by 1,794 million dollars, or 61.6 percent, and raises the system-average locational marginal price by 45.2 percent. Operating cost makes up 84.2 percent of the increase and capital investment 15.8 percent. Renewable curtailment stays negligible, and the optimal plan switches from a 230 kilovolt reinforcement to a new 400 megawatt combined-cycle gas turbine.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything rests on one small test system, one load size and one hand-chosen siting pattern, with no sensitivity analysis. So the headline switch from transmission to generation could easily be an artifact of the RTS-24 topology and the assumed costs, not a general rule. A 62 percent cost jump from a 17.5 percent load increase also suggests the base system is already near its limits, which overstates the effect. The data center is modeled as fixed, inflexible demand, which skips the flexibility question the authors themselves say earlier work focused on.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>It has nothing to do with your work. This is power-system expansion planning, with no vehicles, no communication and no negotiation between agents. The only shared vocabulary is mixed-integer optimization, and the paper offers no technique you could transfer to cooperative maneuver planning or platooning.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.18385v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.18385v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-16 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

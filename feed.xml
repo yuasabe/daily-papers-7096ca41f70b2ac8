@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 21:02:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 21:02:51 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 16 — 5 papers</title>
+      <description>&lt;p&gt;Two CubeSat papers lead off: a 6U spacecraft that trained a thermal segmentation network on its onboard Jetson GPU in low Earth orbit and used the output to keep the Moon in view, and a magnetorquer-only attitude controller whose MPC refits the last layer of a neural magnetic field model from onboard measurements, tested in simulation around Earth and Uranus. Also covered: a VR simulator for steering a guidewire with a catheter robot that estimates contact force from a physics model rather than a sensor (trialed with 15 novices), the task length at which a larger language model becomes cheaper, greener and faster per completed agentic task across fifteen open models, and how adding a 500 MW data center to a 24-bus test grid shifts the expansion plan from a 230 kV line upgrade to a new gas plant and raises 15-year system cost by about 62 percent.
+
+None of these five papers is about cooperative driving or V2X. If this episode came from the daily pipeline, the scope filter may have let off-topic papers through.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.20280v1"&gt;Learning-Based Adaptive MPC for Magnetorquer-Only Satellite Attitude Control&lt;/a&gt; &amp;mdash; Patrick Schwartz, Abhishek Cauligi&lt;br/&gt;A CubeSat attitude controller that uses only magnetorquers, where an MPC plans with a neural magnetic field model and refits only the last layer from onboard measurements, tested in simulation around Earth and Uranus.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19413v1"&gt;A VR Training System for Robot-Assisted Vascular Intervention with Dual-Mode Control and Model-Based Interaction Response&lt;/a&gt; &amp;mdash; Yining Shang et al.&lt;br/&gt;A VR simulator for training people to steer a guidewire through blood vessels with a catheter robot, which estimates contact force from a physics model instead of a sensor, plus a small 15-novice study that shows better phantom performance after training.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19345v1"&gt;When Is Smaller Greener? Right-Sizing Language Models for Agentic AI&lt;/a&gt; &amp;mdash; Sajid Siraj, Maria Barbati&lt;br/&gt;If an agent has to get every step right, a slightly less reliable small model loses more and more as tasks get longer, so the authors work out the task length at which a bigger model becomes cheaper, greener and faster per finished task, and check it on fifteen open models.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19122v1"&gt;Learning in Orbit: Onboard Training and Closed-Loop Attitude Control with a Thermal Segmentation Model on a Spacecraft&lt;/a&gt; &amp;mdash; Elena Sorina Lupu et al.&lt;br/&gt;A team flew a 6U CubeSat that trained a small thermal segmentation network on its own Jetson GPU in low Earth orbit, then used that network&amp;#x27;s output to steer the spacecraft so it kept the Moon in view.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.18385v1"&gt;Impact of Data Center Load on Co-Optimized Generation and Transmission Expansion Planning with Embedded Unit Commitment&lt;/a&gt; &amp;mdash; Haoxiang Wan, Xingpeng Li, Jonghwan Kwon&lt;br/&gt;On a 24-bus test grid, adding a 500 megawatt data center pushes a joint generation and transmission plan away from a 230 kilovolt line upgrade and toward a new gas plant, and raises 15-year system cost by about 62 percent.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-16</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-16.mp3" length="4984779" type="audio/mpeg"/>
+      <pubDate>Fri, 16 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:50</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Two CubeSat papers lead off: a 6U spacecraft that trained a thermal segmentation network on its onboard Jetson GPU in low Earth orbit and used the output to keep the Moon in view, and a magnetorquer-only attitude controller whose MPC refits the last layer of a neural magnetic field model from onboard measurements, tested in simulation around Earth and Uranus. Also covered: a VR simulator for steering a guidewire with a catheter robot that estimates contact force from a physics model rather than a sensor (trialed with 15 novices), the task length at which a larger language model becomes cheaper, greener and faster per completed agentic task across fifteen open models, and how adding a 500 MW data center to a 24-bus test grid shifts the expansion plan from a 230 kV line upgrade to a new gas plant and raises 15-year system cost by about 62 percent.
+
+None of these five papers is about cooperative driving or V2X. If this episode came from the daily pipeline, the scope filter may have let off-topic papers through.</itunes:summary>
+      <itunes:episode>30</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 15 — 2 papers</title>
       <description>&lt;p&gt;SIGN-MAPPO trains a shared graph-attention policy with multi-agent PPO so connected automated vehicles at an unsignalized mixed-traffic intersection each choose stop or go, broadcast that intention over V2V, and fall back on a local rule layer when peers&amp;#x27; information conflicts under imperfect communication. Akule speeds up diffusion-based multi-robot path planning by keeping a single-robot diffusion model frozen, adding learned pairwise corrections only for the robot pairs a learned selector flags, and handing any remaining conflicts to a search-based planner.&lt;/p&gt;
