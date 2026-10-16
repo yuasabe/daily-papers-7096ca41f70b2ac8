@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 31 (2026-10-17)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 17 — 2 papers</h1>
+    <div class="meta">
+      <strong>Episode 31</strong> · October 17, 2026 · 2 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.22277v1">Auditable and Deployable Multi-Agent Motion Planning via Posetal Games from Legal Guidelines</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Florian Lercher et al.</p>
+
+<p class="hook">They turn partially ordered legal rules into a game for each scenario, solve for equilibria that each agent&#39;s private preferences can only narrow down, and show it on seven ship encounters with up to four vessels.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Traffic law only partly ranks its own priorities, so collapsing it into a weighted cost or a strict rule hierarchy imposes an ordering that regulators never gave. There was also no principled way to coordinate several agents whose private objectives sit on top of shared legal duties without making them reveal those objectives.</dd></div><div class="frag"><dt>Method</dt><dd>A scenario-independent guideline orders abstract legal concerns, and the framework compiles it into per-agent partial preference orders and a posetal game for any concrete encounter. They prove that refining this order, whether by private agent objectives or by a regulator, can only remove equilibria, so every surviving equilibrium is still legal. For coordination they propose belief play, in which agents solve conservative local games and provably recover the true equilibria, and a lighter distributed iterative best-response protocol that needs less shared information.</dd></div><div class="frag"><dt>Results</dt><dd>The evaluation covers seven maritime encounters with at most four vessels. In every case, each rule violation in the committed equilibrium is certified as either forced by the legal hierarchy or unsatisfiable, and defectors are identified from public information in all tested cases. The abstract reports no baselines, no runtimes, and no scaling or success-rate numbers.</dd></div><div class="frag"><dt>Caveat</dt><dd>Seven hand-built encounters with up to four ships is a tiny benchmark, and the headline auditability result follows largely from the construction itself, since violations are certified against the same hierarchy that generated the game. The title promises deployability, yet the abstract describes no hardware or real traffic data, no study of message loss or delay in the best-response protocol, and no test of how equilibrium computation scales with agent count or with the dense, fast interactions of road traffic.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is adjacent rather than core. The relevant parts are the who-yields machinery, the guarantee that private refinements cannot break legal equilibria, and a best-response negotiation that reaches agreement without sharing private preferences, all of which map onto your right-of-way and deadlock questions. But the domain is slow maritime collision avoidance, the protocol is not designed around message formats or partial participation, and lifting pairwise rules to multi-agent encounters would need real rework for merges and lane changes. Read the belief play and best-response sections, and skip the maritime rule encoding.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.22277v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.22277v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.22198v1">Robust Multi-Agent Pursuit with Preemptive Communication via Reachability-Based Control Barrier Functions</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Madison Book, Justin Bradley</p>
+
+<p class="hook">Each pursuer plans around the reachable set of its teammates&#39; last reported states. A barrier-function filter keeps them from colliding, and each agent decides for itself when its teammates&#39; picture of it has gone stale enough that it should transmit again.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Multi-agent safety filters based on control barrier functions usually assume continuous, perfect state sharing, which bandwidth-limited robots cannot provide. Periodic and event-triggered schemes either waste messages or trigger only on local state error. Neither accounts for how risky the receiver&#39;s uncertainty about the sender has become.</dd></div><div class="frag"><dt>Method</dt><dd>Each agent forward-propagates the reachable set of each neighbor from the last received state, then solves a control barrier function program that keeps it clear of that inflating set. They prove collision avoidance holds as long as message staleness stays bounded. The communication side is sender-driven. Each agent tracks an uncertainty-risk metric, meaning how much its reachable set has grown in others&#39; eyes, and a kinematic-risk metric, meaning how close and fast-closing it is relative to neighbors. It transmits preemptively when these metrics cross a threshold, instead of on a clock or a local error trigger.</dd></div><div class="frag"><dt>Results</dt><dd>In simulated pursuit-evasion scenarios, preemptive communication cuts messages by 77.5 percent compared with periodic and event-triggered baselines, with zero collisions. The abstract gives one figure for two different baselines, so the real gap against event-triggering may be smaller. It also reports nothing on pursuit performance, such as capture time or success rate.</dd></div><div class="frag"><dt>Caveat</dt><dd>The guarantee depends on bounded staleness, which is exactly what bursty packet loss or channel congestion breaks. Without a lossy channel model, the zero-collision result says little about robustness to real dropouts. The paper also seems to skip the cost of conservatism. As reachable sets inflate, the barrier filter can freeze agents or make them overly cautious, and the message savings could be bought with worse task performance. Message count alone does not show that tradeoff. Finally, the two risk metrics and their thresholds look hand-designed, and it is unclear whether results hold across agent densities or dynamics beyond the simulated pursuit setup.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is mostly peripheral. It shares state, not intentions or proposals, and there is no negotiation, yielding, or agreement step, so it does not touch maneuver coordination itself. The one useful link is to your interest in how coordination degrades under delayed or lost messages. The idea of deciding when to send based on the receiver&#39;s uncertainty about you is a clean analogue to adaptive generation rules for cooperative awareness or maneuver coordination messages, and a reachable-set barrier filter is a reasonable safety fallback when a negotiation partner goes silent. Skim the risk metrics and the staleness bound. Don&#39;t expect vehicle-specific insight.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.22198v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.22198v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-17 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

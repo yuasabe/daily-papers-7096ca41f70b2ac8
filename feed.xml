@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 21:02:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 21:02:18 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 17 — 2 papers</title>
+      <description>&lt;p&gt;One paper turns partially ordered legal rules, such as maritime collision regulations, into a game for each scenario, where each vessel&amp;#x27;s private preferences can only narrow down the set of rule-compliant equilibria; it&amp;#x27;s demonstrated on seven ship encounters with up to four vessels. A second paper has each pursuer plan around the reachable set of its teammates&amp;#x27; last reported states, uses a control-barrier-function filter to prevent collisions, and lets each agent decide for itself when its teammates&amp;#x27; picture of it is stale enough to transmit again.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.22277v1"&gt;Auditable and Deployable Multi-Agent Motion Planning via Posetal Games from Legal Guidelines&lt;/a&gt; &amp;mdash; Florian Lercher et al.&lt;br/&gt;They turn partially ordered legal rules into a game for each scenario, solve for equilibria that each agent&amp;#x27;s private preferences can only narrow down, and show it on seven ship encounters with up to four vessels.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.22198v1"&gt;Robust Multi-Agent Pursuit with Preemptive Communication via Reachability-Based Control Barrier Functions&lt;/a&gt; &amp;mdash; Madison Book, Justin Bradley&lt;br/&gt;Each pursuer plans around the reachable set of its teammates&amp;#x27; last reported states. A barrier-function filter keeps them from colliding, and each agent decides for itself when its teammates&amp;#x27; picture of it has gone stale enough that it should transmit again.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-17</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-17.mp3" length="5130615" type="audio/mpeg"/>
+      <pubDate>Sat, 17 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:03</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>One paper turns partially ordered legal rules, such as maritime collision regulations, into a game for each scenario, where each vessel's private preferences can only narrow down the set of rule-compliant equilibria; it's demonstrated on seven ship encounters with up to four vessels. A second paper has each pursuer plan around the reachable set of its teammates' last reported states, uses a control-barrier-function filter to prevent collisions, and lets each agent decide for itself when its teammates' picture of it is stale enough to transmit again.</itunes:summary>
+      <itunes:episode>31</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 16 — 5 papers</title>
       <description>&lt;p&gt;Two CubeSat papers lead off: a 6U spacecraft that trained a thermal segmentation network on its onboard Jetson GPU in low Earth orbit and used the output to keep the Moon in view, and a magnetorquer-only attitude controller whose MPC refits the last layer of a neural magnetic field model from onboard measurements, tested in simulation around Earth and Uranus. Also covered: a VR simulator for steering a guidewire with a catheter robot that estimates contact force from a physics model rather than a sensor (trialed with 15 novices), the task length at which a larger language model becomes cheaper, greener and faster per completed agentic task across fifteen open models, and how adding a 500 MW data center to a 24-bus test grid shifts the expansion plan from a 230 kV line upgrade to a new gas plant and raises 15-year system cost by about 62 percent.
