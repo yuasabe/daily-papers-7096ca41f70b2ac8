@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 32 (2026-10-19)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 19 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 32</strong> · October 19, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.20460v1">DD-GBP: Anytime Multi-Arm Planning and Continuous Execution via Distributed Dynamic Gaussian Belief Propagation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zhao Jin et al.</p>
+
+<p class="hook">Each robot arm runs its own Gaussian belief propagation planner and swaps messages only with the arms it might hit, and in their four-arm simulations this keeps working even when 90 percent of packets are dropped.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Centralized multi-arm planners get too slow for long tasks with moving obstacles, and existing distributed Gaussian belief propagation planners update in lockstep. That lockstep updating produces jerky execution and does not show how planning holds up when messages are delayed or lost.</dd></div><div class="frag"><dt>Method</dt><dd>Each arm keeps a local tree-shaped factor graph over its joint-space trajectory, built on a Gaussian process prior. The same prior drives the adaptive planning horizon, the collision checks between waypoints, and smooth interpolation during execution. Arms exchange belief messages asynchronously, and only over links that are currently active. Those links are rebuilt as arms move closer or farther apart, and replanning runs only when an event triggers it. The authors also prove bounds on local inference accuracy, on stopping early, and on how consistent replanning stays.</dd></div><div class="frag"><dt>Results</dt><dd>Across 50 long-horizon four-arm scenes with moving obstacles, the method completes all targets without collision 92.5 percent of the time. That is the best of six baselines that the abstract does not name. Success stays at 86.0 percent under 90 percent packet loss. With 30 arms and no obstacles, success is 99.87 percent and a warm solve takes 15.80 milliseconds on average, which is faster than 60 hertz. A dual-arm transport demo runs on hardware.</dd></div><div class="frag"><dt>Caveat</dt><dd>The 30-arm scaling test and the packet-loss results come from a single workstation, so the communication faults are simulated and never touch real network timing. Fixed-base arms in a shared, fully known workspace are much easier than vehicles with nonholonomic dynamics and partial observation. A robot that simply keeps using its last received belief can look robust to heavy loss whenever the scene changes slowly. Every agent runs the same cooperative algorithm, so there is no test of agents that refuse to participate or that pursue conflicting goals. The 50 scenes look like the authors&#39; own benchmark.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to maneuver negotiation and platooning, since it involves no vehicles, no explicit intention exchange, and no proposal and acceptance step. It does touch your interest in distributed trajectory planning that relies on explicit communication. Asynchronous belief propagation over communication links that appear and disappear, with experiments on heavy packet loss, offers a tool and an evaluation template you could carry over to cooperative merging or gap creation. Go to the packet-loss ablation and the replanning-consistency analysis, and skip the parts about arm kinematics.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.20460v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.20460v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19750v1">Severity-Aware Minimum Security Sets for Accelerated Preventive SCOPF Using Machine Learning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Mohammad Iman Alizadeh et al.</p>
+
+<p class="hook">A power systems paper that trains a multi-label classifier to predict which grid contingencies actually matter, so the security-constrained optimal power flow can be solved on a much smaller problem.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Preventive AC security-constrained optimal power flow has to account for every credible outage, and that makes it too large to solve quickly. Earlier contingency screening usually ranks outages heuristically and does not explicitly bound how much post-contingency violation is left over after the reduced problem is solved.</dd></div><div class="frag"><dt>Method</dt><dd>Offline, they alternate a reduced optimal power flow with an exhaustive AC security check over all contingencies. Any contingency and constraint pair whose leftover severity exceeds a set threshold gets added back, and dominated contingencies are pruned. Severity is scored using the count, total size, worst case and average size of violations. The resulting minimum security sets, which change with the operating point, become labels for a supervised multi-label model that predicts the needed set directly from the pre-contingency grid state.</dd></div><div class="frag"><dt>Results</dt><dd>They test on the IEEE 60-bus and 118-bus systems, and the 118-bus formulation is roughly seven times larger. The abstract claims substantial computational savings with limited impact on the operating solution, but it gives no speedup factors, cost gaps or prediction accuracy.</dd></div><div class="frag"><dt>Caveat</dt><dd>Two small IEEE test cases say little about whether this scales to realistic grids with thousands of buses. The labels come from expensive exhaustive offline solves. If the classifier misses a binding contingency, the reported operating point could be insecure, and the abstract does not say whether the online pipeline catches those misses with a check.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is power grid operations, not vehicle coordination, so it has no direct bearing on maneuver negotiation, platooning or cooperative trajectory planning. The one abstract link is the general idea of learning which constraints are active to shrink a joint optimization. That idea already exists in the motion planning literature, so it is not worth your time beyond the title.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19750v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19750v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19438v1">Paraphrase Consensus Is Not Self-Consistency: Instruction Reliance and Robustness in VLA Policies</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hanlong Li et al.</p>
+
+<p class="hook">VLA robot policies fine-tuned on LIBERO break when you reword the instruction, prompt ensembling over paraphrases does not fix it, and simply fine-tuning on paraphrased instructions does.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>LIBERO trains and tests on the same ten instruction strings, so nobody knew how much VLA success depends on the exact wording, or whether test-time tricks borrowed from language models could recover robustness. The paper asks whether paraphrase consensus works for action policies the way self-consistency works for text.</dd></div><div class="frag"><dt>Method</dt><dd>They reword the LIBERO instructions and compare several test-time aggregation schemes on base OpenVLA. These are a medoid action over several paraphrases, confidence-based selection, and a medoid over repeated samples of one paraphrase. They add a wrong-instruction probe that measures how much of a policy&#39;s success actually depends on the instruction. They then fine-tune with LoRA on paraphrased instructions and compare against a matched control.</dd></div><div class="frag"><dt>Results</dt><dd>Rewording drops base OpenVLA by 38 points, and the paraphrase medoid is 32.4 points below the training instruction. Confidence selection is 28.0 below, and sampling one paraphrase repeatedly is still 27.6 below. Adding paraphrases to an ensemble that already contains the training instruction costs 16.8 points. LoRA training on paraphrases shrinks the gap to a gain of 2.0 points, against a loss of 32.0 for the control. This holds across two seeds and on OpenVLA-OFT, and it transfers to withheld phrasings.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is in LIBERO simulation with ten instruction templates, so the headline drop partly reflects how narrow the benchmark is rather than something deep about VLAs. The fix is essentially data augmentation with paraphrases, which is the expected remedy and was only tested on OpenVLA-family models. The abstract also does not say how the paraphrases were generated or checked for meaning, which matters because a bad paraphrase would inflate the measured loss.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It covers language conditioning for robot manipulation, not vehicle coordination or communication. The one transferable idea is that averaging over noisy inputs reduces variance but not shared bias. That applies by analogy to fusing multiple intent or trajectory messages, but the paper says nothing about vehicles, protocols or negotiation.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19438v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19438v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19403v1">Topology-Preserving Multi-Usage Pipe Centerline Refinement under Permanent Tubular Occupancy</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Deng Quan</p>
+
+<p class="hook">A single-author technical report on smoothing the boxy, right-angled channel paths of 3D-printed hydraulic manifolds into fair curves, while keeping every tube clear of the others.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Grid-based routers for multi-group pipe networks produce feasible layouts full of axis-aligned corners, and these corners hurt geometric fairness and flow quality in permanently occupied fluid channels. Standard robot path smoothing does not cover this case, because here the paths are branched, have finite radii, and must stay clear of the other groups&#39; tubes permanently.</dd></div><div class="frag"><dt>Method</dt><dd>The routing topology and a feasible coarse layout are taken as fixed, and the tube centerlines are then refined against soft geometric costs such as curvature, with hard clearance checks between capsule-shaped tube segments deciding whether each update is accepted. The key design choice is a hybrid parameterization: branches share a common trunk where they can, and they split at the junction when different terminal usages cannot be served by one shared branch point.</dd></div><div class="frag"><dt>Results</dt><dd>On one synthetic suite of 8 groups with 8 terminals each and a tube radius of 2, every case passed the hard clearance check, curvature times radius stayed at about 1 or below, and the soft objective fell by about 95 percent. No baseline smoother is compared, and no flow or pressure-drop numbers are reported.</dd></div><div class="frag"><dt>Caveat</dt><dd>The paper claims better flow quality but measures only geometry, since pressure drop is explicitly left to a future PDE stage. The evidence is one self-made benchmark with no comparison to existing smoothers, and the report only outlines the parameterization rather than fully specifying it.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It deals with static fluid channels in manufactured parts, with no vehicles, communication, negotiation or dynamics involved. The only loose link is the idea of refining a fixed-topology plan under hard clearance constraints, which loosely resembles smoothing multi-vehicle trajectories, but it offers you nothing you could use directly.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19403v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19403v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.19395v1">A Master-to-Simulation Interface with Demonstration-Trajectory Guidance for Vascular Intervention</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Mingyu Zou et al.</p>
+
+<p class="hook">A surgical robotics paper: they connect a real catheter-robot master controller to the SOFA simulator, then show that overlaying a previously successful catheter path helps operators in a vessel phantom, while overlaying the vessel centerline does not.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Robotic vascular intervention relies on 2D fluoroscopy, which gives operators poor spatial cues for steering a guidewire through branching vessels. Centerline overlays are the obvious fix, but they ignore how the instrument actually contacts the vessel wall.</dd></div><div class="frag"><dt>Method</dt><dd>They built a control bridge that streams velocity-mode commands from a physical robotic master into a SOFA physics simulation of the instrument and vessel. Recorded successful operation trajectories are then replayed as a visual overlay during physical phantom trials. Three conditions are compared: no guidance, centerline guidance, and successful-trajectory guidance.</dd></div><div class="frag"><dt>Results</dt><dd>Compared with no guidance, trajectory guidance cut task completion time by about 66.8 percent, collisions by 34.3 percent, rollbacks by 55.6 percent, and rotations by 66.7 percent, while centerline guidance showed no clear gain. The abstract reports no participant count, no trial count, and no statistical tests, and the control-loop validation is described only as reliable without any latency or error figures.</dd></div><div class="frag"><dt>Caveat</dt><dd>The guiding trajectories were most likely recorded on the same phantom they were tested on, so the gain may be little more than replaying a known answer on a fixed geometry, with no evidence of transfer to new anatomy or patient-specific vessels. Round-number reductions such as 66.7 percent suggest very small counts, and with no reported sample size or variance the effect size cannot be trusted. The SOFA interface and the phantom guidance study also seem loosely linked, so it is unclear what the simulator contributes to the headline result.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It concerns a single teleoperated catheter robot, with no multiple agents, no communication between vehicles, and no negotiation or coordination. The only faint link is the idea of sharing a demonstrated trajectory as an intent cue, but here the cue goes to a human operator, not between vehicles, so it tells you nothing about maneuver coordination messages or how they degrade. You can safely drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.19395v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.19395v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-19 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

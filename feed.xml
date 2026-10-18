@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 21:02:18 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 21:03:19 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 19 — 5 papers</title>
+      <description>&lt;p&gt;Four simulated robot arms each run their own Gaussian belief propagation planner, exchange messages only with the arms they might collide with, and keep working at 90 percent packet loss; a power-grid paper trains a multi-label classifier to pick out which contingencies matter, which shrinks the security-constrained optimal power flow problem. VLA policies fine-tuned on LIBERO fail when the instruction is reworded, and paraphrase ensembling doesn&amp;#x27;t fix it but fine-tuning on paraphrases does; a technical report smooths the right-angled channels of 3D-printed hydraulic manifolds into fair curves without letting tubes collide; and a catheter-robot master console connected to the SOFA simulator shows that a previously successful catheter path helps operators while the vessel centerline does not.
+
+**Possible filtering problem:** none of these five papers is about cooperative driving or maneuver coordination. The closest is the multi-arm planner, which deals with distributed coordination under packet loss. Since the recent scope change, this looks like the filter let through papers outside that scope. You may want to check that before you publish this episode.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.20460v1"&gt;DD-GBP: Anytime Multi-Arm Planning and Continuous Execution via Distributed Dynamic Gaussian Belief Propagation&lt;/a&gt; &amp;mdash; Zhao Jin et al.&lt;br/&gt;Each robot arm runs its own Gaussian belief propagation planner and swaps messages only with the arms it might hit, and in their four-arm simulations this keeps working even when 90 percent of packets are dropped.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19750v1"&gt;Severity-Aware Minimum Security Sets for Accelerated Preventive SCOPF Using Machine Learning&lt;/a&gt; &amp;mdash; Mohammad Iman Alizadeh et al.&lt;br/&gt;A power systems paper that trains a multi-label classifier to predict which grid contingencies actually matter, so the security-constrained optimal power flow can be solved on a much smaller problem.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19438v1"&gt;Paraphrase Consensus Is Not Self-Consistency: Instruction Reliance and Robustness in VLA Policies&lt;/a&gt; &amp;mdash; Hanlong Li et al.&lt;br/&gt;VLA robot policies fine-tuned on LIBERO break when you reword the instruction, prompt ensembling over paraphrases does not fix it, and simply fine-tuning on paraphrased instructions does.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19403v1"&gt;Topology-Preserving Multi-Usage Pipe Centerline Refinement under Permanent Tubular Occupancy&lt;/a&gt; &amp;mdash; Deng Quan&lt;br/&gt;A single-author technical report on smoothing the boxy, right-angled channel paths of 3D-printed hydraulic manifolds into fair curves, while keeping every tube clear of the others.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.19395v1"&gt;A Master-to-Simulation Interface with Demonstration-Trajectory Guidance for Vascular Intervention&lt;/a&gt; &amp;mdash; Mingyu Zou et al.&lt;br/&gt;A surgical robotics paper: they connect a real catheter-robot master controller to the SOFA simulator, then show that overlaying a previously successful catheter path helps operators in a vessel phantom, while overlaying the vessel centerline does not.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-19</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-19.mp3" length="6896096" type="audio/mpeg"/>
+      <pubDate>Mon, 19 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:30</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Four simulated robot arms each run their own Gaussian belief propagation planner, exchange messages only with the arms they might collide with, and keep working at 90 percent packet loss; a power-grid paper trains a multi-label classifier to pick out which contingencies matter, which shrinks the security-constrained optimal power flow problem. VLA policies fine-tuned on LIBERO fail when the instruction is reworded, and paraphrase ensembling doesn't fix it but fine-tuning on paraphrases does; a technical report smooths the right-angled channels of 3D-printed hydraulic manifolds into fair curves without letting tubes collide; and a catheter-robot master console connected to the SOFA simulator shows that a previously successful catheter path helps operators while the vessel centerline does not.
+
+**Possible filtering problem:** none of these five papers is about cooperative driving or maneuver coordination. The closest is the multi-arm planner, which deals with distributed coordination under packet loss. Since the recent scope change, this looks like the filter let through papers outside that scope. You may want to check that before you publish this episode.</itunes:summary>
+      <itunes:episode>32</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 17 — 2 papers</title>
       <description>&lt;p&gt;One paper turns partially ordered legal rules, such as maritime collision regulations, into a game for each scenario, where each vessel&amp;#x27;s private preferences can only narrow down the set of rule-compliant equilibria; it&amp;#x27;s demonstrated on seven ship encounters with up to four vessels. A second paper has each pursuer plan around the reachable set of its teammates&amp;#x27; last reported states, uses a control-barrier-function filter to prevent collisions, and lets each agent decide for itself when its teammates&amp;#x27; picture of it is stale enough to transmit again.&lt;/p&gt;
