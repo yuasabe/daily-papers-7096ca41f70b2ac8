@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">34 episodes ·
-       116 papers ·
+    <p class="tagline">35 episodes ·
+       119 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,66 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-21">
+      <div class="ep-head">
+        <h2>Wednesday, October 21, 2026</h2>
+        <span class="ep-meta">Episode 33 · 3 papers · 5 min</span>
+      </div>
+<p class="ep-summary">Kuaishou&#39;s MAPS uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small click and conversion lifts in a live A/B test. Two papers deal with motion: one turns four pediatric infant motor scales into training curricula for a humanoid robot, and three of them get it to standing and walking with no extra help; the other, InteractAgent, uses a multimodal LLM to plan long chains of scene interactions for a virtual human, generating each step with a frozen motion model and redoing or replanning steps that go wrong.
+
+---
+
+None of these three papers are about cooperative driving or maneuver coordination, so the topic filter may have let them through. You might want to check before publishing this episode.</p>
+      <audio controls preload="none" src="audio/2026-10-21.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-21.html">One-pager</a><a class="btn" href="onepagers/2026-10-21.pdf">PDF</a><a class="btn" href="audio/2026-10-21.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="maps: a multi-agent personalized script-driven video advertising system enhanced by reinforcement learning zhongyu wang et al. kuaishou uses an llm agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small lifts in click and conversion rates in a live a/b test. retrieval-based video ad systems can only pick from a fixed set of pre-made ads, so personalization is only as fine-grained as that set allows, and user groups the set does not suit get worse results. the authors want to generate the ad itself for each user rather than just pick one. four llm agents run in a loop: one models the user profile, one writes the ad script, one synthesizes the video, and one uses feedback to refine the script. the scripter agent is trained with reinforcement learning on a multi-dimensional reward that scores both how well the script matches the user&#39;s content preferences and how faithfully it conveys the product information. the multi-agent part is a sequential content pipeline, not a set of independent agents negotiating with each other. offline results are described only as encouraging, with no numbers or named datasets in the abstract. in an online a/b test in one kuaishou advertising scenario, maps raised click-through rate by 2.87 percent, conversion rate by 2.74 percent, and average revenue per user by 9.85 percent against a generative baseline. the online gains come from one unnamed scenario on one platform, compared against an unspecified generative baseline rather than the retrieval systems the paper argues against. nothing in the abstract separates the effect of the rl reward from the effect of the feedback loop, and with no offline numbers given, the encouraging offline claim cannot be checked. this is irrelevant to your work. the agents are stages of an ad-generation pipeline, so there is no negotiation, no conflict resolution, no communication constraint, and no vehicles. nothing here carries over to maneuver coordination or cooperative planning, and it only reached your feed through the multi-agent systems category tag. 2610.25748v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.25748v1">MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Zhongyu Wang et al. · arXiv:2610.25748v1</p><p class="p-hook">Kuaishou uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small lifts in click and conversion rates in a live A/B test.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Retrieval-based video ad systems can only pick from a fixed set of pre-made ads, so personalization is only as fine-grained as that set allows, and user groups the set does not suit get worse results. The authors want to generate the ad itself for each user rather than just pick one.</dd><dt>Method</dt><dd>Four LLM agents run in a loop: one models the user profile, one writes the ad script, one synthesizes the video, and one uses feedback to refine the script. The Scripter Agent is trained with reinforcement learning on a multi-dimensional reward that scores both how well the script matches the user&#39;s content preferences and how faithfully it conveys the product information. The multi-agent part is a sequential content pipeline, not a set of independent agents negotiating with each other.</dd><dt>Results</dt><dd>Offline results are described only as encouraging, with no numbers or named datasets in the abstract. In an online A/B test in one Kuaishou advertising scenario, MAPS raised click-through rate by 2.87 percent, conversion rate by 2.74 percent, and average revenue per user by 9.85 percent against a generative baseline.</dd><dt>Caveat</dt><dd>The online gains come from one unnamed scenario on one platform, compared against an unspecified generative baseline rather than the retrieval systems the paper argues against. Nothing in the abstract separates the effect of the RL reward from the effect of the feedback loop, and with no offline numbers given, the encouraging offline claim cannot be checked.</dd><dt>Why it matters</dt><dd>This is irrelevant to your work. The agents are stages of an ad-generation pipeline, so there is no negotiation, no conflict resolution, no communication constraint, and no vehicles. Nothing here carries over to maneuver coordination or cooperative planning, and it only reached your feed through the multi-agent systems category tag.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="validation of human motor development scales with humanoid robots fanxing meng, jing xiao the authors turn four pediatric infant motor scales into training curricula for a humanoid robot and find that three of them get it all the way to standing and walking with no extra help. curriculum design for humanoid locomotion is usually done by hand. nobody has checked whether the milestone sequences pediatricians use for infants are complete enough to serve as a ready-made curriculum on their own. each motor scale is encoded as a developmental graph. nodes are milestones such as rolling, sitting, crawling and pulling to stand, and edges are the order in which those milestones are expected. the graph then sets the order of skill training inside a reinforcement learning framework, so each milestone is learned in turn as a stepping stone to the next. the abstract gives no numbers, success rates, training times or baselines. the only claim is qualitative: three of the four scales succeed, the fourth fails at a missing intermediate milestone, and adding that one milestone fixes it. getting a robot through a curriculum says little about whether a pediatric scale is valid, so the framing of validating human scales overreaches. the abstract also shows no comparison against a hand-designed curriculum or against training with no curriculum at all, which leaves open whether developmental ordering adds anything. four scales is a tiny sample, the fix for the failing scale was chosen after seeing the failure, and the abstract does not say whether results come from simulation or real hardware. this is outside your area. it covers single-robot motor learning, with no communication, no multiple agents and no negotiation, so it has nothing to say about maneuver coordination, platooning or conflict resolution. at most it is a loose example of curriculum-ordered reinforcement learning. 2610.25701v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.25701v1">Validation of Human Motor Development Scales with Humanoid Robots</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Fanxing Meng, Jing Xiao · arXiv:2610.25701v1</p><p class="p-hook">The authors turn four pediatric infant motor scales into training curricula for a humanoid robot and find that three of them get it all the way to standing and walking with no extra help.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Curriculum design for humanoid locomotion is usually done by hand. Nobody has checked whether the milestone sequences pediatricians use for infants are complete enough to serve as a ready-made curriculum on their own.</dd><dt>Method</dt><dd>Each motor scale is encoded as a developmental graph. Nodes are milestones such as rolling, sitting, crawling and pulling to stand, and edges are the order in which those milestones are expected. The graph then sets the order of skill training inside a reinforcement learning framework, so each milestone is learned in turn as a stepping stone to the next.</dd><dt>Results</dt><dd>The abstract gives no numbers, success rates, training times or baselines. The only claim is qualitative: three of the four scales succeed, the fourth fails at a missing intermediate milestone, and adding that one milestone fixes it.</dd><dt>Caveat</dt><dd>Getting a robot through a curriculum says little about whether a pediatric scale is valid, so the framing of validating human scales overreaches. The abstract also shows no comparison against a hand-designed curriculum or against training with no curriculum at all, which leaves open whether developmental ordering adds anything. Four scales is a tiny sample, the fix for the failing scale was chosen after seeing the failure, and the abstract does not say whether results come from simulation or real hardware.</dd><dt>Why it matters</dt><dd>This is outside your area. It covers single-robot motor learning, with no communication, no multiple agents and no negotiation, so it has nothing to say about maneuver coordination, platooning or conflict resolution. At most it is a loose example of curriculum-ordered reinforcement learning.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="interactagent: agentic human motion interaction with memory-augmented reflection tao zhang et al. an agent built on a multimodal llm animates a single virtual human through long chains of scene interactions. it plans steps, generates each motion with a frozen motion model, checks the result, and redoes or replans when a step goes wrong. text-to-motion models ignore the surrounding scene and never correct themselves. scene-aware methods, on the other hand, need paired scene and motion training data or 3d preprocessing, so they generalize poorly to new room layouts and open-ended goals. one multimodal llm serves as both planner and judge, and a frozen motionllm generates the motion for each step. after every step, an online observation check decides whether to continue, redo the step, or replan. across rounds, a reflection loop with memory refines the whole plan and stops on its own once the plan stops improving. on the unihsi benchmark, the authors report higher task success and less body penetration than training-free baselines. the abstract gives no numbers, does not name the baselines, and does not compare against trained, scene-conditioned methods. the evaluation is one benchmark, judged only against training-free baselines. the same llm plans and grades its own output, so its success judgments could be biased toward itself. there is also no reported breakdown of how much the observation check adds compared with the memory reflection, and nothing on latency or llm call cost. this is off topic for you. the paper is about one simulated human interacting with furniture, with no vehicles, no communication between agents, and no negotiation. the only loose link is the plan, execute, check and replan loop, which echoes how a maneuver protocol recovers from a failed step. that idea is generic, though, and not worth your reading time. 2610.25649v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.25649v1">InteractAgent: Agentic Human Motion Interaction with Memory-Augmented Reflection</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Tao Zhang et al. · arXiv:2610.25649v1</p><p class="p-hook">An agent built on a multimodal LLM animates a single virtual human through long chains of scene interactions. It plans steps, generates each motion with a frozen motion model, checks the result, and redoes or replans when a step goes wrong.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Text-to-motion models ignore the surrounding scene and never correct themselves. Scene-aware methods, on the other hand, need paired scene and motion training data or 3D preprocessing, so they generalize poorly to new room layouts and open-ended goals.</dd><dt>Method</dt><dd>One multimodal LLM serves as both planner and judge, and a frozen MotionLLM generates the motion for each step. After every step, an online observation check decides whether to continue, redo the step, or replan. Across rounds, a reflection loop with memory refines the whole plan and stops on its own once the plan stops improving.</dd><dt>Results</dt><dd>On the UniHSI benchmark, the authors report higher task success and less body penetration than training-free baselines. The abstract gives no numbers, does not name the baselines, and does not compare against trained, scene-conditioned methods.</dd><dt>Caveat</dt><dd>The evaluation is one benchmark, judged only against training-free baselines. The same LLM plans and grades its own output, so its success judgments could be biased toward itself. There is also no reported breakdown of how much the observation check adds compared with the memory reflection, and nothing on latency or LLM call cost.</dd><dt>Why it matters</dt><dd>This is off topic for you. The paper is about one simulated human interacting with furniture, with no vehicles, no communication between agents, and no negotiation. The only loose link is the plan, execute, check and replan loop, which echoes how a maneuver protocol recovers from a failed step. That idea is generic, though, and not worth your reading time.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-19">
       <div class="ep-head">
         <h2>Monday, October 19, 2026</h2>
@@ -2336,7 +2396,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-19 06:03 · unlisted, not indexed ·
+    Generated 2026-10-21 06:01 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>

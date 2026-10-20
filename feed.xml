@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Oct 2026 21:03:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 21:01:41 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,31 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 21 — 3 papers</title>
+      <description>&lt;p&gt;Kuaishou&amp;#x27;s MAPS uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small click and conversion lifts in a live A/B test. Two papers deal with motion: one turns four pediatric infant motor scales into training curricula for a humanoid robot, and three of them get it to standing and walking with no extra help; the other, InteractAgent, uses a multimodal LLM to plan long chains of scene interactions for a virtual human, generating each step with a frozen motion model and redoing or replanning steps that go wrong.
+
+---
+
+None of these three papers are about cooperative driving or maneuver coordination, so the topic filter may have let them through. You might want to check before publishing this episode.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.25748v1"&gt;MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning&lt;/a&gt; &amp;mdash; Zhongyu Wang et al.&lt;br/&gt;Kuaishou uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small lifts in click and conversion rates in a live A/B test.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.25701v1"&gt;Validation of Human Motor Development Scales with Humanoid Robots&lt;/a&gt; &amp;mdash; Fanxing Meng, Jing Xiao&lt;br/&gt;The authors turn four pediatric infant motor scales into training curricula for a humanoid robot and find that three of them get it all the way to standing and walking with no extra help.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.25649v1"&gt;InteractAgent: Agentic Human Motion Interaction with Memory-Augmented Reflection&lt;/a&gt; &amp;mdash; Tao Zhang et al.&lt;br/&gt;An agent built on a multimodal LLM animates a single virtual human through long chains of scene interactions. It plans steps, generates each motion with a frozen motion model, checks the result, and redoes or replans when a step goes wrong.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-21</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-21.mp3" length="3413504" type="audio/mpeg"/>
+      <pubDate>Wed, 21 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:04:40</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Kuaishou's MAPS uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small click and conversion lifts in a live A/B test. Two papers deal with motion: one turns four pediatric infant motor scales into training curricula for a humanoid robot, and three of them get it to standing and walking with no extra help; the other, InteractAgent, uses a multimodal LLM to plan long chains of scene interactions for a virtual human, generating each step with a frozen motion model and redoing or replanning steps that go wrong.
+
+---
+
+None of these three papers are about cooperative driving or maneuver coordination, so the topic filter may have let them through. You might want to check before publishing this episode.</itunes:summary>
+      <itunes:episode>33</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 19 — 5 papers</title>
       <description>&lt;p&gt;Four simulated robot arms each run their own Gaussian belief propagation planner, exchange messages only with the arms they might collide with, and keep working at 90 percent packet loss; a power-grid paper trains a multi-label classifier to pick out which contingencies matter, which shrinks the security-constrained optimal power flow problem. VLA policies fine-tuned on LIBERO fail when the instruction is reworded, and paraphrase ensembling doesn&amp;#x27;t fix it but fine-tuning on paraphrases does; a technical report smooths the right-angled channels of 3D-printed hydraulic manifolds into fair curves without letting tubes collide; and a catheter-robot master console connected to the SOFA simulator shows that a previously successful catheter path helps operators while the vessel centerline does not.
