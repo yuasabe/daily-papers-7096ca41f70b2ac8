@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">35 episodes ·
-       119 papers ·
+    <p class="tagline">36 episodes ·
+       120 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,34 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-22">
+      <div class="ep-head">
+        <h2>Thursday, October 22, 2026</h2>
+        <span class="ep-meta">Episode 34 · 1 papers · 4 min</span>
+      </div>
+<p class="ep-summary">A distributed platoon controller for vehicles circulating on a closed track through one unsignalized intersection, with a proof that the vehicles converge to a common speed and never collide in the crossing. The convergence guarantee is only local, the setting is a single intersection on a closed loop, and this is Part I (stability analysis only), so how it handles open road networks, multiple intersections, or starts far from equilibrium is still unshown.</p>
+      <audio controls preload="none" src="audio/2026-10-22.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-22.html">One-pager</a><a class="btn" href="onepagers/2026-10-22.pdf">PDF</a><a class="btn" href="audio/2026-10-22.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="distributed platoon control for safe and smooth crossing at an unsignalized intersection-part i: stability analysis bin-bin hu et al. a distributed platoon controller for vehicles looping around a closed track with one unsignalized intersection, with a proof that they converge locally to a common speed and never collide in the crossing. existing intersection schemes split the problem into an intersection layer and a platoon layer and treat them separately. on open paths vehicles enter and leave, so there is no steady state to analyze, and nobody could prove how the crossing logic and the platoon&#39;s convergence affect each other. they put the vehicles on a closed path that passes through a single intersection, so the same vehicles cross again and again and the long-run behaviour can be studied. each time vehicles swap order at the crossing, the system switches to a new closed-loop mode. they prove local exponential convergence of this switched system under conditions on the controller gains, and show the crossing stays safe during the transient and becomes a steady flow at one shared speed. the abstract gives no numbers at all. the only evidence is a carla simulation with several commercial vehicle models, with no baseline, throughput, gap or delay figures reported. the closed loop with exactly one intersection is a modelling convenience, not a road network, and the guarantee is only local, so nothing is said about large initial errors or vehicles arriving from outside. the abstract never mentions communication delay, packet loss or partial participation, and the order at the crossing seems to come from the controller&#39;s fixed switching structure rather than any negotiation. calling the gain conditions mild means little until they are checked against real actuator limits, and part i has no experiment on real vehicles. this touches two of your areas, platoon string coordination and deciding who goes first at a conflict point. but the right of way here is built into a continuous control law, not agreed through exchanged intentions or messages, and there is no study of how it degrades when communication fails. it is useful mainly as a reference for proving safety and convergence of a switched multi-vehicle system, so it sits on the edge of your negotiation and protocol work. 2610.28290v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.28290v1">Distributed Platoon Control for Safe and Smooth Crossing at an Unsignalized Intersection-Part I: Stability Analysis</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Bin-Bin Hu et al. · arXiv:2610.28290v1</p><p class="p-hook">A distributed platoon controller for vehicles looping around a closed track with one unsignalized intersection, with a proof that they converge locally to a common speed and never collide in the crossing.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Existing intersection schemes split the problem into an intersection layer and a platoon layer and treat them separately. On open paths vehicles enter and leave, so there is no steady state to analyze, and nobody could prove how the crossing logic and the platoon&#39;s convergence affect each other.</dd><dt>Method</dt><dd>They put the vehicles on a closed path that passes through a single intersection, so the same vehicles cross again and again and the long-run behaviour can be studied. Each time vehicles swap order at the crossing, the system switches to a new closed-loop mode. They prove local exponential convergence of this switched system under conditions on the controller gains, and show the crossing stays safe during the transient and becomes a steady flow at one shared speed.</dd><dt>Results</dt><dd>The abstract gives no numbers at all. The only evidence is a CARLA simulation with several commercial vehicle models, with no baseline, throughput, gap or delay figures reported.</dd><dt>Caveat</dt><dd>The closed loop with exactly one intersection is a modelling convenience, not a road network, and the guarantee is only local, so nothing is said about large initial errors or vehicles arriving from outside. The abstract never mentions communication delay, packet loss or partial participation, and the order at the crossing seems to come from the controller&#39;s fixed switching structure rather than any negotiation. Calling the gain conditions mild means little until they are checked against real actuator limits, and Part I has no experiment on real vehicles.</dd><dt>Why it matters</dt><dd>This touches two of your areas, platoon string coordination and deciding who goes first at a conflict point. But the right of way here is built into a continuous control law, not agreed through exchanged intentions or messages, and there is no study of how it degrades when communication fails. It is useful mainly as a reference for proving safety and convergence of a switched multi-vehicle system, so it sits on the edge of your negotiation and protocol work.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-21">
       <div class="ep-head">
         <h2>Wednesday, October 21, 2026</h2>
@@ -2396,7 +2424,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-21 06:01 · unlisted, not indexed ·
+    Generated 2026-10-22 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>

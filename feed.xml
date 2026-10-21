@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2026 21:01:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 21:02:10 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 22 — 1 papers</title>
+      <description>&lt;p&gt;A distributed platoon controller for vehicles circulating on a closed track through one unsignalized intersection, with a proof that the vehicles converge to a common speed and never collide in the crossing. The convergence guarantee is only local, the setting is a single intersection on a closed loop, and this is Part I (stability analysis only), so how it handles open road networks, multiple intersections, or starts far from equilibrium is still unshown.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.28290v1"&gt;Distributed Platoon Control for Safe and Smooth Crossing at an Unsignalized Intersection-Part I: Stability Analysis&lt;/a&gt; &amp;mdash; Bin-Bin Hu et al.&lt;br/&gt;A distributed platoon controller for vehicles looping around a closed track with one unsignalized intersection, with a proof that they converge locally to a common speed and never collide in the crossing.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-22</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-22.mp3" length="2661496" type="audio/mpeg"/>
+      <pubDate>Thu, 22 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:03:37</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A distributed platoon controller for vehicles circulating on a closed track through one unsignalized intersection, with a proof that the vehicles converge to a common speed and never collide in the crossing. The convergence guarantee is only local, the setting is a single intersection on a closed loop, and this is Part I (stability analysis only), so how it handles open road networks, multiple intersections, or starts far from equilibrium is still unshown.</itunes:summary>
+      <itunes:episode>34</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 21 — 3 papers</title>
       <description>&lt;p&gt;Kuaishou&amp;#x27;s MAPS uses an LLM agent pipeline to write a custom ad video script for each user profile instead of picking from pre-made ads, and reports small click and conversion lifts in a live A/B test. Two papers deal with motion: one turns four pediatric infant motor scales into training curricula for a humanoid robot, and three of them get it to standing and walking with no extra help; the other, InteractAgent, uses a multimodal LLM to plan long chains of scene interactions for a virtual human, generating each step with a frozen motion model and redoing or replanning steps that go wrong.
