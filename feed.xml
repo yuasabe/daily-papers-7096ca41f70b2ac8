@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 21:02:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 21:03:31 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,41 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 23 — 5 papers</title>
+      <description>&lt;p&gt;Here&amp;#x27;s the two-sentence description covering all five papers:
+
+&amp;gt; Borrelli&amp;#x27;s group extends learning model predictive control to multi-player games: agents pool trajectories from earlier runs of a repeated task into a shared safe set, so no player&amp;#x27;s cost gets worse from one run to the next. Also covered are a transformer that fuses force history and point clouds so a Franka arm can tell an unknown payload from a human push, a review of machine learning in wireless charging, a chemical-plant simulation library whose linearized damping ratio ranks heat-exchanger networks well but predicts oscillating runs poorly, and a carpet-bombing DDoS detector that reweights its evidence by the fraction of attacked hosts it can see.
+
+Only the first paper fits the show&amp;#x27;s scope of cooperative driving and maneuver coordination. The wireless-charging paper&amp;#x27;s own note says it &amp;quot;has nothing to do with vehicles negotiating maneuvers,&amp;quot; and the other three aren&amp;#x27;t on scope either. Since short episodes are fine for this show, a one-paper episode may be the better call:
+
+&amp;gt; Borrelli&amp;#x27;s group extends learning model predictive control from a single robot to several players in a game, where agents reuse trajectories from earlier runs of the same task to build a shared safe set. The result is that each player&amp;#x27;s cost never gets worse from one run to the next, which is relevant to repeated multi-vehicle maneuvers like merges at the same on-ramp.
+
+That last clause about merges is my own reading, not a claim from the paper, so cut it if you&amp;#x27;d rather not frame it that way. Four off-topic papers getting through suggests the scope filter from the &amp;quot;Limit scope to maneuver coordination&amp;quot; commit is letting things in. I can look into why if you want.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.28901v1"&gt;Learning Dynamic Games for Cooperative Iterative Tasks&lt;/a&gt; &amp;mdash; Mark Pustilnik, Francesco Borrelli&lt;br/&gt;Borrelli&amp;#x27;s group extends learning model predictive control from one robot to several players in a game. Agents reuse trajectories from earlier runs of the same task to build a shared safe set. Each player&amp;#x27;s cost then never gets worse from one run to the next.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.30101v1"&gt;Machine Learning-Enabled Wireless Power Transfer: A Task-Oriented Review of Structural Optimization, State and Parameter Estimation, and Adaptive Control&lt;/a&gt; &amp;mdash; Denghao Luo et al.&lt;br/&gt;This is a review of how machine learning gets used in wireless charging systems, sorted into coil design, estimating coupling and load, and adaptive control, and it has nothing to do with vehicles negotiating maneuvers.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.29953v1"&gt;A Plantwide Simulation Library for Control-Oriented Design: Analytical and Data-driven Use Cases&lt;/a&gt; &amp;mdash; Kyle Territo, Luis A. Briceno-Mena, Jose A. Romagnoli&lt;br/&gt;A chemical-process simulation library that stores each study&amp;#x27;s configuration as hashed plain data, demonstrated on one reactor, separator and recycle plant, where the linearized damping ratio ranks heat-exchanger networks correctly but is a poor predictor of which operating runs will oscillate.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.29802v1"&gt;Prefix Visibility Ratio: Quantifying Partial Observability in Carpet Bombing Detection&lt;/a&gt; &amp;mdash; Farid Naït-Abdesselam et al.&lt;br/&gt;A DDoS detection paper that argues carpet bombing detectors should report what fraction of the attacked hosts they can actually see, and shows in Mininet that a detector which reweights its evidence by that fraction holds up when visibility is low.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.24235v1"&gt;Multimodal Interaction Estimation for Contact-Aware Adaptive Impedance Control&lt;/a&gt; &amp;mdash; Mateusz Jaszczuk, Paris Perdikaris, Nadia Figueroa&lt;br/&gt;A transformer fuses force history and point clouds to tell an unknown payload apart from a human push, so a Franka arm knows whether to compensate the load or yield compliantly.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-23</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-23.mp3" length="6016528" type="audio/mpeg"/>
+      <pubDate>Fri, 23 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:16</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Here's the two-sentence description covering all five papers:
+
+&gt; Borrelli's group extends learning model predictive control to multi-player games: agents pool trajectories from earlier runs of a repeated task into a shared safe set, so no player's cost gets worse from one run to the next. Also covered are a transformer that fuses force history and point clouds so a Franka arm can tell an unknown payload from a human push, a review of machine learning in wireless charging, a chemical-plant simulation library whose linearized damping ratio ranks heat-exchanger networks well but predicts oscillating runs poorly, and a carpet-bombing DDoS detector that reweights its evidence by the fraction of attacked hosts it can see.
+
+Only the first paper fits the show's scope of cooperative driving and maneuver coordination. The wireless-charging paper's own note says it "has nothing to do with vehicles negotiating maneuvers," and the other three aren't on scope either. Since short episodes are fine for this show, a one-paper episode may be the better call:
+
+&gt; Borrelli's group extends learning model predictive control from a single robot to several players in a game, where agents reuse trajectories from earlier runs of the same task to build a shared safe set. The result is that each player's cost never gets worse from one run to the next, which is relevant to repeated multi-vehicle maneuvers like merges at the same on-ramp.
+
+That last clause about merges is my own reading, not a claim from the paper, so cut it if you'd rather not frame it that way. Four off-topic papers getting through suggests the scope filter from the "Limit scope to maneuver coordination" commit is letting things in. I can look into why if you want.</itunes:summary>
+      <itunes:episode>35</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 22 — 1 papers</title>
       <description>&lt;p&gt;A distributed platoon controller for vehicles circulating on a closed track through one unsignalized intersection, with a proof that the vehicles converge to a common speed and never collide in the crossing. The convergence guarantee is only local, the setting is a single intersection on a closed loop, and this is Part I (stability analysis only), so how it handles open road networks, multiple intersections, or starts far from equilibrium is still unshown.&lt;/p&gt;
