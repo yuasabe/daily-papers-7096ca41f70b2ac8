@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 36 (2026-10-24)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 24 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 36</strong> · October 24, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.31540v1">Dispersive Tree Agreements for Multi-Robot Coordination</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Shashank A. Deshpande, Blake T. Edwards, Jonathan P. How</p>
+
+<p class="hook">Each robot grows its own tree of feasible trajectories, and the team bids prices on shared space until the combined plans settle on a near-optimal, conflict-free agreement, in real time and without a central planner.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Joint-space multi-robot planning that comes close to optimal is usually centralized, offline and limited to collision avoidance. Decentralized real-time planners stay safe but give up on joint optimality. Nobody had a decentralized, online method that keeps getting better over time and can certify how close it is to the joint optimum.</dd></div><div class="frag"><dt>Method</dt><dd>They extend a single-robot planner for differentially flat systems. That planner searches dispersive trees of forward-simulated commands. They argue that the coupling between robots can be swapped for local constraints, and that each robot&#39;s locally grown tree still contains a near-optimal joint agreement. The robots find that agreement by decentralized column generation: they negotiate rents, which are prices on shared space, and those rents steer each robot&#39;s tree search. The protocol is called WarpWeaver and runs as an asynchronous receding-horizon loop. Near-optimality is certified only once the negotiation goes quiet, meaning no robot wants to change its plan.</dd></div><div class="frag"><dt>Results</dt><dd>In simulation on the Dynobench suite, total travel time drops by up to 22 percent against centralized offline planners and by up to 37 percent against a decentralized real-time baseline. On a graph-connectivity task the success rate nearly doubles compared with a task-specific planner. A hardware demo runs on six robots, each planning onboard. The abstract gives no numbers for hardware performance or for communication cost.</dd></div><div class="frag"><dt>Caveat</dt><dd>The optimality certificate holds only once the negotiation goes quiet, but in real time the deadlines cut the negotiation short. So the guarantee may not cover the regime that actually matters, and the claim of effective closure needs a close look at how often agreements are truly reached. The headline numbers are best cases. Beating centralized offline planners on travel time also raises the question of whether those baselines got equal compute budgets and the same cost function. The abstract says nothing about message loss, latency, bandwidth, or robots that don&#39;t participate. Scaling past six physical robots is also not shown.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is not a vehicle paper, but the mechanism is a concrete, price-based answer to the student&#39;s core questions: who yields, how incompatible plans get resolved, and how to jointly optimize trajectories through explicit messages instead of inference. Rents on shared space are basically an auction for right of way, and road vehicles under a bicycle model are differentially flat, so the method plausibly carries over to merges and gap creation. What&#39;s missing for their purposes is any treatment of lossy communication or of vehicles that don&#39;t participate. Those gaps are exactly where their own work could add something.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.31540v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.31540v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.30437v1">Integrated Longitudinal and Lateral Control for High-Speed Platooning of Articulated Vehicles</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Aashish Shaju, Steve Southward, Mehdi Ahmadian</p>
+
+<p class="hook">A Virginia Tech group tunes a PID spacing controller and a clothoid path follower so a string of tractor-trailers can platoon at highway speed on curves, and shows it works in simulation.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Most platooning controllers measure spacing as a straight-line gap and assume a rigid car-like vehicle, so they break down on curved roads and with articulated trucks. Lookahead path trackers also tend to oscillate at high speed. Both problems stay open for heavy vehicles because truck-trailer dynamics are rarely built into the control laws.</dd></div><div class="frag"><dt>Method</dt><dd>For spacing, they measure the gap along the arc of the path rather than in a straight line, run a PID controller on that error, and give their own proof that the string is stable. For steering, they extend a clothoid-based lookahead tracker with four additions. A tangent-direction check damps oscillation, path segments are labelled so the lookahead distance can be tuned per segment, and the lookahead changes at a rate set by both cross-track error and the curvature ahead. The fourth addition extends the tracker to truck-trailer kinematics.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers, no named baseline and no named scenarios. It only says the simulations show stability, small tracking errors and robust high-speed behaviour, so you cannot judge the size of the improvement from the abstract.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is shown in simulation only. The abstract never says what the communication layer is, so it is unclear whether the string stability proof holds with packet loss, delay or a mixed platoon, which are the conditions that usually break string stability. A string stability proof for a PID spacing law is close to textbook material, so a reviewer would ask how this one differs from standard CACC results. With four lateral add-ons and no ablation mentioned, nobody can tell which one does the work.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits on the edge of your platooning interest and misses everything else. It is a single-vehicle control paper about holding a gap and following a path once the platoon already exists. There is no forming, joining or splitting, no negotiation, and no message design. The one idea you might reuse is measuring the gap along the arc of the path, if you ever model platoons on curved roads or with trucks.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.30437v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.30437v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.30979v1">LAST-V2X: Language-Driven Adaptive Scenario Synthesis and Testing for Communication-Induced Failures in V2X Safety Applications</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Keshu Wu et al.</p>
+
+<p class="hook">They use an LLM to turn plain-English test requests into CARLA scenarios with injected V2X message faults, then replay each scenario with perfect information to check whether the crash was really caused by the communication fault.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Testing V2X safety applications under delayed, dropped or corrupted messages means setting up traffic, channel conditions and application logic together by hand, and a crash seen under a degraded channel might have happened anyway. Nobody had a cheap, automated way to both generate these scenarios and show that the communication fault was the real cause.</dd></div><div class="frag"><dt>Method</dt><dd>An LLM turns a natural-language test description into an executable CARLA scenario tied to road geometry, message semantics and vehicle behavior, coupled with a spatially aware channel model and message-level fault injection. To decide whether communication caused a failure, every scenario is run twice, once with degraded messages and once with ground-truth information, and only the failures that appear in the degraded run count. A refinement loop combines parameter search with LLM self-reflection to drop test configurations that trigger nothing and to shrink failures down to minimal reproducible cases.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all, no failure discovery rates, no scenario validity rates and no baselines. It only says experiments ran across diverse CARLA environments and V2X safety applications, and that adaptive refinement substantially improves failure discovery.</dd></div><div class="frag"><dt>Caveat</dt><dd>The matched-run test only shows that the outcome changes when you swap degraded information for ground truth on one deterministic replay. It does not isolate which message or fault mattered, and it says nothing about the stochastic interactions where real systems break. The applications under test look like single-vehicle warning or reaction apps rather than multi-party protocols, and with no reported baseline against random or classical falsification search, the claim of substantial improvement cannot be checked. Everything is in CARLA with a modeled channel, not a validated network simulator or real radios.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is a testing harness, not a coordination method, and it does not study negotiation, proposal and acceptance, or platoon string stability. The one useful idea is the matched degraded-versus-ground-truth run, which you could borrow to show that a failure in your maneuver protocol under message loss is really caused by the protocol and not by the scenario itself.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.30979v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.30979v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.27995v1">Learning Tactile-Aware Hand Representations from Human Hand-Object Interaction Data</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yeonguk Yu, Jaehong Kim, Byungok Han</p>
+
+<p class="hook">Pretrain a robot hand&#39;s tactile encoder on human hand-object videos and motion data with no touch sensors involved, then fine-tune it on a little robot data; this matches training from scratch while using a quarter of the labels.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Tactile representation learning for dexterous hands usually needs a lot of data collected on the robot itself. That data is tied to one hand and one sensor, so it does not scale. Large human hand-object interaction datasets exist, but they contain no real tactile signals, so it was unclear whether they could help touch-based learning on a robot.</dd></div><div class="frag"><dt>Method</dt><dd>HuTact pretrains a hand representation on human hand-object interaction data, presumably using contact structure derived from hand pose and object geometry in place of measured touch. That learned interaction structure is then mapped onto the robot&#39;s tactile observations. An optional midtraining stage on unlabeled robot play data adapts it further before supervised fine-tuning on grasp prediction, slip detection, object classification and tactile-conditioned policy learning.</dd></div><div class="frag"><dt>Results</dt><dd>The headline number: human pretraining followed by midtraining on robot play data reaches 88.26 percent Macro-F1 on grasp prediction with 25 percent of the labels, against 88.23 percent for training from scratch on the full labeled set. The abstract gives no figures for slip detection, object classification or the policy tasks, and names no pretrained baselines.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline result is a 0.03 point gap with no variance reported, so it shows parity at best and not improvement. It also comes from the configuration that includes midtraining on robot play data, which leaves open how much of the gain is really due to the human data. The abstract does not separate those two contributions, does not compare against other pretraining sources such as vision-only or simulated tactile priors, and does not show transfer across different robot hands or sensors, even though cross-hand scalability is the stated motivation.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is about tactile sensing for dexterous manipulation and has nothing to do with connected vehicles, maneuver negotiation, platooning or cooperative planning. The only transferable idea is the general pattern of pretraining on plentiful human behaviour data and adapting with a small amount of unlabeled target data, and that pattern is already familiar from driving-behaviour pretraining.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.27995v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.27995v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.27905v1">High-Precision RCM Motion for Ophthalmic Robotics via Hierarchical QP Control and Authority-Guided Recovery Planning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Huanyu Tian et al.</p>
+
+<p class="hook">When a general-purpose robot arm runs a software pivot point for eye surgery, certain poses make the tip servo oscillate, so the authors detect those poses and replan to a better-conditioned arm configuration before moving.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>With a software remote centre of motion, the pivot constraint can wipe out the tip&#39;s ability to move in some directions even though the tip task alone is well conditioned and the target is reachable, and standard singularity handling misses this because it only checks the unconstrained tip Jacobian. The authors name this a constraint-induced task singularity, meaning the tip Jacobian projected through the pivot constraint loses rank while the raw tip Jacobian stays healthy.</dd></div><div class="frag"><dt>Method</dt><dd>For each commanded target, a planner scores candidate arm configurations by their effective tip authority under the pivot constraint, picks a well-conditioned one that reaches the target, and plans a route to it that keeps the pivot constraint satisfied. A fixed hierarchical quadratic-program controller then executes that route, with the pivot constraint at higher priority than tip tracking. The key design choice is to avoid the bad configurations at the planning stage rather than damp through them in the controller.</dd></div><div class="frag"><dt>Results</dt><dd>On a 200-scenario kinematic benchmark, the full nominal-plus-recovery protocol reaches 128 of 128 near-singular targets and 71 of 72 near-joint-limit targets, with software pivot residual under 0.142 millimetres. On a physical 6-DOF arm across four pivot entry points, the worst-case pivot residual is 178 micrometres and the median tip error is 32 micrometres, against a 200 micrometre requirement.</dd></div><div class="frag"><dt>Caveat</dt><dd>The benchmark is the authors&#39; own and purely kinematic, and the abstract names no baseline, so we cannot tell how much damped least squares or a standard null-space method would already recover. The hardware pivot residual is reconstructed from joint encoders rather than measured externally, so it hides calibration and arm compliance errors, and there is no eye phantom, tissue contact, or timing data for the replanning step.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work: it is single-robot surgical kinematics with no communication, negotiation, or multiple agents. The only transferable idea is the general pattern of noticing when a constraint silently removes control authority and replanning to a better-conditioned state, which loosely mirrors how coupling constraints can make a platoon or cooperative maneuver infeasible, but nothing here carries over directly.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.27905v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.27905v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-24 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

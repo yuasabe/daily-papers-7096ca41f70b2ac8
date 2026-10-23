@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2026 21:03:31 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 21:03:11 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 24 — 5 papers</title>
+      <description>&lt;p&gt;Each robot grows its own tree of feasible trajectories, and the team bids prices on shared space until it settles on a near-optimal, conflict-free plan in real time with no central planner; a Virginia Tech group pairs a PID spacing controller with a clothoid path follower to platoon tractor-trailers at highway speed on curves, so far only in simulation. LAST-V2X uses an LLM to turn plain-English test requests into CARLA scenarios with injected V2X message faults, then replays each one with perfect information to check whether the fault actually caused the crash; also covered are a robot-hand touch encoder pretrained on human hand-object data that matches training from scratch with a quarter of the labels, and an eye-surgery arm that spots poses where the tip servo oscillates and moves to a steadier configuration first.
+
+The tactile-hand and eye-surgery papers don&amp;#x27;t fit the cooperative driving / maneuver coordination scope. If they got through the filter by mistake, you may want to drop them from the episode rather than describe them.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.31540v1"&gt;Dispersive Tree Agreements for Multi-Robot Coordination&lt;/a&gt; &amp;mdash; Shashank A. Deshpande, Blake T. Edwards, Jonathan P. How&lt;br/&gt;Each robot grows its own tree of feasible trajectories, and the team bids prices on shared space until the combined plans settle on a near-optimal, conflict-free agreement, in real time and without a central planner.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.30437v1"&gt;Integrated Longitudinal and Lateral Control for High-Speed Platooning of Articulated Vehicles&lt;/a&gt; &amp;mdash; Aashish Shaju, Steve Southward, Mehdi Ahmadian&lt;br/&gt;A Virginia Tech group tunes a PID spacing controller and a clothoid path follower so a string of tractor-trailers can platoon at highway speed on curves, and shows it works in simulation.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.30979v1"&gt;LAST-V2X: Language-Driven Adaptive Scenario Synthesis and Testing for Communication-Induced Failures in V2X Safety Applications&lt;/a&gt; &amp;mdash; Keshu Wu et al.&lt;br/&gt;They use an LLM to turn plain-English test requests into CARLA scenarios with injected V2X message faults, then replay each scenario with perfect information to check whether the crash was really caused by the communication fault.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.27995v1"&gt;Learning Tactile-Aware Hand Representations from Human Hand-Object Interaction Data&lt;/a&gt; &amp;mdash; Yeonguk Yu, Jaehong Kim, Byungok Han&lt;br/&gt;Pretrain a robot hand&amp;#x27;s tactile encoder on human hand-object videos and motion data with no touch sensors involved, then fine-tune it on a little robot data; this matches training from scratch while using a quarter of the labels.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.27905v1"&gt;High-Precision RCM Motion for Ophthalmic Robotics via Hierarchical QP Control and Authority-Guided Recovery Planning&lt;/a&gt; &amp;mdash; Huanyu Tian et al.&lt;br/&gt;When a general-purpose robot arm runs a software pivot point for eye surgery, certain poses make the tip servo oscillate, so the authors detect those poses and replan to a better-conditioned arm configuration before moving.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-24</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-24.mp3" length="7305797" type="audio/mpeg"/>
+      <pubDate>Sat, 24 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:10:04</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Each robot grows its own tree of feasible trajectories, and the team bids prices on shared space until it settles on a near-optimal, conflict-free plan in real time with no central planner; a Virginia Tech group pairs a PID spacing controller with a clothoid path follower to platoon tractor-trailers at highway speed on curves, so far only in simulation. LAST-V2X uses an LLM to turn plain-English test requests into CARLA scenarios with injected V2X message faults, then replays each one with perfect information to check whether the fault actually caused the crash; also covered are a robot-hand touch encoder pretrained on human hand-object data that matches training from scratch with a quarter of the labels, and an eye-surgery arm that spots poses where the tip servo oscillates and moves to a steadier configuration first.
+
+The tactile-hand and eye-surgery papers don't fit the cooperative driving / maneuver coordination scope. If they got through the filter by mistake, you may want to drop them from the episode rather than describe them.</itunes:summary>
+      <itunes:episode>36</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 23 — 5 papers</title>
       <description>&lt;p&gt;Here&amp;#x27;s the two-sentence description covering all five papers:
