@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2026 21:03:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 21:02:27 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,26 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 25 — 2 papers</title>
+      <description>&lt;p&gt;Wind readings from a drone-mounted anemometer are given less weight whenever the multirotor moves fast horizontally or vertically, a simple speed-based confidence rule that is essentially the paper&amp;#x27;s entire contribution. DexGraspFlow uses SE(3) flow matching to generate dexterous grasps: it predicts a pose for every link of the hand, biases attention using the hand&amp;#x27;s kinematic tree, and transfers across three different robot hands.
+
+Neither paper is about cooperative driving or maneuver coordination, so they probably got past the topic filter by mistake. You may want to check before this episode goes out.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.25688v1"&gt;Vehicle-State-Aware Confidence Estimation for Direct Wind Sensing on a Multirotor&lt;/a&gt; &amp;mdash; Sri Arjun Senthil Kumar, April Zi Qian Chan, Chen-Hua Yeow&lt;br/&gt;A drone-mounted anemometer&amp;#x27;s readings get down-weighted whenever the drone is moving fast horizontally or vertically, and that is essentially the whole idea.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.26962v1"&gt;DexGraspFlow: Topology-Aware SE(3) Flow Matching for Cross-Embodiment Dexterous Grasp Generation&lt;/a&gt; &amp;mdash; Bin Zhou et al.&lt;br/&gt;A flow-matching grasp generator that predicts a pose for every link of a robot hand, uses the hand&amp;#x27;s kinematic tree to bias attention, and transfers across three different dexterous hands.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-25</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-25.mp3" length="3473232" type="audio/mpeg"/>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:04:45</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Wind readings from a drone-mounted anemometer are given less weight whenever the multirotor moves fast horizontally or vertically, a simple speed-based confidence rule that is essentially the paper's entire contribution. DexGraspFlow uses SE(3) flow matching to generate dexterous grasps: it predicts a pose for every link of the hand, biases attention using the hand's kinematic tree, and transfers across three different robot hands.
+
+Neither paper is about cooperative driving or maneuver coordination, so they probably got past the topic filter by mistake. You may want to check before this episode goes out.</itunes:summary>
+      <itunes:episode>37</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 24 — 5 papers</title>
       <description>&lt;p&gt;Each robot grows its own tree of feasible trajectories, and the team bids prices on shared space until it settles on a near-optimal, conflict-free plan in real time with no central planner; a Virginia Tech group pairs a PID spacing controller with a clothoid path follower to platoon tractor-trailers at highway speed on curves, so far only in simulation. LAST-V2X uses an LLM to turn plain-English test requests into CARLA scenarios with injected V2X message faults, then replays each one with perfect information to check whether the fault actually caused the crash; also covered are a robot-hand touch encoder pretrained on human hand-object data that matches training from scratch with a quarter of the labels, and an eye-surgery arm that spots poses where the tip servo oscillates and moves to a steadier configuration first.

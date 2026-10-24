@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">38 episodes ·
-       130 papers ·
+    <p class="tagline">39 episodes ·
+       132 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,50 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-10-25">
+      <div class="ep-head">
+        <h2>Sunday, October 25, 2026</h2>
+        <span class="ep-meta">Episode 37 · 2 papers · 5 min</span>
+      </div>
+<p class="ep-summary">Wind readings from a drone-mounted anemometer are given less weight whenever the multirotor moves fast horizontally or vertically, a simple speed-based confidence rule that is essentially the paper&#39;s entire contribution. DexGraspFlow uses SE(3) flow matching to generate dexterous grasps: it predicts a pose for every link of the hand, biases attention using the hand&#39;s kinematic tree, and transfers across three different robot hands.
+
+Neither paper is about cooperative driving or maneuver coordination, so they probably got past the topic filter by mistake. You may want to check before this episode goes out.</p>
+      <audio controls preload="none" src="audio/2026-10-25.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-10-25.html">One-pager</a><a class="btn" href="onepagers/2026-10-25.pdf">PDF</a><a class="btn" href="audio/2026-10-25.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="vehicle-state-aware confidence estimation for direct wind sensing on a multirotor sri arjun senthil kumar, april zi qian chan, chen-hua yeow a drone-mounted anemometer&#39;s readings get down-weighted whenever the drone is moving fast horizontally or vertically, and that is essentially the whole idea. a wind sensor mounted on a multirotor is corrupted by the vehicle&#39;s own motion and rotor wash. existing estimators usually take every reading at face value, or throw readings out with hand-set rules, instead of grading how trustworthy each one is. they build a confidence score from just two inputs, horizontal speed and vertical speed of the vehicle. that score scales the gain of a two-dimensional wind vector estimator, so readings taken while the drone is moving barely update the wind estimate and readings taken in hover update it normally. the two-feature score separates reliable from unreliable readings with an roc-auc of 0.995 and flags 98.84 percent of translation readings as unreliable. median estimator gain drops from 0.207 to 0.064 during translation and stays at 0.151 in hover, tested on translation, vertical motion and one held-out autonomous waypoint flight. the abstract compares against no external baseline. the near-perfect auc looks circular: if reliability labels come from flight phase, then vehicle speed predicts them almost by definition. the abstract also reports lower gain, not lower wind estimation error against an independent reference such as a ground mast, so we don&#39;t know whether the final wind estimate actually gets better. everything comes from one airframe and one sensor. this is outside your area. it involves no inter-vehicle communication, no negotiation, no platooning and no multi-agent planning. the only loose link is the general idea of using the sender&#39;s own motion state to weight how much to trust its data, which you could apply to incoming intent or trajectory messages, but the paper offers nothing you can transfer directly. 2610.25688v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.25688v1">Vehicle-State-Aware Confidence Estimation for Direct Wind Sensing on a Multirotor</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Sri Arjun Senthil Kumar, April Zi Qian Chan, Chen-Hua Yeow · arXiv:2610.25688v1</p><p class="p-hook">A drone-mounted anemometer&#39;s readings get down-weighted whenever the drone is moving fast horizontally or vertically, and that is essentially the whole idea.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>A wind sensor mounted on a multirotor is corrupted by the vehicle&#39;s own motion and rotor wash. Existing estimators usually take every reading at face value, or throw readings out with hand-set rules, instead of grading how trustworthy each one is.</dd><dt>Method</dt><dd>They build a confidence score from just two inputs, horizontal speed and vertical speed of the vehicle. That score scales the gain of a two-dimensional wind vector estimator, so readings taken while the drone is moving barely update the wind estimate and readings taken in hover update it normally.</dd><dt>Results</dt><dd>The two-feature score separates reliable from unreliable readings with an ROC-AUC of 0.995 and flags 98.84 percent of translation readings as unreliable. Median estimator gain drops from 0.207 to 0.064 during translation and stays at 0.151 in hover, tested on translation, vertical motion and one held-out autonomous waypoint flight. The abstract compares against no external baseline.</dd><dt>Caveat</dt><dd>The near-perfect AUC looks circular: if reliability labels come from flight phase, then vehicle speed predicts them almost by definition. The abstract also reports lower gain, not lower wind estimation error against an independent reference such as a ground mast, so we don&#39;t know whether the final wind estimate actually gets better. Everything comes from one airframe and one sensor.</dd><dt>Why it matters</dt><dd>This is outside your area. It involves no inter-vehicle communication, no negotiation, no platooning and no multi-agent planning. The only loose link is the general idea of using the sender&#39;s own motion state to weight how much to trust its data, which you could apply to incoming intent or trajectory messages, but the paper offers nothing you can transfer directly.</dd>            </dl>
+          </details>
+        </li>
+        <li class="paper"
+            data-prio="skim"
+            data-text="dexgraspflow: topology-aware se(3) flow matching for cross-embodiment dexterous grasp generation bin zhou et al. a flow-matching grasp generator that predicts a pose for every link of a robot hand, uses the hand&#39;s kinematic tree to bias attention, and transfers across three different dexterous hands. grasp generators trained on one hand do not transfer well to hands with different geometry, joint layouts or finger counts. the authors argue that earlier cross-embodiment methods model only spatial relations between links and ignore how the links are connected. they run conditional flow matching over the rigid pose of each link, learning translation and rotation velocity fields jointly. a dual-stream diffusion transformer handles link-to-link and link-to-object attention. attention is biased by distances in the kinematic tree. joint angles are recovered afterwards by inverse kinematics, and a guidance term applied at inference time steers palm orientation without retraining. across three robotic hands and 30 object-hand pairs, they report a 95.33 percent average simulation success rate and roughly 49 percent lower generation latency, inverse kinematics included, than an unnamed state-of-the-art baseline. they also show zero-shot transfer to seven finger-removal variants and 91 percent success over 100 real-robot trials. the real-robot model was trained on demonstrations from the deployed hand itself, so the 91 percent figure does not test cross-embodiment transfer. the finger-removal variants are subsets of hands already seen in training, not new kinematic designs. the abstract also never names the baseline and gives no ablation of the kinematic-tree attention bias. this is outside your area. it is about single-robot dexterous manipulation, with no connected vehicles, no communication, no negotiation and no multi-agent planning. the only loose link is the idea of encoding graph structure as an attention bias, which you can get from better-matched graph-transformer work on vehicle interaction. 2610.26962v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2610.26962v1">DexGraspFlow: Topology-Aware SE(3) Flow Matching for Cross-Embodiment Dexterous Grasp Generation</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Bin Zhou et al. · arXiv:2610.26962v1</p><p class="p-hook">A flow-matching grasp generator that predicts a pose for every link of a robot hand, uses the hand&#39;s kinematic tree to bias attention, and transfers across three different dexterous hands.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Grasp generators trained on one hand do not transfer well to hands with different geometry, joint layouts or finger counts. The authors argue that earlier cross-embodiment methods model only spatial relations between links and ignore how the links are connected.</dd><dt>Method</dt><dd>They run conditional flow matching over the rigid pose of each link, learning translation and rotation velocity fields jointly. A dual-stream diffusion transformer handles link-to-link and link-to-object attention. Attention is biased by distances in the kinematic tree. Joint angles are recovered afterwards by inverse kinematics, and a guidance term applied at inference time steers palm orientation without retraining.</dd><dt>Results</dt><dd>Across three robotic hands and 30 object-hand pairs, they report a 95.33 percent average simulation success rate and roughly 49 percent lower generation latency, inverse kinematics included, than an unnamed state-of-the-art baseline. They also show zero-shot transfer to seven finger-removal variants and 91 percent success over 100 real-robot trials.</dd><dt>Caveat</dt><dd>The real-robot model was trained on demonstrations from the deployed hand itself, so the 91 percent figure does not test cross-embodiment transfer. The finger-removal variants are subsets of hands already seen in training, not new kinematic designs. The abstract also never names the baseline and gives no ablation of the kinematic-tree attention bias.</dd><dt>Why it matters</dt><dd>This is outside your area. It is about single-robot dexterous manipulation, with no connected vehicles, no communication, no negotiation and no multi-agent planning. The only loose link is the idea of encoding graph structure as an attention bias, which you can get from better-matched graph-transformer work on vehicle interaction.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-10-24">
       <div class="ep-head">
         <h2>Saturday, October 24, 2026</h2>
@@ -2602,7 +2646,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-10-24 06:03 · unlisted, not indexed ·
+    Generated 2026-10-25 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>
