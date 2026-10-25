@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 38 (2026-10-26)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 26 — 2 papers</h1>
+    <div class="meta">
+      <strong>Episode 38</strong> · October 26, 2026 · 2 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.30996v1">Archive coverage constrains abstaining retrieval for transient stability screening more than conditional accuracy</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Gregor Cerar et al.</p>
+
+<p class="hook">A nearest-neighbour estimator for power-grid critical clearing time refuses to answer when no past state matches the current switching topology, and on the real Slovenian grid that refusal, not accuracy, is the binding limit.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Machine-learning estimators of critical clearing time are usually judged on accuracy over a random split. That hides whether a real operator&#39;s archive actually holds comparable past states when a new grid configuration shows up. Nobody had measured how often a retrieval method that must cite its supporting states simply has nothing to cite under realistic chronological access.</dd></div><div class="frag"><dt>Method</dt><dd>They build a retrieval estimator that returns past simulated states together with their clearing times. Candidates must match the query&#39;s switching configuration exactly, and the estimator abstains when no match exists. They then test whether support statistics, such as neighbour distance or spread, predict the observed error. They compare this against supervised regressors, including gradient boosting, on a dense synthetic IEEE 39-bus archive and on an operational archive from ELES, the Slovenian transmission operator. They also run a causal protocol that lets each query use only earlier records.</dd></div><div class="frag"><dt>Results</dt><dd>Exact-topology coverage is 99.9996 percent of about 1.04 million synthetic records but only 73.47 percent of about 323 thousand ELES records. It falls to 59.37 percent when only earlier same-topology states are allowed, and to 56.34 percent once full causal availability is enforced. Mean absolute error rises 10 percent on records covered under both protocols. Retrieval beats every tested regressor on the matched ELES population, but gradient boosting overtakes it once temporally adjacent states are excluded. That suggests much of retrieval&#39;s ELES advantage comes from near-duplicate neighbouring snapshots, and no support diagnostic ranks first on both grids.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline coverage numbers follow almost entirely from the choice of exact switching-configuration equality as the compatibility key. The authors adopt that key and do not relax it, so a topology-similarity or graph-distance key could change the conclusion. The gradient boosting reversal also means the claimed accuracy edge on real data rests on temporal leakage between adjacent snapshots. Finally, the evidence covers one operational grid and one synthetic benchmark, with no test of what an operator does with the abstained 40-odd percent.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off-topic for you. It concerns power-system transient stability, not vehicles, and it involves no negotiation, messaging or coordination. The only transferable idea is methodological: before trusting a lookup-based or precedent-based predictor, such as one matching past merge or lane-change scenarios, audit how often the archive actually covers a new situation under chronological access. That lesson fits in one sentence and does not justify reading 34 pages.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.30996v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.30996v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.26265v1">Fast Reassessment of Prolonged Electricity Shortages under Shared Fuel Interruptions</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Dogan Urgun</p>
+
+<p class="hook">The paper speeds up grid reliability studies of shared fuel outages. It precomputes how much each outage duration adds to long blackouts, then scores new scenarios as a weighted sum, and falls back to exact dynamic programming whenever an error bound says the shortcut is not accurate enough.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Standard adequacy metrics, expected unserved energy and loss-of-load hours, cannot tell apart a fix that makes fuel interruptions rarer from one that makes them shorter. When interruptions are independent of grid conditions, both metrics depend only on the expected time without fuel. Prolonged-shortage exposure does separate the two fixes, but computing it exactly needs a full chronological simulation for every interruption scenario, which is too expensive for screening many options.</dd></div><div class="frag"><dt>Method</dt><dd>Network calculations run once and are condensed into a restoration response. This is the extra prolonged-shortage hours that a single interruption of each duration would cause. Any interruption scenario is then evaluated as a weighted sum over that response without new simulation. An hour-by-hour error bound decides whether the shortcut is within tolerance, and exact dynamic programming is run otherwise, so every result stays within the requested tolerance of the exact value on the same Monte Carlo samples.</dd></div><div class="frag"><dt>Results</dt><dd>The only test case is the Grid Modernization Laboratory Consortium Reliability Test System. Most evaluations passed the error bound. Scenarios that passed fully typically ran more than 200 times faster than exact calculation, and total computation time fell in every workload. The abstract does not give the acceptance rate or the absolute run times.</dd></div><div class="frag"><dt>Caveat</dt><dd>The core argument assumes fuel interruptions are independent of system conditions, but the events that matter most, such as winter storms that freeze gas supply while demand peaks, are strongly correlated with high load. The accuracy guarantee only bounds the error against exact calculation on the same Monte Carlo samples, not the sampling error itself. The evidence also comes from a single test system, so the speedup depends on an acceptance rate the abstract leaves vague.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is power system reliability and has nothing to do with connected vehicles, maneuver negotiation, platooning or cooperative planning. The only idea that might transfer is the general pattern of precomputing a response once, reusing it for cheap evaluation, and falling back to an exact solver when a certified error bound fails. That pattern is generic and not worth your reading time.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.26265v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.26265v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-26 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
