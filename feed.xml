@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 21:02:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 21:02:46 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,22 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 28 — 2 papers</title>
+      <description>&lt;p&gt;IntNet has each autonomous vehicle broadcast a prediction of its own next action, with a learned scheduler deciding who talks to whom, and in simulation this crashes less than sharing encoded observations. Leonard&amp;#x27;s group takes the opposite approach and uses no communication at all: with nonlinear opinion dynamics, they prove that agents limited to changing speed along fixed paths settle on a passing order without collisions or deadlock.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.34466v1"&gt;IntNet: A Communication-Driven Multi-Agent Reinforcement Learning Framework for Cooperative Autonomous Driving&lt;/a&gt; &amp;mdash; Leandro Parada, Kevin Yu, Panagiotis Angeloudis&lt;br/&gt;Each self-driving agent predicts its own next action and broadcasts that prediction to nearby vehicles, a learned scheduler decides who talks to whom, and in simulation this crashes less than sharing encoded observations.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.33271v1"&gt;Neuromorphic Decision Dynamics for Deadlock-free Safe Navigation in Congested Environments&lt;/a&gt; &amp;mdash; Himani Sinhmar, Vaibhav Srivastava, Naomi Ehrich Leonard&lt;br/&gt;Leonard&amp;#x27;s group applies nonlinear opinion dynamics to agents that can only change speed along fixed paths, and proves the agents settle on a passing order with no collisions and no deadlock, all without any communication.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-28</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-28.mp3" length="5012997" type="audio/mpeg"/>
+      <pubDate>Wed, 28 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>IntNet has each autonomous vehicle broadcast a prediction of its own next action, with a learned scheduler deciding who talks to whom, and in simulation this crashes less than sharing encoded observations. Leonard's group takes the opposite approach and uses no communication at all: with nonlinear opinion dynamics, they prove that agents limited to changing speed along fixed paths settle on a passing order without collisions or deadlock.</itunes:summary>
+      <itunes:episode>40</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 27 — 5 papers</title>
       <description>&lt;p&gt;A general-sum differential game fit to real Washington, D.C. intersection trajectories predicts human drivers somewhat better than calibrated SUMO, an inverse RL model, or purely selfish or fully cooperative versions of itself, and a knowledge-graph-embedding lane-change predictor gives a CARLA ego vehicle three to four seconds of warning before a cut-in, enough to brake early or change lanes instead of crashing. Outside driving, a short review sorts wind turbine MPC by prediction model and proposes a strict test for whether nonlinear pitch aerodynamics really stay inside the optimizer; a feeder simulation shows about a quarter of grid-interactive building flexibility offers fail once feeder-head limits apply, with only about one in twelve surviving unchanged; and an extended Kalman filter tracks relative orientation between two body-worn IMUs to about 2.5° joint-angle error on real gait data with no calibration step.

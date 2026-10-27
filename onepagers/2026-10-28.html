@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 40 (2026-10-28)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 28 — 2 papers</h1>
+    <div class="meta">
+      <strong>Episode 40</strong> · October 28, 2026 · 2 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.34466v1">IntNet: A Communication-Driven Multi-Agent Reinforcement Learning Framework for Cooperative Autonomous Driving</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Leandro Parada, Kevin Yu, Panagiotis Angeloudis</p>
+
+<p class="hook">Each self-driving agent predicts its own next action and broadcasts that prediction to nearby vehicles, a learned scheduler decides who talks to whom, and in simulation this crashes less than sharing encoded observations.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Communicative MARL methods for driving usually share encoded observations, which tell neighbours what an agent sees but not what it is about to do. The authors argue that this is not enough to avoid collisions in dense urban traffic with human drivers mixed in.</dd></div><div class="frag"><dt>Method</dt><dd>Each agent has an observation prediction module that forecasts its own next policy output. That forecast is sent as an intent message over a vehicle-to-vehicle graph. Receivers combine incoming messages with a Graph Attention Network, and a learned scheduler prunes graph edges to save bandwidth. The intent module, attention module, scheduler and policy are all trained together, end to end and model-free.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract claims fewer collisions and better coordination than unnamed state-of-the-art communicative MARL baselines in simulated urban scenes with autonomous and human-driven vehicles. The only number it gives is a communication reduction of up to 60 percent. It reports no collision rates, no simulator, no scenario counts and no baseline names.</dd></div><div class="frag"><dt>Caveat</dt><dd>The intent is a learned latent forecast of the agent&#39;s own policy, not an explicit trajectory or maneuver proposal. Nothing in it can be accepted, rejected or checked by a vehicle that does not run the same trained network, so it says little about protocol design or about fleets with mixed software. The abstract mentions no tests with packet loss, latency or partial participation, which are the conditions where intent sharing matters most. The 60 percent saving is an upper bound with no stated reference point, and probably comes from pruning against a fully connected graph. Sharing intent in MARL communication is not new either, so the key ablation is intent messages against observation messages under the same scheduler. The abstract does not say whether that was done.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>It is only loosely related to your work. It uses learned implicit communication rather than negotiation, so it has no proposals, no acceptance step and no right-of-way resolution, and it does not touch platooning. The part worth looking at is the scheduler, as a data-driven view of who needs to talk to whom. Its evidence that intent beats observations could also support your case for explicit intent messages. Check whether the paper tests message loss before you cite it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.34466v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.34466v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.33271v1">Neuromorphic Decision Dynamics for Deadlock-free Safe Navigation in Congested Environments</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Himani Sinhmar, Vaibhav Srivastava, Naomi Ehrich Leonard</p>
+
+<p class="hook">Leonard&#39;s group applies nonlinear opinion dynamics to agents that can only change speed along fixed paths, and proves the agents settle on a passing order with no collisions and no deadlock, all without any communication.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Decentralized collision avoidance in crowded spaces often freezes in deadlock, or oscillates in livelock, when nobody holds priority. Existing fixes usually lean on preassigned priorities, communication, or models of what neighbours intend. Methods that get no-deadlock guarantees without any of those, for groups that change size, have been rare.</dd></div><div class="frag"><dt>Method</dt><dd>Each agent runs an internal decision state and an attention state, coupled to the relative motion it senses nearby. Together these set the agent&#39;s speed along a path it was given in advance. The key choice is to tie decision and action into one feedback loop. When a conflict becomes safety-critical, that loop destabilizes the undecided state, so the group breaks symmetry into a traversal order and then holds it. The authors derive sufficient conditions on sensing range, feedback gains, time scales and actuation limits that guarantee collision avoidance and an order forming in finite time, for mixed populations of finite but changing size.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers at all. It cites large-scale simulations, unnamed baselines and hardware experiments, but reports no success rates, throughput, time-to-clear, agent counts or robot platform. The only quantitative claim is a scaling statement: computational cost grows with the number of local interactions each agent senses.</dd></div><div class="frag"><dt>Caveat</dt><dd>Agents only modulate speed along fixed paths. That reduces the problem to choosing an ordering at crossings, so lane changes, merges that need a lateral move, and overtakes fall outside the theory. The guarantees rest on sufficient conditions about sensing range and actuation limits. Those conditions may be conservative enough to force early, sluggish slowdowns at highway speeds, and the abstract never says how tight they are. The traversal order simply emerges, so it cannot express priority, fairness or an emergency vehicle&#39;s right of way. The baselines are not named, so we can&#39;t tell whether they beat strong methods like priority-based or MPC deconfliction.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits close to your conflict-resolution and deadlock interests, but it argues the opposite of your premise. It shows that safe, deadlock-free ordering can be proven with no messages at all. That makes it the natural baseline your communication-based negotiation has to beat, and the claim reviewers will throw at you when they ask why intent sharing is needed. Its proof technique for ruling out livelock may also carry over to your degraded case, where some vehicles never send messages. It says nothing about message design, platooning or joint trajectory optimization.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.33271v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.33271v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-28 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
