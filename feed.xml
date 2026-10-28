@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2026 21:02:46 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 21:03:24 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 29 — 5 papers</title>
+      <description>&lt;p&gt;A three-paper series on unsignalized intersections splits coordination into a crossing-order search over per-order trajectory optimization, uses cost sensitivities to choose which adjacent vehicles to swap instead of defaulting to first-in-first-out, speeds up the sensitivity computation with acados, and replans each time a new car arrives. Also covered: a scheme where a regulator publishes reference seed agents so that cars developed independently and tested against those seeds are guaranteed to be compatible, and a swarm of bristlebots running distributed NMPC with shared predicted trajectories, comparing six barrier and control-barrier-function constraints by how many robots fit collision-free in a 0.64 m² arena.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.37288v1"&gt;A heuristic for optimal coordination of autonomous vehicles: dynamic problems&lt;/a&gt; &amp;mdash; Saugat Shahi, Filippo Fabiani, Mario Zanon&lt;br/&gt;For unsignalized intersections, they fix a crossing order, solve one nonlinear program for every vehicle&amp;#x27;s trajectory, and then use cost sensitivities to pick which pair of neighbouring vehicles in the order to swap. The scheme replans each time a new car arrives.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.37632v1"&gt;A heuristic for optimal coordination of autonomous vehicles: real-time algorithms&lt;/a&gt; &amp;mdash; Saugat Shahi et al.&lt;br/&gt;For a fixed crossing order at an unsignalized intersection, they make an existing bi-level intersection coordinator run faster by computing each vehicle&amp;#x27;s sensitivities with the acados solver package.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.37275v1"&gt;A heuristic for optimal coordination of autonomous vehicles: static problems&lt;/a&gt; &amp;mdash; Saugat Shahi, Filippo Fabiani, Mario Zanon&lt;br/&gt;They split intersection coordination into a crossing-order search on top and per-order trajectory optimization below, and use sensitivities from the lower-level problems to propose better crossing orders than first-in-first-out.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36289v1"&gt;Compatibility and future-proof testing for multi-agent systems&lt;/a&gt; &amp;mdash; Yueshan Li et al.&lt;br/&gt;A regulator publishes a set of reference seed agents, and if every developer tests its own car against those seeds in the right way, any two independently built cars are guaranteed to be compatible with each other.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.35582v1"&gt;Distributed Predictive Flocking for a Swarm of Miniature Vibration-Driven Robots in a Confined Arena&lt;/a&gt; &amp;mdash; Prajol Shrestha et al.&lt;br/&gt;Each bristlebot in a small swarm runs its own NMPC and shares its predicted trajectory with nearby robots, and the authors test which of six barrier or control barrier function safety constraints lets the most robots share a 0.64 square metre arena without collisions.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-29</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-29.mp3" length="6577283" type="audio/mpeg"/>
+      <pubDate>Thu, 29 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:03</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A three-paper series on unsignalized intersections splits coordination into a crossing-order search over per-order trajectory optimization, uses cost sensitivities to choose which adjacent vehicles to swap instead of defaulting to first-in-first-out, speeds up the sensitivity computation with acados, and replans each time a new car arrives. Also covered: a scheme where a regulator publishes reference seed agents so that cars developed independently and tested against those seeds are guaranteed to be compatible, and a swarm of bristlebots running distributed NMPC with shared predicted trajectories, comparing six barrier and control-barrier-function constraints by how many robots fit collision-free in a 0.64 m² arena.</itunes:summary>
+      <itunes:episode>41</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 28 — 2 papers</title>
       <description>&lt;p&gt;IntNet has each autonomous vehicle broadcast a prediction of its own next action, with a learned scheduler deciding who talks to whom, and in simulation this crashes less than sharing encoded observations. Leonard&amp;#x27;s group takes the opposite approach and uses no communication at all: with nonlinear opinion dynamics, they prove that agents limited to changing speed along fixed paths settle on a passing order without collisions or deadlock.&lt;/p&gt;

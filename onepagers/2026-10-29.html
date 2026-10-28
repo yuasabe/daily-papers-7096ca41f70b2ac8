@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 41 (2026-10-29)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 29 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 41</strong> · October 29, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.37288v1">A heuristic for optimal coordination of autonomous vehicles: dynamic problems</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Saugat Shahi, Filippo Fabiani, Mario Zanon</p>
+
+<p class="hook">For unsignalized intersections, they fix a crossing order, solve one nonlinear program for every vehicle&#39;s trajectory, and then use cost sensitivities to pick which pair of neighbouring vehicles in the order to swap. The scheme replans each time a new car arrives.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Choosing the crossing order and the trajectories together is a mixed-integer optimal control problem that is too slow to solve online. It gets harder in real traffic, where vehicles keep entering and leaving the set being coordinated, while the authors&#39; earlier heuristic only handled a fixed set of vehicles.</dd></div><div class="frag"><dt>Method</dt><dd>For a given crossing order, a single nonlinear program optimizes all trajectories and crossing times together. The first-order sensitivities of the cost with respect to the schedule are used to rank swaps of adjacent vehicles in the order, and only the swaps most likely to reduce cost are tried. Replanning happens only when a vehicle arrives, the newcomer is placed at the back of the queue, and a memory of swaps already evaluated is kept across replanning steps so they are not recomputed.</dd></div><div class="frag"><dt>Results</dt><dd>The tests are simulations of streams of a few hundred heterogeneous vehicles. The only stated result is that the scheme recovers most of the optimality gap left by first-in-first-out scheduling. The abstract gives no percentages, no computation times, and no comparison against an exact mixed-integer solver or other ordering heuristics.</dd></div><div class="frag"><dt>Caveat</dt><dd>The scheme is centralized and assumes perfect, instant information about every vehicle, so it says nothing about message loss, delay, or vehicles that do not take part. Only adjacent swaps are allowed and new arrivals always start at the back, so the search is local by design. On a dynamic problem, saying it recovers most of the gap needs a defined reference optimum, and the abstract does not say what that reference is or how much computation each replanning step takes.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is mostly peripheral to your work. It does address the question of who yields at a conflict point, but it does so through a central optimizer rather than negotiation between vehicles, and there is no communication model at all. The one transferable idea is using cost sensitivities to rank which order swaps are worth testing. That could carry over to proposal and acceptance schemes for merges or gap creation, where you need a cheap signal of which reordering is worth proposing.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.37288v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.37288v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.37632v1">A heuristic for optimal coordination of autonomous vehicles: real-time algorithms</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Saugat Shahi et al.</p>
+
+<p class="hook">For a fixed crossing order at an unsignalized intersection, they make an existing bi-level intersection coordinator run faster by computing each vehicle&#39;s sensitivities with the acados solver package.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Coordinating automated vehicles at an intersection means choosing who crosses first and each car&#39;s trajectory together, and solving both at once is too slow to run in real time. The bi-level split was already known, but the upper level needs first and second derivatives of every vehicle&#39;s optimal cost with respect to its entry and exit times, and getting those derivatives quickly was the bottleneck.</dd></div><div class="frag"><dt>Method</dt><dd>Once the crossing order is fixed, each vehicle solves its own optimal control problem given its entry and exit times for the intersection. A central coordinator then adjusts those times to optimize total cost while respecting precedence constraints between conflicting vehicles. The contribution is engineering. The coordinator&#39;s gradients and Hessians come from the lower-level problems through algorithmic differentiation inside acados, which makes the coordinator a fast second-order method.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It does not report solve times, numbers of vehicles, baselines or optimality gaps. It only says that simulations show real-time feasibility and effectiveness.</dd></div><div class="frag"><dt>Caveat</dt><dd>The crossing order is fixed. The title promises a heuristic, but the abstract never says how the order is chosen, and choosing it is the combinatorial core of deciding who yields. The setup is a centralized coordinator in simulation only, with perfect communication and full participation. The real-time claim has no reported timing, hardware or scaling with vehicle count to back it.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It does touch conflict resolution, because precedence at an intersection is a right-of-way decision. But it assumes a central planner with perfect information, so it says nothing about negotiation, message design, lost or delayed messages, or partial participation. The useful takeaway is the entry and exit time interface between vehicles and the coordinator. It could become a compact message format if you ever decentralize the upper level.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.37632v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.37632v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.37275v1">A heuristic for optimal coordination of autonomous vehicles: static problems</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Saugat Shahi, Filippo Fabiani, Mario Zanon</p>
+
+<p class="hook">They split intersection coordination into a crossing-order search on top and per-order trajectory optimization below, and use sensitivities from the lower-level problems to propose better crossing orders than first-in-first-out.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>At unsignalized intersections, crossing order and trajectories are coupled, so solving them together is a mixed-integer problem that blows up with the number of vehicles. Most practical schemes fall back on a fixed rule such as first-in-first-out, which can be far from optimal.</dd></div><div class="frag"><dt>Method</dt><dd>The lower level solves a set of nonlinear programs that optimize each vehicle&#39;s trajectory for a fixed crossing order. The upper level is a heuristic that reads sensitivity information, essentially the multipliers on the ordering constraints, to decide which order swaps should lower cost, and then re-solves. The word static in the title means a fixed set of vehicles is scheduled once, with no arrivals over time and no receding horizon.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It only says that extensive simulations across many traffic scenarios show substantially better schedules than first-in-first-out at tractable computation cost, with no reported cost gap to the exact mixed-integer optimum and no runtimes.</dd></div><div class="frag"><dt>Caveat</dt><dd>The only baseline named is first-in-first-out, which is weak. A reviewer would ask for a comparison against the exact mixed-integer solution on small instances and against other scheduling heuristics. It is also a centralized, static, simulation-only setup, so communication delay, packet loss, partial participation and vehicles arriving over time are all left out.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits close to your interest in deciding who yields and in right-of-way allocation, but it gets there through centralized optimization rather than negotiation, and it has no message exchange, protocol or degradation analysis. The idea worth taking is using constraint sensitivities as a signal for which ordering swap to propose, which could become a cue for proposals in a negotiation scheme. Otherwise it is peripheral.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.37275v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.37275v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36289v1">Compatibility and future-proof testing for multi-agent systems</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yueshan Li et al.</p>
+
+<p class="hook">A regulator publishes a set of reference seed agents, and if every developer tests its own car against those seeds in the right way, any two independently built cars are guaranteed to be compatible with each other.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Joint safety and task completion among autonomous agents currently depend on a protocol or interaction mechanism designed centrally before deployment. That does not work when developers keep their designs confidential, and it cannot absorb agent designs that arrive later. Passing tests against a fixed reference set does not by itself guarantee that two such agents are compatible with each other, so the problem was open.</dd></div><div class="frag"><dt>Method</dt><dd>They define compatibility for general multi-agent systems and give counterexamples showing that being compatible with the seed does not imply being compatible with each other. They define a future-proof agent as one compatible with every agent that is compatible with the seed. They characterize this set as a closure of the seed, prove the closure grows monotonically as the seed grows, and then ask how well executable tests that interact only with the seed can pick out the future-proof agents.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers, no driving scenarios and no baselines. Every claim is a theoretical characterization, and the last question is only posed as to what extent seed-only tests can separate future-proof agents. That wording hints the answer is partial or negative rather than a clean, complete test.</dd></div><div class="frag"><dt>Caveat</dt><dd>The closure is defined by quantifying over every possible seed-compatible agent, so nothing in the abstract says it can be computed or tested on a real driving stack. A reviewer would want to know whether seed-only tests are sound and complete for any non-trivial class of agents, and whether the formalism handles stochastic policies, partial observability and lost or delayed messages. Without a worked lane-change or merge example, the link to autonomous vehicles is still only motivation.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits next to your work, not inside it. Your protocols assume vehicles share a message format and an acceptance scheme, and this paper asks what certifies agents when no such shared mechanism is designed up front. It could give you a vocabulary for arguing that a maneuver coordination protocol stays compatible with future or non-participating designs. But it says nothing about message design, negotiation, platooning or trajectory optimization, so read the definitions and the monotonicity result and skip the rest unless certification becomes part of your thesis.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36289v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36289v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.35582v1">Distributed Predictive Flocking for a Swarm of Miniature Vibration-Driven Robots in a Confined Arena</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Prajol Shrestha et al.</p>
+
+<p class="hook">Each bristlebot in a small swarm runs its own NMPC and shares its predicted trajectory with nearby robots, and the authors test which of six barrier or control barrier function safety constraints lets the most robots share a 0.64 square metre arena without collisions.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In dense, leaderless swarms in a confined space, collision avoidance limits how many robots can safely coexist. How the inter-robot safety constraint is written decides that limit, and no one had compared these formulations head to head under a common distributed predictive controller.</dd></div><div class="frag"><dt>Method</dt><dd>Each robot solves its own nonlinear model predictive control problem in real time. The cost combines flocking cohesion and alignment terms, safety with other robots and with walls, and a task objective. The only thing robots exchange with local neighbours is their predicted trajectory, which the others treat as fixed when they solve their own problem. Six safety formulations are swapped into this one architecture and compared on a digital twin of an open-source vibration-driven bristlebot. The winner is a discrete-time control barrier function that looks ahead over the prediction horizon.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers beyond the 0.64 square metre arena and swarm sizes from ten robots up to the geometric packing limit. Qualitatively, the look-ahead discrete-time barrier had the fewest collisions and the widest margins at nearly every swarm size. Collisions stay low in small swarms and rise steeply near the packing limit, while alignment and cohesion degrade only gradually across phototaxis, orbiting, and plain cohesion tasks.</dd></div><div class="frag"><dt>Caveat</dt><dd>The evidence seems to come entirely from the digital twin. The abstract never confirms physical hardware, and vibration-driven bristlebots are notoriously noisy and hard to model, so whether the results transfer is the open question. The abstract also does not say whether they compare against a baseline where robots predict their neighbours without communication, so the value of sharing trajectories is not measured on its own. Nothing suggests they test packet loss, delay, or asynchronous updates. And with no headline collision counts or margins, the claim that one formulation wins cannot be checked from the abstract.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It overlaps with yours in one place: distributed predictive planning where agents exchange predicted trajectories and enforce pairwise safety with control barrier functions. That is the same basic pattern as communication-based cooperative trajectory planning for vehicles. But there is no negotiation, no proposal and acceptance step, no right-of-way logic, and no study of how the scheme degrades under message loss. The task is flocking among identical holonomic-like microrobots, not lane-structured vehicle maneuvers. The comparison of six safety formulations might be worth a look if you are choosing a barrier constraint for a distributed vehicle planner. Otherwise you can safely skip it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.35582v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.35582v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-29 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
