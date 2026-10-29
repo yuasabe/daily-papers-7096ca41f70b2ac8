@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2026 21:03:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 21:03:12 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 30 — 5 papers</title>
+      <description>&lt;p&gt;A 21-joint humanoid robot hand driven entirely by motors in the palm through screw-and-linkage mechanisms instead of tendons, and TOPS, which gives each task in a flow-matching manipulation policy its own noise source and interpolation schedule to improve one-step action generation on LIBERO and CALVIN. Also covered: a neural surrogate that replaces slow physics simulation to choose cable-threading patterns that bend soft modular robots into eel and inchworm shapes; a model-predictive control retrofit that saves about 3% of a factory&amp;#x27;s compressor energy without flow meters; and a high-school NASA rover design report whose analysis stays on paper, with the rover never driven.
+
+None of these five papers is about cooperative driving or maneuver coordination. If this batch came from the daily pipeline, the scope filter may have let off-topic papers through.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36816v1"&gt;Integrated Design and Reproducible Feasibility Analysis of a Four-Wheel Rover with Packet-Commanded Imaging, LiDAR Ranging, and Learning-Assisted Target Recognition&lt;/a&gt; &amp;mdash; Sabik Bin Sultan et al.&lt;br/&gt;A high-school NASA rover challenge design report that works out speed, climbing torque and camera pixel budgets on paper, and tests a toy target classifier on synthetic images, without ever driving the rover.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36789v1"&gt;A fully articulated humanoid dexterous hand with human-level joint structure enabled by linkage-based actuation&lt;/a&gt; &amp;mdash; Jihao Li et al.&lt;br/&gt;A twenty-one joint robot hand that copies human finger and thumb structure, driven entirely by motors in the palm through screw-and-linkage mechanisms instead of tendons.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36694v1"&gt;TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation&lt;/a&gt; &amp;mdash; Tuo An et al.&lt;br/&gt;TOPS swaps the shared Gaussian noise source of a flow-matching manipulation policy for task-specific sources and per-task interpolation schedules, and gets much better one-step action generation on LIBERO and CALVIN.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36681v1"&gt;From Biological Curves to Soft Modular Robots: Learning-Based Inverse Design with Uncertainty-Guided Refinement&lt;/a&gt; &amp;mdash; Dixiang Wang et al.&lt;br/&gt;They train a neural surrogate to replace slow physics simulation of cable-threaded soft modular robots, then use it to quickly pick a threading pattern that bends the robot into an eel or inchworm shape.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36678v1"&gt;Retrofitting centralized air compressor stations with end-use-aware predictive set-pressure control using a physics-constrained pressure-drop model&lt;/a&gt; &amp;mdash; Taito Watanabe et al.&lt;br/&gt;An MPC retrofit for a factory&amp;#x27;s air compressor station lowers the set pressure until one critical end-use gauge sits just above its requirement, saving about 3 percent of compressor energy without flow meters.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-30</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-30.mp3" length="5608717" type="audio/mpeg"/>
+      <pubDate>Fri, 30 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:43</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A 21-joint humanoid robot hand driven entirely by motors in the palm through screw-and-linkage mechanisms instead of tendons, and TOPS, which gives each task in a flow-matching manipulation policy its own noise source and interpolation schedule to improve one-step action generation on LIBERO and CALVIN. Also covered: a neural surrogate that replaces slow physics simulation to choose cable-threading patterns that bend soft modular robots into eel and inchworm shapes; a model-predictive control retrofit that saves about 3% of a factory's compressor energy without flow meters; and a high-school NASA rover design report whose analysis stays on paper, with the rover never driven.
+
+None of these five papers is about cooperative driving or maneuver coordination. If this batch came from the daily pipeline, the scope filter may have let off-topic papers through.</itunes:summary>
+      <itunes:episode>42</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 29 — 5 papers</title>
       <description>&lt;p&gt;A three-paper series on unsignalized intersections splits coordination into a crossing-order search over per-order trajectory optimization, uses cost sensitivities to choose which adjacent vehicles to swap instead of defaulting to first-in-first-out, speeds up the sensitivity computation with acados, and replans each time a new car arrives. Also covered: a scheme where a regulator publishes reference seed agents so that cars developed independently and tested against those seeds are guaranteed to be compatible, and a swarm of bristlebots running distributed NMPC with shared predicted trajectories, comparing six barrier and control-barrier-function constraints by how many robots fit collision-free in a 0.64 m² arena.&lt;/p&gt;

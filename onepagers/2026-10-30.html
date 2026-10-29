@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 42 (2026-10-30)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Oct 30 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 42</strong> · October 30, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36816v1">Integrated Design and Reproducible Feasibility Analysis of a Four-Wheel Rover with Packet-Commanded Imaging, LiDAR Ranging, and Learning-Assisted Target Recognition</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Sabik Bin Sultan et al.</p>
+
+<p class="hook">A high-school NASA rover challenge design report that works out speed, climbing torque and camera pixel budgets on paper, and tests a toy target classifier on synthetic images, without ever driving the rover.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>The team wants to show that their rover component choices actually meet the competition limits before building it, because spec-sheet labels such as motor RPM do not by themselves prove compliance. The paper treats this as a gap in traceability between the parts list, the CAD model and the requirements.</dd></div><div class="frag"><dt>Method</dt><dd>They do back-of-envelope mechanics for wheel speed and slope torque, and work out how many pixels a target covers and how far the range reading drifts for the Raspberry Pi camera and LiDAR. The Pi runs imaging and ranging commands it receives as packets from the operator, a single-vehicle remote-control link with no coordination at all. They also compare color and shape rules against two linear support vector classifiers on synthetic board images, and check the command executor against mocked hardware.</dd></div><div class="frag"><dt>Results</dt><dd>The analytical numbers are 8.105 kilometers per hour at 200 RPM on a 215 millimeter wheel, slightly over the 8 kilometer per hour ceiling, plus 1.255 newton meters per wheel for a 20 degree climb, about 71 pixels for a 12 inch target at 50 feet, and 266 millimeters of ray offset per degree of pointing error. The classifier comparison uses 2,400 generated crops with scene-disjoint splits, but the abstract gives no accuracy figures.</dd></div><div class="frag"><dt>Caveat</dt><dd>There are no physical trials at all, so every figure is either a textbook formula or a result on synthetic images, and the rolling resistance coefficient of 0.10 is simply assumed. The classifier benchmark only tests on images the team generated themselves, so it says nothing about real lighting or terrain.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is entirely outside your area. It covers one teleoperated rover with no vehicle-to-vehicle communication, no negotiation, no platooning and no shared trajectories, and the packet command link is just operator-to-robot remote control. Nothing here transfers to maneuver coordination.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36816v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36816v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36789v1">A fully articulated humanoid dexterous hand with human-level joint structure enabled by linkage-based actuation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Jihao Li et al.</p>
+
+<p class="hook">A twenty-one joint robot hand that copies human finger and thumb structure, driven entirely by motors in the palm through screw-and-linkage mechanisms instead of tendons.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Humanoid robot hands usually give up something to get something: human-like joint complexity comes at the cost of robustness, load capacity or easy control. Tendon-driven designs in particular suffer from friction, cable stretch and joints that move each other unintentionally.</dd></div><div class="frag"><dt>Method</dt><dd>They built Torch-Hand, with a five-joint thumb that has a multi-axis base joint for opposition and four joints in each of the other fingers. All transmission is through rigid screw-driven linkages, and every motor sits in the palm. The motors are laid out like a serial robot arm, so each motor maps directly to one joint, which keeps the joints mechanically independent and makes control simpler.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It lists experiments on workspace, fingertip trajectories, thumb opposition, coverage of a thirty-three grasp taxonomy, grip force, payload and task-level manipulation, but quotes no force, payload, speed or success-rate figures and names no baseline hands.</dd></div><div class="frag"><dt>Caveat</dt><dd>Covering a grasp taxonomy only shows that the hand can reach static poses, not that it can manipulate objects dexterously. With no reported numbers or head-to-head comparison against existing tendon or hybrid hands, the robustness and payload claims can&#39;t be checked from the abstract. Rigid linkages usually cost speed and compliance, and the abstract says nothing about either.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is a robot hand hardware paper with no vehicles, no communication, no negotiation and no multi-agent coordination, so nothing in it bears on maneuver protocols, platooning or cooperative trajectory planning. It probably reached your feed only because it is listed under robotics.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36789v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36789v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36694v1">TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Tuo An et al.</p>
+
+<p class="hook">TOPS swaps the shared Gaussian noise source of a flow-matching manipulation policy for task-specific sources and per-task interpolation schedules, and gets much better one-step action generation on LIBERO and CALVIN.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Language-conditioned multi-task flow policies start every task from the same Gaussian noise and follow the same linear path to the expert actions. The authors argue this forces one transport map to cover tasks with very different motion statistics, which hurts both success rate and few-step inference.</dd></div><div class="frag"><dt>Method</dt><dd>They build a multimodal source distribution for each task by reverse-mapping expert action sequences back into source space, so the language instruction picks where generation starts. They then reshape the interpolation schedule direction by direction, using the covariance mismatch between source and target. The path moves slowly toward the expert actions early and speeds up later along directions that need to expand. Under a Gaussian endpoint model they show this lowers an upper bound on velocity-prediction risk, and the network architecture is left unchanged.</dd></div><div class="frag"><dt>Results</dt><dd>With a single integration step, TOPS lifts LIBERO-10 success from 53.44 percent to 69.67 percent compared with ten-step standard flow matching, at about one sixth of the inference time. They also report gains on LIBERO-Plus and CALVIN, and on all four settings when the method is grafted onto pi zero point five. On the real robot, upper-drawer opening goes from 20 to 80 percent.</dd></div><div class="frag"><dt>Caveat</dt><dd>The theory only bounds a surrogate risk under a Gaussian endpoint assumption, which real multimodal action distributions break. Task sources built from expert demonstrations raise the question of what happens on instructions with no matching demonstrations, since that is exactly the cross-task generalization a shared prior was supposed to give. The headline comparison puts one-step TOPS against ten-step vanilla flow matching, not against strong few-step baselines such as consistency or rectified-flow distillation. The real-robot result is a single task, where 20 versus 80 percent likely reflects only a handful of trials.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is about single-robot imitation learning and has no communication, negotiation or multi-agent component. The only possible link is if you use flow or diffusion models to propose candidate trajectories for maneuver negotiation. In that case, conditioning the source prior on the maneuver type, such as a lane change versus a merge, is a cheap trick to get fast one-step sampling. Even then, nothing here addresses multi-vehicle coupling.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36694v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36694v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36681v1">From Biological Curves to Soft Modular Robots: Learning-Based Inverse Design with Uncertainty-Guided Refinement</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Dixiang Wang et al.</p>
+
+<p class="hook">They train a neural surrogate to replace slow physics simulation of cable-threaded soft modular robots, then use it to quickly pick a threading pattern that bends the robot into an eel or inchworm shape.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Choosing how to thread cables through a modular soft robot so it reproduces a target curve has required slow physics simulation inside a combinatorial search, at around two million milliseconds per design. That makes it impractical to reproduce many different biological shapes on demand.</dd></div><div class="frag"><dt>Method</dt><dd>A learned inverse model proposes candidate threading configurations directly from a target curve. Where the model is uncertain, extra candidates are explored around those proposals, and a fast learned forward surrogate scores every candidate so the best one is kept. Target curves come from real animals, designs are found in simulation, and the chosen designs are then built physically.</dd></div><div class="frag"><dt>Results</dt><dd>The forward surrogate cuts deformation prediction from about 153 thousand milliseconds to under a thousandth of a millisecond, and full inverse design drops from about two million milliseconds to 4.18 milliseconds. Shape reconstruction succeeds 93 percent of the time on 5,000 test samples with unseen threading patterns, but that success is judged by the surrogate itself. Four physical robots serve as demonstrations, with no reported measure of how well they match their targets.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline 93 percent is graded by the same learned surrogate that chose the designs, so surrogate error is never measured against physics or hardware, and the four physical robots look like qualitative demos rather than an experiment. The two hundred million times speedup also leaves out training data generation and training time, which is where the expensive physics actually went.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is unrelated to your work. It is about the shape design of a single soft robot, with no vehicles, communication, negotiation or multi-agent coordination. The only transferable idea is the general pattern of an inverse model plus a fast surrogate filter for candidates, and you can get that from far more relevant planning literature.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36681v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36681v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.36678v1">Retrofitting centralized air compressor stations with end-use-aware predictive set-pressure control using a physics-constrained pressure-drop model</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Taito Watanabe et al.</p>
+
+<p class="hook">An MPC retrofit for a factory&#39;s air compressor station lowers the set pressure until one critical end-use gauge sits just above its requirement, saving about 3 percent of compressor energy without flow meters.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Small and medium plants run their compressors at a fixed set pressure well above what end users need, because they cannot predict pipe-network pressure drop without flow meters or piping surveys. That leftover margin is wasted energy.</dd></div><div class="frag"><dt>Method</dt><dd>They place a hierarchical nonlinear MPC on top of the existing sequencing controller, using only the receiver gauge, one critical end-use gauge and compressor data. End-use pressure is predicted by a low-order pressure-drop model fitted by least squares, with stability, damping and steady-state constraints. These constraints are chosen so the measured drop can be held over the horizon with unit gain, not to maximize fit.</dd></div><div class="frag"><dt>Results</dt><dd>Tests on plant data, a pipe-network simulator checked against measurements, and the real controller show the required pressure is met with updates of at most 1.41 seconds. Estimated annual energy falls by 2.8 percent against current constant operation, or 9.3 percent against a 0.70 megapascal baseline. A PID cascade using the same gauge matches the savings only if tuned with a step test that is hard to run in a live plant.</dd></div><div class="frag"><dt>Caveat</dt><dd>The 2.8 percent headline is an estimated annual saving from one plant, and much of the gain comes from simply having the end-use gauge, since a well-tuned PID gets about the same result. The real comparison is therefore tuning convenience, not control quality. Relying on a single critical end-use point also assumes the worst-case consumer never moves.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is industrial process control for compressed air, and it has nothing to do with connected vehicles, maneuver negotiation, platooning or multi-agent coordination. The one transferable idea is fitting a constrained low-order model so it behaves well inside MPC rather than for accuracy. That idea is too generic to justify reading time for this researcher.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.36678v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.36678v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-10-30 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
