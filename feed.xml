@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 21:03:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 21:03:05 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,33 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Oct 31 — 5 papers</title>
+      <description>&lt;p&gt;A funnel-control platooning controller uses only onboard gap and speed sensing, stays within each car&amp;#x27;s own braking and throttle limits, and comes with proofs of no collisions and of speed deviations that don&amp;#x27;t grow with platoon length; RadarCom turns the interference between two stock TI automotive radars into a data link of a few kilobits per second, with no hardware changes and no break in sensing. Also covered: a world-action model under 100M parameters that predicts DINOv3 features and matches billion-parameter models on RoboTwin and LIBERO, a lunar hopping robot whose best leg length depends on the jump controller paired with it, and an event-camera spacecraft pose pipeline that weights keypoints and frames by reliability and edges out the previous best SPADES entry.
+
+---
+
+Three of these five papers (the lunar hopper, GAWM and the spacecraft pose work) have nothing to do with cooperative driving. Commit 5ad7f74 narrowed the scope to maneuver coordination, so the relevance filter may be letting off-topic papers through. Want me to check it?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39964v1"&gt;Safe Platooning under Input Constraints with Link-Wise Velocity String Stability&lt;/a&gt; &amp;mdash; Panagiotis S. Trakas, Charalampos P. Bechlioulis, Thomas Berger&lt;br/&gt;A funnel-control platoon controller that uses only onboard gap and speed sensing, respects each car&amp;#x27;s own braking and throttle limits, and comes with proofs of no collisions and bounded speed deviation that do not grow with platoon length.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.37199v1"&gt;A Bi-level Co-design Framework for Lunar Monoped with 2D Jump and Landing Control&lt;/a&gt; &amp;mdash; Sanjay Ramkumar, Suraj Kumar&lt;br/&gt;They tune the leg lengths of a single-legged hopping robot for moon gravity and show that the best leg depends on which jump controller you pair it with.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.37091v1"&gt;GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation&lt;/a&gt; &amp;mdash; Yang Liu et al.&lt;br/&gt;A model under a hundred million parameters that predicts future DINOv3 features instead of future pixels, then reads robot actions off those predictions, and it matches or beats billion-parameter manipulation models on RoboTwin and LIBERO.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36625v1"&gt;Polarity--Time Interaction and Multi-Level Reliability for Event-Based Spacecraft Pose Estimation&lt;/a&gt; &amp;mdash; Yonglong Zhang, Zongwu Xie, Yang Liu&lt;br/&gt;An event-camera pipeline for estimating spacecraft pose that weights each keypoint and each frame by how reliable it looks, and edges out the previous best entry on the SPADES challenge.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36622v1"&gt;RadarCom: Unlocking Simultaneous Communication and Sensing on Commodity Automotive mmWave Radars&lt;/a&gt; &amp;mdash; Yi Wei et al.&lt;br/&gt;They turn the interference between two stock TI automotive radars into a few-kilobit-per-second data link, with no hardware changes, and the radars keep sensing while it runs.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-10-31</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-10-31.mp3" length="6792881" type="audio/mpeg"/>
+      <pubDate>Sat, 31 Oct 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:21</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A funnel-control platooning controller uses only onboard gap and speed sensing, stays within each car's own braking and throttle limits, and comes with proofs of no collisions and of speed deviations that don't grow with platoon length; RadarCom turns the interference between two stock TI automotive radars into a data link of a few kilobits per second, with no hardware changes and no break in sensing. Also covered: a world-action model under 100M parameters that predicts DINOv3 features and matches billion-parameter models on RoboTwin and LIBERO, a lunar hopping robot whose best leg length depends on the jump controller paired with it, and an event-camera spacecraft pose pipeline that weights keypoints and frames by reliability and edges out the previous best SPADES entry.
+
+---
+
+Three of these five papers (the lunar hopper, GAWM and the spacecraft pose work) have nothing to do with cooperative driving. Commit 5ad7f74 narrowed the scope to maneuver coordination, so the relevance filter may be letting off-topic papers through. Want me to check it?</itunes:summary>
+      <itunes:episode>43</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 30 — 5 papers</title>
       <description>&lt;p&gt;A 21-joint humanoid robot hand driven entirely by motors in the palm through screw-and-linkage mechanisms instead of tendons, and TOPS, which gives each task in a flow-matching manipulation policy its own noise source and interpolation schedule to improve one-step action generation on LIBERO and CALVIN. Also covered: a neural surrogate that replaces slow physics simulation to choose cable-threading patterns that bend soft modular robots into eel and inchworm shapes; a model-predictive control retrofit that saves about 3% of a factory&amp;#x27;s compressor energy without flow meters; and a high-school NASA rover design report whose analysis stays on paper, with the rover never driven.
