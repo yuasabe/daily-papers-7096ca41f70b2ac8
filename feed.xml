@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 21:03:05 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 21:02:11 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,27 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 1 — 3 papers</title>
+      <description>&lt;p&gt;Two control papers: a local frequency-droop law driven by two DC measurements lets every AC/DC converter in a meshed medium-voltage DC grid act as grid-forming, and a closed-form Lyapunov attitude controller for a reaction-wheel spacecraft keeps wheel momentum and torque within limits without an online optimizer. A third paper uses an 864-sensor pressure glove to split a badminton player&amp;#x27;s grip into force that drives the racket and force that only holds it steady, and novices coached on that split improved faster than novices told only their skill level.
+
+None of these three papers is about cooperative driving or V2X, and two of the descriptions you pasted say so directly. If this batch came from the pipeline, the new saved-paper source (commit `2778c3d`) may be letting papers past the topic filter. You might want to skip this episode instead of publishing it.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.35709v1"&gt;Grid-Forming AC/DC Converters for Meshed DC Networks via Dual-Measurement Frequency Droop&lt;/a&gt; &amp;mdash; Hisham Mahmood, Marcelo A. Elizondo&lt;br/&gt;A power-electronics paper showing that converters in a meshed medium-voltage DC grid can each act as grid-forming using only a local frequency-droop law driven by two DC measurements, with no cooperative-driving content at all.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.35563v1"&gt;High-resolution tactile observation makes hidden racket-control mechanisms learnable&lt;/a&gt; &amp;mdash; Haoyang Tian et al.&lt;br/&gt;A badminton player wears a glove with 864 pressure sensors, a model breaks their grip into force that drives the racket and force that just holds it steady, and coaching built on that breakdown helped novices improve far faster than being told only their skill level.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.34922v1"&gt;Explicit Globally Asymptotically Stable Attitude Control with Reaction Wheel Angular Momentum and Torque Constraints&lt;/a&gt; &amp;mdash; Javier Urrios, Rafael Vazquez, Guillermo Pacheco-Ramos&lt;br/&gt;A closed-form Lyapunov attitude controller for a reaction-wheel spacecraft that guarantees wheel momentum and torque limits are never exceeded, with no online optimizer, and that has nothing to do with connected vehicles.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-01</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-01.mp3" length="4860498" type="audio/mpeg"/>
+      <pubDate>Sun, 01 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:40</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Two control papers: a local frequency-droop law driven by two DC measurements lets every AC/DC converter in a meshed medium-voltage DC grid act as grid-forming, and a closed-form Lyapunov attitude controller for a reaction-wheel spacecraft keeps wheel momentum and torque within limits without an online optimizer. A third paper uses an 864-sensor pressure glove to split a badminton player's grip into force that drives the racket and force that only holds it steady, and novices coached on that split improved faster than novices told only their skill level.
+
+None of these three papers is about cooperative driving or V2X, and two of the descriptions you pasted say so directly. If this batch came from the pipeline, the new saved-paper source (commit `2778c3d`) may be letting papers past the topic filter. You might want to skip this episode instead of publishing it.</itunes:summary>
+      <itunes:episode>44</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Oct 31 — 5 papers</title>
       <description>&lt;p&gt;A funnel-control platooning controller uses only onboard gap and speed sensing, stays within each car&amp;#x27;s own braking and throttle limits, and comes with proofs of no collisions and of speed deviations that don&amp;#x27;t grow with platoon length; RadarCom turns the interference between two stock TI automotive radars into a data link of a few kilobits per second, with no hardware changes and no break in sensing. Also covered: a world-action model under 100M parameters that predicts DINOv3 features and matches billion-parameter models on RoboTwin and LIBERO, a lunar hopping robot whose best leg length depends on the jump controller paired with it, and an event-camera spacecraft pose pipeline that weights keypoints and frames by reliability and edges out the previous best SPADES entry.

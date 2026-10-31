@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 44 (2026-11-01)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Nov 1 — 3 papers</h1>
+    <div class="meta">
+      <strong>Episode 44</strong> · November 1, 2026 · 3 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.35709v1">Grid-Forming AC/DC Converters for Meshed DC Networks via Dual-Measurement Frequency Droop</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hisham Mahmood, Marcelo A. Elizondo</p>
+
+<p class="hook">A power-electronics paper showing that converters in a meshed medium-voltage DC grid can each act as grid-forming using only a local frequency-droop law driven by two DC measurements, with no cooperative-driving content at all.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In meshed MVDC networks, converters that use PLL-based grid-following control lose damping in weak or stressed regimes, and no simple local controller has been shown to form both the AC and DC sides while still giving a provably unique steady state across the mesh.</dd></div><div class="frag"><dt>Method</dt><dd>Each converter adjusts only its terminal frequency, using the local DC bus-voltage deviation and a filtered DC current or power deviation. The authors show that AC-side synchronization turns this into an effective DC droop at every terminal, so the mesh operating point exists and is unique and can be solved from one linear system. They also build a small-signal model and use eigenvalue loci and damping-ratio charts to choose controller gains.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. The only evidence is averaged EMT simulation on one four-terminal ring, where the controller stays stable in regimes where PLL-based control is known to lose damping and follows the predicted steady state.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is validated on a single four-terminal ring in averaged simulation, with no hardware, no switching-level model and no larger or irregular meshes. The PLL comparison rests on regimes the abstract calls known rather than on a matched baseline reported with numbers, and nothing is said about communication delays or measurement noise.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits outside your work. It is about power-converter control, not vehicles, and it has no negotiation, no messages and no trajectories. The one loose link is the idea of decentralized droop control with a unique equilibrium, which rhymes with string stability, but the paper gives you nothing you could carry over to platooning or maneuver coordination.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.35709v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.35709v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.35563v1">High-resolution tactile observation makes hidden racket-control mechanisms learnable</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Haoyang Tian et al.</p>
+
+<p class="hook">A badminton player wears a glove with 864 pressure sensors, a model breaks their grip into force that drives the racket and force that just holds it steady, and coaching built on that breakdown helped novices improve far faster than being told only their skill level.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Expert players control the racket with fast, fine hand forces that they cannot consciously feel or describe, so how skilled grip control actually works has never been measured or taught directly. Earlier sensing had too few contact points to separate the force that moves the racket from the force that keeps it stable.</dd></div><div class="frag"><dt>Method</dt><dd>They built a glove with 864 tactile nodes plus inertial sensors, sampled at 100 hertz, and recorded more than 14,000 strokes from over 70 players across five skills. A two-layer model grounded in mechanics first infers the object-driving and grip-stabilizing control components from the history of touch signals. It then works out where on the hand and when each force is applied. Proficiency markers taken from this model drive personalized feedback on force control and on how force is timed with motion.</dd></div><div class="frag"><dt>Results</dt><dd>Better players showed more selective control: forces more specific to each skill, earlier anticipatory adjustment, modulation focused at the fingertips, and less torque cancelling itself out. Coordination followed a learn-then-refine curve rather than steadily improving. In a randomized training cohort, learners given mechanism-based guidance gained 0.72 expert-rated skill levels, against 0.05 for learners told only their level.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline training effect rests on expert ratings of skill level, and the abstract gives no group sizes, no blinding of raters and no follow-up on retention. The control arm got almost no information, so the 0.72 versus 0.05 gap may reflect richer feedback of any kind rather than these specific mechanisms. An arm with detailed but mechanism-free feedback would settle that. A sampling rate of 100 hertz is also coarse for the impact phase of a badminton stroke, which lasts only milliseconds.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It deals with one person&#39;s hand forces on a racket, with no vehicles, no communication between agents, no negotiation and no shared trajectories. The only loose link is methodological: inferring hidden control intent from high-resolution sensor history is close to inferring a driver&#39;s intent, and your work deliberately replaces that kind of inference with explicit messages. Nothing here carries over to maneuver protocols, platooning or conflict resolution.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.35563v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.35563v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.34922v1">Explicit Globally Asymptotically Stable Attitude Control with Reaction Wheel Angular Momentum and Torque Constraints</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Javier Urrios, Rafael Vazquez, Guillermo Pacheco-Ramos</p>
+
+<p class="hook">A closed-form Lyapunov attitude controller for a reaction-wheel spacecraft that guarantees wheel momentum and torque limits are never exceeded, with no online optimizer, and that has nothing to do with connected vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Explicit Lyapunov attitude controllers normally ignore actuator limits, while optimization-based schemes such as model predictive control handle the limits but must solve a problem online. This paper wants hard limits on both wheel momentum and torque, plus a global stability proof, from a simple feedback law.</dd></div><div class="frag"><dt>Method</dt><dd>Attitude is described with Modified Rodrigues Parameters. A barrier-style momentum feedback term keeps the wheels away from saturation. When the commanded torque would exceed its bound, a continuous positive scalar shrinks the whole feedback uniformly, so its direction and the Lyapunov decrease are both preserved. Global asymptotic stability for regulation follows from LaSalle&#39;s invariance principle for any symmetric positive-definite inertia. Swapping in an error-state barrier gives a tracking version that is only locally stable and needs explicit feasibility conditions on the reference.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It says only that simulations confirm convergence and constraint satisfaction, and it names no baseline controllers and no performance metrics.</dd></div><div class="frag"><dt>Caveat</dt><dd>All evidence is simulation, and the abstract does not say which controllers it was compared against or how the scaled feedback affects settling time when the torque limit is active for long stretches. The model assumes three orthogonal wheels with no failed or redundant wheel, no wheel friction, and no disturbance torques. The tracking result gives up global stability and depends on feasibility conditions that may be restrictive in practice.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It covers control of a single rigid body, with no communication, no multiple agents, and nothing about negotiation or string stability. The one idea you could borrow is uniformly scaling a Lyapunov feedback so actuator limits hold without an online solver. That could interest you only if you need constraint-safe low-level tracking under a cooperative planner, and even then vehicle dynamics are different enough that the proof would not carry over.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.34922v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.34922v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-11-01 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
