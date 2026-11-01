@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Oct 2026 21:02:11 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 21:03:00 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,25 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 2 — 5 papers</title>
+      <description>&lt;p&gt;An audit of 45 real AI coding-agent sessions finds that about a quarter of code-editing episodes end with no check after the last edit, and Kairos matches PDDL tasks to five specialised planning engines based on the features each task uses, returning only plans an independent validator accepts. ProLoop checks each subgoal with a learned state monitor and gains about 13 points on ALFWorld, Utility-WAM adds a residual adapter and a skip gate for when imagining future video makes a robot policy act worse, and Ask to Evolve&amp;#x27;s navigation agent, which can ask humans for help and remembers places between visits, reports near-perfect success but only on small subsets of standard benchmarks.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39468v1"&gt;Soei: Structured Observability of Evidence and Intent for Multi-Agent AI Software Engineering&lt;/a&gt; &amp;mdash; Mohammed Nayeem Khan, K S Sarun Kumar&lt;br/&gt;An audit of what AI coding agents actually do across 45 real sessions, finding that roughly a quarter of code-editing episodes end with no check after the last edit, plus a proposed tamper-evident ledger that keeps an agent&amp;#x27;s claim of being done separate from proof that it is done.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39454v1"&gt;Kairos: Semantics-Aware Orchestration of Planning Engines across Classical, Numeric, Temporal and Hybrid PDDL&lt;/a&gt; &amp;mdash; Francisco Martín Rico et al.&lt;br/&gt;Kairos is a portfolio planner that reads which PDDL features a task uses, picks among five specialised engines, races them under one shared time and memory budget, and only returns plans an independent validator has accepted.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39446v1"&gt;Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory&lt;/a&gt; &amp;mdash; Kai Sheng et al.&lt;br/&gt;An LLM-driven indoor navigation agent that can ask a human for help and remembers places between visits, reporting near-perfect success on small subsets of standard embodied navigation benchmarks.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39367v1"&gt;Utility-WAM: Correcting Future-Induced Action Changes&lt;/a&gt; &amp;mdash; Feihong Zhang et al.&lt;br/&gt;When a robot policy that imagines video of the future acts worse than the same policy acting without it, this paper trains a small residual adapter to undo the damage and a gate that skips video generation when it would not help.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39319v1"&gt;ProLoop: Progress-Aware Closed-Loop Framework via Structured State Relations for Long-Horizon Robotic Task Planning&lt;/a&gt; &amp;mdash; Runxin Zou et al.&lt;br/&gt;ProLoop has an LLM household-robot planner check each subgoal against a learned monitor that compares the desired state with the actual state, instead of guessing progress from the action log, and it gains about 13 points on ALFWorld.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-02</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-02.mp3" length="6278717" type="audio/mpeg"/>
+      <pubDate>Mon, 02 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:38</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>An audit of 45 real AI coding-agent sessions finds that about a quarter of code-editing episodes end with no check after the last edit, and Kairos matches PDDL tasks to five specialised planning engines based on the features each task uses, returning only plans an independent validator accepts. ProLoop checks each subgoal with a learned state monitor and gains about 13 points on ALFWorld, Utility-WAM adds a residual adapter and a skip gate for when imagining future video makes a robot policy act worse, and Ask to Evolve's navigation agent, which can ask humans for help and remembers places between visits, reports near-perfect success but only on small subsets of standard benchmarks.</itunes:summary>
+      <itunes:episode>45</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 1 — 3 papers</title>
       <description>&lt;p&gt;Two control papers: a local frequency-droop law driven by two DC measurements lets every AC/DC converter in a meshed medium-voltage DC grid act as grid-forming, and a closed-form Lyapunov attitude controller for a reaction-wheel spacecraft keeps wheel momentum and torque within limits without an online optimizer. A third paper uses an 864-sensor pressure glove to split a badminton player&amp;#x27;s grip into force that drives the racket and force that only holds it steady, and novices coached on that split improved faster than novices told only their skill level.

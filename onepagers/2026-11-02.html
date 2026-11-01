@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 45 (2026-11-02)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Nov 2 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 45</strong> · November 2, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39468v1">Soei: Structured Observability of Evidence and Intent for Multi-Agent AI Software Engineering</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Mohammed Nayeem Khan, K S Sarun Kumar</p>
+
+<p class="hook">An audit of what AI coding agents actually do across 45 real sessions, finding that roughly a quarter of code-editing episodes end with no check after the last edit, plus a proposed tamper-evident ledger that keeps an agent&#39;s claim of being done separate from proof that it is done.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>When AI coding agents work for long stretches with little supervision, a developer coming back cannot easily tell what was done, which agent did it, or whether the task is really finished. Existing local tools like Agenttrail log events, but they do not separate a claim of completion from evidence, and they do not reliably link work that continues across sessions.</dd></div><div class="frag"><dt>Method</dt><dd>The authors first check the open-source Agenttrail tool against its source code line by line, and find two event pipelines that are never merged and a local mutation endpoint with no authentication. They then run a prototype over real agent transcripts, using a classifier whose labels were checked in a blind audit, to measure missing verification steps and session hand-offs. Their proposed system, Soei, is a hash-chained local event ledger with acknowledgement-aware events, a provenance graph aligned with the W3C PROV standard, and a layer that records a claim of completion separately from proof of it.</dd></div><div class="frag"><dt>Results</dt><dd>Across 45 sessions with about 102 thousand records and 20 thousand tool calls, they estimate that 23.4 percent of code-editing episodes, with a confidence interval of 17 to 36 percent, end with no independent check, and that 57.8 percent of to-dos marked complete had no proof in between. The classifier&#39;s precision was 83 and 97 percent on its two labels, and the ledger is 20 percent of raw size and verifies about 126 thousand events per second.</dd></div><div class="frag"><dt>Caveat</dt><dd>The corpus is 45 sessions with no stated count of users, projects or agent products, so the headline rates may reflect one team&#39;s habits rather than agent behaviour in general. The abstract also gives no evidence that Soei helps a developer make better decisions, so the system is checked for throughput and tamper detection but not for usefulness to the people it is meant to serve.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off-topic for your work. It is about logging and auditing software agents, not vehicles, and it has nothing on negotiation, maneuver messages or trajectory coordination. The only loose link is the idea of keeping a claimed intent separate from verified completion in an acknowledgement-aware log, which echoes proposal and acceptance message design, but you will find no method here to carry over.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39468v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39468v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39454v1">Kairos: Semantics-Aware Orchestration of Planning Engines across Classical, Numeric, Temporal and Hybrid PDDL</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Francisco Martín Rico et al.</p>
+
+<p class="hook">Kairos is a portfolio planner that reads which PDDL features a task uses, picks among five specialised engines, races them under one shared time and memory budget, and only returns plans an independent validator has accepted.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Robots that re-plan at run time need one planner that accepts the full range of PDDL people actually write, from plain STRIPS through durative actions, numeric resources and hybrid PDDL+, and returns fast, trustworthy answers. Today each specialised planner covers only part of that range, and they disagree on what a failure or an unsolvable verdict actually means.</dd></div><div class="frag"><dt>Method</dt><dd>A profiler inspects each task&#39;s semantics to decide which of five engines apply: ground heuristic search, compressed temporal search, snap-action temporal search, time-step discretisation for hybrid dynamics, and lifted search. It then schedules them under a single budget. Every candidate plan goes through a validator that does not depend on the planner&#39;s own compilations. Unsolvable is reported only when a complete search has exhausted its space, so a timeout is never passed off as a proof.</dd></div><div class="frag"><dt>Results</dt><dd>Across 1,756 tasks from nine comparative suites, Kairos solves more tasks at the full limits than the strongest planner in each suite, and it also solves the most tasks at 100 milliseconds and at one second. Domain-level resampling puts the gain above zero in six of the nine suites, and on classical planning against LAMA the difference is within noise. On 26 one-feature probes it handles all seventeen PDDL features tested, while no other planner handles more than eight.</dd></div><div class="frag"><dt>Caveat</dt><dd>This is portfolio engineering, not a new search algorithm, so the wins come from coverage and scheduling. In three of nine suites the gain is not distinguishable from zero. The 450 feature tasks and 26 probes were written by the authors, so the seventeen-versus-eight feature claim partly measures their own choice of features. The run-time robotics motivation is argued but never tested, since all evaluation is offline benchmark solving with no closed-loop re-planning, no dynamic replanning latency under execution, and nothing multi-agent.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits on the edge of your work. It is single-agent symbolic task planning, with no communication, negotiation, multi-vehicle conflict resolution or trajectory optimisation. The only useful point for you is the validated-answer discipline: only certified plans, and unsolvable claimed only on proof. That maps loosely onto how a maneuver protocol should separate a confirmed agreement from a timeout. If you ever use PDDL+ to model merge or platoon-join logic with continuous dynamics, it is worth knowing this exists.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39454v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39454v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39446v1">Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Kai Sheng et al.</p>
+
+<p class="hook">An LLM-driven indoor navigation agent that can ask a human for help and remembers places between visits, reporting near-perfect success on small subsets of standard embodied navigation benchmarks.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Embodied navigation agents usually act alone and start each episode with no memory, so they cannot resolve ambiguous instructions by asking or reuse what they learned on earlier visits. The authors argue that action, interaction and memory have been studied separately and never combined in one agent.</dd></div><div class="frag"><dt>Method</dt><dd>They wrap a multimodal model in a harness with four kinds of action: waypoint navigation, small discrete moves, choosing a target pixel in the image, and navigating to a named object. The agent can stop and ask a question when it is confused or stuck. Observations and dialogue are stored in a spatial memory tied to locations and retrieved on later visits.</dd></div><div class="frag"><dt>Results</dt><dd>On four 100-episode sets from vision-language navigation and object navigation, first-visit success is 100 percent, with an average of 1.87 questions per episode. Full-sequence success is 98 percent on 50 LHPR-VLN sequences and 94 percent on 50 GOAT-Bench sequences, and success weighted by path length on R2R revisits rises from 82.23 to 93.31 percent with memory; the abstract names no baselines and reports a multi-day physical robot demo only qualitatively.</dd></div><div class="frag"><dt>Caveat</dt><dd>Perfect success on 100-episode subsets is a red flag. The questions are presumably answered by an oracle or a human with privileged knowledge, so the gain may come from leaked ground truth rather than better navigation. A reviewer would want the full benchmark splits, success with questions turned off, a fair comparison against baselines given the same help budget, and a statement of who answers the questions and what they know.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It covers one indoor robot asking a human for help, not several vehicles negotiating maneuvers, and there is nothing on message design, packet loss, platoons or right of way. The only loose connection is the idea of asking only when ambiguous, which loosely mirrors event-triggered intent requests, but the paper offers no protocol or analysis you could transfer.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39446v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39446v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39367v1">Utility-WAM: Correcting Future-Induced Action Changes</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Feihong Zhang et al.</p>
+
+<p class="hook">When a robot policy that imagines video of the future acts worse than the same policy acting without it, this paper trains a small residual adapter to undo the damage and a gate that skips video generation when it would not help.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>World action models condition robot actions on generated visual futures, but averaged benchmark scores hide that this foresight barely helps overall and badly hurts specific precision tasks, all while nearly doubling inference latency. Nobody had isolated the action difference caused by the imagined future as the thing to measure and fix.</dd></div><div class="frag"><dt>Method</dt><dd>They compare the future-conditioned and future-free execution paths of one frozen model and treat the gap between their actions as the object to correct. A residual adapter is trained to pull that gap toward ground-truth dynamics, with a penalty whenever its error exceeds the future-free baseline. A lightweight gate, placed before generation, uses counterfactual action outcomes to decide when to skip video generation entirely.</dd></div><div class="frag"><dt>Results</dt><dd>Imagined futures shift average success by only plus 0.8 points on LIBERO and minus 0.8 on RoboTwin 2.0 while costing 1.7 to 1.9 times the latency, but they cost Press Stapler 54 points and Place Can Basket 34; the adapter cuts those losses to 6 and 14. The gate skips generation on 75.5 percent of RoboTwin queries, cutting latency by 38 percent, and the system reaches 93.3 percent on RoboTwin, 98.9 percent on LIBERO, and 53 of 60 real bimanual trials against 43 for FAST-WAM.</dd></div><div class="frag"><dt>Caveat</dt><dd>The headline failure is told through two cherry-picked tasks, and the adapter still leaves a 14 point loss on one of them. The gate learns from counterfactual outcomes that may require running both paths during training, so its cost and its transfer to new tasks are unclear. The real-robot evidence is three tasks at 20 trials each, where a 10 trial gap against a single baseline is suggestive but statistically thin.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is robot manipulation, not connected vehicles, and none of it involves multiple agents, communication, negotiation or right of way, so it sits outside your work. The only transferable idea is methodological: measure what extra predicted context actually changes in the chosen action, and gate it when it does not pay. That is a fair lens for asking when shared intent or trajectory messages are worth their bandwidth and latency, but you can get that idea from this abstract alone.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39367v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39367v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39319v1">ProLoop: Progress-Aware Closed-Loop Framework via Structured State Relations for Long-Horizon Robotic Task Planning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Runxin Zou et al.</p>
+
+<p class="hook">ProLoop has an LLM household-robot planner check each subgoal against a learned monitor that compares the desired state with the actual state, instead of guessing progress from the action log, and it gains about 13 points on ALFWorld.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>LLM planners for long-horizon tasks usually infer whether a subgoal is done from the raw interaction history, so a wrong progress estimate quietly sends execution down the wrong path and early errors compound. Explicit progress tracking has been missing because LLM agents rarely keep a structured representation of the state they want to reach.</dd></div><div class="frag"><dt>Method</dt><dd>Each subgoal is written as a set of desired state relations, such as an object being inside a receptacle. A learned State-Relation Monitor checks each relation against the observed execution state. Those checks are combined into one of three labels: ongoing, deviated, or completed. The planner then uses that label to keep going, re-plan, or move to the next subgoal.</dd></div><div class="frag"><dt>Results</dt><dd>On AgentBoard ALFWorld and a real robot platform, the authors report a 12.94 percent gain in success rate overall and 15.46 percent on Hard tasks, with 32.3 percent fewer environment interactions. The abstract does not name the baselines, does not say whether the gains are absolute or relative, and gives no separate numbers for the real robot.</dd></div><div class="frag"><dt>Caveat</dt><dd>ALFWorld is a text environment where symbolic state relations are easy to read off, so the monitor&#39;s accuracy probably depends on clean, enumerable predicates that perception-heavy or continuous domains do not provide. The abstract also leaves unclear whether the monitor was trained on data from the same distribution, and whether the gain comes from the learned monitor or simply from having explicit subgoal state specifications at all.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is single-agent tabletop and household planning with no communication, no negotiation and no other agents. The only transferable idea is loose: representing maneuver progress as explicit desired-versus-actual state relations, with an ongoing, deviated or completed label. That could inform how a maneuver coordination protocol signals abort or completion, but the paper does nothing in that direction.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39319v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39319v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-11-02 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
