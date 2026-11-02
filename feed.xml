@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Nov 2026 21:03:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 21:02:51 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,23 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 3 — 3 papers</title>
+      <description>&lt;p&gt;LLM agents role-playing autonomous and human drivers bargain over shared road space in text, and every bid and tone shift is labeled to trace which exchanges end in a deal and which break down, though the &amp;quot;human&amp;quot; drivers are themselves LLMs. An MPPI sampling-based planner steers small autonomous boats through Amsterdam&amp;#x27;s canals by predicting the other vessels&amp;#x27; paths with no communication between them, and two single-seat indoor personal mobility vehicles learn from human drivers to travel side by side so their riders can talk, tested only in a kinematic simulator.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.41239v1"&gt;Understanding LLM-Based Bargaining of Driving Agents in Mixed-Autonomy Traffic&lt;/a&gt; &amp;mdash; Lingxiao Zhou, Di Chen, Jia Li&lt;br/&gt;They have LLM agents playing autonomous and human drivers haggle in text over shared road space, then label every bid and tone shift to see which interaction patterns lead to deals and which lead to breakdowns.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.41676v1"&gt;Interaction-Aware Sampling-Based Motion Planning for Autonomous Surface Vessels in Urban Waterways&lt;/a&gt; &amp;mdash; Elia Trevisan et al.&lt;br/&gt;A Delft-style MPPI planner for small autonomous boats in Amsterdam&amp;#x27;s canals that plans its own path while also predicting the other boats&amp;#x27; paths, with no communication between vessels.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.36726v1"&gt;Learning Side-by-Side Navigation for Personal Mobility Vehicles from Human Drivers&lt;/a&gt; &amp;mdash; Luis Yoichi Morales, Florent Ferreri&lt;br/&gt;Two indoor personal mobility vehicles, which are small single-seat vehicles, learn from human drivers to travel side by side so their riders can talk, using a shared decision rule over each other&amp;#x27;s candidate trajectories, and are tested only in a kinematic simulator.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-03</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-03.mp3" length="5629444" type="audio/mpeg"/>
+      <pubDate>Tue, 03 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:44</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>LLM agents role-playing autonomous and human drivers bargain over shared road space in text, and every bid and tone shift is labeled to trace which exchanges end in a deal and which break down, though the "human" drivers are themselves LLMs. An MPPI sampling-based planner steers small autonomous boats through Amsterdam's canals by predicting the other vessels' paths with no communication between them, and two single-seat indoor personal mobility vehicles learn from human drivers to travel side by side so their riders can talk, tested only in a kinematic simulator.</itunes:summary>
+      <itunes:episode>46</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 2 — 5 papers</title>
       <description>&lt;p&gt;An audit of 45 real AI coding-agent sessions finds that about a quarter of code-editing episodes end with no check after the last edit, and Kairos matches PDDL tasks to five specialised planning engines based on the features each task uses, returning only plans an independent validator accepts. ProLoop checks each subgoal with a learned state monitor and gains about 13 points on ALFWorld, Utility-WAM adds a residual adapter and a skip gate for when imagining future video makes a robot policy act worse, and Ask to Evolve&amp;#x27;s navigation agent, which can ask humans for help and remembers places between visits, reports near-perfect success but only on small subsets of standard benchmarks.&lt;/p&gt;
