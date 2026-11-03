@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 21:02:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 21:02:15 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 4 — 1 papers</title>
+      <description>&lt;p&gt;A platooning operator with better information about corridor fuel savings than the truckers can raise voluntary participation without subsidies or mandates, purely by choosing what to announce publicly. The catch is that the result depends on trucks coordinating on the favorable equilibrium, and the paper doesn&amp;#x27;t show how they would get there, so treat the participation gains as an upper bound.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.00584v1"&gt;Information Design for Behaviorally Stable Platooning&lt;/a&gt; &amp;mdash; Jia Li, Di Chen&lt;br/&gt;An operator who knows more about corridor fuel savings can raise how many trucks voluntarily join platoons by choosing what to announce publicly, but only if the trucks settle on the good equilibrium.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-04</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-04.mp3" length="3148439" type="audio/mpeg"/>
+      <pubDate>Wed, 04 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:04:18</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A platooning operator with better information about corridor fuel savings than the truckers can raise voluntary participation without subsidies or mandates, purely by choosing what to announce publicly. The catch is that the result depends on trucks coordinating on the favorable equilibrium, and the paper doesn't show how they would get there, so treat the participation gains as an upper bound.</itunes:summary>
+      <itunes:episode>47</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 3 — 3 papers</title>
       <description>&lt;p&gt;LLM agents role-playing autonomous and human drivers bargain over shared road space in text, and every bid and tone shift is labeled to trace which exchanges end in a deal and which break down, though the &amp;quot;human&amp;quot; drivers are themselves LLMs. An MPPI sampling-based planner steers small autonomous boats through Amsterdam&amp;#x27;s canals by predicting the other vessels&amp;#x27; paths with no communication between them, and two single-seat indoor personal mobility vehicles learn from human drivers to travel side by side so their riders can talk, tested only in a kinematic simulator.&lt;/p&gt;
