@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 48 (2026-11-05)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-compact">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Nov 5 — 4 papers</h1>
+    <div class="meta">
+      <strong>Episode 48</strong> · November 5, 2026 · 4 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.04957v1">Safeguarding Multi-Agent Reinforcement Learning for Connected and Automated Vehicles with Recursively Feasible Control Barrier Functions</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-read">read</span>
+        </div>
+      </div>
+
+      <p class="byline">Jianye Xu, Yousef Sayed, Bassam Alrifaee</p>
+
+<p class="hook">They put a decentralized safety filter on a multi-agent RL driving policy. The filter checks whether every vehicle could still brake to a full stop without a collision, and in roundabout and intersection simulations it never crashed while baseline filters did.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Standard control barrier function filters can become infeasible once braking and steering limits are enforced, and they often approximate vehicles and roads with coarse shapes, which makes them overly cautious. So in practice they cannot give multi-agent RL a safety guarantee that holds at every step in dense traffic.</dd></div><div class="frag"><dt>Method</dt><dd>The Backup-Horizon CBF rolls every vehicle forward under a backup policy of braking to a stop and checks the exact vehicle and road geometry along that whole horizon. The paper claims this makes the filter recursively feasible under control bounds, in the spirit of earlier backup-set barrier functions. Each vehicle broadcasts its state and route once per step, then filters its own action locally. The same function is used as a pre-training reward, as a run-time filter, and as a filter inside the fine-tuning loop on unseen maps.</dd></div><div class="frag"><dt>Results</dt><dd>On real-world roundabout and intersection maps, it removed every collision of deliberately unsafe policies and kept the guarantee at every step. The baseline filters either collided, lost the guarantee, or fell back to full braking much more often, but the abstract gives no rates. On recorded roundabout traffic with 1264 human-driven vehicles over 115 kilometres, the safeguarded policies cut median travel time by 14 percent compared with the humans, with zero collisions.</dd></div><div class="frag"><dt>Caveat</dt><dd>The guarantee assumes every vehicle runs the filter, receives every broadcast on time, and agrees on routes. The abstract never tests lost or delayed messages or vehicles that do not participate, and those are exactly the cases where a stop-based backup argument breaks down. The 14 percent gain compares coordinated, fully informed agents with the logged human drivers, which is not a fair comparison. It is also unclear whether the replayed traffic reacts to the agents. Everything is in simulation, and the abstract gives no number for how often the filter itself falls back to braking.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is relevant to your protocol and conflict-resolution work, not to explicit negotiation. Who yields falls out of a shared safety constraint, not a proposal-and-acceptance exchange. The interesting part for you is the message design: one broadcast of state plus route per step is enough for a decentralized guarantee. That gives you a concrete minimal-intent baseline for testing how coordination degrades under message loss or partial participation, which the paper itself does not seem to address.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.04957v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.04957v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.41538v1">Report on Stability Analysis of Islanded Power Systems with Grid-Forming Converters</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Anup Joshi et al.</p>
+
+<p class="hook">This is a review-style project deliverable on why small island power grids become unstable when converters replace generators, and how grid-forming inverters help. It has nothing to do with vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Island power grids have little inertia and weak short-circuit strength, and swapping synchronous machines for inverter-based renewables makes frequency and voltage swings worse. The open question is which grid-forming control strategies actually hold up in these weak, isolated grids.</dd></div><div class="frag"><dt>Method</dt><dd>It is mainly a literature survey. It sorts island-grid stability into five types: frequency, converter-driven, voltage, large-disturbance and small-signal. It then compares grid-forming converter controls that set voltage and frequency themselves and mimic synchronous machines, and closes with one small-signal stability case study of a grid-forming converter on a weak grid.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, test systems or baselines. The only evidence is a single small-signal case study that it says shows improved stability in weak grids.</dd></div><div class="frag"><dt>Caveat</dt><dd>This is a doctoral-network deliverable published on Zenodo, not a peer-reviewed contribution. Most of it restates existing survey material. A single linearized small-signal case cannot show large-disturbance or multi-converter behaviour, and those are exactly the coordination and interoperability problems the report calls open.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>It is outside your area. The only loose overlap is that coordinating many independent controllers with no standard interface looks a bit like mixed-participation maneuver coordination. But the report treats this as a power-grid problem with no messaging or negotiation, so you can safely drop it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.41538v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.41538v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.41249v1">Multi-Timescale Deliverability of Shared Hybrid Storage for AI Data Center Campuses</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Zihan Meng et al.</p>
+
+<p class="hook">A two-layer scheduler for a shared battery and fast-storage system on an AI data center campus, where a five-minute plan feeds a fast controller that tracks the lag between commanded and delivered power at the grid connection.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Five-minute storage schedules treat commanded power as if it were delivered instantly, so they miss the subsecond swings that AI training loads cause at the campus grid connection. Earlier interval-based models had no way to represent that delivery lag or the fast fluctuations.</dd></div><div class="frag"><dt>Method</dt><dd>They pool every building&#39;s load on one campus bus and limit the shared hybrid storage to a single injection point at the grid connection. An upper layer schedules five-minute power, energy state and reserve. It passes these to a causal fast-response layer that models commanded and delivered power as separate quantities, so the fast layer respects real actuator dynamics instead of assuming instant response.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It says only that integral absolute error fell at both the grid connection and the fast timescale on the National Laboratory of the Rockies GenAI Power Profiles Dataset, and that most of the gain available under ideal response was kept. It does not say how large the reductions were or which baselines were used.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is tested offline on one public load-profile dataset, and the abstract names no baseline. A reviewer would ask how the delivered-power lag model was identified and checked against real converter hardware. They would also ask how much of the benefit comes from the two-layer split itself rather than from simply having fast storage.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is not your field. It is power systems scheduling for data centers, with no vehicles, no negotiation and no inter-agent communication. The only loose link is the general idea of a slow planner passing commitments and reserves to a fast causal tracker, which resembles hierarchical platoon control, but you won&#39;t find anything here to reuse.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.41249v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.41249v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2610.39951v1">LC-Resonance Placement Limits and Damping Recovery in Virtual-Admittance-Based Grid-Forming Inverter Control</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Stephen Arinze Obi, Jae-Jung Jung</p>
+
+<p class="hook">For grid-forming inverters with an LC filter, the current-loop gain caps how high you can push the filter resonance, and a simple shaping of the proportional path buys most of that headroom back.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Shrinking the LC filter pushes its resonance upward, but in virtual-admittance dual-loop control the inner current-loop gain and the sampling delay together limit where that resonance can stably sit. That limit had not been quantified, so filter design and inner-loop tuning were done without a clear joint rule.</dd></div><div class="frag"><dt>Method</dt><dd>They use equivalent-impedance analysis to show that raising the current-loop proportional gain shrinks the region where the loop looks like a positive resistance. They also show that above one sixth of the sampling frequency, delayed inverter-current feedback works against the damping that voltage-feedback decoupling provides. Their fix is to frequency-shape only the proportional path, keeping unity voltage-feedback decoupling and leaving the resonant controller alone, and they check reduced-model stability criteria against the full model.</dd></div><div class="frag"><dt>Results</dt><dd>They derive a nominal resonance-placement limit near one third of the sampling frequency for single-sampled, single-update operation. On a 3 kilovolt-ampere prototype they cut the LC product by 83.3 percent at comparable crossovers, and with the same high-resonance filter they run stably at 2.68 times the unshaped nominal current crossover.</dd></div><div class="frag"><dt>Caveat</dt><dd>The one-third limit holds only for single-sampled, single-update timing and the gain range they studied, so it may not transfer to double-update or multirate schemes. The grid-connected tests surface further grid-dependent gain limits that the main design criterion does not cover, and everything is checked on a single 3 kilovolt-ampere prototype.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It is power-electronics inverter control with no vehicles, no communication between agents, and no negotiation or coordination. The only loose link is the general theme of loop gain against delay, and that is far from string stability in platoons. You can safely ignore it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2610.39951v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2610.39951v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-11-05 06:03 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Nov 2026 21:02:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 21:03:27 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,36 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 5 — 4 papers</title>
+      <description>&lt;p&gt;A decentralized safety filter for multi-agent reinforcement learning (RL) driving policies checks that every vehicle can still brake to a full stop without a collision, and in roundabout and intersection simulations it never crashed while baseline filters did. The other three papers are about power electronics: a review of why island grids become unstable when converters replace generators, a two-layer scheduler for shared hybrid storage on an AI data center campus that tracks the gap between commanded and delivered grid power, and a result showing that current-loop gain limits how high the LC-filter resonance can go in grid-forming inverters, with a simple shaping of the proportional path recovering most of that headroom.
+
+---
+
+Only the first paper is about cooperative driving. The other three are power-systems papers, and one of your own notes says it &amp;quot;has nothing to do with vehicles.&amp;quot; That suggests a filtering problem upstream: a keyword like &amp;quot;grid,&amp;quot; &amp;quot;control barrier,&amp;quot; or &amp;quot;converter&amp;quot; may be matching. The new saved-papers source (`2778c3d`, `11d41fd`) could also be skipping the scope filter added in `5ad7f74`.
+
+If that&amp;#x27;s right, this should be a one-paper episode. Short episodes are fine for a narrow topic. I can trace where these papers came from if you&amp;#x27;d like, and give you a one-paper version of the description.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.04957v1"&gt;Safeguarding Multi-Agent Reinforcement Learning for Connected and Automated Vehicles with Recursively Feasible Control Barrier Functions&lt;/a&gt; &amp;mdash; Jianye Xu, Yousef Sayed, Bassam Alrifaee&lt;br/&gt;They put a decentralized safety filter on a multi-agent RL driving policy. The filter checks whether every vehicle could still brake to a full stop without a collision, and in roundabout and intersection simulations it never crashed while baseline filters did.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.41538v1"&gt;Report on Stability Analysis of Islanded Power Systems with Grid-Forming Converters&lt;/a&gt; &amp;mdash; Anup Joshi et al.&lt;br/&gt;This is a review-style project deliverable on why small island power grids become unstable when converters replace generators, and how grid-forming inverters help. It has nothing to do with vehicles.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.41249v1"&gt;Multi-Timescale Deliverability of Shared Hybrid Storage for AI Data Center Campuses&lt;/a&gt; &amp;mdash; Zihan Meng et al.&lt;br/&gt;A two-layer scheduler for a shared battery and fast-storage system on an AI data center campus, where a five-minute plan feeds a fast controller that tracks the lag between commanded and delivered power at the grid connection.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2610.39951v1"&gt;LC-Resonance Placement Limits and Damping Recovery in Virtual-Admittance-Based Grid-Forming Inverter Control&lt;/a&gt; &amp;mdash; Stephen Arinze Obi, Jae-Jung Jung&lt;br/&gt;For grid-forming inverters with an LC filter, the current-loop gain caps how high you can push the filter resonance, and a simple shaping of the proportional path buys most of that headroom back.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-05</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-05.mp3" length="5609474" type="audio/mpeg"/>
+      <pubDate>Thu, 05 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:43</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A decentralized safety filter for multi-agent reinforcement learning (RL) driving policies checks that every vehicle can still brake to a full stop without a collision, and in roundabout and intersection simulations it never crashed while baseline filters did. The other three papers are about power electronics: a review of why island grids become unstable when converters replace generators, a two-layer scheduler for shared hybrid storage on an AI data center campus that tracks the gap between commanded and delivered grid power, and a result showing that current-loop gain limits how high the LC-filter resonance can go in grid-forming inverters, with a simple shaping of the proportional path recovering most of that headroom.
+
+---
+
+Only the first paper is about cooperative driving. The other three are power-systems papers, and one of your own notes says it "has nothing to do with vehicles." That suggests a filtering problem upstream: a keyword like "grid," "control barrier," or "converter" may be matching. The new saved-papers source (`2778c3d`, `11d41fd`) could also be skipping the scope filter added in `5ad7f74`.
+
+If that's right, this should be a one-paper episode. Short episodes are fine for a narrow topic. I can trace where these papers came from if you'd like, and give you a one-paper version of the description.</itunes:summary>
+      <itunes:episode>48</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 4 — 1 papers</title>
       <description>&lt;p&gt;A platooning operator with better information about corridor fuel savings than the truckers can raise voluntary participation without subsidies or mandates, purely by choosing what to announce publicly. The catch is that the result depends on trucks coordinating on the favorable equilibrium, and the paper doesn&amp;#x27;t show how they would get there, so treat the participation gains as an upper bound.&lt;/p&gt;
