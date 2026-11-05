@@ -181,8 +181,8 @@
   <header class="top">
     <div class="eyebrow">Daily Papers</div>
     <h1>Archive</h1>
-    <p class="tagline">50 episodes ·
-       172 papers ·
+    <p class="tagline">51 episodes ·
+       173 papers ·
        every one-pager and recording, searchable.</p>
   </header>
 
@@ -207,6 +207,34 @@
   </div>
 
   <main id="list">
+    <section class="ep" data-ep="2026-11-06">
+      <div class="ep-head">
+        <h2>Friday, November 6, 2026</h2>
+        <span class="ep-meta">Episode 49 · 1 papers · 5 min</span>
+      </div>
+<p class="ep-summary">CoSafe puts runtime safety assurance on a roadside unit that sees the whole scene over V2X, so it can catch conflicts between several vehicles&#39; plans that no single car could detect alone. When it finds one, it overrides more than one automated vehicle at once instead of leaving each to brake on its own, which raises questions about how much it relies on the roadside unit and the communication link, and how it handles the human-driven cars it can&#39;t command.</p>
+      <audio controls preload="none" src="audio/2026-11-06.mp3"></audio>
+
+      <div class="ep-links">
+<a class="btn primary" href="onepagers/2026-11-06.html">One-pager</a><a class="btn" href="onepagers/2026-11-06.pdf">PDF</a><a class="btn" href="audio/2026-11-06.mp3" download>Download audio</a>      </div>
+
+      <ol class="papers">
+        <li class="paper"
+            data-prio="skim"
+            data-text="cosafe: cooperative runtime safety assurance for mixed-traffic autonomous driving dingji wang et al. a roadside unit watches the whole scene over v2x and, when it sees several vehicles&#39; plans heading for a conflict, overrides more than one automated vehicle at once instead of letting each one brake for itself. runtime safety monitors usually let each vehicle take over for itself, but in mixed traffic many crashes come from plans that are each reasonable on their own and clash when combined. a single vehicle acting alone cannot reliably fix that kind of conflict. the authors argue that no existing safety layer works at the level of the whole scene and coordinates the fix across vehicles. a roadside unit gathers state from nearby vehicles over v2x, predicts hazards for the whole scene, and flags which automated vehicles are unsafe. it then sends coordinated interventions to several of those vehicles together, so the safety logic sits outside each vehicle&#39;s own driving stack. the framework is built as a wrapper that works with any driving stack, and the authors connect it to seven existing ones without changing their planners. on the interdrive benchmark, across seven driving stacks, the driving score rises by 70.03 percent on average and safety violations fall by 87.80 percent. unsafe vehicles are identified with an f3 score of 0.930. the abstract says real-time constraints are met but gives no latency figure, and it names no rival cooperative or ego-centric safety monitor as a baseline. judging from the abstract, the comparison seems to be against the bare driving stacks rather than against an ego-centric safety monitor, so the large gains may mostly reflect having any safety layer at all. the f3 score weights recall about nine times as heavily as precision, so it rewards flagging too many vehicles, and the false-intervention rate is the number to look for. coordination runs through a central roadside unit and seems to assume the v2x link is reliable. nothing in the abstract tests message loss, delay, or partial v2x coverage. human drivers cannot be steered, so the cooperation applies only to the automated vehicles, and the evaluation looks like it was done entirely in simulation. this sits next to your conflict-resolution work rather than inside it. the decision about who yields is made centrally by roadside infrastructure as an emergency override, not negotiated between vehicles through proposals and acceptances. its useful points for you are the framing of jointly incompatible plans as the failure mode, and interdrive as a possible benchmark for mixed traffic. it says little about message design, protocols that hold up when messages are lost, or distributed agreement between vehicles. 2611.06204v1 incremental skim">
+          <div class="p-head">
+            <h3 class="p-title">
+<a href="http://arxiv.org/abs/2611.06204v1">CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving</a>            </h3>
+            <span class="badge skim">skim</span>
+          </div>
+<p class="p-authors">Dingji Wang et al. · arXiv:2611.06204v1</p><p class="p-hook">A roadside unit watches the whole scene over V2X and, when it sees several vehicles&#39; plans heading for a conflict, overrides more than one automated vehicle at once instead of letting each one brake for itself.</p>          <details class="more">
+            <summary>details</summary>
+            <dl class="frags">
+<dt>Problem</dt><dd>Runtime safety monitors usually let each vehicle take over for itself, but in mixed traffic many crashes come from plans that are each reasonable on their own and clash when combined. A single vehicle acting alone cannot reliably fix that kind of conflict. The authors argue that no existing safety layer works at the level of the whole scene and coordinates the fix across vehicles.</dd><dt>Method</dt><dd>A roadside unit gathers state from nearby vehicles over V2X, predicts hazards for the whole scene, and flags which automated vehicles are unsafe. It then sends coordinated interventions to several of those vehicles together, so the safety logic sits outside each vehicle&#39;s own driving stack. The framework is built as a wrapper that works with any driving stack, and the authors connect it to seven existing ones without changing their planners.</dd><dt>Results</dt><dd>On the InterDrive benchmark, across seven driving stacks, the driving score rises by 70.03 percent on average and safety violations fall by 87.80 percent. Unsafe vehicles are identified with an F3 score of 0.930. The abstract says real-time constraints are met but gives no latency figure, and it names no rival cooperative or ego-centric safety monitor as a baseline.</dd><dt>Caveat</dt><dd>Judging from the abstract, the comparison seems to be against the bare driving stacks rather than against an ego-centric safety monitor, so the large gains may mostly reflect having any safety layer at all. The F3 score weights recall about nine times as heavily as precision, so it rewards flagging too many vehicles, and the false-intervention rate is the number to look for. Coordination runs through a central roadside unit and seems to assume the V2X link is reliable. Nothing in the abstract tests message loss, delay, or partial V2X coverage. Human drivers cannot be steered, so the cooperation applies only to the automated vehicles, and the evaluation looks like it was done entirely in simulation.</dd><dt>Why it matters</dt><dd>This sits next to your conflict-resolution work rather than inside it. The decision about who yields is made centrally by roadside infrastructure as an emergency override, not negotiated between vehicles through proposals and acceptances. Its useful points for you are the framing of jointly incompatible plans as the failure mode, and InterDrive as a possible benchmark for mixed traffic. It says little about message design, protocols that hold up when messages are lost, or distributed agreement between vehicles.</dd>            </dl>
+          </details>
+        </li>
+      </ol>
+    </section>
     <section class="ep" data-ep="2026-11-05">
       <div class="ep-head">
         <h2>Thursday, November 5, 2026</h2>
@@ -3378,7 +3406,7 @@ Note: file-read tools aren&#39;t available in this session, so I couldn&#39;t ch
   <p class="empty" id="noresults" hidden>No papers match that search.</p>
 
   <footer>
-    Generated 2026-11-05 06:03 · unlisted, not indexed ·
+    Generated 2026-11-06 06:02 · unlisted, not indexed ·
     <a href="feed.xml">feed.xml</a>
   </footer>
 </div>

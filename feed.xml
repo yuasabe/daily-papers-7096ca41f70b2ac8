@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 21:03:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 21:02:04 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,21 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 6 — 1 papers</title>
+      <description>&lt;p&gt;CoSafe puts runtime safety assurance on a roadside unit that sees the whole scene over V2X, so it can catch conflicts between several vehicles&amp;#x27; plans that no single car could detect alone. When it finds one, it overrides more than one automated vehicle at once instead of leaving each to brake on its own, which raises questions about how much it relies on the roadside unit and the communication link, and how it handles the human-driven cars it can&amp;#x27;t command.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.06204v1"&gt;CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving&lt;/a&gt; &amp;mdash; Dingji Wang et al.&lt;br/&gt;A roadside unit watches the whole scene over V2X and, when it sees several vehicles&amp;#x27; plans heading for a conflict, overrides more than one automated vehicle at once instead of letting each one brake for itself.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-06</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-06.mp3" length="3448599" type="audio/mpeg"/>
+      <pubDate>Fri, 06 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:04:43</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>CoSafe puts runtime safety assurance on a roadside unit that sees the whole scene over V2X, so it can catch conflicts between several vehicles' plans that no single car could detect alone. When it finds one, it overrides more than one automated vehicle at once instead of leaving each to brake on its own, which raises questions about how much it relies on the roadside unit and the communication link, and how it handles the human-driven cars it can't command.</itunes:summary>
+      <itunes:episode>49</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 5 — 4 papers</title>
       <description>&lt;p&gt;A decentralized safety filter for multi-agent reinforcement learning (RL) driving policies checks that every vehicle can still brake to a full stop without a collision, and in roundabout and intersection simulations it never crashed while baseline filters did. The other three papers are about power electronics: a review of why island grids become unstable when converters replace generators, a two-layer scheduler for shared hybrid storage on an AI data center campus that tracks the gap between commanded and delivered grid power, and a result showing that current-loop gain limits how high the LC-filter resonance can go in grid-forming inverters, with a simple shaping of the proportional path recovering most of that headroom.
