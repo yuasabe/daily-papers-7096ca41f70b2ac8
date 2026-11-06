@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2026 21:02:04 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 21:03:15 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 7 — 5 papers</title>
+      <description>&lt;p&gt;MA-SafeDiffuser extends SafeDiffuser to multiple agents: it adds pairwise collision barriers, a decentralized variant and liveness terms that break deadlock, all enforced as control-barrier-function constraints during diffusion denoising, and it is tested only on a multi-agent Maze2D. The other four papers cover rehab robots that prescribe force trajectories from arm muscle (sEMG) signals, a power-swing blocking scheme for distance relays on grids with grid-forming inverters, open-vocabulary object search from a robot&amp;#x27;s camera memory that can report when an object is absent, and an LLM-agent assistant that turns storytelling goals into camera and shot settings.
+
+Only MA-SafeDiffuser is close to cooperative driving or maneuver coordination, so the description says plainly that the rest are off-topic. If an episode like this should go out at all, the paper filter is probably letting too much through. It could be the new saved-paper source or the recent scope change, so it may be worth checking before publishing.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.05524v1"&gt;MA-SafeDiffuser: Safe Multi-Agent Planning with Diffusion Probabilistic Models&lt;/a&gt; &amp;mdash; Kiran Ravish et al.&lt;br/&gt;They take SafeDiffuser, which forces a diffusion planner&amp;#x27;s samples to satisfy control barrier function constraints during denoising, and extend it to many agents with pairwise collision barriers, a decentralized version, and liveness terms to break deadlock, tested on a multi-agent Maze2D.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.08295v1"&gt;Transformer-Based Trajectory Prescription for sEMG-Optimizing Robot-Mediated Rehabilitation&lt;/a&gt; &amp;mdash; Gabriel Parra et al.&lt;br/&gt;A transformer with flow matching takes a person&amp;#x27;s arm muscle signals and predicts the force trajectory a rehab robot should ask them to push along, so therapy can target muscle activation rather than just movement.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07796v1"&gt;Power-Swing Blocking Scheme Based on Continuous and Higher-Order Incremental Quantities for Systems with Inverter-Based Resources&lt;/a&gt; &amp;mdash; Henrik Johansson et al.&lt;br/&gt;A power-system protection paper that replaces the blinder-based method of telling power swings apart from faults in distance relays with one built on higher-order incremental quantities, aimed at grids with grid-forming inverters.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07493v1"&gt;Fast and Reliable Open-Vocabulary Object Search with Absence Detection from Robot Memory&lt;/a&gt; &amp;mdash; Nicholas Paul, Devson Butani, Eric Martinson&lt;br/&gt;A home robot finds objects from its stored camera history using fast caption-based retrieval followed by a visual check. That check also lets it say an object is not there, which existing embedding-search systems almost never do.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07377v1"&gt;Designing with Cinematic Language: An Intent-Driven Approach to Human-AI Video Clip Co-Creation&lt;/a&gt; &amp;mdash; Yi He et al.&lt;br/&gt;A video-generation assistant that turns a creator&amp;#x27;s storytelling goals into concrete camera and shot settings, using a film-clip dataset and a few cooperating language-model agents. It has nothing to do with vehicles.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-07</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-07.mp3" length="6278187" type="audio/mpeg"/>
+      <pubDate>Sat, 07 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:38</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>MA-SafeDiffuser extends SafeDiffuser to multiple agents: it adds pairwise collision barriers, a decentralized variant and liveness terms that break deadlock, all enforced as control-barrier-function constraints during diffusion denoising, and it is tested only on a multi-agent Maze2D. The other four papers cover rehab robots that prescribe force trajectories from arm muscle (sEMG) signals, a power-swing blocking scheme for distance relays on grids with grid-forming inverters, open-vocabulary object search from a robot's camera memory that can report when an object is absent, and an LLM-agent assistant that turns storytelling goals into camera and shot settings.
+
+Only MA-SafeDiffuser is close to cooperative driving or maneuver coordination, so the description says plainly that the rest are off-topic. If an episode like this should go out at all, the paper filter is probably letting too much through. It could be the new saved-paper source or the recent scope change, so it may be worth checking before publishing.</itunes:summary>
+      <itunes:episode>50</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 6 — 1 papers</title>
       <description>&lt;p&gt;CoSafe puts runtime safety assurance on a roadside unit that sees the whole scene over V2X, so it can catch conflicts between several vehicles&amp;#x27; plans that no single car could detect alone. When it finds one, it overrides more than one automated vehicle at once instead of leaving each to brake on its own, which raises questions about how much it relies on the roadside unit and the communication link, and how it handles the human-driven cars it can&amp;#x27;t command.&lt;/p&gt;
