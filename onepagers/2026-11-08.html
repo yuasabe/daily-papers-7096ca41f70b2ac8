@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 51 (2026-11-08)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Nov 8 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 51</strong> · November 8, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.07383v1">Distributed Robust Model Predictive Control for Optimal Consensus of Unknown Multiagent Systems with Event-Triggered Communication</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Shiyue Jia et al.</p>
+
+<p class="hook">They learn nominal models of unknown agents from noisy offline data, wrap them in a robust MPC that also picks the consensus point, and solve it with a distributed ADMM in which agents only talk when an event trigger fires.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Optimal consensus with constraints usually assumes known agent dynamics and continuous neighbour communication. This paper tries to drop both assumptions while still guaranteeing constraint satisfaction and convergence.</dd></div><div class="frag"><dt>Method</dt><dd>Noisy offline trajectories give each agent a nominal prediction model and an uncertainty bound. A robust MPC uses that bound to tighten constraints and jointly optimizes the inputs and the consensus sequence. A gradient-projection ADMM solves it in a distributed way, and agents send updates to neighbours only when a trigger condition is violated. They prove that this ADMM converges to the optimal solution, and they give sufficient conditions for robust constraint satisfaction and practical consensus, meaning agreement to within a bounded neighbourhood.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers. It does not say how much communication the trigger saves, how close the agents get to consensus, or what baselines they compared against. It only says that numerical simulations show the framework is effective.</dd></div><div class="frag"><dt>Caveat</dt><dd>The trigger is meant to save communication, but the guarantees appear to assume reliable, delay-free delivery whenever a message is sent. Packet loss and latency, the failures that actually matter on a vehicle network, are not addressed. It is also unclear whether the ADMM has to run to convergence within each MPC step, which is a real-time burden. Practical consensus with tightened constraints may be very conservative if the offline noise bound is loose. And with only generic simulations, there is no evidence about scale, mixed participation, or agents that drop out.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It is a generic control-theory result about agreeing on a state, not about negotiating lane changes, merges or right of way. There are no intentions, proposals or acceptances, and no conflict resolution. The closest tie is to platooning and distributed cooperative trajectory planning. If you need a formal pattern for consensus ADMM with event-triggered messages and constraint guarantees under model uncertainty, check the trigger rule and the convergence proof. Otherwise, the title and figures are enough.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.07383v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.07383v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.08298v1">Beyond Quantum Messages: Toward Quantum-Native Network Functioning</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Angela Sara Cacciapuoti et al.</p>
+
+<p class="hook">A Quantum Internet position paper arguing that entanglement and quantum coherence should help decide routing, neighbors and addressing, not just be the payload the network carries; it has nothing to do with vehicles.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Quantum network designs today treat entanglement as a resource that the network moves around, while routing, control and addressing still run on classical ideas. The authors say this leaves unused any way that quantum effects could carry out network functions directly.</dd></div><div class="frag"><dt>Method</dt><dd>This is a Perspective, so it argues rather than builds or proves anything new. It treats entanglement as a stateful resource spread across distant nodes that decays over time, then points to two existing mechanisms as examples: creating entanglement while a signal travels in a superposition of paths, and shared entanglement that links nodes which are not physically adjacent. From these it proposes Quantum Addressing, an abstraction that sits alongside classical addressing rather than replacing it.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract reports no numbers, no simulations, no experiments and no baselines. The evidence is conceptual and leans on mechanisms from the authors&#39; earlier work.</dd></div><div class="frag"><dt>Caveat</dt><dd>Quantum Addressing is named but, going by the abstract, never specified as a format, a protocol or a cost model. Neither example mechanism is tested against decoherence time limits or a realistic hardware platform, so the claim of a broad design space rests on two hand-picked examples. It also reads as the agenda for the authors&#39; new ERC grant, so it is stronger on vision than on evidence.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It does not touch vehicle negotiation, maneuver messages, platooning, conflict resolution or joint trajectory planning, and quantum networking is nowhere near being usable in vehicle-to-vehicle links. The only loose connection is the idea that whether two nodes count as neighbors depends on shared state rather than radio range, which echoes thinking about logical versus physical participants in coordination. That is not enough reason to read it.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.08298v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.08298v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.08259v1">Fault-Geometry-Aware Control Allocation for Emergency Quadrotor Landing under Single-Motor Loss of Effectiveness</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Suhas S P et al.</p>
+
+<p class="hook">In Crazyflie simulation, the authors pick one of three control allocators for a quadrotor emergency landing based on which motor has partly failed, and get about 117 safe touchdowns out of 120.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>When one motor partly loses thrust, the quadrotor has a different amount of control authority left depending on which motor failed. A single fixed control allocator may therefore not be the best choice for every failed motor during an emergency landing.</dd></div><div class="frag"><dt>Method</dt><dd>They compare three allocators. The first is bounded weighted least squares. The second picks the best of a fixed set of candidate motor commands by a residual score. The third is that same candidate allocator with its scoring weights tuned offline by the Cross-Entropy Method. The fault is assumed known and is given simply as the failed motor&#39;s index. A routing table that maps each failed motor to its best allocator is chosen from development trials at about 49.6 percent remaining effectiveness and then frozen.</dd></div><div class="frag"><dt>Results</dt><dd>With the table frozen, the policy gets 117 of 120 safe first-contact touchdowns on new seeds, and 115 of 120 in a separate randomized-order test with the full supervisor. For the motor-two branch, where least squares wins, the 50 percent success threshold sits at about 49.56 percent effectiveness. Changing mass or thrust coefficient by ten percent moves that threshold by about five percentage points.</dd></div><div class="frag"><dt>Caveat</dt><dd>The test point of 49.6 percent effectiveness sits almost exactly on the motor-two 50 percent success threshold. Headline counts at that point are therefore fragile, and the plant perturbation results confirm this: the threshold moves by about five points, and some plant states drop to zero of 30. The motor-three routing choice rests on a single trial out of 30. The bootstrap interval is extremely narrow and only holds within the fitted model. Everything runs in simulation with the failed motor given, with no fault detection, no hardware and only 30 trials per condition.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is outside your area. It concerns fault-tolerant actuator allocation on a single quadrotor. It has no vehicle-to-vehicle communication, negotiation, platooning or multi-agent conflict resolution. The only transferable idea is general: pick the controller according to the identified fault, and report sensitivity to model mismatch separately from the headline result. You do not need to read it for that.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.08259v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.08259v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.08097v1">STEP: Spatiotemporal Training with Explicit Prediction for Perceptive Humanoid Locomotion</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Youhao Lyu et al.</p>
+
+<p class="hook">A humanoid locomotion policy that fuses depth and body sensing, and is trained with two extra prediction losses. One loss guesses the missing sensor, and the other predicts the next state from the action. It cleared 98 of 100 real-robot trials on stairs, gaps and stepping stones.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Perceptive humanoid controllers either just pool vision and proprioception together, or predict one modality from the other at the same instant. Neither approach forces the policy to learn how terrain and body state change together as the robot acts. That leaves the policy fragile when depth input is missing or late.</dd></div><div class="frag"><dt>Method</dt><dd>Learned query tokens compress depth and proprioceptive tokens into one compact policy state. Two auxiliary losses shape that state. A bidirectional masked prediction loss hides one modality and predicts its latent features from the other. An action-conditioned forward model predicts the next fused state against a slowly updated moving-average target, in the style of a self-supervised world model. Everything is trained in a single reinforcement learning stage, with no teacher-student distillation.</dd></div><div class="frag"><dt>Results</dt><dd>On a 23 degree-of-freedom Noetix E1 humanoid using onboard sensing, it succeeded in 98 of 100 hardware trials. These covered stairs, a 40 centimeter platform, a 70 centimeter gap, stepping stones, and walking backward down stairs with no view behind the robot. The simulation gains over other fusion methods, and the robustness to depth dropout and delay, are only described in words in the abstract, with no numbers given.</dd></div><div class="frag"><dt>Caveat</dt><dd>The hardware result is a success count on a hand-picked set of terrains, with no hardware comparison against baselines. So the 98 percent figure does not show that the prediction losses are what made the difference. The abstract also does not name the fusion baselines, and the dropout and delay tests appear to be simulation only.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This sits outside the student&#39;s field. It is about a single robot&#39;s locomotion, with no communication between agents, no negotiation, and no multiple vehicles. The only loose connection is the idea of training with masked inputs and a forward model so the system copes with dropped or delayed sensor data. That idea could carry over to handling lost messages in cooperative driving, but it does not need a careful read.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.08097v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.08097v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.07850v1">Learning Robotic World Models with Semantic and Visual Feedback</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Hao Wu et al.</p>
+
+<p class="hook">RoboImagine post-trains a video world model for robot arm manipulation with a GRPO-style method: it samples several candidate futures, has a frozen multimodal model judge them pairwise and adds pixel and perceptual scores, then reinforces the better ones. On RT-1 this gains about 1.3 dB of PSNR over plain continued fine-tuning.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Supervised video world models trained on reconstruction loss can look pixel-accurate while getting task progress wrong. Pure semantic judges miss fine visual errors, and candidate rollouts are too similar to give a useful comparison signal, so preference-style post-training for robot world models was not working well.</dd></div><div class="frag"><dt>Method</dt><dd>They sample a group of candidate future videos under the same observation, action sequence and instruction, with a diversity-promoting search step. Each candidate is scored by a frozen multimodal evaluator that compares videos pairwise in both orders to cancel position bias, combined with pixel-level and perceptual consistency terms. The scores become group-relative advantages for policy optimization. For long rollouts they keep the initial frames fixed and give each branch its own rolling history, so context stays bounded and the conditioning used for generation matches the conditioning used for updates.</dd></div><div class="frag"><dt>Results</dt><dd>On RT-1, with the same initialization, number of updates and evaluation protocol, it improves PSNR by 1.26 dB and cuts LPIPS by 11.93 percent compared with continued supervised fine-tuning. Separate models are also trained on BridgeV2 and RoboCasa, but the abstract gives no numbers for them. Ablations credit diverse search with better prediction quality and credit semantic feedback with higher external multimodal judge scores at similar visual fidelity.</dd></div><div class="frag"><dt>Caveat</dt><dd>The semantic gain is measured by an external multimodal judge, which is close to the kind of evaluator used as the training reward, so the improvement may be reward hacking against model-based judges rather than real task relevance. Nothing shows that the better predictions lead to better planning or higher robot task success, which is the stated purpose of a world model. The only baseline in the abstract is continued fine-tuning, not other preference or reinforcement post-training methods for video models.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It covers single-arm manipulation video prediction and has no multi-agent interaction, communication, negotiation or vehicle coordination. The only transferable idea is the general recipe of group-relative post-training with a frozen judge and bias-cancelling pairwise comparison, which might matter later if you train trajectory or intent predictors with preference feedback. Nothing here bears on maneuver protocols, platooning or conflict resolution.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.07850v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.07850v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-11-08 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>

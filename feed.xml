@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2026 21:03:15 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 21:02:55 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,37 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 8 — 5 papers</title>
+      <description>&lt;p&gt;A distributed robust MPC learns models of unknown agents from noisy offline data, picks the consensus point itself, and solves the problem with ADMM in which agents communicate only when an event trigger fires. A Crazyflie simulation study chooses among three control allocators based on which quadrotor motor has partly failed and lands safely in about 117 of 120 runs. A Quantum Internet position paper argues that entanglement should help decide routing, neighbors and addressing, not just be the payload. STEP trains a humanoid walking policy on depth and body sensing, adding losses that predict the missing sensor and the next state, and clears 98 of 100 real-robot trials on stairs, gaps and stepping stones. RoboImagine post-trains a robot-arm video world model GRPO-style by having a frozen multimodal judge rank sampled futures, and gains about 1.3 dB PSNR on RT-1 over plain fine-tuning.
+
+That&amp;#x27;s five sentences, not two. Here is the two-sentence version:
+
+A distributed robust MPC learns models of unknown agents from noisy offline data and solves for consensus with event-triggered ADMM; a Crazyflie simulation picks one of three control allocators based on which quadrotor motor has partly failed, landing safely in about 117 of 120 runs; and a Quantum Internet position paper argues entanglement should drive routing and addressing, not just be the payload. STEP trains a humanoid walking policy on depth and body sensing with extra losses that predict the missing sensor and the next state, clearing 98 of 100 real-robot trials on stairs, gaps and stepping stones, while RoboImagine post-trains a robot-arm video world model using a frozen multimodal judge to rank sampled futures, gaining about 1.3 dB PSNR on RT-1 over plain fine-tuning.
+
+None of these five papers is about cooperative driving or V2X, and the quantum one has nothing to do with vehicles. If this batch came out of the pipeline after the maneuver-coordination scope change, the filter may be letting off-topic papers through.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07383v1"&gt;Distributed Robust Model Predictive Control for Optimal Consensus of Unknown Multiagent Systems with Event-Triggered Communication&lt;/a&gt; &amp;mdash; Shiyue Jia et al.&lt;br/&gt;They learn nominal models of unknown agents from noisy offline data, wrap them in a robust MPC that also picks the consensus point, and solve it with a distributed ADMM in which agents only talk when an event trigger fires.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.08298v1"&gt;Beyond Quantum Messages: Toward Quantum-Native Network Functioning&lt;/a&gt; &amp;mdash; Angela Sara Cacciapuoti et al.&lt;br/&gt;A Quantum Internet position paper arguing that entanglement and quantum coherence should help decide routing, neighbors and addressing, not just be the payload the network carries; it has nothing to do with vehicles.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.08259v1"&gt;Fault-Geometry-Aware Control Allocation for Emergency Quadrotor Landing under Single-Motor Loss of Effectiveness&lt;/a&gt; &amp;mdash; Suhas S P et al.&lt;br/&gt;In Crazyflie simulation, the authors pick one of three control allocators for a quadrotor emergency landing based on which motor has partly failed, and get about 117 safe touchdowns out of 120.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.08097v1"&gt;STEP: Spatiotemporal Training with Explicit Prediction for Perceptive Humanoid Locomotion&lt;/a&gt; &amp;mdash; Youhao Lyu et al.&lt;br/&gt;A humanoid locomotion policy that fuses depth and body sensing, and is trained with two extra prediction losses. One loss guesses the missing sensor, and the other predicts the next state from the action. It cleared 98 of 100 real-robot trials on stairs, gaps and stepping stones.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07850v1"&gt;Learning Robotic World Models with Semantic and Visual Feedback&lt;/a&gt; &amp;mdash; Hao Wu et al.&lt;br/&gt;RoboImagine post-trains a video world model for robot arm manipulation with a GRPO-style method: it samples several candidate futures, has a frozen multimodal model judge them pairwise and adds pixel and perceptual scores, then reinforces the better ones. On RT-1 this gains about 1.3 dB of PSNR over plain continued fine-tuning.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-08</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-08.mp3" length="6727298" type="audio/mpeg"/>
+      <pubDate>Sun, 08 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:09:16</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A distributed robust MPC learns models of unknown agents from noisy offline data, picks the consensus point itself, and solves the problem with ADMM in which agents communicate only when an event trigger fires. A Crazyflie simulation study chooses among three control allocators based on which quadrotor motor has partly failed and lands safely in about 117 of 120 runs. A Quantum Internet position paper argues that entanglement should help decide routing, neighbors and addressing, not just be the payload. STEP trains a humanoid walking policy on depth and body sensing, adding losses that predict the missing sensor and the next state, and clears 98 of 100 real-robot trials on stairs, gaps and stepping stones. RoboImagine post-trains a robot-arm video world model GRPO-style by having a frozen multimodal judge rank sampled futures, and gains about 1.3 dB PSNR on RT-1 over plain fine-tuning.
+
+That's five sentences, not two. Here is the two-sentence version:
+
+A distributed robust MPC learns models of unknown agents from noisy offline data and solves for consensus with event-triggered ADMM; a Crazyflie simulation picks one of three control allocators based on which quadrotor motor has partly failed, landing safely in about 117 of 120 runs; and a Quantum Internet position paper argues entanglement should drive routing and addressing, not just be the payload. STEP trains a humanoid walking policy on depth and body sensing with extra losses that predict the missing sensor and the next state, clearing 98 of 100 real-robot trials on stairs, gaps and stepping stones, while RoboImagine post-trains a robot-arm video world model using a frozen multimodal judge to rank sampled futures, gaining about 1.3 dB PSNR on RT-1 over plain fine-tuning.
+
+None of these five papers is about cooperative driving or V2X, and the quantum one has nothing to do with vehicles. If this batch came out of the pipeline after the maneuver-coordination scope change, the filter may be letting off-topic papers through.</itunes:summary>
+      <itunes:episode>51</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 7 — 5 papers</title>
       <description>&lt;p&gt;MA-SafeDiffuser extends SafeDiffuser to multiple agents: it adds pairwise collision barriers, a decentralized variant and liveness terms that break deadlock, all enforced as control-barrier-function constraints during diffusion denoising, and it is tested only on a multi-agent Maze2D. The other four papers cover rehab robots that prescribe force trajectories from arm muscle (sEMG) signals, a power-swing blocking scheme for distance relays on grids with grid-forming inverters, open-vocabulary object search from a robot&amp;#x27;s camera memory that can report when an object is absent, and an LLM-agent assistant that turns storytelling goals into camera and shot settings.
