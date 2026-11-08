@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 21:02:55 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 21:02:26 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 9 — 5 papers</title>
+      <description>&lt;p&gt;NVIDIA&amp;#x27;s cuRoboV2-Fast makes GPU arm motion planning about fifteen times faster by switching to B-spline trajectories and adding a time-scaling step that respects joint torque limits as the payload changes. A separate study finds that fine-tuning a robot foundation model with online RL on many manipulation tasks at once improves all of them, and that value-based RL also raises success on tasks it never trained on. Also covered: a gripper that squeezes wash bottles to dispense a target volume using grip-force targets taken from a person&amp;#x27;s forearm EMG; a single-author survey arguing that task success rates make dexterous robot hands look more ready to deploy than they are; and measurements from two cruise ships showing that the ship&amp;#x27;s router and per-passenger rate limits, not the Starlink link, decide what passengers get.
+
+None of these five papers are about cooperative driving, V2X or maneuver coordination, and the Starlink one isn&amp;#x27;t robotics either. If this batch came from your daily pipeline, the scope filter from `5ad7f74` may not be applying to the new saved-papers source added in `2778c3d`.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07235v1"&gt;Adaptive Hybrid Force-Vision Control with EMG-Derived References for Deformable Bottle Manipulation&lt;/a&gt; &amp;mdash; Jeffrey Lee et al.&lt;br/&gt;A robot gripper squeezes lab wash bottles to dispense a target volume, switching between force and vision feedback, with grip force targets copied from a human&amp;#x27;s forearm muscle signals.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.07191v1"&gt;A First Look at Starlink Maritime on Cruise Ships&lt;/a&gt; &amp;mdash; Jinwei Zhao, Kousar Malekinasab, Jianping Pan&lt;br/&gt;The authors took a phone and Starlink dish telemetry onto two cruise ships and found that the ship&amp;#x27;s own router and per-passenger rate limits, not the satellite link, decide what passengers get.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.06913v1"&gt;cuRoboV2-Fast: Fast Torque-Limited Collision-Free Motion Planning&lt;/a&gt; &amp;mdash; Balakumar Sundaralingam, Adithyavairavan Murali, Stan Birchfield&lt;br/&gt;NVIDIA made its GPU arm motion planner about fifteen times faster by switching to B-spline trajectories and adding a fast time-scaling step that respects joint torque limits under a changing payload.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.06905v1"&gt;Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement&lt;/a&gt; &amp;mdash; Michal Korniak et al.&lt;br/&gt;Fine-tuning a robot foundation model with online reinforcement learning on many manipulation tasks at once can improve all of them together, and value-based RL with the right mix of training tasks even raises success on tasks it never trained on.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.06724v1"&gt;Dexterous Robotic Hands in the Foundation-Model Era: A Full-Stack Survey of Hardware, Data, Cross-Embodiment Transfer, Learning, and Evaluation&lt;/a&gt; &amp;mdash; Ji Pei&lt;br/&gt;A single-author narrative survey of dexterous robot hands from 2024 to late 2026. It argues that human video data, shared action spaces and foundation policies still run into hand-specific limits on force, latency and contact, and that task success rates overstate how ready these systems are to deploy.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-09</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-09.mp3" length="4542497" type="audio/mpeg"/>
+      <pubDate>Mon, 09 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:06:14</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>NVIDIA's cuRoboV2-Fast makes GPU arm motion planning about fifteen times faster by switching to B-spline trajectories and adding a time-scaling step that respects joint torque limits as the payload changes. A separate study finds that fine-tuning a robot foundation model with online RL on many manipulation tasks at once improves all of them, and that value-based RL also raises success on tasks it never trained on. Also covered: a gripper that squeezes wash bottles to dispense a target volume using grip-force targets taken from a person's forearm EMG; a single-author survey arguing that task success rates make dexterous robot hands look more ready to deploy than they are; and measurements from two cruise ships showing that the ship's router and per-passenger rate limits, not the Starlink link, decide what passengers get.
+
+None of these five papers are about cooperative driving, V2X or maneuver coordination, and the Starlink one isn't robotics either. If this batch came from your daily pipeline, the scope filter from `5ad7f74` may not be applying to the new saved-papers source added in `2778c3d`.</itunes:summary>
+      <itunes:episode>52</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 8 — 5 papers</title>
       <description>&lt;p&gt;A distributed robust MPC learns models of unknown agents from noisy offline data, picks the consensus point itself, and solves the problem with ADMM in which agents communicate only when an event trigger fires. A Crazyflie simulation study chooses among three control allocators based on which quadrotor motor has partly failed and lands safely in about 117 of 120 runs. A Quantum Internet position paper argues that entanglement should help decide routing, neighbors and addressing, not just be the payload. STEP trains a humanoid walking policy on depth and body sensing, adding losses that predict the missing sensor and the next state, and clears 98 of 100 real-robot trials on stairs, gaps and stepping stones. RoboImagine post-trains a robot-arm video world model GRPO-style by having a frozen multimodal judge rank sampled futures, and gains about 1.3 dB PSNR on RT-1 over plain fine-tuning.
