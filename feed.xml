@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Nov 2026 21:02:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 21:02:56 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 10 — 5 papers</title>
+      <description>&lt;p&gt;Two LLM agents, one speaking for all autonomous vehicles and one for all human drivers, negotiate in text over how to split road space, and the results show how the traffic mix, fairness instructions and traffic knowledge in the prompt affect whether they reach a deal. The briefing also covers four other papers: a constrained moving horizon estimator that locates where a tendon-driven continuum robot touches a known wall using only tendon readings, a tabletop benchmark where a hand-built belief pipeline picks the right camera view about 99% of the time while off-the-shelf vision-language models stay below 43%, a way of grouping submodules in multi-output solid-state transformers, and a diffusion prior learned from noisy ENTSO-E records that corrects European grid data so energy balances exactly.
+
+Only the bargaining paper is about cooperative driving. The other four are robotics, power electronics and grid data, which suggests the scope filter let them through even after the recent &amp;quot;maneuver coordination&amp;quot; scope change. You may want to check the filter before this episode goes out.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.09004v1"&gt;Sharing the Road: LLM-Based Bargaining in Mixed-Autonomy Traffic&lt;/a&gt; &amp;mdash; Lingxiao Zhou, Di Chen, Jia Li&lt;br/&gt;They have two LLM agents, one standing in for all autonomous vehicles and one for all human drivers, haggle in text over how to split road space, and they report how traffic mix, fairness instructions and traffic background knowledge in the prompt change whether the agents reach a deal.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.09877v1"&gt;Locating Contact on Tendon-Driven Continuum Robots From Tendon Measurements Alone via Constrained Moving Horizon Estimation&lt;/a&gt; &amp;mdash; Haitham El-Hussieny&lt;br/&gt;A single-author robotics estimation paper showing that you can locate where a tendon-driven continuum robot is touching a known wall from motor-side tendon readings alone, but only if you bake the wall geometry and contact complementarity into a moving horizon estimator.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.09794v1"&gt;Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation&lt;/a&gt; &amp;mdash; Yina Jian, Mingkun Xu&lt;br/&gt;A simulated tabletop benchmark that tests whether a robot picks the camera view that shows what its specific command needs, where a hand-built belief pipeline scores near ninety-nine percent and off-the-shelf vision-language models stay below forty-three.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.09305v1"&gt;An Optimal Power-Flow Grouping Topology for Single-Isolation-Stage Multi-Output Solid-State Transformers&lt;/a&gt; &amp;mdash; Yi Hao et al.&lt;br/&gt;A power-electronics hardware paper about wiring the submodules of a multi-output solid-state transformer so that each submodule sits next to submodules serving other output ports, which keeps balancing power local, with nothing to do with vehicle coordination.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.09265v1"&gt;Reconciling European Electricity Data with Diffusion Priors Learned from Observations Alone&lt;/a&gt; &amp;mdash; Matthias Pirlet et al.&lt;br/&gt;They clean up inconsistent European grid data by learning a diffusion prior straight from the noisy ENTSO-E records, then sampling corrections that satisfy energy balance exactly.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-10</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-10.mp3" length="6303029" type="audio/mpeg"/>
+      <pubDate>Tue, 10 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:08:40</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Two LLM agents, one speaking for all autonomous vehicles and one for all human drivers, negotiate in text over how to split road space, and the results show how the traffic mix, fairness instructions and traffic knowledge in the prompt affect whether they reach a deal. The briefing also covers four other papers: a constrained moving horizon estimator that locates where a tendon-driven continuum robot touches a known wall using only tendon readings, a tabletop benchmark where a hand-built belief pipeline picks the right camera view about 99% of the time while off-the-shelf vision-language models stay below 43%, a way of grouping submodules in multi-output solid-state transformers, and a diffusion prior learned from noisy ENTSO-E records that corrects European grid data so energy balances exactly.
+
+Only the bargaining paper is about cooperative driving. The other four are robotics, power electronics and grid data, which suggests the scope filter let them through even after the recent "maneuver coordination" scope change. You may want to check the filter before this episode goes out.</itunes:summary>
+      <itunes:episode>53</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 9 — 5 papers</title>
       <description>&lt;p&gt;NVIDIA&amp;#x27;s cuRoboV2-Fast makes GPU arm motion planning about fifteen times faster by switching to B-spline trajectories and adding a time-scaling step that respects joint torque limits as the payload changes. A separate study finds that fine-tuning a robot foundation model with online RL on many manipulation tasks at once improves all of them, and that value-based RL also raises success on tasks it never trained on. Also covered: a gripper that squeezes wash bottles to dispense a target volume using grip-force targets taken from a person&amp;#x27;s forearm EMG; a single-author survey arguing that task success rates make dexterous robot hands look more ready to deploy than they are; and measurements from two cruise ships showing that the ship&amp;#x27;s router and per-passenger rate limits, not the Starlink link, decide what passengers get.

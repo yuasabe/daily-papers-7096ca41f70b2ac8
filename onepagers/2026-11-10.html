@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Daily Papers — Ep. 53 (2026-11-10)</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#5c574c;
+    --ink-3:#867f70;
+    --paper:#faf8f3;
+    --rule:#ded6c4;
+    --accent:#7a3626;
+    --accent-2:#9c5a44;
+    --skim-bg:#dcefe0;   --skim-fg:#1f6d3a;
+    --read-bg:#fbe6bd;   --read-fg:#8a5a00;
+    --close-bg:#f6cfcf;  --close-fg:#9c1f22;
+  }
+  *{box-sizing:border-box;}
+  html{font-size:16px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:.9375rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .serif{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  }
+  .page{
+    max-width:840px;
+    margin:0 auto;
+    padding:1.9rem 1.6rem 2.75rem;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding-bottom:.6rem;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:.9rem;
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.25rem .75rem;
+    font-size:.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .eyebrow .brand{font-weight:700;color:var(--accent);}
+  h1.doc-title{
+    margin:.15rem 0 .2rem;
+    font-weight:700;
+    font-size:1.55rem;
+    line-height:1.2;
+    letter-spacing:-.005em;
+  }
+  .masthead .meta{
+    font-size:.8rem;
+    color:var(--ink-2);
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- paper cards ---------- */
+  main.papers{margin-top:.2rem;}
+  article.paper{
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  article.paper:first-child{padding-top:.1rem;}
+  article.paper:last-child{border-bottom:none;padding-bottom:0;}
+
+  .paper-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  h2.title{
+    margin:0 0 .18rem;
+    font-weight:700;
+    font-size:1.05rem;
+    line-height:1.32;
+    flex:1 1 auto;
+  }
+  h2.title a{
+    color:var(--ink);
+    text-decoration:none;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0 1px;
+    transition:background-size .15s ease;
+  }
+  h2.title a:hover,h2.title a:focus{background-size:100% 1px;color:var(--accent);}
+  .badges{
+    display:flex;
+    gap:.35rem;
+    flex:0 0 auto;
+    padding-top:.05rem;
+  }
+
+  .byline{
+    font-size:.78rem;
+    color:var(--ink-2);
+    margin:0 0 .4rem;
+  }
+
+  .hook{
+    margin:.05rem 0 .55rem;
+    font-size:.94rem;
+    font-style:italic;
+    color:var(--ink);
+    line-height:1.45;
+  }
+
+  dl.facts{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:1.4rem;
+    row-gap:.32rem;
+    margin:.1rem 0 .5rem;
+  }
+  dl.facts .frag{
+    flex:1 1 250px;
+    min-width:0;
+    margin:0;
+  }
+  dl.facts dt{
+    display:inline;
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-right:.4em;
+  }
+  dl.facts dd{
+    display:inline;
+    margin:0;
+    font-size:.85rem;
+    line-height:1.42;
+  }
+
+  p.why{
+    margin:.1rem 0 .55rem;
+    font-size:.83rem;
+    color:var(--ink-2);
+  }
+  p.why .lbl{
+    font-weight:700;
+    font-size:.66rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-right:.4em;
+  }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.45rem .7rem;
+    margin-top:.35rem;
+    font-size:.74rem;
+  }
+  .arxiv-id{
+    color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .pdf-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dotted var(--accent-2);
+  }
+  .pdf-link:hover{border-bottom-style:solid;}
+
+  /* ---------- badges ---------- */
+  .pill{
+    display:inline-block;
+    padding:.16em .6em;
+    border-radius:99px;
+    font-size:.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    line-height:1.5;
+    white-space:nowrap;
+  }
+  .pill-skim{background:var(--skim-bg);color:var(--skim-fg);}
+  .pill-read{background:var(--read-bg);color:var(--read-fg);}
+  .pill-read-closely{background:var(--close-bg);color:var(--close-fg);}
+
+  .chip{
+    display:inline-block;
+    padding:.05em .55em;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    font-size:.64rem;
+    letter-spacing:.02em;
+    color:var(--ink-3);
+  }
+
+  footer.colophon{
+    margin-top:1.6rem;
+    padding-top:.6rem;
+    border-top:1px solid var(--rule);
+    font-size:.68rem;
+    color:var(--ink-3);
+    text-align:center;
+  }
+
+  /* ---------- screen-only print affordance ---------- */
+  .print-btn{
+    position:fixed;
+    right:1.1rem;
+    bottom:1.1rem;
+    z-index:10;
+    border:none;
+    border-radius:99px;
+    padding:.6rem 1.05rem;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    box-shadow:0 2px 10px rgba(0,0,0,.22);
+    cursor:pointer;
+  }
+  .print-btn:hover{background:var(--accent);}
+
+  /* ---------- phone screens ---------- */
+  @media (max-width:640px){
+    .page{padding:1.15rem .95rem 3.5rem;}
+    h1.doc-title{font-size:1.3rem;}
+    .paper-head{flex-direction:column;gap:.3rem;}
+    dl.facts .frag{flex-basis:100%;}
+    .eyebrow{font-size:.68rem;}
+  }
+
+  /* ---------- print: one tight page ---------- */
+
+  .from-lib{
+    font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);border:1px solid var(--accent);
+    border-radius:3px;padding:.03rem .26rem;
+  }
+
+  /* ---------- density ----------
+     The promise is ONE page. Five papers do not fit at the comfortable
+     spacing three papers get, so the sheet tightens as the day gets busier
+     rather than silently spilling onto a second sheet. Type scale is
+     reduced last and least -- whitespace is cheaper to give up than
+     legibility. */
+  body.density-compact{font-size:.875rem;}
+  body.density-compact .sheet{padding:1.4rem 1.5rem 1.6rem;}
+  body.density-compact article.paper{padding:.62rem 0;}
+  body.density-compact h2.title{font-size:.97rem;}
+  body.density-compact .masthead{margin-bottom:.6rem;padding-bottom:.45rem;}
+  body.density-compact .masthead h1{font-size:1.3rem;}
+  body.density-compact .hook{margin:.12rem 0 .3rem;}
+  body.density-compact .frags{gap:.1rem .9rem;}
+  body.density-compact .why{margin-top:.28rem;}
+  body.density-compact .paper-foot{margin-top:.3rem;}
+
+  body.density-tight{font-size:.78rem;line-height:1.34;}
+  body.density-tight .sheet{padding:.85rem 1.25rem 1rem;}
+  body.density-tight article.paper{padding:.34rem 0;}
+  body.density-tight h2.title{font-size:.9rem;}
+  body.density-tight .masthead{margin-bottom:.45rem;padding-bottom:.35rem;}
+  body.density-tight .masthead h1{font-size:1.15rem;}
+  body.density-tight .hook{margin:.08rem 0 .22rem;}
+  body.density-tight .frags{gap:.06rem .8rem;}
+  body.density-tight .why{margin-top:.2rem;}
+  body.density-tight .paper-foot{margin-top:.22rem;}
+
+  @media print{
+    @page{size:auto;margin:12mm 14mm;}
+    html{font-size:9.5pt;}
+    body{background:#fff;color:#000;}
+    .page{max-width:none;padding:0;margin:0;}
+    .print-btn{display:none !important;}
+    a{color:#000 !important;}
+    h2.title a{background-image:none;}
+    .pdf-link{border-bottom-color:#000;}
+    article.paper{break-inside:avoid;page-break-inside:avoid;}
+    header.masthead{break-after:avoid;}
+    .eyebrow,.masthead .meta,.byline,p.why,footer.colophon{color:#000;}
+    .chip{border-color:#000;color:#000;}
+    /* priority must survive grayscale printing: fill-intensity coded */
+    .pill{border:1px solid #000;}
+    .pill-skim{background:#fff;color:#000;}
+    .pill-read{background:#ddd;color:#000;}
+    .pill-read-closely{background:#000;color:#fff;}
+  }
+</style>
+</head>
+<body class="density-tight">
+<div class="page">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="brand">Daily Papers · Your personal research briefing</span>
+      <span>One-page briefing</span>
+    </div>
+    <h1 class="doc-title serif">Nov 10 — 5 papers</h1>
+    <div class="meta">
+      <strong>Episode 53</strong> · November 10, 2026 · 5 papers
+    </div>
+  </header>
+
+  <main class="papers">
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.09004v1">Sharing the Road: LLM-Based Bargaining in Mixed-Autonomy Traffic</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Lingxiao Zhou, Di Chen, Jia Li</p>
+
+<p class="hook">They have two LLM agents, one standing in for all autonomous vehicles and one for all human drivers, haggle in text over how to split road space, and they report how traffic mix, fairness instructions and traffic background knowledge in the prompt change whether the agents reach a deal.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Earlier game-theoretic and reinforcement learning studies of mixed-autonomy traffic had to fix behaviour assumptions or reward functions by hand. That left open how bargaining would play out between agents with richer, partly private objectives that reason in natural language.</dd></div><div class="frag"><dt>Method</dt><dd>Two population-level LLM agents, one for autonomous vehicles and one for human-driven vehicles, negotiate a split of road space through language. Each agent has its own objective and private information. The experiments vary traffic composition, whether the agents are told to pursue self-interest or fairness, and whether traffic-domain knowledge is put in the prompt, then measure agreement, coordination and road-space utilization.</dd></div><div class="frag"><dt>Results</dt><dd>The abstract gives no numbers, no named LLM, no baseline and no dataset. Its qualitative claims are that agreed splits track relative traffic density without being strictly proportional, that splits are hardest to agree on when the two populations are about the same size, and that fairness objectives raise agreement rates but do not reliably raise utilization.</dd></div><div class="frag"><dt>Caveat</dt><dd>The agents are whole populations bargaining over abstract shares of road, not individual vehicles negotiating a specific merge or gap, and there seems to be no traffic simulation to show what a negotiated split means for flow or safety. The results probably depend on which model is used, how prompts are worded and what sampling settings are chosen, and the abstract gives no sign that any of these were tested. With no game-theoretic baseline, such as a Nash bargaining solution, there is no way to tell if the LLM is doing anything a simple closed-form split could not.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It looks at negotiation as a population-level policy question, while you study vehicle-to-vehicle maneuver agreement with real messages, timing limits and message loss, and none of that is modeled here. The one useful point is that the agreement rate falls when the two populations are evenly matched, and the abstract does not give the actual agreement rates. That could serve as a citation if you ever argue for or against using LLMs to negotiate right of way.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.09004v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.09004v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.09877v1">Locating Contact on Tendon-Driven Continuum Robots From Tendon Measurements Alone via Constrained Moving Horizon Estimation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Haitham El-Hussieny</p>
+
+<p class="hook">A single-author robotics estimation paper showing that you can locate where a tendon-driven continuum robot is touching a known wall from motor-side tendon readings alone, but only if you bake the wall geometry and contact complementarity into a moving horizon estimator.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Contact along the body of a tendon-driven continuum robot does not show up uniquely at the motor-side sensors, and the author argues this is structural: the map from contact forces to tendon measurements has a null space of at least seven dimensions, so tuning a filter cannot fix it. Prior estimators left the contact location free and so could not identify it.</dd></div><div class="frag"><dt>Method</dt><dd>The author proves the null-space result, then shows that with known obstacle geometry, non-penetration and complementarity constraints make the contact force locally identifiable, and the system with unknown contact inputs locally exponentially strongly detectable. The estimator is a constrained moving horizon estimator solved as one quadratic program per sample, with a local, mode-wise robust stability guarantee.</dd></div><div class="frag"><dt>Results</dt><dd>In a finite-element simulation of a two-section robot pressing and sliding on a wall, the estimator located contact to 0.9 millimeters and force to 0.22 newtons, against 65 millimeters and 0.72 newtons for a tuned extended Kalman filter with state projection. It also beat that filter on force and location in all 40 randomized model-mismatch trials, including unmodeled tendon friction, and gave no advantage when there was no contact.</dd></div><div class="frag"><dt>Caveat</dt><dd>All the evidence comes from a finite-element simulation with no physical robot, and the scenario is one two-section robot against one flat wall. Known obstacle geometry is a strong assumption, and the robustness test only covers millimeter-level wall position error. The stability guarantees are local and hold mode by mode, so nothing is shown about contact mode switching under real sensor noise, multiple simultaneous contacts, or unknown environments.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is off-topic for you: it is about single-robot contact sensing, with no vehicles, no communication, and no negotiation between agents. The one transferable idea is that constraints you already know can make an otherwise unobservable quantity identifiable inside a moving horizon estimator. That loosely parallels using known road geometry or shared intent to pin down what other vehicles plan to do, but you would gain little by reading it for that.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.09877v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.09877v1">PDF</a>        <span class="chip">notable</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.09794v1">Seeing What Matters: Benchmarking Task-Conditioned Actionable Spatial Belief for Manipulation</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yina Jian, Mingkun Xu</p>
+
+<p class="hook">A simulated tabletop benchmark that tests whether a robot picks the camera view that shows what its specific command needs, where a hand-built belief pipeline scores near ninety-nine percent and off-the-shelf vision-language models stay below forty-three.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>Spatial-reasoning benchmarks reward describing a whole scene, but a manipulation command only needs particular evidence, and the same view can be decisive for one task and useless for another. No existing benchmark scored view selection by whether the chosen views actually let the command execute.</dd></div><div class="frag"><dt>Method</dt><dd>They freeze 860 cases across coffee, drawer, and microwave tabletop domains. Each case pairs candidate RGB views with a command, shared scripted skills, and hidden postconditions, and is scored under a closed-loop actionability protocol and a same-object functional out-of-distribution protocol. They also build a reference pipeline that keeps a spatial and functional belief state and ranks views by how much missing evidence each one would supply for the current command.</dd></div><div class="frag"><dt>Results</dt><dd>The reference pipeline reaches 98.8 percent closed-loop and 98.9 percent functional out-of-distribution success, and removing either the functional or the command-binding component drops it to near zero. Seven vision-language models score only 26 to 43 percent, and swapping coverage metadata for frozen RGB-derived scores holds at 98.5 and 98.9 percent, while shuffling those scores drops it to 15 and 11 percent.</dd></div><div class="frag"><dt>Caveat</dt><dd>The reference pipeline is designed by the benchmark authors around the same evidence structure the hidden postconditions check, so its near-perfect score and the huge gap to the vision-language models may mostly show a good match between pipeline and benchmark, not general competence. Everything runs in simulation with scripted skills, three domains, and same-object out-of-distribution only, and the authors themselves say cross-domain and physical-robot validation are still in progress.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is peripheral to your work. It concerns a single robot choosing camera views for tabletop manipulation, with no vehicles, no communication, and no multi-agent negotiation. The only transferable idea is loose: score shared information by whether it lets the receiver act on the current decision, not by how complete it is, which echoes how you might judge what a maneuver coordination message needs to carry.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.09794v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.09794v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.09305v1">An Optimal Power-Flow Grouping Topology for Single-Isolation-Stage Multi-Output Solid-State Transformers</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Yi Hao et al.</p>
+
+<p class="hook">A power-electronics hardware paper about wiring the submodules of a multi-output solid-state transformer so that each submodule sits next to submodules serving other output ports, which keeps balancing power local, with nothing to do with vehicle coordination.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>In a single-isolation-stage solid-state transformer, several submodules must be paralleled for each output port, so under unbalanced loads the balancing circuits have to shuttle power between submodules. When submodules are grouped sequentially, those transfer paths get long and the balancing power accumulates, which raises current stress and losses.</dd></div><div class="frag"><dt>Method</dt><dd>They interleave the submodules assigned to different output ports, so that power redistribution happens between neighbours instead of across the whole chain. They derive analytical models of the required balancing power and of how much interleaving saves compared with sequential grouping. They also add a coordinated submodule-bypass scheme and work out the output power that remains available under different fault cases.</dd></div><div class="frag"><dt>Results</dt><dd>On a six-submodule prototype under the same highly unbalanced load, the interleaved topology cut the maximum submodule dc-link voltage difference by 63 percent and the peak balancing current by 14.5 percent compared with sequential grouping. It improved measured efficiency at rated power by about 5.6 percent, and the authors show stable operation after a fault.</dd></div><div class="frag"><dt>Caveat</dt><dd>Everything is shown on a single six-submodule bench prototype, while a real charging-station transformer would use many more submodules and ports, so it is untested whether the analytical savings hold at that scale. A 5.6 percent efficiency gain is very large for a change to the balancing paths alone, which suggests the prototype runs at a low power level where balancing losses dominate. The abstract also states no absolute power rating or baseline efficiency that would let a reader judge this.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This is irrelevant to your work. It mentions electric vehicles only because fast-charging stations are one application for the converter, and it says nothing about negotiating maneuvers, platooning, conflict resolution or joint trajectory planning. Its arXiv systems category is the only reason it reached your feed.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.09305v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.09305v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="paper-head">
+        <h2 class="title serif">
+<a href="http://arxiv.org/abs/2611.09265v1">Reconciling European Electricity Data with Diffusion Priors Learned from Observations Alone</a>        </h2>
+        <div class="badges">
+          <span class="pill pill-skim">skim</span>
+        </div>
+      </div>
+
+      <p class="byline">Matthias Pirlet et al.</p>
+
+<p class="hook">They clean up inconsistent European grid data by learning a diffusion prior straight from the noisy ENTSO-E records, then sampling corrections that satisfy energy balance exactly.</p>
+      <dl class="facts">
+<div class="frag"><dt>Problem</dt><dd>ENTSO-E generation, load and cross-border flow figures contain undocumented errors and break energy conservation. Classical reconciliation implicitly uses a flat prior, so it cannot use the structure shared across zones, and it fails outright when a whole zone&#39;s data is missing.</dd></div><div class="frag"><dt>Method</dt><dd>They treat reconciliation as Bayesian inference and replace the implicit uniform prior with a diffusion model. That model is fitted to the noisy observations alone, using empirical-Bayes expectation-maximization, so no clean ground truth is needed. Posterior samples come from a guided diffusion process that includes a projection step, so every sample satisfies the balance constraint exactly instead of only approximately.</dd></div><div class="frag"><dt>Results</dt><dd>The tests use synthetic systems of six to thirty-five bidding zones built from ENTSO-E resource-adequacy data. The diffusion prior is the most accurate method, its lead grows with system size, its credible intervals are calibrated or conservative, and it stays best when the noise covariance is misspecified. The abstract gives no error figures and does not name the classical baselines.</dd></div><div class="frag"><dt>Caveat</dt><dd>Every evaluation runs on synthetic systems with injected noise, never on real ENTSO-E records with their true error patterns, so the headline application is not actually shown working. Recovering an unreported zone only works when the learned cross-zone correlations stay stable, and the abstract does not test what happens under a regime shift or when the training data are themselves badly biased.</dd></div>      </dl>
+
+      <p class="why"><span class="lbl">Why it matters</span>This has nothing to do with your topics. It is about power-system data reconciliation, not connected vehicles, and it has no maneuvers, messages, platoons or negotiation in it. The one idea you could borrow is constraint-projected diffusion sampling, meaning a diffusion sampler whose every output is forced to satisfy a hard constraint. That could matter if you ever generate joint trajectories that must meet hard feasibility constraints, but the energy-balance constraint here is linear, which is far easier than collision avoidance.</p>
+
+      <div class="card-foot">
+        <span class="arxiv-id">arXiv:2611.09265v1</span>
+<a class="pdf-link" href="https://arxiv.org/pdf/2611.09265v1">PDF</a>        <span class="chip">incremental</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="colophon">
+    Generated automatically · 2026-11-10 06:02 · verify against the source before citing
+  </footer>
+
+</div>
+<button class="print-btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+</body>
+</html>
