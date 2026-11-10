@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2026 21:02:56 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 21:02:42 +0000</lastBuildDate>
     <itunes:author>yuasabe</itunes:author>
     <itunes:block>yes</itunes:block>
     <itunes:category text="Science">
@@ -22,6 +22,29 @@
     </itunes:owner>
     <itunes:subtitle>Your personal research briefing</itunes:subtitle>
     <itunes:type>episodic</itunes:type>
+    <item>
+      <title>Nov 11 — 3 papers</title>
+      <description>&lt;p&gt;A distributed MPC lets up to 32 simulated planar robots coordinate only with the neighbours they are predicted to conflict with, solving one convexified QP per update with edge-consensus ADMM and falling back to a centralized safety filter when the distributed plan isn&amp;#x27;t safe enough; a game-theoretic MPC for small drone teams is tested on cooperative goal reaching and pursuit-evasion in PyBullet, and its one lab flight checks only trajectory tracking. Also included, though off-topic for this feed, is SoftPAT3D, which makes text-to-3D scenes containing cloth, stuffed toys and ropes ready for simulation, so those objects settle onto furniture without passing through anything.
+
+- **SoftPAT3D doesn&amp;#x27;t belong here.** It has nothing to do with maneuver coordination, so it probably got past the scope filter, maybe through the saved-papers source. If you drop it from the episode, use this second sentence instead: &amp;quot;Both are simulation-heavy: the robot planner never leaves 2D simulation, and the drone planner&amp;#x27;s hardware result shows only that the low-level controller can follow its plans.&amp;quot;
+- **Typo in the first title:** &amp;quot;vianEdge-Consensus&amp;quot; should be &amp;quot;via Edge-Consensus&amp;quot;. It&amp;#x27;s probably a newline left over from extraction, so check whether it also appears in the episode JSON.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.11755v1"&gt;Graph-Sparse Distributed Predictive Control for Multi-Robot Motion Planning vianEdge-Consensus ADMM&lt;/a&gt; &amp;mdash; Josep Borras-Borras, Pablo Segovia, Carlos Ocampo-Martinez&lt;br/&gt;Distributed MPC for up to 32 simulated planar robots: they only coordinate with neighbours they are predicted to conflict with, solve one convexified QP per update with edge-consensus ADMM, and fall back to a centralized safety filter when the distributed plan isn&amp;#x27;t safe enough.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.12226v1"&gt;A Game-Theoretic MPC Planner for Cooperative and Adversarial Drone Coordination&lt;/a&gt; &amp;mdash; Zdeněk Bouček, Miroslav Flídr&lt;br/&gt;A game-theoretic model predictive controller for small drone teams, tested on cooperative goal reaching and pursuit-evasion in PyBullet, with one lab flight that checks only the trajectory-tracking interface.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arxiv.org/abs/2611.11087v1"&gt;SoftPAT3D: Physics-Augmented Text-to-3D Scene Generation with Deformables&lt;/a&gt; &amp;mdash; Lei Shu et al.&lt;br/&gt;SoftPAT3D makes text-to-3D scenes that contain cloth, stuffed toys and ropes simulation-ready, so those objects settle onto furniture without passing through anything, and it has nothing to do with connected vehicles.&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <guid isPermaLink="false">daily-papers-2026-11-11</guid>
+      <enclosure url="https://yuasabe.github.io/daily-papers-7096ca41f70b2ac8/audio/2026-11-11.mp3" length="5447856" type="audio/mpeg"/>
+      <pubDate>Wed, 11 Nov 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>00:07:29</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A distributed MPC lets up to 32 simulated planar robots coordinate only with the neighbours they are predicted to conflict with, solving one convexified QP per update with edge-consensus ADMM and falling back to a centralized safety filter when the distributed plan isn't safe enough; a game-theoretic MPC for small drone teams is tested on cooperative goal reaching and pursuit-evasion in PyBullet, and its one lab flight checks only trajectory tracking. Also included, though off-topic for this feed, is SoftPAT3D, which makes text-to-3D scenes containing cloth, stuffed toys and ropes ready for simulation, so those objects settle onto furniture without passing through anything.
+
+- **SoftPAT3D doesn't belong here.** It has nothing to do with maneuver coordination, so it probably got past the scope filter, maybe through the saved-papers source. If you drop it from the episode, use this second sentence instead: "Both are simulation-heavy: the robot planner never leaves 2D simulation, and the drone planner's hardware result shows only that the low-level controller can follow its plans."
+- **Typo in the first title:** "vianEdge-Consensus" should be "via Edge-Consensus". It's probably a newline left over from extraction, so check whether it also appears in the episode JSON.</itunes:summary>
+      <itunes:episode>54</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
     <item>
       <title>Nov 10 — 5 papers</title>
       <description>&lt;p&gt;Two LLM agents, one speaking for all autonomous vehicles and one for all human drivers, negotiate in text over how to split road space, and the results show how the traffic mix, fairness instructions and traffic knowledge in the prompt affect whether they reach a deal. The briefing also covers four other papers: a constrained moving horizon estimator that locates where a tendon-driven continuum robot touches a known wall using only tendon readings, a tabletop benchmark where a hand-built belief pipeline picks the right camera view about 99% of the time while off-the-shelf vision-language models stay below 43%, a way of grouping submodules in multi-output solid-state transformers, and a diffusion prior learned from noisy ENTSO-E records that corrects European grid data so energy balances exactly.
